@@ -223,7 +223,7 @@ SPDX-License-Identifier: MIT
 <span id="onemkl-rng-wichmann-hill"></span><h1>wichmann_hill<a class="headerlink" href="#wichmann-hill" title="Permalink to this headline">¶</a></h1>
 <p>The wichmann_hill engine is the set of 273 Wichmann-Hill’s combined multiplicative congruential generators from NAG Numerical Libraries <a class="reference internal" href="bibliography.html#onemkl-rng-bibliography"><span class="std std-ref">[NAG]</span></a>.</p>
 <p class="rubric" id="onemkl-rng-wichmann-hill-description">Description</p>
-<p>The set of 372 different basic pseudorandom number generators wichmann_hill is the second basig generator in the NAG libraries.</p>
+<p>The set of 372 different basic pseudorandom number generators wichmann_hill is the second basic generator in the NAG libraries.</p>
 <div class="section docutils container">
 <p class="rubric">Generation algorithm</p>
 <p><span class="math notranslate nohighlight">\(x_n=a_{1, j} x_{n-1} (mod \ m_{1, j})\)</span></p>
@@ -231,7 +231,7 @@ SPDX-License-Identifier: MIT
 <p><span class="math notranslate nohighlight">\(z_n = a_{3, j} z_{n-1} (mod \ m_{3, j})\)</span></p>
 <p><span class="math notranslate nohighlight">\(w_n = a_{4, j} w_{n-1} (mod \ m_{4, j})\)</span></p>
 <p><span class="math notranslate nohighlight">\(u_n = (x_n / m_{1, j} + y_n / m_{2, j} + z_n / m_{3, j} + w_n / m_{4, j}) mod \ 1\)</span></p>
-<p>The constatns <span class="math notranslate nohighlight">\(a_{i, j}\)</span> range from 112 to 127, the constatnts <span class="math notranslate nohighlight">\(m_{i, j}\)</span> are prime numbers ranging from 16718909 to 16776917, close to <span class="math notranslate nohighlight">\(2 ^ {24}\)</span>.</p>
+<p>The constants <span class="math notranslate nohighlight">\(a_{i, j}\)</span> range from 112 to 127, the constants <span class="math notranslate nohighlight">\(m_{i, j}\)</span> are prime numbers ranging from 16718909 to 16776917, close to <span class="math notranslate nohighlight">\(2 ^ {24}\)</span>.</p>
 </div>
 <div class="section" id="class-wichmann-hill">
 <span id="onemkl-rng-wichmann-hill-description-syntax"></span><h2>class wichmann_hill<a class="headerlink" href="#class-wichmann-hill" title="Permalink to this headline">¶</a></h2>
@@ -294,10 +294,10 @@ SPDX-License-Identifier: MIT
 <td><p>Move constructor</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#wichmann-hill-operator-const-wichmann-hill-other">wichmann_hill&amp; operator=(const wichmann_hill&amp; other)</a></p></td>
-<td><p>Copy assignement operator</p></td>
+<td><p>Copy assignment operator</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#wichmann-hill-operator-wichmann-hill-other">wichmann_hill&amp; operator=(wichmann_hill&amp;&amp; other)</a></p></td>
-<td><p>Move assignement operator</p></td>
+<td><p>Move assignment operator</p></td>
 </tr>
 </tbody>
 </table>

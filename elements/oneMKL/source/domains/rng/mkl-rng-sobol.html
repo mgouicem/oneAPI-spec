@@ -223,7 +223,7 @@ SPDX-License-Identifier: MIT
 <span id="onemkl-rng-sobol"></span><h1>sobol<a class="headerlink" href="#sobol" title="Permalink to this headline">¶</a></h1>
 <p>The sobol is a 32-bit Gray code-based quasi-random number generator.</p>
 <p class="rubric" id="onemkl-rng-sobol-description">Description</p>
-<p>Bratley and Fox <a class="reference internal" href="bibliography.html#onemkl-rng-bibliography"><span class="std std-ref">[Bratley88]</span></a> provide an implementation of the SOBOL quasi-rando number generator. The defaulit dimensions of quasi-random vectors can vary from 1 to 40 inclusive. It is also allowed to register user-defined parameters (direction numbers).</p>
+<p>Bratley and Fox <a class="reference internal" href="bibliography.html#onemkl-rng-bibliography"><span class="std std-ref">[Bratley88]</span></a> provide an implementation of the SOBOL quasi-random number generator. The default dimensions of quasi-random vectors can vary from 1 to 40 inclusive. It is also allowed to register user-defined parameters (direction numbers).</p>
 <div class="section docutils container">
 <p class="rubric">Generation algorithm</p>
 <p><span class="math notranslate nohighlight">\(x_n=x_{n_1} \oplus v_c\)</span></p>
@@ -281,10 +281,10 @@ SPDX-License-Identifier: MIT
 <td><p>Move constructor</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sobol-operator-const-sobol-other">sobol&amp; operator=(const sobol&amp; other)</a></p></td>
-<td><p>Copy assignement operator</p></td>
+<td><p>Copy assignment operator</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sobol-operator-sobol-other">sobol&amp; operator=(sobol&amp;&amp; other)</a></p></td>
-<td><p>Move assignement operator</p></td>
+<td><p>Move assignment operator</p></td>
 </tr>
 </tbody>
 </table>
@@ -311,7 +311,7 @@ SPDX-License-Identifier: MIT
 <dl class="simple">
 <dt>queue</dt><dd><p>Valid <code class="docutils literal notranslate"><span class="pre">sycl::queue</span></code> object, calls of the <a class="reference internal" href="mkl-rng-generate.html#onemkl-rng-generate"><span class="std std-ref">oneapi::mkl::rng::generate()</span></a> routine submits kernels in this queue to obtain random numbers from a given engine.</p>
 </dd>
-<dt>direction_numbers</dt><dd><p>If you want to generate quasi-random vectors of greater dimension or obtain another sequence, you can register a set of your own direction_numbers. The number of dimmensions corresponds to direction_numbers.size() / 32.</p>
+<dt>direction_numbers</dt><dd><p>If you want to generate quasi-random vectors of greater dimension or obtain another sequence, you can register a set of your own direction_numbers. The number of dimensions corresponds to direction_numbers.size() / 32.</p>
 </dd>
 </dl>
 </div>

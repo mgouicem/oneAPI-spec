@@ -219,7 +219,7 @@ SPDX-License-Identifier: MIT
 <span id="onemkl-stats-dataset"></span><h1>dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h1>
 <p>The structure consolidates the information of a multi-dimensional dataset.</p>
 <p class="rubric" id="onemkl-stats-dataset-description">Description</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">dataset</span></code> struct object is used in <a class="reference internal" href="stats_routines.html#onemkl-stats-routines"><span class="std std-ref">Summary Statistics Routines</span></a> as a multi-dimensional data storage. <code class="docutils literal notranslate"><span class="pre">dataset</span></code> struct contains information about observations matrix and its size (dimensions x observations), observations weights and indicies for dimensions (defines dimensions to be processed).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">dataset</span></code> struct object is used in <a class="reference internal" href="stats_routines.html#onemkl-stats-routines"><span class="std std-ref">Summary Statistics Routines</span></a> as a multi-dimensional data storage. <code class="docutils literal notranslate"><span class="pre">dataset</span></code> struct contains information about observations matrix and its size (dimensions x observations), observations weights and indices for dimensions (defines dimensions to be processed).</p>
 <div class="section" id="structure-dataset-buffer-version">
 <span id="onemkl-stats-dataset-syntax-buffer"></span><h2>structure dataset (Buffer version)<a class="headerlink" href="#structure-dataset-buffer-version" title="Permalink to this headline">¶</a></h2>
 <p class="rubric">Syntax</p>
@@ -307,7 +307,7 @@ SPDX-License-Identifier: MIT
 <li><p><cite>n_dims_</cite> is the number of dimensions</p></li>
 <li><p><cite>n_observations_</cite> is the number of observations</p></li>
 <li><p><cite>observations_</cite> is the matrix of observations</p></li>
-<li><p><cite>weights_</cite> is an optional parameter, represents array of weights for obervations (of size <cite>n_observations</cite>). If the parameter is not specified, each observation is assigned a weight equal 1.</p></li>
+<li><p><cite>weights_</cite> is an optional parameter, represents array of weights for observations (of size <cite>n_observations</cite>). If the parameter is not specified, each observation is assigned a weight equal 1.</p></li>
 <li><p><cite>indices_</cite> is an optional parameter, represents array of dimensions that are processed (of size <cite>n_dims</cite>). If the parameter is not specified, all dimensions are processed.</p></li>
 </ul>
 </div></blockquote>
@@ -407,7 +407,7 @@ SPDX-License-Identifier: MIT
 <li><p><cite>n_dims_</cite> is the number of dimensions</p></li>
 <li><p><cite>n_observations_</cite> is the number of observations</p></li>
 <li><p><cite>observations_</cite> is the matrix of observations</p></li>
-<li><p><cite>weights_</cite> is an optional parameter, represents array of weights for obervations (of size <cite>n_observations</cite>). If the parameter is not specified, each observation is assigned a weight equal 1.</p></li>
+<li><p><cite>weights_</cite> is an optional parameter, represents array of weights for observations (of size <cite>n_observations</cite>). If the parameter is not specified, each observation is assigned a weight equal 1.</p></li>
 <li><p><cite>indices_</cite> is an optional parameter, represents array of dimensions that are processed (of size <cite>n_dims</cite>). If the parameter is not specified, all dimensions are processed.</p></li>
 </ul>
 </div></blockquote>

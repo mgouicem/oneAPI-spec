@@ -221,7 +221,7 @@ SPDX-License-Identifier: MIT
 <span id="onemkl-stats-make-dataset"></span><h1>make_dataset<a class="headerlink" href="#make-dataset" title="Permalink to this headline">¶</a></h1>
 <p>Entry point to create a dataset from the provided parameters.</p>
 <p class="rubric" id="onemkl-stats-make-dataset-description">Description and Assumptions</p>
-<p>The oneapi::mkl::stats::make_dataset function is used to create a dataset from the provided storage of the observations matrix, the number of dimensions and obesrvations, and other parameters.</p>
+<p>The oneapi::mkl::stats::make_dataset function is used to create a dataset from the provided storage of the observations matrix, the number of dimensions and observations, and other parameters.</p>
 <p><a class="reference internal" href="#onemkl-stats-make-dataset"><span class="std std-ref">make_dataset</span></a> supports the following precisions for data:</p>
 <blockquote>
 <div><table class="docutils align-default">
@@ -274,7 +274,7 @@ SPDX-License-Identifier: MIT
 </dd>
 <dt>weights</dt><dd><p>Optional parameter. Array of weights of size n_observations. Elements of the array are non-negative members.  If the parameter is not specified, each observation has weight equal to 1.</p>
 </dd>
-<dt>indicies</dt><dd><p>Optional parameter. Array of vector components that are processed. The size of the array is n_dims. If the parameter is not specified, all components are processed.</p>
+<dt>indices</dt><dd><p>Optional parameter. Array of vector components that are processed. The size of the array is n_dims. If the parameter is not specified, all components are processed.</p>
 </dd>
 </dl>
 </div>
@@ -319,9 +319,9 @@ SPDX-License-Identifier: MIT
 </dd>
 <dt>observations</dt><dd><p>Matrix of observations.</p>
 </dd>
-<dt>weights</dt><dd><p>Optional parameter. Array of weights of size n_observations. Elements of the array are non-negative     mbers.  If   the parameter is not specified, each observation has weight equal to 1.</p>
+<dt>weights</dt><dd><p>Optional parameter. Array of weights of size n_observations. Elements of the array are non-negative members.  If the parameter is not specified, each observation has weight equal to 1.</p>
 </dd>
-<dt>indicies</dt><dd><p>Optional parameter. Array of vector components that are processed. Size of array is n_dims. If the    parameter  is   not specified, all components are processed.</p>
+<dt>indices</dt><dd><p>Optional parameter. Array of vector components that are processed. Size of array is n_dims. If the    parameter  is   not specified, all components are processed.</p>
 </dd>
 </dl>
 </div>

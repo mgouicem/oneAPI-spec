@@ -280,10 +280,10 @@ SPDX-License-Identifier: MIT
 <td><p>Move constructor</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#r250-operator-const-r250-other">r250&amp; operator=(const r250&amp; other)</a></p></td>
-<td><p>Copy assignement operator</p></td>
+<td><p>Copy assignment operator</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#r250-operator-r250-other">r250&amp; operator=(r250&amp;&amp; other)</a></p></td>
-<td><p>Move assignement operator</p></td>
+<td><p>Move assignment operator</p></td>
 </tr>
 </tbody>
 </table>
@@ -298,7 +298,7 @@ SPDX-License-Identifier: MIT
 <dl class="simple">
 <dt>queue</dt><dd><p>Valid sycl::queue object, calls of the <a class="reference internal" href="mkl-rng-generate.html#onemkl-rng-generate"><span class="std std-ref">oneapi::mkl::rng::generate()</span></a> routine submits kernels in this queue to obtain random numbers from a given engine.</p>
 </dd>
-<dt>seed</dt><dd><p>The initial conditions of the generator state, assume <span class="math notranslate nohighlight">\(x_{-250} = seed\)</span>. If <span class="math notranslate nohighlight">\(seed = 0\)</span>, assume <span class="math notranslate nohighlight">\(seed = 1\)</span>. Other values in state are initialized according to reccurent correlation <span class="math notranslate nohighlight">\(x_{n+1} = 69069x_{n}(mod \ 2 ^ {32})\)</span>. Then the values <span class="math notranslate nohighlight">\(x_{7k-247}, k = 0, 1, ..., 31\)</span> are interpreted as a binary matrix of size 32 x 32 and diagonalbits are set to 0, the under-diagonal bits to 0.</p>
+<dt>seed</dt><dd><p>The initial conditions of the generator state, assume <span class="math notranslate nohighlight">\(x_{-250} = seed\)</span>. If <span class="math notranslate nohighlight">\(seed = 0\)</span>, assume <span class="math notranslate nohighlight">\(seed = 1\)</span>. Other values in state are initialized according to recurrent correlation <span class="math notranslate nohighlight">\(x_{n+1} = 69069x_{n}(mod \ 2 ^ {32})\)</span>. Then the values <span class="math notranslate nohighlight">\(x_{7k-247}, k = 0, 1, ..., 31\)</span> are interpreted as a binary matrix of size 32 x 32 and diagonal bits are set to 0, the under-diagonal bits to 0.</p>
 </dd>
 </dl>
 </div>
