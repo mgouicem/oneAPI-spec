@@ -221,8 +221,17 @@
             <span class="n">high</span> <span class="o">=</span> <span class="cm">/* unspecified */</span>
         <span class="p">};</span>
         <span class="k">struct</span> <span class="nc">attach</span> <span class="p">{};</span>
+        <span class="k">struct</span> <span class="nc">constraints</span> <span class="p">{</span>
+            <span class="n">numa_node_id</span> <span class="n">numa_node</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">max_concurrency</span><span class="p">;</span>
+
+            <span class="n">constraints</span><span class="p">(</span><span class="n">numa_node_id</span> <span class="n">numa_node_</span>       <span class="o">=</span> <span class="n">task_arena</span><span class="o">::</span><span class="n">automatic</span><span class="p">,</span>
+                        <span class="kt">int</span>          <span class="n">max_concurrency_</span> <span class="o">=</span> <span class="n">task_arena</span><span class="o">::</span><span class="n">automatic</span><span class="p">);</span>
+        <span class="p">};</span>
 
         <span class="n">task_arena</span><span class="p">(</span><span class="kt">int</span> <span class="n">max_concurrency</span> <span class="o">=</span> <span class="n">automatic</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">reserved_for_masters</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                   <span class="n">priority</span> <span class="n">a_priority</span> <span class="o">=</span> <span class="n">priority</span><span class="o">::</span><span class="n">normal</span><span class="p">);</span>
+        <span class="n">task_arena</span><span class="p">(</span><span class="n">constraints</span> <span class="n">a_constraints</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">reserved_for_masters</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                    <span class="n">priority</span> <span class="n">a_priority</span> <span class="o">=</span> <span class="n">priority</span><span class="o">::</span><span class="n">normal</span><span class="p">);</span>
         <span class="n">task_arena</span><span class="p">(</span><span class="k">const</span> <span class="n">task_arena</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
         <span class="k">explicit</span> <span class="nf">task_arena</span><span class="p">(</span><span class="n">task_arena</span><span class="o">::</span><span class="n">attach</span><span class="p">);</span>
@@ -230,6 +239,8 @@
 
         <span class="kt">void</span> <span class="nf">initialize</span><span class="p">();</span>
         <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="kt">int</span> <span class="n">max_concurrency</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">reserved_for_masters</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+                        <span class="n">priority</span> <span class="n">a_priority</span> <span class="o">=</span> <span class="n">priority</span><span class="o">::</span><span class="n">normal</span><span class="p">);</span>
+        <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">constraints</span> <span class="n">a_constraints</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">reserved_for_masters</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
                         <span class="n">priority</span> <span class="n">a_priority</span> <span class="o">=</span> <span class="n">priority</span><span class="o">::</span><span class="n">normal</span><span class="p">);</span>
         <span class="kt">void</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">task_arena</span><span class="o">::</span><span class="n">attach</span><span class="p">);</span>
         <span class="kt">void</span> <span class="nf">terminate</span><span class="p">();</span>
@@ -300,6 +311,20 @@ has a raised priority.</p>
 <dd><p>A tag for constructing a <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> with attach.</p>
 </dd></dl>
 
+<dl class="cpp struct">
+<dt id="_CPPv411constraints">
+<span id="_CPPv311constraints"></span><span id="_CPPv211constraints"></span><span id="constraints"></span><em class="property">struct </em><code class="sig-name descname">constraints</code><a class="headerlink" href="#_CPPv411constraints" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Represents limitations applied to threads within <code class="docutils literal notranslate"><span class="pre">task_arena</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">numa_node</span></code> - An integral logical index uniquely identifying a NUMA node.
+All threads joining the <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> are bound to this NUMA node.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NUMA node ID is considered valid if it was obtained through tbb::info::numa_nodes().</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">max_concurrency</span></code> - The maximum number of threads that can participate in work processing
+within the <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> at the same time.</p>
+</dd></dl>
+
 </div>
 <div class="section" id="member-functions">
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
@@ -316,6 +341,23 @@ explicitly set to be equal and greater than 1, oneTBB worker threads will never
 join the arena. As a result, the execution guarantee for enqueued tasks is not valid
 in such arena. Do not use <code class="docutils literal notranslate"><span class="pre">task_arena::enqueue()</span></code> with an arena set to have no worker threads.</p>
 </div>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410task_arena11constraintsj8priority">
+<span id="_CPPv310task_arena11constraintsj8priority"></span><span id="_CPPv210task_arena11constraintsj8priority"></span><span id="task_arena__constraints.unsigned.priority"></span><code class="sig-name descname">task_arena</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411constraints" title="constraints">constraints</a> <em>a_constraints</em>, unsigned <em>reserved_for_masters</em> = 1, priority <em>a_priority</em> = priority::<a class="reference internal" href="#_CPPv4N8priority6normalE" title="priority::normal">normal</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410task_arena11constraintsj8priority" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Creates a <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> with a certain constraints(<code class="docutils literal notranslate"><span class="pre">a_constraints</span></code>) and priority
+(<code class="docutils literal notranslate"><span class="pre">a_priority</span></code>).  Some portion of the limit can be reserved for application threads with
+<code class="docutils literal notranslate"><span class="pre">reserved_for_masters</span></code>.  The amount for reservation cannot exceed the concurrency limit specified in <code class="docutils literal notranslate"><span class="pre">constraints</span></code>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">constraints::max_concurrency</span></code> and <code class="docutils literal notranslate"><span class="pre">reserved_for_masters</span></code> are
+explicitly set to be equal and greater than 1, oneTBB worker threads will never
+join the arena. As a result, the execution guarantee for enqueued tasks is not valid
+in such arena. Do not use <code class="docutils literal notranslate"><span class="pre">task_arena::enqueue()</span></code> with an arena set to have no worker threads.</p>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">constraints::numa_node</span></code> is specified, then all threads that enter the arena are automatically
+pinned to corresponding NUMA node.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -358,6 +400,12 @@ Not thread-safe for concurrent invocations of other methods.</p>
 <dt id="_CPPv410initializeij8priority">
 <span id="_CPPv310initializeij8priority"></span><span id="_CPPv210initializeij8priority"></span><span id="initialize__i.unsigned.priority"></span>void <code class="sig-name descname">initialize</code><span class="sig-paren">(</span>int <em>max_concurrency</em>, unsigned <em>reserved_for_masters</em> = 1, priority <em>a_priority</em> = priority::<a class="reference internal" href="#_CPPv4N8priority6normalE" title="priority::normal">normal</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410initializeij8priority" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Same as above, but overrides previous arena parameters.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv410initialize11constraintsj8priority">
+<span id="_CPPv310initialize11constraintsj8priority"></span><span id="_CPPv210initialize11constraintsj8priority"></span><span id="initialize__constraints.unsigned.priority"></span>void <code class="sig-name descname">initialize</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv411constraints" title="constraints">constraints</a> <em>a_constraints</em>, unsigned <em>reserved_for_masters</em> = 1, priority <em>a_priority</em> = priority::<a class="reference internal" href="#_CPPv4N8priority6normalE" title="priority::normal">normal</a><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410initialize11constraintsj8priority" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Same as above.</p>
 </dd></dl>
 
 <dl class="cpp function">
@@ -430,6 +478,43 @@ However, only the maximal number of threads specified for the arena can particip
 </div>
 </dd></dl>
 
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The example demonstrates <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> NUMA support API. Each constructed <code class="docutils literal notranslate"><span class="pre">task_arena</span></code> is pinned
+to the corresponding NUMA node.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;tbb/task_group.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;tbb/task_arena.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">tbb</span><span class="o">::</span><span class="n">numa_node_id</span><span class="o">&gt;</span> <span class="n">numa_nodes</span> <span class="o">=</span> <span class="n">tbb</span><span class="o">::</span><span class="n">info</span><span class="o">::</span><span class="n">numa_nodes</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">tbb</span><span class="o">::</span><span class="n">task_arena</span><span class="o">&gt;</span> <span class="n">arenas</span><span class="p">(</span><span class="n">numa_nodes</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">tbb</span><span class="o">::</span><span class="n">task_group</span><span class="o">&gt;</span> <span class="n">task_groups</span><span class="p">(</span><span class="n">numa_nodes</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numa_nodes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arenas</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">initialize</span><span class="p">(</span><span class="n">tbb</span><span class="o">::</span><span class="n">task_arena</span><span class="o">::</span><span class="n">constraints</span><span class="p">(</span><span class="n">numa_nodes</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numa_nodes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arenas</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">execute</span><span class="p">([</span><span class="o">&amp;</span><span class="n">task_groups</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">task_groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">run</span><span class="p">([]</span> <span class="p">{</span>
+                <span class="cm">/* executed by the thread pinned to specified NUMA node */</span>
+            <span class="p">});</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numa_nodes</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">arenas</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">execute</span><span class="p">([</span><span class="o">&amp;</span><span class="n">task_groups</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="p">{</span>
+            <span class="n">task_groups</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">wait</span><span class="p">();</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>See also:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="../task_group/task_group_cls.html"><span class="doc">task_group</span></a></p></li>
