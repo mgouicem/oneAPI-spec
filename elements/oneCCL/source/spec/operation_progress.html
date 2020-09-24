@@ -48,7 +48,7 @@ SPDX-License-Identifier: MIT
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Error Handling" href="error_handling.html" />
+    <link rel="next" title="Error handling" href="error_handling.html" />
     <link rel="prev" title="Operation Attributes" href="operation_attributes.html" /> 
 </head>
 
@@ -110,6 +110,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../definitions.html">Definitions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="main_objects.html">oneCCL Concepts</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="operations.html">Communication Operations</a><ul class="current">
@@ -120,7 +122,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Operation Progress Tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error handling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_model.html">Programming Model</a></li>
@@ -216,16 +218,16 @@ SPDX-License-Identifier: MIT
             
   <div class="section" id="operation-progress-tracking">
 <h1>Operation Progress Tracking<a class="headerlink" href="#operation-progress-tracking" title="Permalink to this headline">¶</a></h1>
-<p>oneCCL communication operation shall return a request object to be used for tracking the operation’s progress.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">request</span></code> class shall provide the ability to wait for completion of an operation in a blocking manner, the ability to check the completion status in a non-blocking manner, and the ability to retrieve the underlying <code class="docutils literal notranslate"><span class="pre">event</span></code> object that is signaled when the device communication operation completes on the device.</p>
-<div class="section" id="request">
-<h2>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h2>
+<p>oneCCL communication operation shall return an event object to be used for tracking the operation’s progress.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">event</span></code> class shall provide the ability to wait for completion of an operation in a blocking manner, the ability to check the completion status in a non-blocking manner, and the ability to retrieve the underlying native object that is signaled when the operation completes.</p>
+<div class="section" id="event">
+<h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h2>
 <p>Waiting for the completion of an operation in a blocking manner:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">request</span><span class="o">::</span><span class="n">wait</span><span class="p">();</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">event</span><span class="o">::</span><span class="n">wait</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>Checking for the completion of an operation in a non-blocking manner:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">request</span><span class="o">::</span><span class="n">test</span><span class="p">();</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span> <span class="n">event</span><span class="o">::</span><span class="n">test</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -233,12 +235,15 @@ SPDX-License-Identifier: MIT
 <code class="docutils literal notranslate"><span class="pre">false</span></code> if the operation has not been completed</p>
 </dd>
 </dl>
-<p>Retrieving an event object that is signaled when the device communication operation completes on the device:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">request</span><span class="o">::</span><span class="n">get_event</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<p>Retrieving a native object that is signaled when the operation completes:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_event_type</span> <span class="n">event</span><span class="o">::</span><span class="n">get_native</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
-<dl class="simple">
-<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an event object that is signaled when the communication operation completes on the device</p>
+<dl>
+<dt>return <code class="docutils literal notranslate"><span class="pre">native_event_type</span></code></dt><dd><div class="line-block">
+<div class="line">a native object that is signaled when the operation completes</div>
+<div class="line">shall throw an exception if an <code class="docutils literal notranslate"><span class="pre">event</span></code> object does not wrap the native object</div>
+</div>
 </dd>
 </dl>
 </div>
@@ -252,7 +257,7 @@ SPDX-License-Identifier: MIT
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="error_handling.html" class="btn btn-neutral float-right" title="Error Handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="error_handling.html" class="btn btn-neutral float-right" title="Error handling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="operation_attributes.html" class="btn btn-neutral float-left" title="Operation Attributes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

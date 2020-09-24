@@ -110,6 +110,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../definitions.html">Definitions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="main_objects.html">oneCCL Concepts</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="operations.html">Communication Operations</a><ul class="current">
@@ -120,7 +122,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="operation_progress.html">Operation Progress Tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error handling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_model.html">Programming Model</a></li>
@@ -220,7 +222,6 @@ SPDX-License-Identifier: MIT
 <ul class="simple">
 <li><p><a class="reference internal" href="#allgatherv">Allgatherv</a></p></li>
 <li><p><a class="reference internal" href="#allreduce">Allreduce</a></p></li>
-<li><p><a class="reference internal" href="#alltoall">Alltoall</a></p></li>
 <li><p><a class="reference internal" href="#alltoallv">Alltoallv</a></p></li>
 <li><p><a class="reference internal" href="#barrier">Barrier</a></p></li>
 <li><p><a class="reference internal" href="#broadcast">Broadcast</a></p></li>
@@ -228,15 +229,15 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#reducescatter">ReduceScatter</a></p></li>
 </ul>
 <p>These operations are collective, meaning that all participants (ranks) of oneCCL communicator should make a call.
-The order of collective operation calls should be the same across all ranks, unless the <code class="docutils literal notranslate"><span class="pre">match_id</span></code> attribute is used to match calls done without a strict order.</p>
-<p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> shall provide the ability to perform communication operations on host memory buffers.</p>
-<p><code class="docutils literal notranslate"><span class="pre">device_communicator</span></code> shall provide the ability to perform communication operations on device memory buffers. Additionally, device communication operations shall accept the device’s execution context and a vector of events that the device communication operation should depend on. The output <code class="docutils literal notranslate"><span class="pre">request</span></code> object shall provide the ability to retrieve the <code class="docutils literal notranslate"><span class="pre">event</span></code> object that is signaled when the communication operation completes.</p>
+The order of collective operation calls should be the same across all ranks.</p>
+<p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> shall provide the ability to perform communication operations either on host or device memory buffers depending on the <code class="docutils literal notranslate"><span class="pre">device</span></code> used to create the communicator. Additionally, communication operations may accept an execution context (stream) and a vector of events that the communication operation should depend on. The output <code class="docutils literal notranslate"><span class="pre">event</span></code> object shall provide the ability to track the progress of the operation.</p>
 <p><code class="docutils literal notranslate"><span class="pre">BufferType</span></code> is used below to define the C++ type of elements in data buffers (<code class="docutils literal notranslate"><span class="pre">buf</span></code>, <code class="docutils literal notranslate"><span class="pre">send_buf</span></code> and  <code class="docutils literal notranslate"><span class="pre">recv_buf</span></code>) of communication operations. At least the following types shall be supported: <code class="docutils literal notranslate"><span class="pre">[u]int{8/16/32/64}_t</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>. The explicit <code class="docutils literal notranslate"><span class="pre">datatype</span></code> parameter shall be used to enable data types which cannot be inferred from the function arguments.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See also: <a class="reference internal" href="datatypes.html#custom-datatypes"><span class="std std-ref">Custom Datatypes</span></a></p>
 </div>
-<p>The communication operation may accept attribute object. If that parameter is missed then default attribute object will be used (default_&lt;op_name&gt;_attr) which shall be provided by the library.</p>
+<p>The communication operation may accept a <code class="docutils literal notranslate"><span class="pre">stream</span></code> object. If that parameter is missed, then the default stream object is used. The default stream object shall be provided by the library. If a communicator is created from <code class="docutils literal notranslate"><span class="pre">native_device_type</span></code>, then the default stream shall translate to <code class="docutils literal notranslate"><span class="pre">native_stream_type</span></code> on the corresponding device.</p>
+<p>The communication operation may accept attribute object. If that parameter is missed, then the default attribute object is used (default_&lt;operation_name&gt;_attr). The default attribute object shall be provided by the library.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See also: <a class="reference internal" href="operation_attributes.html"><span class="doc">Operation Attributes</span></a></p>
@@ -246,37 +247,24 @@ The order of collective operation calls should be the same across all ranks, unl
 <span id="id1"></span><h2>Allgatherv<a class="headerlink" href="#allgatherv" title="Permalink to this headline">¶</a></h2>
 <p>Allgatherv is a collective communication operation that collects data from all the ranks within a communicator into a single buffer. Different ranks may contribute segments of different sizes. The resulting data in the output buffer must be the same for each rank.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                 <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
-                                 <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                      <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
+                      <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                 <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
-                                 <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                 <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                 <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                        <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
-                                        <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                        <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                        <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
-                                        <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                        <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                        <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
-                                        <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                      <span class="kt">size_t</span> <span class="n">send_count</span><span class="p">,</span>
+                      <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
+                      <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -299,19 +287,15 @@ The order of collective operation calls should be the same across all ranks, unl
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
@@ -319,37 +303,24 @@ The order of collective operation calls should be the same across all ranks, unl
 <span id="id2"></span><h2>Allreduce<a class="headerlink" href="#allreduce" title="Permalink to this headline">¶</a></h2>
 <p>Allreduce is a collective communication operation that performs the global reduction operation on values from all ranks of communicator and distributes the result back to all ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                     <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                     <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                       <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                       <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                       <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                       <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                       <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                     <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                     <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                     <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -367,128 +338,43 @@ The order of collective operation calls should be the same across all ranks, unl
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
-</dd>
-</dl>
-</div>
-<div class="section" id="alltoall">
-<span id="id3"></span><h2>Alltoall<a class="headerlink" href="#alltoall" title="Permalink to this headline">¶</a></h2>
-<p>Alltoall is a collective communication operation in which each rank
-sends separate equal-sized blocks of data to each rank.
-The j-th block of send buffer sent from the i-th rank is received by the j-th rank
-and is placed in the i-th block of receive buffer.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">alltoall</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                               <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                               <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                               <span class="k">const</span> <span class="n">alltoall_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoall_attr</span><span class="p">);</span>
-
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">alltoall</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                               <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                               <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                               <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                               <span class="k">const</span> <span class="n">alltoall_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoall_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">alltoall</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                      <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                      <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                      <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                      <span class="k">const</span> <span class="n">alltoall_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoall_attr</span><span class="p">,</span>
-                                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">alltoall</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                      <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                      <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                      <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                      <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                      <span class="k">const</span> <span class="n">alltoall_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoall_attr</span><span class="p">,</span>
-                                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-</pre></div>
-</div>
-<dl>
-<dt>send_buf</dt><dd><p>the buffer with <code class="docutils literal notranslate"><span class="pre">count</span></code> elements of <code class="docutils literal notranslate"><span class="pre">BufferType</span></code> that stores local data to be sent</p>
-</dd>
-<dt>recv_buf [out]</dt><dd><div class="line-block">
-<div class="line">the buffer to store the received result, must be large enough</div>
-<div class="line">to hold values from all ranks, i.e. at least <code class="docutils literal notranslate"><span class="pre">comm_size</span></code> * <code class="docutils literal notranslate"><span class="pre">count</span></code></div>
-</div>
-</dd>
-<dt>count</dt><dd><p>the number of elements to be send to or to received from each rank</p>
-</dd>
-<dt>dtype</dt><dd><div class="line-block">
-<div class="line">the datatype of elements in <code class="docutils literal notranslate"><span class="pre">send_buf</span></code> and <code class="docutils literal notranslate"><span class="pre">recv_buf</span></code></div>
-<div class="line">must be skipped if <code class="docutils literal notranslate"><span class="pre">BufferType</span></code> can be inferred</div>
-<div class="line">otherwise must be passed explicitly</div>
-</div>
-</dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
-</dd>
-<dt>attr</dt><dd><p>optional attributes to customize the operation</p>
-</dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
-</dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="alltoallv">
-<span id="id4"></span><h2>Alltoallv<a class="headerlink" href="#alltoallv" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Alltoallv<a class="headerlink" href="#alltoallv" title="Permalink to this headline">¶</a></h2>
 <p>Alltoall is a collective communication operation in which each rank
 sends separate blocks of data to each rank. Block sizes may differ.
 The j-th block of send buffer sent from the i-th rank is received by the j-th rank
 and is placed in the i-th block of receive buffer.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
-                                <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
+                     <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
-                                <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
-                                       <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
-                                       <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
-                                       <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">alltoallv</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">send_counts</span><span class="p">,</span>
+                     <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
+                     <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -514,83 +400,62 @@ and is placed in the i-th block of receive buffer.</p>
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="barrier">
-<span id="id5"></span><h2>Barrier<a class="headerlink" href="#barrier" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Barrier<a class="headerlink" href="#barrier" title="Permalink to this headline">¶</a></h2>
 <p>Barrier synchronization is performed across all ranks of the communicator
 and it is completed only after all the ranks in the communicator have called it.</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">barrier</span><span class="p">(</span><span class="k">const</span> <span class="n">barrier_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_barrier_attr</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">barrier</span><span class="p">(</span><span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">barrier_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_barrier_attr</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">barrier</span><span class="p">(</span><span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                     <span class="k">const</span> <span class="n">barrier_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_barrier_attr</span><span class="p">,</span>
-                                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-</pre></div>
-</div>
-<dl>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dl class="simple">
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="broadcast">
-<span id="id6"></span><h2>Broadcast<a class="headerlink" href="#broadcast" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Broadcast<a class="headerlink" href="#broadcast" title="Permalink to this headline">¶</a></h2>
 <p>Broadcast is a collective communication operation that broadcasts data
 from one rank of communicator (denoted as root) to all other ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="n">BufferType</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="n">BufferType</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="n">BufferType</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                       <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                       <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                       <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
-                                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                     <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                     <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -609,62 +474,43 @@ from one rank of communicator (denoted as root) to all other ranks.</p>
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="reduce">
-<span id="id7"></span><h2>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
 <p>Reduce is a collective communication operation that performs the global reduction operation
-on values from all ranks of the communicator and returns the result to the root rank</p>
+on values from all ranks of the communicator and returns the result to the root rank.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                             <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                             <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                             <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                             <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                             <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                  <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                  <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                  <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                  <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                             <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                             <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                             <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                             <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                             <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                             <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                    <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                    <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                    <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                    <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                    <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                    <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
-                                    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                    <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                    <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                                    <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                    <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                    <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
-                                    <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                    <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
-                                    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">reduce</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                  <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                  <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
+                  <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                  <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                  <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -687,58 +533,41 @@ on values from all ranks of the communicator and returns the result to the root 
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="reducescatter">
-<span id="id8"></span><h2>ReduceScatter<a class="headerlink" href="#reducescatter" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>ReduceScatter<a class="headerlink" href="#reducescatter" title="Permalink to this headline">¶</a></h2>
 <p>Reduce-scatter is a collective communication operation that performs the global reduction operation
 on values from all ranks of the communicator and scatters the result in blocks back to all ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                     <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                     <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
-                                     <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                     <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">);</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                          <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                          <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
+                          <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
-<span class="n">request</span> <span class="n">communicator</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                     <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                     <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
-                                     <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                     <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                     <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                            <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                            <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
-                                            <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                            <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                            <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
-                                            <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
-
-<span class="n">request</span> <span class="n">device_communicator</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
-                                            <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
-                                            <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
-                                            <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                                            <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                                            <span class="n">stream</span> <span class="n">op_stream</span><span class="p">,</span>
-                                            <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
-                                            <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
+<span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">reduce_scatter</span><span class="p">(</span><span class="k">const</span> <span class="kt">void</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
+                          <span class="kt">void</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
+                          <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
+                          <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
+                          <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
 </div>
 <dl>
@@ -756,19 +585,15 @@ on values from all ranks of the communicator and scatters the result in blocks b
 <div class="line">otherwise must be passed explicitly</div>
 </div>
 </dd>
-<dt>op_stream</dt><dd><div class="line-block">
-<div class="line">the stream associated with the operation</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
+</dd>
+<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
-<dt>deps</dt><dd><div class="line-block">
-<div class="line">an optional vector of the events that the operation should depend on</div>
-<div class="line">relevant for device communicator</div>
-</div>
+<dt>deps</dt><dd><p>an optional vector of the events that the operation should depend on</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">request</span></code></dt><dd><p>an object to track the progress of the operation</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">event</span></code></dt><dd><p>an object to track the progress of the operation</p>
 </dd>
 </dl>
 <div class="admonition note">
@@ -776,8 +601,6 @@ on values from all ranks of the communicator and scatters the result in blocks b
 <p>See also:</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="main_objects.html#communicator"><span class="std std-ref">Communicator</span></a></p></li>
-<li><p><a class="reference internal" href="main_objects.html#device-communicator"><span class="std std-ref">Device Communicator</span></a></p></li>
-<li><p><a class="reference internal" href="main_objects.html#request"><span class="std std-ref">Request</span></a></p></li>
 <li><p><a class="reference internal" href="main_objects.html#stream"><span class="std std-ref">Stream</span></a></p></li>
 <li><p><a class="reference internal" href="main_objects.html#event"><span class="std std-ref">Event</span></a></p></li>
 <li><p><a class="reference internal" href="operation_progress.html"><span class="doc">Operation Progress Tracking</span></a></p></li>

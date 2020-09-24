@@ -110,6 +110,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">oneCCL</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="definitions.html">Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming_model.html">Programming Model</a></li>
 </ul>
@@ -199,15 +201,20 @@ SPDX-License-Identifier: MIT
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="namespaces.html">Namespaces</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="namespaces.html#oneapi-ccl-namespace">oneapi::ccl namespace</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespaces.html#ccl-namespace">ccl namespace</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spec/main_objects.html">oneCCL Concepts</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#environment">Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#device">Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#context">Context</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#key-value-store">Key-Value Store</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#communicator">Communicator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#device-communicator">Device Communicator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#request">Request</a></li>
-<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#event">Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#stream">Stream</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#event">Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spec/main_objects.html#operation-attributes">Operation Attributes</a></li>
 </ul>
 </li>
@@ -220,7 +227,6 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l3"><a class="reference internal" href="spec/collective_operations.html">Collective Operations</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#allgatherv">Allgatherv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#allreduce">Allreduce</a></li>
-<li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#alltoall">Alltoall</a></li>
 <li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#alltoallv">Alltoallv</a></li>
 <li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#barrier">Barrier</a></li>
 <li class="toctree-l4"><a class="reference internal" href="spec/collective_operations.html#broadcast">Broadcast</a></li>
@@ -230,24 +236,20 @@ SPDX-License-Identifier: MIT
 </li>
 <li class="toctree-l3"><a class="reference internal" href="spec/operation_attributes.html">Operation Attributes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="spec/operation_progress.html">Operation Progress Tracking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="spec/operation_progress.html#request">Request</a></li>
+<li class="toctree-l4"><a class="reference internal" href="spec/operation_progress.html#event">Event</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="spec/error_handling.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spec/error_handling.html">Error handling</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="spec/error_handling.html#exception-classification">Exception classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="spec/error_handling.html#common-exceptions">Common exceptions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="programming_model.html">Programming Model</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="spec/generic_workflow.html">Generic Workflow</a></li>
-<li class="toctree-l2"><a class="reference internal" href="spec/host_communication.html">Host Communication Support</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spec/host_communication.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="spec/device_communication.html">Device Communication Support</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="spec/device_communication.html#example">Example</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

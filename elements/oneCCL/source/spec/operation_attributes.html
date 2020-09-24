@@ -110,6 +110,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../definitions.html">Definitions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="main_objects.html">oneCCL Concepts</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="operations.html">Communication Operations</a><ul class="current">
@@ -120,7 +122,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="operation_progress.html">Operation Progress Tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error handling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_model.html">Programming Model</a></li>
@@ -221,7 +223,6 @@ SPDX-License-Identifier: MIT
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">allgatherv_attr</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">allreduce_attr</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">alltoall_attr</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">alltoallv_attr</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">barrier_attr</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">broadcast_attr</span></code></p></li>
@@ -252,8 +253,7 @@ SPDX-License-Identifier: MIT
 </dd>
 <dt>operation_attr_id::match_id</dt><dd><div class="line-block">
 <div class="line">the unique identifier of the operation</div>
-<div class="line">enables correct matching and execution of the operations started in different order on different ranks</div>
-<div class="line">in conjunction with <code class="docutils literal notranslate"><span class="pre">to_cache</span></code>, it also enables the caching of the communication operation</div>
+<div class="line">in conjunction with <code class="docutils literal notranslate"><span class="pre">to_cache</span></code>, it enables the caching of the communication operation</div>
 </div>
 </dd>
 </dl>
@@ -276,7 +276,7 @@ SPDX-License-Identifier: MIT
 <dt>allreduce_attr_id::reduction_fn / reduce_attr_id::reduction_fn / reduce_scatter_attr_id::reduction_fn</dt><dd><p>a function pointer for the custom reduction operation that follows the signature:</p>
 </dd>
 </dl>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">ccl_reduction_fn_t</span><span class="p">)</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">reduction_fn</span><span class="p">)</span>
 <span class="p">(</span>
     <span class="k">const</span> <span class="kt">void</span><span class="o">*</span><span class="p">,</span>      <span class="c1">// in_buf</span>
     <span class="kt">size_t</span><span class="p">,</span>           <span class="c1">// in_count</span>
@@ -292,10 +292,9 @@ SPDX-License-Identifier: MIT
 <span class="p">}</span> <span class="n">fn_context</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">environment</span></code> class shall provide the ability to create an attribute object for a communication operation.</p>
 <p>Creating an operation attribute object, which may be used in a corresponding communication operation:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">OpAttrType</span><span class="o">&gt;</span>
-<span class="n">OpAttrType</span> <span class="n">environment</span><span class="o">::</span><span class="n">create_operation_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">OpAttrType</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_operation_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">

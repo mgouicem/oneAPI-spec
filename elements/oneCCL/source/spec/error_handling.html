@@ -13,7 +13,7 @@ SPDX-License-Identifier: MIT
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Error Handling &mdash; oneAPI Specification 1.0 documentation</title>
+  <title>Error handling &mdash; oneAPI Specification 1.0 documentation</title>
   
 
   
@@ -110,10 +110,16 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../definitions.html">Definitions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="main_objects.html">oneCCL Concepts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="operations.html">Communication Operations</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Error Handling</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Error handling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exception-classification">Exception classification</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#common-exceptions">Common exceptions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_model.html">Programming Model</a></li>
@@ -206,11 +212,56 @@ SPDX-License-Identifier: MIT
            <div itemprop="articleBody">
             
   <div class="section" id="error-handling">
-<h1>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
-<p>oneCCL error handling relies on the mechanism of C++ exceptions. If an error occurs,
-it shall be propagated at the point of a function call where it is caught
-using standard C++ error handling mechanism.</p>
-<p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">exception</span></code> as a type for exceptions that may be thrown by oneCCL API.</p>
+<h1>Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h1>
+<p>oneCCL error handling relies on the mechanism of C++ exceptions. If an error
+occurs, it shall be propagated at the point of a function call where it is
+caught using standard C++ error handling mechanism.</p>
+<div class="section" id="exception-classification">
+<h2>Exception classification<a class="headerlink" href="#exception-classification" title="Permalink to this headline">¶</a></h2>
+<p>Exception classification in oneCCL is aligned with C++ Standard Library classification. oneCCL introduces class that defines the base class in the hierarchy of oneCCL exception classes. All oneCCL routines throw exceptions inherited from this base class.</p>
+<p>In the hierarchy of oneCCL exceptions, <code class="docutils literal notranslate"><span class="pre">ccl::exception</span></code> is the base class inherited from <code class="docutils literal notranslate"><span class="pre">std::exception</span></code> class. All other oneCCL exception classes are derived from this base class.</p>
+<p>This specification does not require implementations to perform error-checking. However, if an implementation does provide error-checking, it shall use the following exception classes. Additional implementation-specific exception classes can be used for exceptional conditions not fitting any of these classes.</p>
+</div>
+<div class="section" id="common-exceptions">
+<h2>Common exceptions<a class="headerlink" href="#common-exceptions" title="Permalink to this headline">¶</a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Exception class</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p id="oneccl-exception"><code class="docutils literal notranslate"><span class="pre">ccl::exception</span></code></p>
+</td>
+<td><p>Reports general unspecified error</p></td>
+</tr>
+<tr class="row-odd"><td><p id="oneccl-exception-unsupported-device"><code class="docutils literal notranslate"><span class="pre">ccl::unsupported_device</span></code></p>
+</td>
+<td><p>Reports an error when the operation is not supported on a specific device</p></td>
+</tr>
+<tr class="row-even"><td><p id="oneccl-exception-host-bad-alloc"><code class="docutils literal notranslate"><span class="pre">ccl::host_bad_alloc</span></code></p>
+</td>
+<td><p>Reports an error that occurred during memory allocation on the host</p></td>
+</tr>
+<tr class="row-odd"><td><p id="oneccl-exception-device-bad-alloc"><code class="docutils literal notranslate"><span class="pre">ccl::device_bad_alloc</span></code></p>
+</td>
+<td><p>Reports an error that occurred during memory allocation on a specific device</p></td>
+</tr>
+<tr class="row-even"><td><p id="oneccl-exception-unimplemented"><code class="docutils literal notranslate"><span class="pre">ccl::unimplemented</span></code></p>
+</td>
+<td><p>Reports an error when an algorithm or a method is not implemented</p></td>
+</tr>
+<tr class="row-odd"><td><p id="oneccl-exception-invalid-argument"><code class="docutils literal notranslate"><span class="pre">ccl::invalid_argument</span></code></p>
+</td>
+<td><p>Reports an error when arguments to the operation were rejected</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 
 

@@ -48,7 +48,7 @@ SPDX-License-Identifier: MIT
     
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Host Communication Support" href="host_communication.html" />
+    <link rel="next" title="Level Zero" href="../../../l0/source/index.html" />
     <link rel="prev" title="Programming Model" href="../programming_model.html" /> 
 </head>
 
@@ -110,11 +110,11 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../definitions.html">Definitions</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../programming_model.html">Programming Model</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Generic Workflow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="host_communication.html">Host Communication Support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="device_communication.html">Device Communication Support</a></li>
 </ul>
 </li>
 </ul>
@@ -208,15 +208,10 @@ SPDX-License-Identifier: MIT
   <div class="section" id="generic-workflow">
 <h1>Generic Workflow<a class="headerlink" href="#generic-workflow" title="Permalink to this headline">¶</a></h1>
 <p>Below is a generic workflow with oneCCL API</p>
-<ol class="arabic simple">
-<li><p>Initialize the library:</p></li>
-</ol>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span> <span class="n">env</span> <span class="o">=</span> <span class="n">environment</span><span class="o">::</span><span class="n">instance</span><span class="p">();</span>
-</pre></div>
-</div>
-<p>2. Create a main built-in key-value store. Its address should be distributed
+<p>1. Create a main built-in key-value store. Its address should be distributed
 using an out-of-band communication mechanism and be used to create key-value stores on other processes:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for example use MPI as an out-of-band communication mechanism */</span>
+
 <span class="kt">int</span> <span class="n">mpi_rank</span><span class="p">,</span> <span class="n">mpi_size</span><span class="p">;</span>
 
 <span class="n">MPI_Init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">);</span>
@@ -224,60 +219,73 @@ using an out-of-band communication mechanism and be used to create key-value sto
 <span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mpi_size</span><span class="p">);</span>
 
 <span class="n">kvs_interface</span> <span class="n">kvs</span><span class="p">;</span>
-<span class="n">kvs</span><span class="o">::</span><span class="n">addr</span> <span class="n">kvs_addr</span><span class="p">;</span>
+<span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span> <span class="n">kvs_addr</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">mpi_rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">kvs</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">create_main_kvs</span><span class="p">();</span>
-    <span class="n">kvs_addr</span> <span class="o">=</span> <span class="n">kvs</span><span class="o">-&gt;</span><span class="n">get_addr</span><span class="p">();</span>
-    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">addr_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+    <span class="n">kvs</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">();</span>
+    <span class="n">kvs_addr</span> <span class="o">=</span> <span class="n">kvs</span><span class="o">-&gt;</span><span class="n">get_address</span><span class="p">();</span>
+    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">addr_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
-    <span class="n">kvs</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">create_kvs</span><span class="p">(</span><span class="n">kvs_addr</span><span class="p">);</span>
+    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+    <span class="n">kvs</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="n">kvs_addr</span><span class="p">);</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Create communicator(s):</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for host communications */</span>
+<span class="k">auto</span> <span class="n">comm</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_communicator</span><span class="p">(</span><span class="n">mpi_size</span><span class="p">,</span> <span class="n">mpi_rank</span><span class="p">,</span> <span class="n">kvs</span><span class="p">);</span>
+</pre></div>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for SYCL devices communications, for example with multiple devices per process */</span>
+
+<span class="cm">/* sycl_context -&gt; cl::sycl::context */</span>
+<span class="cm">/* sycl_devices -&gt; vector&lt;cl::sycl::device&gt; */</span>
+<span class="cm">/* sycl_queues  -&gt; vector&lt;cl::sycl::queue&gt; */</span>
+
+<span class="cm">/* create ccl::context object from cl::sycl::context object */</span>
+<span class="k">auto</span> <span class="n">ccl_context</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">(</span><span class="n">sycl_context</span><span class="p">);</span>
+
+<span class="cm">/* create ccl::device objects from cl::sycl::device objects */</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">ccl_devices</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_devices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ccl_devices</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">(</span><span class="n">sycl_devices</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">device</span><span class="o">&gt;&gt;</span> <span class="n">r2d_map</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">dev</span> <span class="p">:</span> <span class="n">ccl_devices</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">r2d_map</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">&lt;</span><span class="n">rank</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">dev</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/* create ccl::stream objects from cl::sycl::queue objects */</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">stream</span><span class="o">&gt;</span> <span class="n">ccl_streams</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_queues</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">ccl_streams</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">(</span><span class="n">sycl_queues</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>
+<span class="p">}</span>
+
+<span class="k">auto</span> <span class="n">comms</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_communicators</span><span class="p">(</span><span class="n">mpi_size</span> <span class="o">*</span> <span class="n">r2d_map</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
+                                       <span class="n">r2d_map</span><span class="p">,</span>
+                                       <span class="n">ccl_context</span><span class="p">,</span>
+                                       <span class="n">kvs</span><span class="p">);</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>Create a host communicator or device communicator(s):</p></li>
-</ol>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for host communications */</span>
-<span class="k">auto</span> <span class="n">comm</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">create_communicator</span><span class="p">(</span><span class="n">mpi_size</span><span class="p">,</span> <span class="n">kvs</span><span class="p">);</span>
-</pre></div>
-</div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for device communications, for example with multiple devices per process */</span>
-
-<span class="cm">/* rank_to_sycl_dev_map -&gt; map&lt;size_t, sycl::device&gt; */</span>
-<span class="cm">/* sycl_queues -&gt; vector&lt;sycl::queue&gt; */</span>
-<span class="cm">/* sycl_ctx -&gt; sycl::context */</span>
-
-<span class="k">auto</span> <span class="n">comms</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">create_device_communicators</span><span class="p">(</span><span class="n">mpi_size</span> <span class="o">*</span> <span class="n">rank_to_sycl_dev_map</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
-                                             <span class="n">rank_to_sycl_dev_map</span><span class="p">,</span>
-                                             <span class="n">sycl_ctx</span><span class="p">,</span>
-                                             <span class="n">kvs</span><span class="p">);</span>
-
-<span class="cm">/* create stream objects from sycl::queue objects */</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">request</span><span class="o">&gt;</span> <span class="n">streams</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">comm</span> <span class="p">:</span> <span class="n">comms</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">streams</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">env</span><span class="p">.</span><span class="n">create_stream</span><span class="p">(</span><span class="n">sycl_queues</span><span class="p">[</span><span class="n">comm</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">()]));</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
 <li><p>Execute a communication operation of choice on the communicator(s):</p></li>
 </ol>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for host communications */</span>
-<span class="k">auto</span> <span class="n">request</span> <span class="o">=</span> <span class="n">comm</span><span class="o">-&gt;</span><span class="n">allreduce</span><span class="p">(...);</span>
-<span class="n">request</span><span class="o">-&gt;</span><span class="n">wait</span><span class="p">();</span>
+<span class="n">allreduce</span><span class="p">(...,</span> <span class="n">comm</span><span class="p">).</span><span class="n">wait</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for device communications */</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">request</span><span class="o">&gt;</span> <span class="n">reqs</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for SYCL devices communications */</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;</span> <span class="n">events</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">comm</span> <span class="p">:</span> <span class="n">comms</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">reqs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">comm</span><span class="o">-&gt;</span><span class="n">allreduce</span><span class="p">(...,</span> <span class="n">streams</span><span class="p">[</span><span class="n">comm</span><span class="o">-&gt;</span><span class="n">rank</span><span class="p">()]));</span>
+    <span class="n">events</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">allreduce</span><span class="p">(...,</span> <span class="n">comm</span><span class="p">,</span> <span class="n">ccl_streams</span><span class="p">[</span><span class="n">comm</span><span class="p">.</span><span class="n">rank</span><span class="p">()]));</span>
 <span class="p">}</span>
 
-<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">req</span> <span class="p">:</span> <span class="n">reqs</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">req</span><span class="o">-&gt;</span><span class="n">wait</span><span class="p">();</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">e</span> <span class="p">:</span> <span class="n">events</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">e</span><span class="p">.</span><span class="n">wait</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -291,7 +299,7 @@ using an out-of-band communication mechanism and be used to create key-value sto
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="host_communication.html" class="btn btn-neutral float-right" title="Host Communication Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../../../l0/source/index.html" class="btn btn-neutral float-right" title="Level Zero" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../programming_model.html" class="btn btn-neutral float-left" title="Programming Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

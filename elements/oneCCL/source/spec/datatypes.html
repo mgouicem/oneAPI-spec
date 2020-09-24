@@ -110,6 +110,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneCCL</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../namespaces.html">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../spec_version.html">Current Version of this oneCCL Specification</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../definitions.html">Definitions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="main_objects.html">oneCCL Concepts</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="operations.html">Communication Operations</a><ul class="current">
@@ -120,7 +122,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="operation_progress.html">Operation Progress Tracking</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="error_handling.html">Error handling</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_model.html">Programming Model</a></li>
@@ -277,9 +279,8 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 <dt>datatype_attr_id::size</dt><dd><p>the size of the datatype in bytes</p>
 </dd>
 </dl>
-<p>The <code class="docutils literal notranslate"><span class="pre">environment</span></code> class shall provide the ability to create a datatype attribute object, to register the datatype based on an attribute object, and to deregister the datatype.</p>
 <p>Creating a datatype attribute object, which may used to register custom datatype:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype_attr</span> <span class="n">environment</span><span class="o">::</span><span class="n">create_datatype_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype_attr</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_datatype_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -287,7 +288,7 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 </dd>
 </dl>
 <p>Registering a custom datatype to be used in communication operations:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype</span> <span class="n">environment</span><span class="o">::</span><span class="n">register_datatype</span><span class="p">(</span><span class="k">const</span> <span class="n">datatype_attr</span><span class="o">&amp;</span> <span class="n">attr</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype</span> <span class="n">ccl</span><span class="o">::</span><span class="n">register_datatype</span><span class="p">(</span><span class="k">const</span> <span class="n">datatype_attr</span><span class="o">&amp;</span> <span class="n">attr</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -297,7 +298,7 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 </dd>
 </dl>
 <p>Deregistering a custom datatype:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">environment</span><span class="o">::</span><span class="n">deregister_datatype</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">);</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">ccl</span><span class="o">::</span><span class="n">deregister_datatype</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -305,7 +306,7 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 </dd>
 </dl>
 <p>Retrieving a datatype size in bytes:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">environment</span><span class="o">::</span><span class="n">get_datatype_size</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">ccl</span><span class="o">::</span><span class="n">get_datatype_size</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
