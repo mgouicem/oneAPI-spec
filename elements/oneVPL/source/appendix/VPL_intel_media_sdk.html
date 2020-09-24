@@ -290,6 +290,8 @@ obsolete.</p></li>
 <li><p><strong>Multi-frame encode.</strong> A set of external buffers to combine several frames
 into one encoding call. This feature was removed because it is device specific
 and not commonly used.</p></li>
+<li><p><strong>Surface Type Neutral Transcoding.</strong> Opaque memory support is removed and
+replaced with internal memory allocation concept.</p></li>
 </ul>
 </div>
 <div class="section" id="msdk-full-name-api-removals">
@@ -357,6 +359,13 @@ and not commonly used.</p></li>
 <li><p><strong>Video processing functions</strong></p>
 <ul>
 <li><p>MFXVideoVPP_RunFrameVPPAsyncEx()</p></li>
+</ul>
+</li>
+<li><p><strong>Memory type and IOPattern enumerations</strong></p>
+<ul>
+<li><p>MFX_IOPATTERN_IN_OPAQUE_MEMORY</p></li>
+<li><p>MFX_IOPATTERN_OUT_OPAQUE_MEMORY</p></li>
+<li><p>MFX_MEMTYPE_OPAQUE_FRAME</p></li>
 </ul>
 </li>
 </ul>
