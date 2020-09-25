@@ -365,21 +365,21 @@ SPDX-License-Identifier: MIT
 </dl>
 <p>Creating a main built-in key-value store. Its address should be distributed using an out-of-band communication mechanism
 and be used to create key-value stores on other ranks:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">kvs</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>return <code class="docutils literal notranslate"><span class="pre">kvs</span></code></dt><dd><p>the main key-value store object</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">shared_ptr_class&lt;kvs&gt;</span></code></dt><dd><p>the main key-value store object</p>
 </dd>
 </dl>
 <p>Creating a new key-value store from main kvs address:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">kvs</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="k">const</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span><span class="o">&amp;</span> <span class="n">addr</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="k">const</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span><span class="o">&amp;</span> <span class="n">addr</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
 <dt>addr</dt><dd><p>the address of the main kvs</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">kvs</span></code></dt><dd><p>key-value store object</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">shared_ptr_class&lt;kvs&gt;</span></code></dt><dd><p>key-value store object</p>
 </dd>
 </dl>
 </div>

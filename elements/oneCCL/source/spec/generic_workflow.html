@@ -210,7 +210,9 @@ SPDX-License-Identifier: MIT
 <p>Below is a generic workflow with oneCCL API</p>
 <p>1. Create a main built-in key-value store. Its address should be distributed
 using an out-of-band communication mechanism and be used to create key-value stores on other processes:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for example use MPI as an out-of-band communication mechanism */</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* for example use MPI as an out-of-band communication mechanism */</span>
 
 <span class="kt">int</span> <span class="n">mpi_rank</span><span class="p">,</span> <span class="n">mpi_size</span><span class="p">;</span>
 
@@ -218,16 +220,16 @@ using an out-of-band communication mechanism and be used to create key-value sto
 <span class="n">MPI_Comm_rank</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mpi_rank</span><span class="p">);</span>
 <span class="n">MPI_Comm_size</span><span class="p">(</span><span class="n">MPI_COMM_WORLD</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">mpi_size</span><span class="p">);</span>
 
-<span class="n">kvs_interface</span> <span class="n">kvs</span><span class="p">;</span>
-<span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span> <span class="n">kvs_addr</span><span class="p">;</span>
+<span class="n">ccl</span><span class="o">::</span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">kvs</span><span class="p">;</span>
+<span class="n">ccl</span><span class="o">::</span><span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span> <span class="n">kvs_addr</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="n">mpi_rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">kvs</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">();</span>
     <span class="n">kvs_addr</span> <span class="o">=</span> <span class="n">kvs</span><span class="o">-&gt;</span><span class="n">get_address</span><span class="p">();</span>
-    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">ccl</span><span class="o">::</span><span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span> <span class="p">{</span>
-    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
+    <span class="n">MPI_Bcast</span><span class="p">((</span><span class="kt">void</span><span class="o">*</span><span class="p">)</span><span class="n">kvs_addr</span><span class="p">.</span><span class="n">data</span><span class="p">(),</span> <span class="n">ccl</span><span class="o">::</span><span class="n">kvs</span><span class="o">::</span><span class="n">address_max_size</span><span class="p">,</span> <span class="n">MPI_BYTE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MPI_COMM_WORLD</span><span class="p">);</span>
     <span class="n">kvs</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="n">kvs_addr</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
@@ -235,11 +237,11 @@ using an out-of-band communication mechanism and be used to create key-value sto
 <ol class="arabic simple" start="2">
 <li><p>Create communicator(s):</p></li>
 </ol>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for host communications */</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* host communications */</span>
 <span class="k">auto</span> <span class="n">comm</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_communicator</span><span class="p">(</span><span class="n">mpi_size</span><span class="p">,</span> <span class="n">mpi_rank</span><span class="p">,</span> <span class="n">kvs</span><span class="p">);</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for SYCL devices communications, for example with multiple devices per process */</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* SYCL devices communications, for example with multiple devices per process */</span>
 
 <span class="cm">/* sycl_context -&gt; cl::sycl::context */</span>
 <span class="cm">/* sycl_devices -&gt; vector&lt;cl::sycl::device&gt; */</span>
@@ -249,18 +251,19 @@ using an out-of-band communication mechanism and be used to create key-value sto
 <span class="k">auto</span> <span class="n">ccl_context</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">(</span><span class="n">sycl_context</span><span class="p">);</span>
 
 <span class="cm">/* create ccl::device objects from cl::sycl::device objects */</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">ccl_devices</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">ccl_devices</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_devices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ccl_devices</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">(</span><span class="n">sycl_devices</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>
 <span class="p">}</span>
 
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">device</span><span class="o">&gt;&gt;</span> <span class="n">r2d_map</span><span class="p">;</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">ccl</span><span class="o">::</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">r2d_map</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">dev</span> <span class="p">:</span> <span class="n">ccl_devices</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">r2d_map</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">&lt;</span><span class="n">rank</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">dev</span><span class="p">);</span>
+    <span class="kt">size_t</span> <span class="n">rank</span> <span class="o">=</span> <span class="cm">/* generate a globally unique rank for a specific device */</span>
+    <span class="n">r2d_map</span><span class="p">[</span><span class="n">rank</span><span class="p">]</span> <span class="o">=</span> <span class="n">dev</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="cm">/* create ccl::stream objects from cl::sycl::queue objects */</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">stream</span><span class="o">&gt;</span> <span class="n">ccl_streams</span><span class="p">;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">stream</span><span class="o">&gt;</span> <span class="n">ccl_streams</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_queues</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ccl_streams</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">(</span><span class="n">sycl_queues</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>
 <span class="p">}</span>
@@ -274,12 +277,12 @@ using an out-of-band communication mechanism and be used to create key-value sto
 <ol class="arabic simple" start="3">
 <li><p>Execute a communication operation of choice on the communicator(s):</p></li>
 </ol>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for host communications */</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* host communications */</span>
 <span class="n">allreduce</span><span class="p">(...,</span> <span class="n">comm</span><span class="p">).</span><span class="n">wait</span><span class="p">();</span>
 </pre></div>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* for SYCL devices communications */</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;</span> <span class="n">events</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* SYCL devices communications */</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">event</span><span class="o">&gt;</span> <span class="n">events</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">comm</span> <span class="p">:</span> <span class="n">comms</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">events</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">allreduce</span><span class="p">(...,</span> <span class="n">comm</span><span class="p">,</span> <span class="n">ccl_streams</span><span class="p">[</span><span class="n">comm</span><span class="p">.</span><span class="n">rank</span><span class="p">()]));</span>
 <span class="p">}</span>
