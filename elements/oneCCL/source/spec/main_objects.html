@@ -230,20 +230,20 @@ SPDX-License-Identifier: MIT
 <span id="id1"></span><h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Here and below, a native device/context/stream/event are defined in the scope of SYCL device runtime.</p>
+<p>Here and below, a native device/context/stream/event are defined in the scope of SYCL device runtime</p>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">native_device_type</span> <span class="o">=</span> <span class="n">cl</span><span class="o">::</span><span class="n">sycl</span><span class="o">::</span><span class="n">device</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">native_context_type</span> <span class="o">=</span> <span class="n">cl</span><span class="o">::</span><span class="n">sycl</span><span class="o">::</span><span class="n">context</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">native_stream_type</span> <span class="o">=</span> <span class="n">cl</span><span class="o">::</span><span class="n">sycl</span><span class="o">::</span><span class="n">queue</span><span class="p">;</span>
-<span class="k">using</span> <span class="n">native_event_type</span> <span class="o">=</span> <span class="n">cl</span><span class="o">::</span><span class="n">sycl</span><span class="o">::</span><span class="n">event</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">using</span> <span class="n">native_device_type</span> <span class="o">=</span> <span class="n">sycl</span><span class="o">::</span><span class="n">device</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">native_context_type</span> <span class="o">=</span> <span class="n">sycl</span><span class="o">::</span><span class="n">context</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">native_stream_type</span> <span class="o">=</span> <span class="n">sycl</span><span class="o">::</span><span class="n">queue</span><span class="p">;</span>
+<span class="k">using</span> <span class="n">native_event_type</span> <span class="o">=</span> <span class="n">sycl</span><span class="o">::</span><span class="n">event</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">device</span></code> as an abstraction of a computational device: a CPU, a specific GPU card in the system, or any other device participating in a communication operation. <code class="docutils literal notranslate"><span class="pre">device</span></code> corresponds to the communicator’s rank (addressable entity in a communication operation).</p>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">device</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_device_type</span></code>) and without a native object (corresponds to the host).</p>
 <p>Creating a new device object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">(</span><span class="n">native_device_type</span><span class="o">&amp;</span> <span class="n">native_device</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">(</span><span class="n">native_device_type</span><span class="o">&amp;</span> <span class="n">native_device</span><span class="p">);</span>
 
-<span class="n">device</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">device</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -254,7 +254,7 @@ SPDX-License-Identifier: MIT
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">device</span></code> class shall provide ability to retrieve a native object.</p>
 <p>Retrieving a native device object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_device_type</span> <span class="n">device</span><span class="o">::</span><span class="n">get_native</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_device_type</span> <span class="n">device</span><span class="o">::</span><span class="n">get_native</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl>
@@ -270,9 +270,9 @@ SPDX-License-Identifier: MIT
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">context</span></code> as an abstraction of a computational devices context that is responsible for managing resources and for executing of communication operations on one or more devices specified in the context.</p>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">context</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_context_type</span></code>) and without a native object.</p>
 <p>Creating a new context object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">(</span><span class="n">native_context_type</span><span class="o">&amp;</span> <span class="n">native_context</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">(</span><span class="n">native_context_type</span><span class="o">&amp;</span> <span class="n">native_context</span><span class="p">);</span>
 
-<span class="n">context</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">context</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -283,7 +283,7 @@ SPDX-License-Identifier: MIT
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">context</span></code> class shall provide ability to retrieve a native object.</p>
 <p>Retrieving a native context object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_context_type</span> <span class="n">context</span><span class="o">::</span><span class="n">get_native</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_context_type</span> <span class="n">context</span><span class="o">::</span><span class="n">get_native</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl>
@@ -299,7 +299,7 @@ SPDX-License-Identifier: MIT
 <p><code class="docutils literal notranslate"><span class="pre">kvs_interface</span></code> defines the key-value store (KVS) interface to be used to establish connection between ranks during the creation of oneCCL communicator. The interface shall include blocking <code class="docutils literal notranslate"><span class="pre">get</span></code> and <code class="docutils literal notranslate"><span class="pre">set</span></code> methods.</p>
 <p>Getting a record from the key-value store:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">virtual</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">kvs_interface</span><span class="o">::</span><span class="n">get</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -315,7 +315,7 @@ SPDX-License-Identifier: MIT
 <p>Saving a record in the key-value store:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="n">kvs_interface</span><span class="o">::</span><span class="n">set</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -341,11 +341,11 @@ SPDX-License-Identifier: MIT
 <span class="n">address_type</span> <span class="nf">get_address</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 
 <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">get</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
 <span class="kt">void</span> <span class="nf">set</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">string_class</span><span class="o">&amp;</span> <span class="n">key</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -363,7 +363,7 @@ SPDX-License-Identifier: MIT
 </dl>
 <p>Creating a main built-in key-value store. Its address should be distributed using an out-of-band communication mechanism
 and be used to create key-value stores on other ranks:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_main_kvs</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -371,7 +371,7 @@ and be used to create key-value stores on other ranks:</p>
 </dd>
 </dl>
 <p>Creating a new key-value store from main kvs address:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="k">const</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span><span class="o">&amp;</span> <span class="n">addr</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_kvs</span><span class="p">(</span><span class="k">const</span> <span class="n">kvs</span><span class="o">::</span><span class="n">address_type</span><span class="o">&amp;</span> <span class="n">addr</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -386,21 +386,25 @@ and be used to create key-value stores on other ranks:</p>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">communicator</span></code> class that describes a group of communicating ranks, where a rank is an addressable entity in a communication operation and corresponds to single oneCCL device.</p>
 <p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> defines communication operations on memory buffers between homogenous oneCCL devices, that is, all oneCCL devices either wrap native device objects of the same type (for example CPUs only or GPUs only) or do not wrap native objects.</p>
 <p>Each process may correspond to multiple ranks.</p>
-<p>Creating a new communicator with user-supplied size, rank-to-device mapping/rank, context and kvs:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If <code class="docutils literal notranslate"><span class="pre">device</span></code> and <code class="docutils literal notranslate"><span class="pre">context</span></code> objects are omitted, then they are created with <code class="docutils literal notranslate"><span class="pre">ccl::create_device()</span></code> and <code class="docutils literal notranslate"><span class="pre">ccl::create_context()</span></code> functions without native objects.</p>
+<p>Support for multiple ranks per process is optional</p>
 </div>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector_class</span><span class="o">&lt;</span><span class="n">communicator</span><span class="o">&gt;</span> <span class="n">create_communicators</span><span class="p">(</span>
-    <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">map_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">device</span><span class="o">&gt;&amp;</span> <span class="n">rank_device_map</span><span class="p">,</span>
+<p>Creating a new communicator(s) with user-supplied communicator size, rank-to-device mapping/rank, context and kvs:</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">device</span></code> and <code class="docutils literal notranslate"><span class="pre">context</span></code> objects are omitted, then they are created with <code class="docutils literal notranslate"><span class="pre">ccl::create_device()</span></code> and <code class="docutils literal notranslate"><span class="pre">ccl::create_context()</span></code> functions without native objects</p>
+</div>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector_class</span><span class="o">&lt;</span><span class="n">communicator</span><span class="o">&gt;</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_communicators</span><span class="p">(</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">,</span>
+    <span class="k">const</span> <span class="n">map_class</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">device</span><span class="o">&gt;&amp;</span> <span class="n">rank_device_map</span><span class="p">,</span>
     <span class="k">const</span> <span class="n">context</span><span class="o">&amp;</span> <span class="n">context</span><span class="p">,</span>
-    <span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs_interface</span><span class="o">&gt;</span> <span class="n">kvs</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+    <span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs_interface</span><span class="o">&gt;</span> <span class="n">kvs</span><span class="p">);</span>
 
-<span class="n">communicator</span> <span class="nf">create_communicator</span><span class="p">(</span>
-    <span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span>
-    <span class="kt">size_t</span> <span class="n">rank</span><span class="p">,</span>
-    <span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs_interface</span><span class="o">&gt;</span> <span class="n">kvs</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">communicator</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_communicator</span><span class="p">(</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">,</span>
+    <span class="kt">int</span> <span class="n">rank</span><span class="p">,</span>
+    <span class="n">shared_ptr_class</span><span class="o">&lt;</span><span class="n">kvs_interface</span><span class="o">&gt;</span> <span class="n">kvs</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -414,28 +418,28 @@ and be used to create key-value stores on other ranks:</p>
 </dd>
 <dt>kvs</dt><dd><p>key-value store for ranks wire-up</p>
 </dd>
-<dt>return <code class="docutils literal notranslate"><span class="pre">vector_class&lt;communicator&gt;</span></code></dt><dd><p>a vector of communicators</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">vector_class&lt;communicator&gt;</span></code> / <code class="docutils literal notranslate"><span class="pre">communicator</span></code></dt><dd><p>a vector of communicator objects  / a communicator object</p>
 </dd>
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> shall provide methods to retrieve the rank, the device, and the context that correspond to the communicator object as well as the total number of ranks in the communicator.</p>
 <p>Retrieving the rank in a communicator:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">communicator</span><span class="o">::</span><span class="n">rank</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">communicator</span><span class="o">::</span><span class="n">rank</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>return <code class="docutils literal notranslate"><span class="pre">size_t</span></code></dt><dd><p>the rank that corresponds to the communicator object</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">int</span></code></dt><dd><p>the rank that corresponds to the communicator object</p>
 </dd>
 </dl>
 <p>Retrieving the total number of ranks in a communicator:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">communicator</span><span class="o">::</span><span class="n">size</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">communicator</span><span class="o">::</span><span class="n">size</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
-<dt>return <code class="docutils literal notranslate"><span class="pre">size_t</span></code></dt><dd><p>the total number of the ranks</p>
+<dt>return <code class="docutils literal notranslate"><span class="pre">int</span></code></dt><dd><p>the total number of the ranks</p>
 </dd>
 </dl>
 <p>Retrieving an underlying device, which was used as communicator construction argument:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="nf">get_device</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">device</span> <span class="n">communicator</span><span class="o">::</span><span class="n">get_device</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -443,7 +447,7 @@ and be used to create key-value stores on other ranks:</p>
 </dd>
 </dl>
 <p>Retrieving an underlying context, which was used as communicator construction argument:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="nf">get_context</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">context</span> <span class="n">communicator</span><span class="o">::</span><span class="n">get_context</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -458,12 +462,12 @@ and be used to create key-value stores on other ranks:</p>
 <div class="section" id="stream">
 <span id="id4"></span><h2>Stream<a class="headerlink" href="#stream" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">stream</span></code> as an abstraction that encapsulates execution context for <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operations.</p>
-<p>Stream may be optionally passed to <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operation.</p>
+<p>Stream shall be passed to <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operation.</p>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">stream</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_stream_type</span></code>) and without a native object.</p>
 <p>Creating a new stream object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">(</span><span class="n">native_stream_type</span><span class="o">&amp;</span> <span class="n">native_stream</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">stream</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">(</span><span class="n">native_stream_type</span><span class="o">&amp;</span> <span class="n">native_stream</span><span class="p">);</span>
 
-<span class="n">stream</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">stream</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -474,7 +478,7 @@ and be used to create key-value stores on other ranks:</p>
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">stream</span></code> class shall provide ability to retrieve a native object.</p>
 <p>Retrieving a native stream object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_stream_type</span> <span class="n">stream</span><span class="o">::</span><span class="n">get_native</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_stream_type</span> <span class="n">stream</span><span class="o">::</span><span class="n">get_native</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl>
@@ -489,9 +493,13 @@ and be used to create key-value stores on other ranks:</p>
 <span id="id5"></span><h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">event</span></code> as an abstraction that encapsulates synchronization context for <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operations.</p>
 <p>Each communication operation of oneCCL shall return an event object for tracking the operation’s progress. A vector of events may be passed to the <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operation to designate input dependencies for the operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for handling of input events is optional</p>
+</div>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">event</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_event_type</span></code>).</p>
 <p>Creating a new event object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_event</span><span class="p">(</span><span class="n">native_event_type</span><span class="o">&amp;</span> <span class="n">native_event</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_event</span><span class="p">(</span><span class="n">native_event_type</span><span class="o">&amp;</span> <span class="n">native_event</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -502,7 +510,7 @@ and be used to create key-value stores on other ranks:</p>
 </dl>
 <p><code class="docutils literal notranslate"><span class="pre">event</span></code> class shall provide ability to retrieve a native object.</p>
 <p>Retrieving a native event object:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_event_type</span> <span class="n">event</span><span class="o">::</span><span class="n">get_native</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">native_event_type</span> <span class="n">event</span><span class="o">::</span><span class="n">get_native</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl>

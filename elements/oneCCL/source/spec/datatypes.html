@@ -263,6 +263,10 @@ SPDX-License-Identifier: MIT
 <dt>datatype::bfloat16</dt><dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">non-standard 16-bit floating point with 7-bit mantissa</a></p>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for <code class="docutils literal notranslate"><span class="pre">datatype::float16</span></code> is optional</p>
+</div>
 <div class="section" id="custom-datatypes">
 <span id="id1"></span><h2>Custom Datatypes<a class="headerlink" href="#custom-datatypes" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines the way to register and deregister a custom datatype
@@ -278,7 +282,7 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 </dd>
 </dl>
 <p>Creating a datatype attribute object, which may used to register custom datatype:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype_attr</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_datatype_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">datatype_attr</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_datatype_attr</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
@@ -304,7 +308,7 @@ using the <code class="docutils literal notranslate"><span class="pre">datatype_
 </dd>
 </dl>
 <p>Retrieving a datatype size in bytes:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">ccl</span><span class="o">::</span><span class="n">get_datatype_size</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">size_t</span> <span class="n">ccl</span><span class="o">::</span><span class="n">get_datatype_size</span><span class="p">(</span><span class="n">datatype</span> <span class="n">dtype</span><span class="p">);</span>
 </pre></div>
 </div>
 <dl class="simple">

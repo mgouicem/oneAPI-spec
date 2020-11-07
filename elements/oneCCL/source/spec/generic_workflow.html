@@ -241,26 +241,26 @@ using an out-of-band communication mechanism and be used to create key-value sto
 </div>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cm">/* SYCL devices communications, for example with multiple devices per process */</span>
 
-<span class="cm">/* sycl_context -&gt; cl::sycl::context */</span>
-<span class="cm">/* sycl_devices -&gt; vector&lt;cl::sycl::device&gt; */</span>
-<span class="cm">/* sycl_queues  -&gt; vector&lt;cl::sycl::queue&gt; */</span>
+<span class="cm">/* sycl_context -&gt; sycl::context */</span>
+<span class="cm">/* sycl_devices -&gt; vector&lt;sycl::device&gt; */</span>
+<span class="cm">/* sycl_queues  -&gt; vector&lt;sycl::queue&gt; */</span>
 
-<span class="cm">/* create ccl::context object from cl::sycl::context object */</span>
+<span class="cm">/* create ccl::context object from sycl::context object */</span>
 <span class="k">auto</span> <span class="n">ccl_context</span> <span class="o">=</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_context</span><span class="p">(</span><span class="n">sycl_context</span><span class="p">);</span>
 
-<span class="cm">/* create ccl::device objects from cl::sycl::device objects */</span>
+<span class="cm">/* create ccl::device objects from sycl::device objects */</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">ccl_devices</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_devices</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ccl_devices</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_device</span><span class="p">(</span><span class="n">sycl_devices</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>
 <span class="p">}</span>
 
-<span class="n">map</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="p">,</span> <span class="n">ccl</span><span class="o">::</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">r2d_map</span><span class="p">;</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">ccl</span><span class="o">::</span><span class="n">device</span><span class="o">&gt;</span> <span class="n">r2d_map</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">dev</span> <span class="p">:</span> <span class="n">ccl_devices</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">size_t</span> <span class="n">rank</span> <span class="o">=</span> <span class="cm">/* generate a globally unique rank for a specific device */</span>
+    <span class="kt">int</span> <span class="n">rank</span> <span class="o">=</span> <span class="cm">/* generate a globally unique rank for a specific device */</span>
     <span class="n">r2d_map</span><span class="p">[</span><span class="n">rank</span><span class="p">]</span> <span class="o">=</span> <span class="n">dev</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="cm">/* create ccl::stream objects from cl::sycl::queue objects */</span>
+<span class="cm">/* create ccl::stream objects from sycl::queue objects */</span>
 <span class="n">vector</span><span class="o">&lt;</span><span class="n">ccl</span><span class="o">::</span><span class="n">stream</span><span class="o">&gt;</span> <span class="n">ccl_streams</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">size_t</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">idx</span> <span class="o">&lt;</span> <span class="n">sycl_queues</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">idx</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">ccl_streams</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">ccl</span><span class="o">::</span><span class="n">create_stream</span><span class="p">(</span><span class="n">sycl_queues</span><span class="p">[</span><span class="n">idx</span><span class="p">]));</span>

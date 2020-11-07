@@ -228,13 +228,17 @@ SPDX-License-Identifier: MIT
 </ul>
 <p>These operations are collective, meaning that all participants (ranks) of oneCCL communicator should make a call.
 The order of collective operation calls should be the same across all ranks.</p>
-<p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> shall provide the ability to perform communication operations either on host or device memory buffers depending on the <code class="docutils literal notranslate"><span class="pre">device</span></code> used to create the communicator. Additionally, communication operations may accept an execution context (stream) and a vector of events that the communication operation should depend on. The output <code class="docutils literal notranslate"><span class="pre">event</span></code> object shall provide the ability to track the progress of the operation.</p>
+<p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> shall provide the ability to perform communication operations either on host or device memory buffers depending on the <code class="docutils literal notranslate"><span class="pre">device</span></code> used to create the communicator. Additionally, communication operations shall accept an execution context (stream) and may accept a vector of events that the communication operation should depend on, that is, input dependencies. The output <code class="docutils literal notranslate"><span class="pre">event</span></code> object shall provide the ability to track the progress of the operation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Support for handling of input events is optional</p>
+</div>
 <p><code class="docutils literal notranslate"><span class="pre">BufferType</span></code> is used below to define the C++ type of elements in data buffers (<code class="docutils literal notranslate"><span class="pre">buf</span></code>, <code class="docutils literal notranslate"><span class="pre">send_buf</span></code> and  <code class="docutils literal notranslate"><span class="pre">recv_buf</span></code>) of communication operations. At least the following types shall be supported: <code class="docutils literal notranslate"><span class="pre">[u]int{8/16/32/64}_t</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code>. The explicit <code class="docutils literal notranslate"><span class="pre">datatype</span></code> parameter shall be used to enable data types which cannot be inferred from the function arguments.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>See also: <a class="reference internal" href="datatypes.html#custom-datatypes"><span class="std std-ref">Custom Datatypes</span></a></p>
 </div>
-<p>The communication operation may accept a <code class="docutils literal notranslate"><span class="pre">stream</span></code> object. If that parameter is missed, then the default stream object is used. The default stream object shall be provided by the library. If a communicator is created from <code class="docutils literal notranslate"><span class="pre">native_device_type</span></code>, then the default stream shall translate to <code class="docutils literal notranslate"><span class="pre">native_stream_type</span></code> on the corresponding device.</p>
+<p>The communication operation accepts a <code class="docutils literal notranslate"><span class="pre">stream</span></code> object. If a communicator is created from <code class="docutils literal notranslate"><span class="pre">native_device_type</span></code>, then the stream shall translate to <code class="docutils literal notranslate"><span class="pre">native_stream_type</span></code> created from the corresponding device.</p>
 <p>The communication operation may accept attribute object. If that parameter is missed, then the default attribute object is used (default_&lt;operation_name&gt;_attr). The default attribute object shall be provided by the library.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -250,7 +254,7 @@ The order of collective operation calls should be the same across all ranks.</p>
                       <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
@@ -260,7 +264,7 @@ The order of collective operation calls should be the same across all ranks.</p>
                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
                       <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                      <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">allgatherv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allgatherv_attr</span><span class="p">,</span>
                       <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -287,7 +291,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -306,7 +310,7 @@ The order of collective operation calls should be the same across all ranks.</p>
                      <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
                      <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
@@ -316,7 +320,7 @@ The order of collective operation calls should be the same across all ranks.</p>
                      <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
                      <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">allreduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_allreduce_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -338,7 +342,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -360,7 +364,7 @@ and is placed in the i-th block of receive buffer.</p>
                      <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
@@ -370,7 +374,7 @@ and is placed in the i-th block of receive buffer.</p>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="kt">size_t</span><span class="o">&gt;&amp;</span> <span class="n">recv_counts</span><span class="p">,</span>
                      <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">alltoallv_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_alltoallv_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -400,7 +404,7 @@ and is placed in the i-th block of receive buffer.</p>
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -415,7 +419,7 @@ and is placed in the i-th block of receive buffer.</p>
 <p>Barrier synchronization is performed across all ranks of the communicator
 and it is completed only after all the ranks in the communicator have called it.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">barrier</span><span class="p">(</span><span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                   <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                   <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                    <span class="k">const</span> <span class="n">barrier_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_barrier_attr</span><span class="p">,</span>
                    <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -423,7 +427,7 @@ and it is completed only after all the ranks in the communicator have called it.
 <dl class="simple">
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -440,18 +444,18 @@ from one rank of communicator (denoted as root) to all other ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
 <span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="n">BufferType</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
                      <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
-                     <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                     <span class="kt">int</span> <span class="n">root</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
 <span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">broadcast</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">buf</span><span class="p">,</span>
                      <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
                      <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
-                     <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                     <span class="kt">int</span> <span class="n">root</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                     <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">broadcast_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_broadcast_attr</span><span class="p">,</span>
                      <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -474,7 +478,7 @@ from one rank of communicator (denoted as root) to all other ranks.</p>
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -493,9 +497,9 @@ on values from all ranks of the communicator and returns the result to the root 
                   <span class="n">BufferType</span><span class="o">*</span> <span class="n">recv_buf</span><span class="p">,</span>
                   <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
                   <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                  <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                  <span class="kt">int</span> <span class="n">root</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
@@ -504,9 +508,9 @@ on values from all ranks of the communicator and returns the result to the root 
                   <span class="kt">size_t</span> <span class="n">count</span><span class="p">,</span>
                   <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
                   <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
-                  <span class="kt">size_t</span> <span class="n">root</span><span class="p">,</span>
+                  <span class="kt">int</span> <span class="n">root</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                  <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">reduce_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_attr</span><span class="p">,</span>
                   <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -533,7 +537,7 @@ on values from all ranks of the communicator and returns the result to the root 
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>
@@ -553,7 +557,7 @@ on values from all ranks of the communicator and scatters the result in blocks b
                           <span class="kt">size_t</span> <span class="n">recv_count</span><span class="p">,</span>
                           <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 
@@ -563,7 +567,7 @@ on values from all ranks of the communicator and scatters the result in blocks b
                           <span class="n">datatype</span> <span class="n">dtype</span><span class="p">,</span>
                           <span class="n">reduction</span> <span class="n">rtype</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
-                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">default_stream</span><span class="p">,</span>
+                          <span class="k">const</span> <span class="n">stream</span><span class="o">&amp;</span> <span class="n">stream</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">reduce_scatter_attr</span><span class="o">&amp;</span> <span class="n">attr</span> <span class="o">=</span> <span class="n">default_reduce_scatter_attr</span><span class="p">,</span>
                           <span class="k">const</span> <span class="n">vector_class</span><span class="o">&lt;</span><span class="n">event</span><span class="o">&gt;&amp;</span> <span class="n">deps</span> <span class="o">=</span> <span class="p">{});</span>
 </pre></div>
@@ -585,7 +589,7 @@ on values from all ranks of the communicator and scatters the result in blocks b
 </dd>
 <dt>comm</dt><dd><p>the communicator that defines a group of ranks for the operation</p>
 </dd>
-<dt>stream</dt><dd><p>an optional stream associated with the operation</p>
+<dt>stream</dt><dd><p>the stream associated with the operation</p>
 </dd>
 <dt>attr</dt><dd><p>optional attributes to customize the operation</p>
 </dd>

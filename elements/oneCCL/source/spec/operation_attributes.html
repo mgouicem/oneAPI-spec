@@ -276,12 +276,12 @@ SPDX-License-Identifier: MIT
 </dl>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="nf">void</span> <span class="p">(</span><span class="o">*</span><span class="n">reduction_fn</span><span class="p">)</span>
 <span class="p">(</span>
-    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span><span class="p">,</span>      <span class="c1">// in_buf</span>
-    <span class="kt">size_t</span><span class="p">,</span>           <span class="c1">// in_count</span>
-    <span class="kt">void</span><span class="o">*</span><span class="p">,</span>            <span class="c1">// inout_buf</span>
-    <span class="kt">size_t</span><span class="o">*</span><span class="p">,</span>          <span class="c1">// out_count</span>
-    <span class="n">datatype</span><span class="p">,</span>         <span class="c1">// datatype</span>
-    <span class="k">const</span> <span class="n">fn_context</span><span class="o">*</span> <span class="c1">// context</span>
+    <span class="k">const</span> <span class="kt">void</span><span class="o">*</span><span class="p">,</span>      <span class="cm">/* in_buf    */</span>
+    <span class="kt">size_t</span><span class="p">,</span>           <span class="cm">/* in_count  */</span>
+    <span class="kt">void</span><span class="o">*</span><span class="p">,</span>            <span class="cm">/* inout_buf */</span>
+    <span class="kt">size_t</span><span class="o">*</span><span class="p">,</span>          <span class="cm">/* out_count */</span>
+    <span class="n">datatype</span><span class="p">,</span>         <span class="cm">/* datatype  */</span>
+    <span class="k">const</span> <span class="n">fn_context</span><span class="o">*</span> <span class="cm">/* context   */</span>
 <span class="p">);</span>
 
 <span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
@@ -292,7 +292,7 @@ SPDX-License-Identifier: MIT
 </div>
 <p>Creating an operation attribute object, which may be used in a corresponding communication operation:</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">OpAttrType</span><span class="o">&gt;</span>
-<span class="n">OpAttrType</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_operation_attr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="n">OpAttrType</span> <span class="n">ccl</span><span class="o">::</span><span class="n">create_operation_attr</span><span class="p">();</span>
 </pre></div>
 </div>
 <dl class="simple">
