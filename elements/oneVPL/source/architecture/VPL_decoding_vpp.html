@@ -1,0 +1,277 @@
+<!--
+SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+
+SPDX-License-Identifier: MIT
+-->
+
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Video Decoding with multiple video processing &mdash; oneAPI Specification 1.0-rev-2 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/graphviz.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/language_data.js"></script>
+        <script src="../../../../_static/custom.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Programming Guide" href="../programming_guide/index.html" />
+    <link rel="prev" title="Video Processing" href="VPL_processing.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="https://oneapi.com" class="icon icon-home"> oneAPI Specification
+          
+
+          
+            
+            <img src="../../../../_static/oneAPI-rgb-rev-100.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0-rev-2
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../dpcpp/source/index.html">DPC++</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneDPL/source/index.html">oneDPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneDNN/source/index.html">oneDNN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneCCL/source/index.html">oneCCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Architecture</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="VPL_decoding.html">Video Decoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VPL_encoding.html">Video Encoding</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VPL_processing.html">Video Processing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Video Decoding with multiple video processing</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_guide/index.html">Programming Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPL_summary.html">Mandatory APIs and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../API_ref/VPL_api_ref.html">oneVPL API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Versioning.html">oneVPL API Versioning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../appendix/index.html">Appendices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../VPL_acronyms.html">Glossary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../oneMKL/source/index.html">oneMKL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../versions.html">HTML and PDF Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../notices.html">Legal Notices and Disclaimers</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">oneAPI Specification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          <!--
+SPDX-FileCopyrightText: 2019-2020 Intel Corporation
+
+SPDX-License-Identifier: MIT
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">oneAPI Specification</a> &raquo;</li>
+        
+          
+          <li><a href="../index.html">oneVPL</a> </li>
+          
+        
+          
+        
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/oneapi-src/oneapi-spec/blob/master/source/elements/oneVPL/source/architecture/VPL_decoding_vpp.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="video-decoding-with-multiple-video-processing">
+<h1>Video Decoding with multiple video processing<a class="headerlink" href="#video-decoding-with-multiple-video-processing" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a> class of functions take a compressed bitstream as input,
+converts it to raw frames and applies video processing filters to raw frames.
+Users can set several output channels where each channel represents a list
+of video processing filters applied for decoded frames.</p>
+<p>The <a class="reference internal" href="index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a> supports only internal allocation.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../programming_guide/index.html" class="btn btn-neutral float-right" title="Programming Guide" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="VPL_processing.html" class="btn btn-neutral float-left" title="Video Processing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Intel Corporation
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

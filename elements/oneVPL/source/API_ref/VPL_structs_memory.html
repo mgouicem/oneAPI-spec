@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_guide/index.html">Programming Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../VPL_summary.html">Mandatory APIs and Functions</a></li>
@@ -126,6 +127,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_encode.html">Encode Structures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_vpp.html">VPP Structures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_protected.html">Protected Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VPL_structs_decode_vpp.html">DECODDE_VPP Structures</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_enums.html">Enumerator Reference</a></li>
@@ -830,13 +832,13 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N12mfxFrameInfo12AspectRatioWE">
 <span id="_CPPv3N12mfxFrameInfo12AspectRatioWE"></span><span id="_CPPv2N12mfxFrameInfo12AspectRatioWE"></span><span id="mfxFrameInfo::AspectRatioW__mfxU16"></span><span class="target" id="structmfx_frame_info_1a37de0c77df866265db9892b839bf7e9a"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">AspectRatioW</code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo12AspectRatioWE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Ratio for width. </p>
+<dd><p>Aspect Ratio for width. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N12mfxFrameInfo12AspectRatioHE">
 <span id="_CPPv3N12mfxFrameInfo12AspectRatioHE"></span><span id="_CPPv2N12mfxFrameInfo12AspectRatioHE"></span><span id="mfxFrameInfo::AspectRatioH__mfxU16"></span><span class="target" id="structmfx_frame_info_1a5b3ff1457bae50b6276618c2000a5f11"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">AspectRatioH</code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo12AspectRatioHE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Ratio for height. </p>
+<dd><p>Aspect Ratio for height. </p>
 </dd></dl>
 
 </div>
@@ -877,9 +879,9 @@ SPDX-License-Identifier: MIT
 </dd></dl>
 
 <dl class="cpp var">
-<dt id="_CPPv4N12mfxFrameInfo9reserved4E">
-<span id="_CPPv3N12mfxFrameInfo9reserved4E"></span><span id="_CPPv2N12mfxFrameInfo9reserved4E"></span><span id="mfxFrameInfo::reserved4__mfxU16"></span><span class="target" id="structmfx_frame_info_1af683b85d4de451370270b8f96e85b0d0"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">reserved4</code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo9reserved4E" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Reserved for future use. </p>
+<dt id="_CPPv4N12mfxFrameInfo9ChannelIdE">
+<span id="_CPPv3N12mfxFrameInfo9ChannelIdE"></span><span id="_CPPv2N12mfxFrameInfo9ChannelIdE"></span><span id="mfxFrameInfo::ChannelId__mfxU16"></span><span class="target" id="structmfx_frame_info_1a0a170cfb4996390618338bb838c9cd9f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">ChannelId</code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo9ChannelIdE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The unique ID of each VPP channel set by application. It’s required that during Init/Reset application fills ChannelId for each <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param"><span class="std std-ref">mfxVideoChannelParam</span></a> provided by the application and the SDK sets it back to the correspondent mfxSurfaceArray::mfxFrameSurface1 to distinguish different channels. It’s expected that surfaces for some channels might be returned with some delay so application has to use <a class="reference internal" href="#structmfx_frame_info_1a0a170cfb4996390618338bb838c9cd9f"><span class="std std-ref">mfxFrameInfo::ChannelId</span></a> to distinguish what returned surface belongs to what VPP channel. Decoder’s initialization parameters are always sent through channel with <a class="reference internal" href="#structmfx_frame_info_1a0a170cfb4996390618338bb838c9cd9f"><span class="std std-ref">mfxFrameInfo::ChannelId</span></a> equals to zero. It’s allowed to skip setting of decoder’s parameters for simplified decoding procedure </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -907,11 +909,10 @@ SPDX-License-Identifier: MIT
 <span id="_CPPv3N12mfxFrameInfo5ShiftE"></span><span id="_CPPv2N12mfxFrameInfo5ShiftE"></span><span id="mfxFrameInfo::Shift__mfxU16"></span><span class="target" id="structmfx_frame_info_1ae6848aabffe6bc80071c8cd8f11c0cd3"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">Shift</code><a class="headerlink" href="#_CPPv4N12mfxFrameInfo5ShiftE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When the value is not zero, indicates that values of luma and chroma samples are shifted. Use BitDepthLuma and BitDepthChroma to calculate shift size. Use zero value to indicate absence of shift. See example data alignment below.</p>
 <p><dl class="simple">
-<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported.</p>
+<dt><strong>Note</strong></dt><dd><p>Not all codecs and implementations support this value. Use the Query API function to check if this feature is supported. </p>
 </dd>
 </dl>
 </p>
-<p></p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -1107,6 +1108,8 @@ SPDX-License-Identifier: MIT
 <p>If MFX_MAP_NOWAIT was set and the surface is not ready yet (for example the surface has unresolved data dependencies or active processing), the read access request exits immediately with error.</p>
 <p>Read-write access with MFX_MAP_READ_WRITE provides exclusive simultaneous reading and writing access.</p>
 <p><dl class="simple">
+<dt><strong>Note</strong></dt><dd><p>Bitwise copying of <a class="reference internal" href="#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a> object between map / unmap calls may result in having dangling data pointers in copies.</p>
+</dd>
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
 <p> MFX_ERR_UNSUPPORTED If flags are invalid. </p>
@@ -1127,7 +1130,7 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N24mfxFrameSurfaceInterface5UnmapE">
 <span id="_CPPv3N24mfxFrameSurfaceInterface5UnmapE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface5UnmapE"></span><span class="target" id="structmfx_frame_surface_interface_1a0f86cecff25b6ec575711f4abc786fa3"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus">mfxStatus</a> (*<code class="sig-name descname">Unmap</code>)<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv416mfxFrameSurface1" title="mfxFrameSurface1">mfxFrameSurface1</a> *surface<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface5UnmapE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Invalidates pointers of surface-&gt;Info.Data and sets them to NULL. In case of video memory, the surface with data in video memory becomes unmapped. </p>
+<dd><p>Invalidates pointers of surface-&gt;Info.Data and sets them to NULL. In case of video memory, the underlying texture becomes unmapped after last reader or writer unmap. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE If no error. <p> MFX_ERR_NULL_PTR If surface is NULL. </p>
 <p> MFX_ERR_INVALID_HANDLE If mfxFrameSurfaceInterface-&gt;Context is invalid (for example NULL). </p>
@@ -1136,8 +1139,8 @@ SPDX-License-Identifier: MIT
 </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface </p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface-&gt;Info.Data</span></code>: Pointers set to NULL</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surface-&gt;Info.Data</span></code>: Pointers set to NULL.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1206,6 +1209,25 @@ SPDX-License-Identifier: MIT
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">surface</span></code>: Valid surface. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">wait</span></code>: Wait time in milliseconds.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N24mfxFrameSurfaceInterface10OnCompleteE">
+<span id="_CPPv3N24mfxFrameSurfaceInterface10OnCompleteE"></span><span id="_CPPv2N24mfxFrameSurfaceInterface10OnCompleteE"></span><span class="target" id="structmfx_frame_surface_interface_1aeddf5d4e0519965e53c269f72f292364"></span>void (*<code class="sig-name descname">OnComplete</code>)<span class="sig-paren">(</span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus">mfxStatus</a> sts<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N24mfxFrameSurfaceInterface10OnCompleteE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The library calls the function after complete of associated video operation notifying the application that frame surface is ready. </p>
+<p><p>It is expected that the function is low-intrusive designed otherwise it may impact performance.</p>
+<dl class="simple">
+<dt><strong>Attention</strong></dt><dd><p>This is callback function and intended to be called by the library only.</p>
+</dd>
+</dl>
+</p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">sts</span></code>: The status of completed operation. </p></li>
 </ul>
 </dd>
 </dl>

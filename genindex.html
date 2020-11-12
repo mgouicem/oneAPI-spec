@@ -110,6 +110,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="elements/oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="elements/oneTBB/source/nested-index.html">oneTBB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="elements/oneVPL/source/index.html">oneVPL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="elements/oneVPL/source/index.html#onevpl-specification-version">oneVPL Specification Version</a></li>
 <li class="toctree-l1"><a class="reference internal" href="elements/oneMKL/source/index.html">oneMKL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="versions.html">HTML and PDF Versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notices.html">Legal Notices and Disclaimers</a></li>
@@ -404,6 +405,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneTBB/source/memory_allocation/cache_aligned_allocator_cls.html#_CPPv410deallocateP1T9size_type">deallocate (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/architecture/index.html#term-DECODE"><strong>DECODE</strong></a>
+</li>
+      <li><a href="elements/oneVPL/source/architecture/index.html#term-DECODE_VPP"><strong>DECODE_VPP</strong></a>
 </li>
       <li><a href="elements/oneTBB/source/info_namespace.html#_CPPv419default_concurrency12numa_node_id">default_concurrency (C++ function)</a>
 </li>
@@ -2304,6 +2307,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_BITSTREAM_EOS">MFX_BITSTREAM_EOS (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv421MFX_BITSTREAM_NO_FLAG">MFX_BITSTREAM_NO_FLAG (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv423MFX_BLOCKSIZE_MIN_16X16">MFX_BLOCKSIZE_MIN_16X16 (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv421MFX_BLOCKSIZE_MIN_4X4">MFX_BLOCKSIZE_MIN_4X4 (C++ enumerator)</a>
@@ -2394,6 +2399,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv420MFX_CORRUPTION_MINOR">MFX_CORRUPTION_MINOR (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_CORRUPTION_NO">MFX_CORRUPTION_NO (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv430MFX_CORRUPTION_REFERENCE_FRAME">MFX_CORRUPTION_REFERENCE_FRAME (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv429MFX_CORRUPTION_REFERENCE_LIST">MFX_CORRUPTION_REFERENCE_LIST (C++ enumerator)</a>
@@ -2432,6 +2439,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv419MFX_ERROR_FRAME_GAP">MFX_ERROR_FRAME_GAP (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv412MFX_ERROR_NO">MFX_ERROR_NO (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv413MFX_ERROR_PPS">MFX_ERROR_PPS (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv419MFX_ERROR_SLICEDATA">MFX_ERROR_SLICEDATA (C++ enumerator)</a>
@@ -2465,6 +2474,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv429MFX_EXTBUFF_CODING_OPTION_VPS">MFX_EXTBUFF_CODING_OPTION_VPS (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv436MFX_EXTBUFF_CONTENT_LIGHT_LEVEL_INFO">MFX_EXTBUFF_CONTENT_LIGHT_LEVEL_INFO (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_EXTBUFF_CROPS">MFX_EXTBUFF_CROPS (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv432MFX_EXTBUFF_DEC_VIDEO_PROCESSING">MFX_EXTBUFF_DEC_VIDEO_PROCESSING (C++ enumerator)</a>
 </li>
@@ -2586,6 +2597,18 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv433MFX_EXTBUFF_VPP_VIDEO_SIGNAL_INFO">MFX_EXTBUFF_VPP_VIDEO_SIGNAL_INFO (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv420MFX_FILM_GRAIN_APPLY">MFX_FILM_GRAIN_APPLY (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv439MFX_FILM_GRAIN_CHROMA_SCALING_FROM_LUMA">MFX_FILM_GRAIN_CHROMA_SCALING_FROM_LUMA (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv439MFX_FILM_GRAIN_CLIP_TO_RESTRICTED_RANGE">MFX_FILM_GRAIN_CLIP_TO_RESTRICTED_RANGE (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_FILM_GRAIN_NO">MFX_FILM_GRAIN_NO (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv422MFX_FILM_GRAIN_OVERLAP">MFX_FILM_GRAIN_OVERLAP (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv421MFX_FILM_GRAIN_UPDATE">MFX_FILM_GRAIN_UPDATE (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv418MFX_FOURCC_A2RGB10">MFX_FOURCC_A2RGB10 (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_FOURCC_ABGR16">MFX_FOURCC_ABGR16 (C++ enumerator)</a>
@@ -2645,6 +2668,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_FOURCC_YV12">MFX_FOURCC_YV12 (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv432MFX_FRAMEDATA_ORIGINAL_TIMESTAMP">MFX_FRAMEDATA_ORIGINAL_TIMESTAMP (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv431MFX_FRAMEDATA_TIMESTAMP_UNKNOWN">MFX_FRAMEDATA_TIMESTAMP_UNKNOWN (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv422MFX_FRAMEORDER_UNKNOWN">MFX_FRAMEORDER_UNKNOWN (C++ enumerator)</a>
 </li>
@@ -2772,6 +2797,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_IMPL_VIA_D3D9">MFX_IMPL_VIA_D3D9 (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv422MFX_IMPL_VIA_HDDLUNITE">MFX_IMPL_VIA_HDDLUNITE (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv418MFX_IMPL_VIA_VAAPI">MFX_IMPL_VIA_VAAPI (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_defines.html#c.MFX_IMPLDESCRIPTION_VERSION">MFX_IMPLDESCRIPTION_VERSION (C macro)</a>
@@ -2799,6 +2826,54 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv426MFX_JPEG_COLORFORMAT_YCbCr">MFX_JPEG_COLORFORMAT_YCbCr (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_defines.html#c.MFX_LEGACY_VERSION">MFX_LEGACY_VERSION (C macro)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_2">MFX_LEVEL_AV1_2 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_21">MFX_LEVEL_AV1_21 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_22">MFX_LEVEL_AV1_22 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_23">MFX_LEVEL_AV1_23 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_3">MFX_LEVEL_AV1_3 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_31">MFX_LEVEL_AV1_31 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_32">MFX_LEVEL_AV1_32 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_33">MFX_LEVEL_AV1_33 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_4">MFX_LEVEL_AV1_4 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_41">MFX_LEVEL_AV1_41 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_42">MFX_LEVEL_AV1_42 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_43">MFX_LEVEL_AV1_43 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_5">MFX_LEVEL_AV1_5 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_51">MFX_LEVEL_AV1_51 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_52">MFX_LEVEL_AV1_52 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_53">MFX_LEVEL_AV1_53 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_6">MFX_LEVEL_AV1_6 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_61">MFX_LEVEL_AV1_61 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_62">MFX_LEVEL_AV1_62 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_63">MFX_LEVEL_AV1_63 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AV1_7">MFX_LEVEL_AV1_7 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_71">MFX_LEVEL_AV1_71 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_72">MFX_LEVEL_AV1_72 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv416MFX_LEVEL_AV1_73">MFX_LEVEL_AV1_73 (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415MFX_LEVEL_AVC_1">MFX_LEVEL_AVC_1 (C++ enumerator)</a>
 </li>
@@ -3042,6 +3117,12 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv420MFX_PLATFORM_UNKNOWN">MFX_PLATFORM_UNKNOWN (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv420MFX_PROFILE_AV1_HIGH">MFX_PROFILE_AV1_HIGH (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv420MFX_PROFILE_AV1_MAIN">MFX_PROFILE_AV1_MAIN (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv419MFX_PROFILE_AV1_PRO">MFX_PROFILE_AV1_PRO (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv424MFX_PROFILE_AVC_BASELINE">MFX_PROFILE_AVC_BASELINE (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv436MFX_PROFILE_AVC_CONSTRAINED_BASELINE">MFX_PROFILE_AVC_CONSTRAINED_BASELINE (C++ enumerator)</a>
@@ -3212,6 +3293,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_defines.html#c.MFX_STRUCT_VERSION">MFX_STRUCT_VERSION (C macro)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_defines.html#c.MFX_SURFACEARRAY_VERSION">MFX_SURFACEARRAY_VERSION (C macro)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_TARGETUSAGE_1">MFX_TARGETUSAGE_1 (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv417MFX_TARGETUSAGE_2">MFX_TARGETUSAGE_2 (C++ enumerator)</a>
@@ -3340,7 +3423,19 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_enum.html#_CPPv4N19mfxAccelerationMode23MFX_ACCEL_MODE_VIA_D3D9E">mfxAccelerationMode::MFX_ACCEL_MODE_VIA_D3D9 (C++ enumerator)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_enum.html#_CPPv4N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_HDDLUNITEE">mfxAccelerationMode::MFX_ACCEL_MODE_VIA_HDDLUNITE (C++ enumerator)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_enum.html#_CPPv4N19mfxAccelerationMode24MFX_ACCEL_MODE_VIA_VAAPIE">mfxAccelerationMode::MFX_ACCEL_MODE_VIA_VAAPI (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv430mfxAccelerationModeDescription">mfxAccelerationModeDescription (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N30mfxAccelerationModeDescription4ModeE">mfxAccelerationModeDescription::Mode (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N30mfxAccelerationModeDescription20NumAccelerationModesE">mfxAccelerationModeDescription::NumAccelerationModes (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N30mfxAccelerationModeDescription8reservedE">mfxAccelerationModeDescription::reserved (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N30mfxAccelerationModeDescription7VersionE">mfxAccelerationModeDescription::Version (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_impl_manage.html#_CPPv414mfxAdapterInfo">mfxAdapterInfo (C++ struct)</a>
 </li>
@@ -3355,6 +3450,12 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_impl_manage.html#_CPPv4N15mfxAdaptersInfo9NumActualE">mfxAdaptersInfo::NumActual (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_impl_manage.html#_CPPv4N15mfxAdaptersInfo8NumAllocE">mfxAdaptersInfo::NumAlloc (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv420mfxAV1FilmGrainPoint">mfxAV1FilmGrainPoint (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N20mfxAV1FilmGrainPoint7ScalingE">mfxAV1FilmGrainPoint::Scaling (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N20mfxAV1FilmGrainPoint5ValueE">mfxAV1FilmGrainPoint::Value (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv412mfxBitstream">mfxBitstream (C++ struct)</a>
 </li>
@@ -3626,6 +3727,52 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_func.html#_CPPv422MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL">MFXEnumImplementations (C++ function)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv423mfxExtAV1FilmGrainParam">mfxExtAV1FilmGrainParam (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam10ArCoeffLagE">mfxExtAV1FilmGrainParam::ArCoeffLag (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCbPlus128E">mfxExtAV1FilmGrainParam::ArCoeffsCbPlus128 (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCrPlus128E">mfxExtAV1FilmGrainParam::ArCoeffsCrPlus128 (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam18ArCoeffShiftMinus6E">mfxExtAV1FilmGrainParam::ArCoeffShiftMinus6 (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam16ArCoeffsYPlus128E">mfxExtAV1FilmGrainParam::ArCoeffsYPlus128 (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam10CbLumaMultE">mfxExtAV1FilmGrainParam::CbLumaMult (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam6CbMultE">mfxExtAV1FilmGrainParam::CbMult (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam8CbOffsetE">mfxExtAV1FilmGrainParam::CbOffset (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam10CrLumaMultE">mfxExtAV1FilmGrainParam::CrLumaMult (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam6CrMultE">mfxExtAV1FilmGrainParam::CrMult (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam8CrOffsetE">mfxExtAV1FilmGrainParam::CrOffset (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam14FilmGrainFlagsE">mfxExtAV1FilmGrainParam::FilmGrainFlags (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam15GrainScaleShiftE">mfxExtAV1FilmGrainParam::GrainScaleShift (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam18GrainScalingMinus8E">mfxExtAV1FilmGrainParam::GrainScalingMinus8 (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam9GrainSeedE">mfxExtAV1FilmGrainParam::GrainSeed (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam11NumCbPointsE">mfxExtAV1FilmGrainParam::NumCbPoints (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam11NumCrPointsE">mfxExtAV1FilmGrainParam::NumCrPoints (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam10NumYPointsE">mfxExtAV1FilmGrainParam::NumYPoints (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam7PointCbE">mfxExtAV1FilmGrainParam::PointCb (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam7PointCrE">mfxExtAV1FilmGrainParam::PointCr (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam6PointYE">mfxExtAV1FilmGrainParam::PointY (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N23mfxExtAV1FilmGrainParam6RefIdxE">mfxExtAV1FilmGrainParam::RefIdx (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv425mfxExtAVCEncodedFrameInfo">mfxExtAVCEncodedFrameInfo (C++ struct)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N25mfxExtAVCEncodedFrameInfo12BRCPanicModeE">mfxExtAVCEncodedFrameInfo::BRCPanicMode (C++ member)</a>
@@ -3878,6 +4025,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption315NumRefActiveBL1E">mfxExtCodingOption3::NumRefActiveBL1 (C++ member)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption313NumRefActivePE">mfxExtCodingOption3::NumRefActiveP (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption39NumSliceBE">mfxExtCodingOption3::NumSliceB (C++ member)</a>
@@ -3916,8 +4065,6 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption317TimingInfoPresentE">mfxExtCodingOption3::TimingInfoPresent (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption313TransformSkipE">mfxExtCodingOption3::TransformSkip (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N19mfxExtCodingOption314WeightedBiPredE">mfxExtCodingOption3::WeightedBiPred (C++ member)</a>
@@ -4195,6 +4342,10 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N15mfxExtHEVCTiles14NumTileColumnsE">mfxExtHEVCTiles::NumTileColumns (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv4N15mfxExtHEVCTiles11NumTileRowsE">mfxExtHEVCTiles::NumTileRows (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv413mfxExtInCrops">mfxExtInCrops (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N13mfxExtInCrops5CropsE">mfxExtInCrops::Crops (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_encode.html#_CPPv419mfxExtInsertHeaders">mfxExtInsertHeaders (C++ struct)</a>
 </li>
@@ -4782,6 +4933,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo10BufferSizeE">mfxFrameInfo::BufferSize (C++ member)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo9ChannelIdE">mfxFrameInfo::ChannelId (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo12ChromaFormatE">mfxFrameInfo::ChromaFormat (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo5CropHE">mfxFrameInfo::CropH (C++ member)</a>
@@ -4805,8 +4958,6 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo9PicStructE">mfxFrameInfo::PicStruct (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo8reservedE">mfxFrameInfo::reserved (C++ member)</a>
-</li>
-      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo9reserved4E">mfxFrameInfo::reserved4 (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo5ShiftE">mfxFrameInfo::Shift (C++ member)</a>
 </li>
@@ -4834,6 +4985,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N24mfxFrameSurfaceInterface3MapE">mfxFrameSurfaceInterface::Map (C++ member)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N24mfxFrameSurfaceInterface10OnCompleteE">mfxFrameSurfaceInterface::OnComplete (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N24mfxFrameSurfaceInterface7ReleaseE">mfxFrameSurfaceInterface::Release (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_memory.html#_CPPv4N24mfxFrameSurfaceInterface11SynchronizeE">mfxFrameSurfaceInterface::Synchronize (C++ member)</a>
@@ -4853,6 +5006,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N13mfxHandleType30MFX_HANDLE_D3D9_DEVICE_MANAGERE">mfxHandleType::MFX_HANDLE_D3D9_DEVICE_MANAGER (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N13mfxHandleType35MFX_HANDLE_DIRECT3D_DEVICE_MANAGER9E">mfxHandleType::MFX_HANDLE_DIRECT3D_DEVICE_MANAGER9 (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N13mfxHandleType36MFX_HANDLE_HDDLUNITE_WORKLOADCONTEXTE">mfxHandleType::MFX_HANDLE_HDDLUNITE_WORKLOADCONTEXT (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N13mfxHandleType20MFX_HANDLE_RESERVED1E">mfxHandleType::MFX_HANDLE_RESERVED1 (C++ enumerator)</a>
 </li>
@@ -4895,6 +5050,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv418mfxImplDescription">mfxImplDescription (C++ struct)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N18mfxImplDescription16AccelerationModeE">mfxImplDescription::AccelerationMode (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N18mfxImplDescription27AccelerationModeDescriptionE">mfxImplDescription::AccelerationModeDescription (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_disp_api_struct.html#_CPPv4N18mfxImplDescription10ApiVersionE">mfxImplDescription::ApiVersion (C++ member)</a>
 </li>
@@ -4960,6 +5117,8 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX17ExtendedPicStructE">mfxInfoMFX::ExtendedPicStruct (C++ member)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX9FilmGrainE">mfxInfoMFX::FilmGrain (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX9FrameInfoE">mfxInfoMFX::FrameInfo (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX10GopOptFlagE">mfxInfoMFX::GopOptFlag (C++ member)</a>
@@ -4971,6 +5130,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX10ICQQualityE">mfxInfoMFX::ICQQuality (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX11IdrIntervalE">mfxInfoMFX::IdrInterval (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX20IgnoreLevelConstrainE">mfxInfoMFX::IgnoreLevelConstrain (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX16InitialDelayInKBE">mfxInfoMFX::InitialDelayInKB (C++ member)</a>
 </li>
@@ -5009,6 +5170,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX15SamplingFactorHE">mfxInfoMFX::SamplingFactorH (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX15SamplingFactorVE">mfxInfoMFX::SamplingFactorV (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX10SkipOutputE">mfxInfoMFX::SkipOutput (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N10mfxInfoMFX18SliceGroupsPresentE">mfxInfoMFX::SliceGroupsPresent (C++ member)</a>
 </li>
@@ -5079,6 +5242,10 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_mem.html#_CPPv429MFXMemory_GetSurfaceForEncode10mfxSessionPP16mfxFrameSurface1">MFXMemory_GetSurfaceForEncode (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_mem.html#_CPPv426MFXMemory_GetSurfaceForVPP10mfxSessionPP16mfxFrameSurface1">MFXMemory_GetSurfaceForVPP (C++ function)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_mem.html#c.MFXMemory_GetSurfaceForVPPIn">MFXMemory_GetSurfaceForVPPIn (C macro)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_mem.html#_CPPv429MFXMemory_GetSurfaceForVPPOut10mfxSessionPP16mfxFrameSurface1">MFXMemory_GetSurfaceForVPPOut (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv414mfxMemoryFlags">mfxMemoryFlags (C++ enum)</a>
 </li>
@@ -5178,6 +5345,16 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N11mfxRange32U4StepE">mfxRange32U::Step (C++ member)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv47mfxRect">mfxRect (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N7mfxRect6BottomE">mfxRect::Bottom (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N7mfxRect4LeftE">mfxRect::Left (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N7mfxRect5RightE">mfxRect::Right (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_cross_component.html#_CPPv4N7mfxRect3TopE">mfxRect::Top (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_capabilities.html#_CPPv425MFXReleaseImplDescription6mfxHDL">MFXReleaseImplDescription (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv415mfxResourceType">mfxResourceType (C++ enum)</a>
@@ -5189,6 +5366,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N15mfxResourceType26MFX_RESOURCE_DX12_RESOURCEE">mfxResourceType::MFX_RESOURCE_DX12_RESOURCE (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N15mfxResourceType24MFX_RESOURCE_DX9_SURFACEE">mfxResourceType::MFX_RESOURCE_DX9_SURFACE (C++ enumerator)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N15mfxResourceType36MFX_RESOURCE_HDDLUNITE_REMOTE_MEMORYE">mfxResourceType::MFX_RESOURCE_HDDLUNITE_REMOTE_MEMORY (C++ enumerator)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_enums.html#_CPPv4N15mfxResourceType27MFX_RESOURCE_SYSTEM_SURFACEE">mfxResourceType::MFX_RESOURCE_SYSTEM_SURFACE (C++ enumerator)</a>
 </li>
@@ -5286,13 +5465,29 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv416mfxStructVersion">mfxStructVersion (C++ union)</a>
 </li>
-      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N16mfxStructVersionUt2_18E">mfxStructVersion::[anonymous] (C++ member)</a>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N16mfxStructVersionUt2_20E">mfxStructVersion::[anonymous] (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N16mfxStructVersion5MajorE">mfxStructVersion::Major (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N16mfxStructVersion5MinorE">mfxStructVersion::Minor (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_type.html#_CPPv4N16mfxStructVersion7VersionE">mfxStructVersion::Version (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv415mfxSurfaceArray">mfxSurfaceArray (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray6AddRefE">mfxSurfaceArray::AddRef (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray7ContextE">mfxSurfaceArray::Context (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray13GetRefCounterE">mfxSurfaceArray::GetRefCounter (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray11NumSurfacesE">mfxSurfaceArray::NumSurfaces (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray7ReleaseE">mfxSurfaceArray::Release (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray8SurfacesE">mfxSurfaceArray::Surfaces (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N15mfxSurfaceArray7VersionE">mfxSurfaceArray::Version (C++ member)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_ref_types.html#_CPPv412mfxSyncPoint">mfxSyncPoint (C++ type)</a>
 </li>
@@ -5378,6 +5573,18 @@ SPDX-License-Identifier: MIT
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_structs_impl_manage.html#_CPPv4N10mfxVersion7VersionE">mfxVersion::Version (C++ member)</a>
 </li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv420mfxVideoChannelParam">mfxVideoChannelParam (C++ struct)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N20mfxVideoChannelParam8ExtParamE">mfxVideoChannelParam::ExtParam (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N20mfxVideoChannelParam9IOPatternE">mfxVideoChannelParam::IOPattern (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N20mfxVideoChannelParam11NumExtParamE">mfxVideoChannelParam::NumExtParam (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N20mfxVideoChannelParam9ProtectedE">mfxVideoChannelParam::Protected (C++ member)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_structs_decode_vpp.html#_CPPv4N20mfxVideoChannelParam3VPPE">mfxVideoChannelParam::VPP (C++ member)</a>
+</li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vidcore.html#_CPPv422MFXVideoCORE_GetHandle10mfxSession13mfxHandleTypeP6mfxHDL">MFXVideoCORE_GetHandle (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vidcore.html#_CPPv426MFXVideoCORE_QueryPlatform10mfxSessionP11mfxPlatform">MFXVideoCORE_QueryPlatform (C++ function)</a>
@@ -5409,6 +5616,12 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_decode.html#_CPPv420MFXVideoDECODE_Reset10mfxSessionP13mfxVideoParam">MFXVideoDECODE_Reset (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_decode.html#_CPPv426MFXVideoDECODE_SetSkipMode10mfxSession11mfxSkipMode">MFXVideoDECODE_SetSkipMode (C++ function)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_decode_vpp.html#_CPPv434MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32">MFXVideoDECODE_VPP_GetChannelParam (C++ function)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_decode_vpp.html#_CPPv423MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32">MFXVideoDECODE_VPP_Init (C++ function)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_decode_vpp.html#_CPPv424MFXVideoDECODE_VPP_Reset10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32">MFXVideoDECODE_VPP_Reset (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_encode.html#_CPPv420MFXVideoENCODE_Close10mfxSession">MFXVideoENCODE_Close (C++ function)</a>
 </li>
@@ -5451,6 +5664,8 @@ SPDX-License-Identifier: MIT
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_vpp.html#_CPPv422MFXVideoVPP_GetVPPStat10mfxSessionP10mfxVPPStat">MFXVideoVPP_GetVPPStat (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_vpp.html#_CPPv416MFXVideoVPP_Init10mfxSessionP13mfxVideoParam">MFXVideoVPP_Init (C++ function)</a>
+</li>
+      <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_vpp.html#_CPPv429MFXVideoVPP_ProcessFrameAsync10mfxSessionP16mfxFrameSurface1PP16mfxFrameSurface1">MFXVideoVPP_ProcessFrameAsync (C++ function)</a>
 </li>
       <li><a href="elements/oneVPL/source/API_ref/VPL_func_vid_vpp.html#_CPPv417MFXVideoVPP_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam">MFXVideoVPP_Query (C++ function)</a>
 </li>

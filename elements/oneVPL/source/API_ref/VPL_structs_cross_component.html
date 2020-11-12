@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_guide/index.html">Programming Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../VPL_summary.html">Mandatory APIs and Functions</a></li>
@@ -126,6 +127,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_encode.html">Encode Structures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_vpp.html">VPP Structures</a></li>
 <li class="toctree-l4"><a class="reference internal" href="VPL_structs_protected.html">Protected Structures</a></li>
+<li class="toctree-l4"><a class="reference internal" href="VPL_structs_decode_vpp.html">DECODDE_VPP Structures</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_enums.html">Enumerator Reference</a></li>
@@ -244,6 +246,9 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxpayload" id="id13">mfxPayload</a></p></li>
 <li><p><a class="reference internal" href="#mfxvideoparam" id="id14">mfxVideoParam</a></p></li>
 <li><p><a class="reference internal" href="#mfxvp9segmentparam" id="id15">mfxVP9SegmentParam</a></p></li>
+<li><p><a class="reference internal" href="#mfxextav1filmgrainparam" id="id16">mfxExtAV1FilmGrainParam</a></p></li>
+<li><p><a class="reference internal" href="#mfxav1filmgrainpoint" id="id17">mfxAV1FilmGrainPoint</a></p></li>
+<li><p><a class="reference internal" href="#mfxrect" id="id18">mfxRect</a></p></li>
 </ul>
 </div>
 <div class="section" id="mfxcomponentinfo">
@@ -358,13 +363,13 @@ SPDX-License-Identifier: MIT
 
 <dl class="cpp var">
 <dt id="_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE">
-<span id="_CPPv3N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a80bf0246d9cdfb11962d901cbb1b6ced"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">DCTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a14cc3309a46cd49659aa9b7e323a609b"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">DCTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Array of DC tables. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE">
-<span id="_CPPv3N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1ad636b633d71dcf24ae21cfe9cd0b5817"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ACTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a447d71b01e8939cdb52d4a7bfa3707cc"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ACTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>List of the 8-bit symbol values. </p>
 </dd></dl>
 
@@ -1000,6 +1005,24 @@ SPDX-License-Identifier: MIT
 </dd></dl>
 
 <dl class="cpp var">
+<dt id="_CPPv4N10mfxInfoMFX9FilmGrainE">
+<span id="_CPPv3N10mfxInfoMFX9FilmGrainE"></span><span id="_CPPv2N10mfxInfoMFX9FilmGrainE"></span><span id="mfxInfoMFX::FilmGrain__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1a7d8b1c7dfe0e58c65a82bf6416c63a26"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">FilmGrain</code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX9FilmGrainE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Special parameter for AV1 decoder. Indicates presence/absence of film grain parameters in bitstream. Also controls decoding behavior for streams with film grain parameters. MFXVideoDECODE_DecodeHeader returns nonzero FilmGrain for streams with film grain parameters and zero for streams w/o them. Decoding with film grain requires additional output surfaces. If FilmGrain` is non-zero then MFXVideoDECODE_QueryIOSurf will request more surfaces in case of external allocated video memory at decoder output. FilmGrain is passed to MFXVideoDECODE_Init function to control decoding operation for AV1 streams with film grain parameters. If FilmGrain is nonzero decoding of each frame require two output surfaces (one for reconstructed frame and one for output frame with film grain applied). The decoder returns MFX_ERR_MORE_SURFACE from MFXVideoDECODE_DecodeFrameAsync if it has insufficient output surfaces to decode frame. Application can forcibly disable the feature passing zero value of <code class="docutils literal notranslate"><span class="pre">FilmGrain</span></code> to <code class="docutils literal notranslate"><span class="pre">MFXVideoDECODE_Init</span></code>. In this case the decoder will output reconstructed frames w/o film grain applied. Application can retrieve film grain parameters for a frame by attaching extended buffer <a class="reference internal" href="#structmfx_ext_a_v1_film_grain_param"><span class="std std-ref">mfxExtAV1FilmGrainParam</span></a> to <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_surface1"><span class="std std-ref">mfxFrameSurface1</span></a>. If stream has no film grain parameters <code class="docutils literal notranslate"><span class="pre">FilmGrain</span></code> passed to <code class="docutils literal notranslate"><span class="pre">MFXVideoDECODE_Init</span></code> is ignored by the decoder. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N10mfxInfoMFX20IgnoreLevelConstrainE">
+<span id="_CPPv3N10mfxInfoMFX20IgnoreLevelConstrainE"></span><span id="_CPPv2N10mfxInfoMFX20IgnoreLevelConstrainE"></span><span id="mfxInfoMFX::IgnoreLevelConstrain__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1a92f91c3d350ba5967df155b1adbc5bc0"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">IgnoreLevelConstrain</code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX20IgnoreLevelConstrainE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>If not zero, it forces SDK to attempt to decode bitstream even if a decoder may not support all features associated with given CodecLevel. Decoder may produce visual artifacts. Only AVC decoder supports this field. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N10mfxInfoMFX10SkipOutputE">
+<span id="_CPPv3N10mfxInfoMFX10SkipOutputE"></span><span id="_CPPv2N10mfxInfoMFX10SkipOutputE"></span><span id="mfxInfoMFX::SkipOutput__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1af10be70c5b4b643ec76fb4a3483cddfa"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">SkipOutput</code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX10SkipOutputE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This flag is used to disable output of main decoding channel. When it’s ON SkipOutput = MFX_CODINGOPTION_ON decoder outputs only video processed channels. For pure decode this flag should be always disabled. </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt id="_CPPv4N10mfxInfoMFX16JPEGChromaFormatE">
 <span id="_CPPv3N10mfxInfoMFX16JPEGChromaFormatE"></span><span id="_CPPv2N10mfxInfoMFX16JPEGChromaFormatE"></span><span id="mfxInfoMFX::JPEGChromaFormat__mfxU16"></span><span class="target" id="structmfx_info_m_f_x_1a8b82f7288ed832205875d29c0db26bb2"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">JPEGChromaFormat</code><a class="headerlink" href="#_CPPv4N10mfxInfoMFX16JPEGChromaFormatE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Specify the chroma sampling format that has been used to encode a JPEG picture. See the ChromaFormat enumerator for details. </p>
@@ -1362,6 +1385,210 @@ and the instant bitrate is not capped or padded.</p>
 <dt id="_CPPv4N18mfxVP9SegmentParam14ReferenceFrameE">
 <span id="_CPPv3N18mfxVP9SegmentParam14ReferenceFrameE"></span><span id="_CPPv2N18mfxVP9SegmentParam14ReferenceFrameE"></span><span id="mfxVP9SegmentParam::ReferenceFrame__mfxU16"></span><span class="target" id="structmfx_v_p9_segment_param_1ad18291297fb5a48fa8f872b1df240eae"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">ReferenceFrame</code><a class="headerlink" href="#_CPPv4N18mfxVP9SegmentParam14ReferenceFrameE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Reference frame for the segment. See VP9ReferenceFrame enumerator for values for this option. Ignored if MFX_VP9_SEGMENT_FEATURE_REFERENCE isn’t set in FeatureEnabled. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mfxextav1filmgrainparam">
+<h3><a class="toc-backref" href="#id16">mfxExtAV1FilmGrainParam</a><a class="headerlink" href="#mfxextav1filmgrainparam" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv423mfxExtAV1FilmGrainParam">
+<span id="_CPPv323mfxExtAV1FilmGrainParam"></span><span id="_CPPv223mfxExtAV1FilmGrainParam"></span><span id="mfxExtAV1FilmGrainParam"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param"></span><em class="property">struct </em><code class="sig-name descname">mfxExtAV1FilmGrainParam</code><a class="headerlink" href="#_CPPv423mfxExtAV1FilmGrainParam" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The structure is used by AV-1 decoder to report film grain parameters for decoded frame. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam14FilmGrainFlagsE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam14FilmGrainFlagsE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam14FilmGrainFlagsE"></span><span id="mfxExtAV1FilmGrainParam::FilmGrainFlags__mfxU16"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1af129943155b205f21e478f61f8b8e657"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">FilmGrainFlags</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam14FilmGrainFlagsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Bit map with bit-ORed flags from FilmGrainFlags enum. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam9GrainSeedE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam9GrainSeedE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam9GrainSeedE"></span><span id="mfxExtAV1FilmGrainParam::GrainSeed__mfxU16"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1aff295305cc90cf05761ba62fe21762c4"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">GrainSeed</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam9GrainSeedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Starting value for pseudo-random numbers used during film grain synthesis. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam6RefIdxE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam6RefIdxE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam6RefIdxE"></span><span id="mfxExtAV1FilmGrainParam::RefIdx__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1adba1834482630938f6c8f9c9fb720c06"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">RefIdx</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam6RefIdxE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Indicate which reference frame contains the film grain parameters to be used for this frame. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam10NumYPointsE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam10NumYPointsE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam10NumYPointsE"></span><span id="mfxExtAV1FilmGrainParam::NumYPoints__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a9dc36cbe7d6c1bf00f8daa0a367b79ec"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">NumYPoints</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam10NumYPointsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of points for the piece-wise linear scaling function of the luma component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam11NumCbPointsE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam11NumCbPointsE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam11NumCbPointsE"></span><span id="mfxExtAV1FilmGrainParam::NumCbPoints__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a30a10c0231ce8347068ea510b8f459e0"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">NumCbPoints</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam11NumCbPointsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of points for the piece-wise linear scaling function of the Cb component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam11NumCrPointsE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam11NumCrPointsE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam11NumCrPointsE"></span><span id="mfxExtAV1FilmGrainParam::NumCrPoints__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1aa678fe3e8319b1089e0ffe699b1245cb"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">NumCrPoints</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam11NumCrPointsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of points for the piece-wise linear scaling function of the Cr component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam6PointYE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam6PointYE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam6PointYE"></span><span id="mfxExtAV1FilmGrainParam::PointY__mfxAV1FilmGrainPointA"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a4e3702c79460aea4ba91042bb46e4856"></span><a class="reference internal" href="#_CPPv420mfxAV1FilmGrainPoint" title="mfxAV1FilmGrainPoint">mfxAV1FilmGrainPoint</a> <code class="sig-name descname">PointY</code>[14]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam6PointYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The array of points for luma component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam7PointCbE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam7PointCbE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam7PointCbE"></span><span id="mfxExtAV1FilmGrainParam::PointCb__mfxAV1FilmGrainPointA"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a1e8f289cca657dd1788b95b9c082cba4"></span><a class="reference internal" href="#_CPPv420mfxAV1FilmGrainPoint" title="mfxAV1FilmGrainPoint">mfxAV1FilmGrainPoint</a> <code class="sig-name descname">PointCb</code>[10]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam7PointCbE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The array of points for Cb component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam7PointCrE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam7PointCrE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam7PointCrE"></span><span id="mfxExtAV1FilmGrainParam::PointCr__mfxAV1FilmGrainPointA"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a74a44526549fad8a7084a88e33a24946"></span><a class="reference internal" href="#_CPPv420mfxAV1FilmGrainPoint" title="mfxAV1FilmGrainPoint">mfxAV1FilmGrainPoint</a> <code class="sig-name descname">PointCr</code>[10]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam7PointCrE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The array of points for Cr component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam18GrainScalingMinus8E">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam18GrainScalingMinus8E"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam18GrainScalingMinus8E"></span><span id="mfxExtAV1FilmGrainParam::GrainScalingMinus8__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a0c3e34823824fc41c34bcaead00ffa5f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">GrainScalingMinus8</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam18GrainScalingMinus8E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The shift – 8 applied to the values of the chroma component. The grain_scaling_minus_8 can take values of 0..3 and determines the range and quantization step of the standard deviation of film grain. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam10ArCoeffLagE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam10ArCoeffLagE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam10ArCoeffLagE"></span><span id="mfxExtAV1FilmGrainParam::ArCoeffLag__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a4cbfe0bdfabe24a35d95ac0b1f64c7aa"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">ArCoeffLag</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam10ArCoeffLagE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of auto-regressive coefficients for luma and chroma. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam16ArCoeffsYPlus128E">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam16ArCoeffsYPlus128E"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam16ArCoeffsYPlus128E"></span><span id="mfxExtAV1FilmGrainParam::ArCoeffsYPlus128__mfxU8A"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1abfa6efa06691a30a22691f443fcef91e"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">ArCoeffsYPlus128</code>[24]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam16ArCoeffsYPlus128E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Auto-regressive coefficients used for the Y plane. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCbPlus128E">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam17ArCoeffsCbPlus128E"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam17ArCoeffsCbPlus128E"></span><span id="mfxExtAV1FilmGrainParam::ArCoeffsCbPlus128__mfxU8A"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a6880eedac522ccc7e10908bbf53117f5"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">ArCoeffsCbPlus128</code>[25]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCbPlus128E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Auto-regressive coefficients used for the Cb plane. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCrPlus128E">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam17ArCoeffsCrPlus128E"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam17ArCoeffsCrPlus128E"></span><span id="mfxExtAV1FilmGrainParam::ArCoeffsCrPlus128__mfxU8A"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a0331653fc8fd77870a391883c346184f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">ArCoeffsCrPlus128</code>[25]<a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam17ArCoeffsCrPlus128E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The number of points for the piece-wise linear scaling function of the Cr component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam18ArCoeffShiftMinus6E">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam18ArCoeffShiftMinus6E"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam18ArCoeffShiftMinus6E"></span><span id="mfxExtAV1FilmGrainParam::ArCoeffShiftMinus6__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a95fb5635b9a8578155b3803be8efa999"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">ArCoeffShiftMinus6</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam18ArCoeffShiftMinus6E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The range of the auto-regressive coefficients. Values of 0, 1, 2, and 3 correspond to the ranges for auto-regressive coefficients of [-2, 2), [-1, 1), [-0.5, 0.5) and [-0.25, 0.25) respectively. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam15GrainScaleShiftE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam15GrainScaleShiftE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam15GrainScaleShiftE"></span><span id="mfxExtAV1FilmGrainParam::GrainScaleShift__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a8c93c555e31b8deb3cd3b15d4355962e"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">GrainScaleShift</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam15GrainScaleShiftE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Downscaling factor of the grain synthesis process for the Gaussian random numbers . </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam6CbMultE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam6CbMultE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam6CbMultE"></span><span id="mfxExtAV1FilmGrainParam::CbMult__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a891990f834c9c328943ba5174f5c6bcc"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">CbMult</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam6CbMultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The multiplier for the Cb component used in derivation of the input index to the Cb component scaling function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam10CbLumaMultE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam10CbLumaMultE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam10CbLumaMultE"></span><span id="mfxExtAV1FilmGrainParam::CbLumaMult__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a18f1a2c1e7427bc1c69d9896f3bf5d45"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">CbLumaMult</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam10CbLumaMultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The multiplier for the average luma component used in derivation of the input index to the Cb component scaling function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam8CbOffsetE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam8CbOffsetE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam8CbOffsetE"></span><span id="mfxExtAV1FilmGrainParam::CbOffset__mfxU16"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1af2e0da9b4b149b179d3cc68324a4e0cc"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">CbOffset</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam8CbOffsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The offset used in derivation of the input index to the Cb component scaling function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam6CrMultE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam6CrMultE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam6CrMultE"></span><span id="mfxExtAV1FilmGrainParam::CrMult__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1aac3e537cadcb8d2ff9e3064621bbe512"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">CrMult</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam6CrMultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The multiplier for the Cr component used in derivation of the input index to the Cr component scaling function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam10CrLumaMultE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam10CrLumaMultE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam10CrLumaMultE"></span><span id="mfxExtAV1FilmGrainParam::CrLumaMult__mfxU8"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1af6c46f61fdacb3a99133c8d2515b9244"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">CrLumaMult</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam10CrLumaMultE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The multiplier for the average luma component used in derivation of the input index to the Cr component scaling function. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxExtAV1FilmGrainParam8CrOffsetE">
+<span id="_CPPv3N23mfxExtAV1FilmGrainParam8CrOffsetE"></span><span id="_CPPv2N23mfxExtAV1FilmGrainParam8CrOffsetE"></span><span id="mfxExtAV1FilmGrainParam::CrOffset__mfxU16"></span><span class="target" id="structmfx_ext_a_v1_film_grain_param_1a8fa368d6a0c58e5694db9ba4c21972de"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">CrOffset</code><a class="headerlink" href="#_CPPv4N23mfxExtAV1FilmGrainParam8CrOffsetE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The offset used in derivation of the input index to the Cr component scaling function. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mfxav1filmgrainpoint">
+<h3><a class="toc-backref" href="#id17">mfxAV1FilmGrainPoint</a><a class="headerlink" href="#mfxav1filmgrainpoint" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv420mfxAV1FilmGrainPoint">
+<span id="_CPPv320mfxAV1FilmGrainPoint"></span><span id="_CPPv220mfxAV1FilmGrainPoint"></span><span id="mfxAV1FilmGrainPoint"></span><span class="target" id="structmfx_a_v1_film_grain_point"></span><em class="property">struct </em><code class="sig-name descname">mfxAV1FilmGrainPoint</code><a class="headerlink" href="#_CPPv420mfxAV1FilmGrainPoint" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Defines film grain point. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N20mfxAV1FilmGrainPoint5ValueE">
+<span id="_CPPv3N20mfxAV1FilmGrainPoint5ValueE"></span><span id="_CPPv2N20mfxAV1FilmGrainPoint5ValueE"></span><span id="mfxAV1FilmGrainPoint::Value__mfxU8"></span><span class="target" id="structmfx_a_v1_film_grain_point_1acce359d986fe425ead842ba6236ca1de"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">Value</code><a class="headerlink" href="#_CPPv4N20mfxAV1FilmGrainPoint5ValueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The x coordinate for the i-th point of the piece-wise linear scaling function for luma/Cb/Cr component. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N20mfxAV1FilmGrainPoint7ScalingE">
+<span id="_CPPv3N20mfxAV1FilmGrainPoint7ScalingE"></span><span id="_CPPv2N20mfxAV1FilmGrainPoint7ScalingE"></span><span id="mfxAV1FilmGrainPoint::Scaling__mfxU8"></span><span class="target" id="structmfx_a_v1_film_grain_point_1abca7a75e982fee5414c26dc296f52d79"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv45mfxU8" title="mfxU8">mfxU8</a> <code class="sig-name descname">Scaling</code><a class="headerlink" href="#_CPPv4N20mfxAV1FilmGrainPoint7ScalingE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The scaling (output) value for the i-th point of the piecewise linear scaling function for luma/Cb/Cr component. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mfxrect">
+<h3><a class="toc-backref" href="#id18">mfxRect</a><a class="headerlink" href="#mfxrect" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv47mfxRect">
+<span id="_CPPv37mfxRect"></span><span id="_CPPv27mfxRect"></span><span id="mfxRect"></span><span class="target" id="structmfx_rect"></span><em class="property">struct </em><code class="sig-name descname">mfxRect</code><a class="headerlink" href="#_CPPv47mfxRect" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The structure describes rectangle coordinates wat can bse used for ROI or for Cropping. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N7mfxRect4LeftE">
+<span id="_CPPv3N7mfxRect4LeftE"></span><span id="_CPPv2N7mfxRect4LeftE"></span><span id="mfxRect::Left__mfxU16"></span><span class="target" id="structmfx_rect_1af1fd51155b032364631cd5023e052db5"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">Left</code><a class="headerlink" href="#_CPPv4N7mfxRect4LeftE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>X coordinate of region of top-left corner of rectangle. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7mfxRect3TopE">
+<span id="_CPPv3N7mfxRect3TopE"></span><span id="_CPPv2N7mfxRect3TopE"></span><span id="mfxRect::Top__mfxU16"></span><span class="target" id="structmfx_rect_1a8de1b5cb47919e383e861268a6557945"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">Top</code><a class="headerlink" href="#_CPPv4N7mfxRect3TopE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Y coordinate of region of top-left corner of rectangle. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7mfxRect5RightE">
+<span id="_CPPv3N7mfxRect5RightE"></span><span id="_CPPv2N7mfxRect5RightE"></span><span id="mfxRect::Right__mfxU16"></span><span class="target" id="structmfx_rect_1ab5467e25ec755a9ad7d4d85ec14a4781"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">Right</code><a class="headerlink" href="#_CPPv4N7mfxRect5RightE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>X coordinate of region of bottom-right corner of rectangle. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7mfxRect6BottomE">
+<span id="_CPPv3N7mfxRect6BottomE"></span><span id="_CPPv2N7mfxRect6BottomE"></span><span id="mfxRect::Bottom__mfxU16"></span><span class="target" id="structmfx_rect_1ae1075d115866911b30826b7d17debf5b"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">Bottom</code><a class="headerlink" href="#_CPPv4N7mfxRect6BottomE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Y coordinate of region of bottom-right corner of rectangle. </p>
 </dd></dl>
 
 </div>

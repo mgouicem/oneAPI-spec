@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../programming_guide/index.html">Programming Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../VPL_summary.html">Mandatory APIs and Functions</a></li>
@@ -230,6 +231,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfximpldescription" id="id4">mfxImplDescription</a></p></li>
 <li><p><a class="reference internal" href="#mfxvariant" id="id5">mfxVariant</a></p></li>
 <li><p><a class="reference internal" href="#mfxvppdescription" id="id6">mfxVPPDescription</a></p></li>
+<li><p><a class="reference internal" href="#mfxaccelerationmodedescription" id="id7">mfxAccelerationModeDescription</a></p></li>
 </ul>
 </div>
 <div class="section" id="mfxdecoderdescription">
@@ -636,7 +638,7 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N18mfxImplDescription16AccelerationModeE">
 <span id="_CPPv3N18mfxImplDescription16AccelerationModeE"></span><span id="_CPPv2N18mfxImplDescription16AccelerationModeE"></span><span id="mfxImplDescription::AccelerationMode__mfxAccelerationMode"></span><span class="target" id="structmfx_impl_description_1a8156fea519549b569e62536ea2639428"></span><a class="reference internal" href="VPL_disp_api_enum.html#_CPPv419mfxAccelerationMode" title="mfxAccelerationMode">mfxAccelerationMode</a> <code class="sig-name descname">AccelerationMode</code><a class="headerlink" href="#_CPPv4N18mfxImplDescription16AccelerationModeE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Hardware acceleration stack to use. OS dependent parameter. Use VA for Linux* and DX* for Windows*. </p>
+<dd><p>Default Hardware acceleration stack to use. OS dependent parameter. Use VA for Linux* and DX* for Windows*. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -700,8 +702,14 @@ SPDX-License-Identifier: MIT
 </dd></dl>
 
 <dl class="cpp var">
+<dt id="_CPPv4N18mfxImplDescription27AccelerationModeDescriptionE">
+<span id="_CPPv3N18mfxImplDescription27AccelerationModeDescriptionE"></span><span id="_CPPv2N18mfxImplDescription27AccelerationModeDescriptionE"></span><span id="mfxImplDescription::AccelerationModeDescription__mfxAccelerationModeDescription"></span><span class="target" id="structmfx_impl_description_1add215fa62544bdde9b24db13950282f2"></span><a class="reference internal" href="#_CPPv430mfxAccelerationModeDescription" title="mfxAccelerationModeDescription">mfxAccelerationModeDescription</a> <code class="sig-name descname">AccelerationModeDescription</code><a class="headerlink" href="#_CPPv4N18mfxImplDescription27AccelerationModeDescriptionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Supported acceleration modes. </p>
+</dd></dl>
+
+<dl class="cpp var">
 <dt id="_CPPv4N18mfxImplDescription8reservedE">
-<span id="_CPPv3N18mfxImplDescription8reservedE"></span><span id="_CPPv2N18mfxImplDescription8reservedE"></span><span id="mfxImplDescription::reserved__mfxU32A"></span><span class="target" id="structmfx_impl_description_1ad83ca94979f156ce690fd233c655bc5a"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32">mfxU32</a> <code class="sig-name descname">reserved</code>[16]<a class="headerlink" href="#_CPPv4N18mfxImplDescription8reservedE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18mfxImplDescription8reservedE"></span><span id="_CPPv2N18mfxImplDescription8reservedE"></span><span id="mfxImplDescription::reserved__mfxU32A"></span><span class="target" id="structmfx_impl_description_1afcb0224d6de939e89eae24339d8c56c2"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32">mfxU32</a> <code class="sig-name descname">reserved</code>[12]<a class="headerlink" href="#_CPPv4N18mfxImplDescription8reservedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Reserved for future use. </p>
 </dd></dl>
 
@@ -725,7 +733,7 @@ SPDX-License-Identifier: MIT
 
 <dl class="cpp var">
 <dt id="_CPPv4N18mfxImplDescription9ExtParamsE">
-<span id="_CPPv3N18mfxImplDescription9ExtParamsE"></span><span id="_CPPv2N18mfxImplDescription9ExtParamsE"></span><span class="target" id="structmfx_impl_description_1a6f687a08231e2b19fb6bdb8223c4a023"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv418mfxImplDescription" title="mfxImplDescription">mfxImplDescription</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ExtParams</code><a class="headerlink" href="#_CPPv4N18mfxImplDescription9ExtParamsE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18mfxImplDescription9ExtParamsE"></span><span id="_CPPv2N18mfxImplDescription9ExtParamsE"></span><span class="target" id="structmfx_impl_description_1a08deae110bdb9bb7de88dc1007a6a561"></span><em class="property">union</em> <a class="reference internal" href="#_CPPv418mfxImplDescription" title="mfxImplDescription">mfxImplDescription</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ExtParams</code><a class="headerlink" href="#_CPPv4N18mfxImplDescription9ExtParamsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Extension buffers. Reserved for future. </p>
 </dd></dl>
 
@@ -1067,6 +1075,42 @@ SPDX-License-Identifier: MIT
 
 </dd></dl>
 
+</dd></dl>
+
+</div>
+<div class="section" id="mfxaccelerationmodedescription">
+<h3><a class="toc-backref" href="#id7">mfxAccelerationModeDescription</a><a class="headerlink" href="#mfxaccelerationmodedescription" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv430mfxAccelerationModeDescription">
+<span id="_CPPv330mfxAccelerationModeDescription"></span><span id="_CPPv230mfxAccelerationModeDescription"></span><span id="mfxAccelerationModeDescription"></span><span class="target" id="structmfx_acceleration_mode_description"></span><em class="property">struct </em><code class="sig-name descname">mfxAccelerationModeDescription</code><a class="headerlink" href="#_CPPv430mfxAccelerationModeDescription" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This structure represents acceleration modes description. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N30mfxAccelerationModeDescription7VersionE">
+<span id="_CPPv3N30mfxAccelerationModeDescription7VersionE"></span><span id="_CPPv2N30mfxAccelerationModeDescription7VersionE"></span><span id="mfxAccelerationModeDescription::Version__mfxStructVersion"></span><span class="target" id="structmfx_acceleration_mode_description_1acea16c31144dc8e075adc725d6114785"></span><a class="reference internal" href="VPL_structs_type.html#_CPPv416mfxStructVersion" title="mfxStructVersion">mfxStructVersion</a> <code class="sig-name descname">Version</code><a class="headerlink" href="#_CPPv4N30mfxAccelerationModeDescription7VersionE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Version of the structure. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N30mfxAccelerationModeDescription8reservedE">
+<span id="_CPPv3N30mfxAccelerationModeDescription8reservedE"></span><span id="_CPPv2N30mfxAccelerationModeDescription8reservedE"></span><span id="mfxAccelerationModeDescription::reserved__mfxU16A"></span><span class="target" id="structmfx_acceleration_mode_description_1a653460da2a7f7bdbeca884767488e050"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">reserved</code>[2]<a class="headerlink" href="#_CPPv4N30mfxAccelerationModeDescription8reservedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>reserved for future use. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N30mfxAccelerationModeDescription20NumAccelerationModesE">
+<span id="_CPPv3N30mfxAccelerationModeDescription20NumAccelerationModesE"></span><span id="_CPPv2N30mfxAccelerationModeDescription20NumAccelerationModesE"></span><span id="mfxAccelerationModeDescription::NumAccelerationModes__mfxU16"></span><span class="target" id="structmfx_acceleration_mode_description_1adc477b801dd3e6302d7c4c0f5173ce49"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16">mfxU16</a> <code class="sig-name descname">NumAccelerationModes</code><a class="headerlink" href="#_CPPv4N30mfxAccelerationModeDescription20NumAccelerationModesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of supported acceleration modes. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N30mfxAccelerationModeDescription4ModeE">
+<span id="_CPPv3N30mfxAccelerationModeDescription4ModeE"></span><span id="_CPPv2N30mfxAccelerationModeDescription4ModeE"></span><span id="mfxAccelerationModeDescription::Mode__mfxAccelerationModeP"></span><span class="target" id="structmfx_acceleration_mode_description_1ae768658301f47ed167109872cc636c58"></span><a class="reference internal" href="VPL_disp_api_enum.html#_CPPv419mfxAccelerationMode" title="mfxAccelerationMode">mfxAccelerationMode</a> *<code class="sig-name descname">Mode</code><a class="headerlink" href="#_CPPv4N30mfxAccelerationModeDescription4ModeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Pointer to the array of supported acceleration modes. </p>
+</dd></dl>
+
+</div>
 </dd></dl>
 
 </div>

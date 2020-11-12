@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Programming Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="VPL_prg_stc.html">Status Codes</a></li>
@@ -123,6 +124,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l4"><a class="reference internal" href="#vp8-specific-details">VP8 Specific Details</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#jpeg">JPEG</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#multi-view-video-decoding">Multi-view Video Decoding</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#combined-decode-with-multi-channel-video-processing">Combined Decode with Multi-channel Video Processing</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_prg_encoding.html">Encoding Procedures</a></li>
@@ -223,7 +225,133 @@ SPDX-License-Identifier: MIT
             
   <div class="section" id="decoding-procedures">
 <span id="decoding-proc"></span><h1>Decoding Procedures<a class="headerlink" href="#decoding-procedures" title="Permalink to this headline">¶</a></h1>
-<p>The following pseudo code shows the decoding procedure:</p>
+<p>There are several approaches to decode video frames. The first one is based on
+the internal allocation mechanism presented here:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">MFXVideoDECODE_Init</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">);</span>
+<span class="n">sts</span><span class="o">=</span><span class="n">MFX_ERR_MORE_DATA</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">end_of_stream</span><span class="p">())</span>
+      <span class="n">append_more_bitstream</span><span class="p">(</span><span class="n">bitstream</span><span class="p">);</span>
+   <span class="n">bits</span><span class="o">=</span><span class="p">(</span><span class="n">end_of_stream</span><span class="p">())</span><span class="o">?</span><span class="nb">NULL</span><span class="o">:</span><span class="n">bitstream</span><span class="p">;</span>
+   <span class="n">sts</span><span class="o">=</span><span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">bits</span><span class="p">,</span><span class="nb">NULL</span><span class="p">,</span><span class="o">&amp;</span><span class="n">disp</span><span class="p">,</span><span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">end_of_stream</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+   <span class="c1">// skipped other error handling</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_NONE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Synchronize</span><span class="p">(</span><span class="n">disp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span> <span class="c1">// or MFXVideoCORE_SyncOperation(session,syncp,INFINITE)</span>
+      <span class="n">do_something_with_decoded_frame</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">MFXVideoDECODE_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Note the following key points about the example:</p>
+<ul>
+<li><p>The application calls the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function
+for a decoding operation with the bitstream buffer (bits), frame surface is allocated
+internally by the library.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>As shown in the example above starting with API version 2.0,
+the application can provide NULL
+as the working frame surface that leads to internal memory
+allocation.</p>
+</div>
+</li>
+<li><p>If decoding output is not available, the function returns a status code
+requesting additional bitstream input as follows:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus17MFX_ERR_MORE_DATAE" title="mfxStatus::MFX_ERR_MORE_DATA"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_MORE_DATA</span></code></a>: The function needs additional
+bitstream input. The existing buffer contains less than a frame’s worth of
+bitstream data.</p></li>
+</ul>
+</li>
+<li><p>Upon successful decoding, the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a>
+function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus12MFX_ERR_NONEE" title="mfxStatus::MFX_ERR_NONE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_NONE</span></code></a>. However, the
+decoded frame data (identified by the surface_out pointer) is not yet available
+because the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function is asynchronous.
+The application must use the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv426MFXVideoCORE_SyncOperation10mfxSession12mfxSyncPoint6mfxU32" title="MFXVideoCORE_SyncOperation"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SyncOperation()</span></code></a> or
+<a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N24mfxFrameSurfaceInterface11SynchronizeE" title="mfxFrameSurfaceInterface::Synchronize"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameSurfaceInterface::Synchronize</span></code></a>  to synchronize the decoding
+operation before retrieving the decoded frame data.</p></li>
+<li><p>At the end of the bitstream, the application continuously calls the
+<a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function with a NULL bitstream
+pointer to drain any remaining frames cached within the decoder until the
+function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus17MFX_ERR_MORE_DATAE" title="mfxStatus::MFX_ERR_MORE_DATA"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_MORE_DATA</span></code></a>.</p></li>
+<li><p>When application completes the work with frame surface, it must call release to avoid memory leaks.</p></li>
+</ul>
+<p>The next example demonstrates how applications can use internally pre-allocated chunk
+of video surfaces:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">MFXVideoDECODE_QueryIOSurf</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">request</span><span class="p">);</span>
+<span class="n">MFXVideoDECODE_Init</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">request</span><span class="p">.</span><span class="n">NumFrameSuggested</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">MFXMemory_GetSurfaceForDecode</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">work</span><span class="p">);</span>
+    <span class="n">add_surface_to_pool</span><span class="p">(</span><span class="n">work</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">sts</span><span class="o">=</span><span class="n">MFX_ERR_MORE_DATA</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">end_of_stream</span><span class="p">())</span>
+      <span class="n">append_more_bitstream</span><span class="p">(</span><span class="n">bitstream</span><span class="p">);</span>
+   <span class="n">bits</span><span class="o">=</span><span class="p">(</span><span class="n">end_of_stream</span><span class="p">())</span><span class="o">?</span><span class="nb">NULL</span><span class="o">:</span><span class="n">bitstream</span><span class="p">;</span>
+   <span class="n">find_free_surface_from_the_pool</span><span class="p">(</span><span class="o">&amp;</span><span class="n">work</span><span class="p">);</span>
+   <span class="n">sts</span><span class="o">=</span><span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">bits</span><span class="p">,</span><span class="n">work</span><span class="p">,</span><span class="o">&amp;</span><span class="n">disp</span><span class="p">,</span><span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>
+   <span class="n">work</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">work</span><span class="p">);</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">end_of_stream</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+   <span class="c1">// skipped other error handling</span>
+   <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_NONE</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Synchronize</span><span class="p">(</span><span class="n">disp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span> <span class="c1">// or MFXVideoCORE_SyncOperation(session,syncp,INFINITE)</span>
+      <span class="n">do_something_with_decoded_frame</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">MFXVideoDECODE_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>Here the application should use the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv426MFXVideoDECODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest" title="MFXVideoDECODE_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_QueryIOSurf()</span></code></a> function to
+obtain the number of working frame surfaces required to reorder output frames.
+It is also required that <a class="reference internal" href="../API_ref/VPL_func_mem.html#_CPPv429MFXMemory_GetSurfaceForDecode10mfxSessionPP16mfxFrameSurface1" title="MFXMemory_GetSurfaceForDecode"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXMemory_GetSurfaceForDecode()</span></code></a> call is done after
+decoder initialization.
+In the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a>
+the oneVPL library increments reference counter of incoming surface frame so it is required
+that the application releases frame surface after the call.</p>
+<p>The following pseudo code shows the decoding procedure according to the legacy mode
+(API version &lt; 2.0) with external video frames allocation:</p>
 <div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -257,7 +385,7 @@ SPDX-License-Identifier: MIT
 <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">end_of_stream</span><span class="p">())</span>
       <span class="n">append_more_bitstream</span><span class="p">(</span><span class="n">bitstream</span><span class="p">);</span>
-   <span class="n">find_unlocked_surface_from_the_pool</span><span class="p">(</span><span class="o">&amp;</span><span class="n">work</span><span class="p">);</span>
+   <span class="n">find_free_surface_from_the_pool</span><span class="p">(</span><span class="o">&amp;</span><span class="n">work</span><span class="p">);</span>
    <span class="n">bits</span><span class="o">=</span><span class="p">(</span><span class="n">end_of_stream</span><span class="p">())</span><span class="o">?</span><span class="nb">NULL</span><span class="o">:</span><span class="n">bitstream</span><span class="p">;</span>
    <span class="n">sts</span><span class="o">=</span><span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">bits</span><span class="p">,</span><span class="n">work</span><span class="p">,</span><span class="o">&amp;</span><span class="n">disp</span><span class="p">,</span><span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_SURFACE</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
@@ -269,7 +397,7 @@ SPDX-License-Identifier: MIT
    <span class="p">}</span>
    <span class="c1">// skipped other error handling</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_NONE</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">MFXVideoCORE_SyncOperation</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">syncp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Synchronize</span><span class="p">(</span><span class="n">disp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span> <span class="c1">// or MFXVideoCORE_SyncOperation(session,syncp,INFINITE)</span>
       <span class="n">do_something_with_decoded_frame</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
@@ -278,49 +406,20 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </td></tr></table></div>
 <p>Note the following key points about the example:</p>
-<ul>
+<ul class="simple">
 <li><p>The application can use the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv427MFXVideoDECODE_DecodeHeader10mfxSessionP12mfxBitstreamP13mfxVideoParam" title="MFXVideoDECODE_DecodeHeader"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeHeader()</span></code></a> function
 to retrieve decoding initialization parameters from the bitstream. This step
 is optional if the data is retrievable from other sources such as an
 audio/video splitter.</p></li>
-<li><p>The application can use the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv426MFXVideoDECODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest" title="MFXVideoDECODE_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_QueryIOSurf()</span></code></a> function to
-obtain the number of working frame surfaces required to reorder output frames.
-This step is required if the application is responsible for memory allocation.
-Use of this function is not required if oneVPL is responsible for memory
-allocation.</p></li>
-<li><p>The application calls the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function
-for a decoding operation with the bitstream buffer (bits) and an unlocked
-working frame surface (work) as input parameters.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Starting with oneVPL API version 2.0, the application can provide NULL
-as the working frame surface that leads to internal memory
-allocation.</p>
-</div>
-</li>
-<li><p>If decoding output is not available, the function returns a status code
-requesting additional bitstream input or working frame surfaces as follows:</p>
-<ul class="simple">
-<li><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus17MFX_ERR_MORE_DATAE" title="mfxStatus::MFX_ERR_MORE_DATA"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_MORE_DATA</span></code></a>: The function needs additional
-bitstream input. The existing buffer contains less than a frame’s worth of
-bitstream data.</p></li>
+<li><p>The <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function can return following status
+codes in addition to the described above:</p>
+<ul>
 <li><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus20MFX_ERR_MORE_SURFACEE" title="mfxStatus::MFX_ERR_MORE_SURFACE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_MORE_SURFACE</span></code></a>: The function needs one
 more frame surface to produce any output.</p></li>
 <li><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus23MFX_ERR_REALLOC_SURFACEE" title="mfxStatus::MFX_ERR_REALLOC_SURFACE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_REALLOC_SURFACE</span></code></a>: Dynamic resolution
 change case - the function needs a bigger working frame surface (work).</p></li>
 </ul>
 </li>
-<li><p>Upon successful decoding, the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a>
-function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus12MFX_ERR_NONEE" title="mfxStatus::MFX_ERR_NONE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_NONE</span></code></a>. However, the
-decoded frame data (identified by the surface_out pointer) is not yet available
-because the <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function is asynchronous.
-The application must use the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv426MFXVideoCORE_SyncOperation10mfxSession12mfxSyncPoint6mfxU32" title="MFXVideoCORE_SyncOperation"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SyncOperation()</span></code></a> or
-<a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv424mfxFrameSurfaceInterface" title="mfxFrameSurfaceInterface"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxFrameSurfaceInterface</span></code></a> interface to synchronize the decoding
-operation before retrieving the decoded frame data.</p></li>
-<li><p>At the end of the bitstream, the application continuously calls the
-<a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv431MFXVideoDECODE_DecodeFrameAsync10mfxSessionP12mfxBitstreamP16mfxFrameSurface1PP16mfxFrameSurface1P12mfxSyncPoint" title="MFXVideoDECODE_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_DecodeFrameAsync()</span></code></a> function with a NULL bitstream
-pointer to drain any remaining frames cached within the oneVPL decoder until the
-function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus17MFX_ERR_MORE_DATAE" title="mfxStatus::MFX_ERR_MORE_DATA"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_MORE_DATA</span></code></a>.</p></li>
 </ul>
 <p>The following pseudo code shows the simplified decoding procedure:</p>
 <div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -347,9 +446,9 @@ function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_
    <span class="k">if</span> <span class="p">(</span><span class="n">end_of_stream</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_MORE_DATA</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
    <span class="c1">// skipped other error handling</span>
    <span class="k">if</span> <span class="p">(</span><span class="n">sts</span><span class="o">==</span><span class="n">MFX_ERR_NONE</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">MFXVideoCORE_SyncOperation</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">syncp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Synchronize</span><span class="p">(</span><span class="n">disp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span> <span class="c1">// or MFXVideoCORE_SyncOperation(session,syncp,INFINITE)</span>
       <span class="n">do_something_with_decoded_frame</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
-      <span class="n">release_surface</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
+      <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">disp</span><span class="p">);</span>
    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -606,13 +705,89 @@ structure.</p>
 <span class="cm">/* perform decoding */</span>
 <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
     <span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">bits</span><span class="p">,</span> <span class="n">work</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">disp</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>
-    <span class="n">MFXVideoCORE_SyncOperation</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">syncp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span>
+    <span class="n">disp</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Synchronize</span><span class="p">(</span><span class="n">disp</span><span class="p">,</span> <span class="n">INFINITE</span><span class="p">);</span> <span class="c1">// or MFXVideoCORE_SyncOperation(session,syncp,INFINITE)</span>
 <span class="p">}</span>
 
 <span class="cm">/* close decoder */</span>
 <span class="n">MFXVideoDECODE_Close</span><span class="p">(</span><span class="n">session</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+<div class="section" id="combined-decode-with-multi-channel-video-processing">
+<h2>Combined Decode with Multi-channel Video Processing<a class="headerlink" href="#combined-decode-with-multi-channel-video-processing" title="Permalink to this headline">¶</a></h2>
+<p>The oneVPL exposes interface for making decode and video processing operations in one call.
+Users can specify a number of output processing channels and multiple video filters per each channel.
+This interface supports only internal memory allocation model and returns array of processed frames
+through <a class="reference internal" href="../API_ref/VPL_structs_decode_vpp.html#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxSurfaceArray</span></code></a> reference object as shown by the example:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">num_channel_par</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<span class="c1">// first video processing channel with resize</span>
+<span class="n">vpp_par_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">VPP</span><span class="p">.</span><span class="n">Width</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>
+<span class="n">vpp_par_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">VPP</span><span class="p">.</span><span class="n">Height</span> <span class="o">=</span> <span class="mi">400</span><span class="p">;</span>
+
+<span class="c1">// second video channel with color conversion filter</span>
+<span class="n">vpp_par_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">VPP</span><span class="p">.</span><span class="n">FourCC</span> <span class="o">=</span> <span class="n">MFX_FOURCC_UYVY</span><span class="p">;</span>
+
+<span class="n">sts</span> <span class="o">=</span> <span class="n">MFXVideoDECODE_VPP_Init</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">decode_par</span><span class="p">,</span> <span class="n">vpp_par_array</span><span class="p">,</span> <span class="n">num_channel_par</span><span class="p">);</span>
+
+<span class="n">sts</span> <span class="o">=</span> <span class="n">MFXVideoDECODE_VPP_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">bitstream</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">surf_array_out</span><span class="p">);</span>
+
+<span class="c1">//surf_array_out layout is</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">//The first channel which contains original decoded frames</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">//The second channel contains resized processed frames after decode. </span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">//The third  channel contains color converted frames after decode. </span>
+</pre></div>
+</td></tr></table></div>
+<p>It’s possible that different video processing channels may have diffrent latency:</p>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">//1st call</span>
+<span class="n">sts</span> <span class="o">=</span> <span class="n">MFXVideoDECODE_VPP_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">bitstream</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">surf_array_out</span><span class="p">);</span>
+<span class="c1">//surf_array_out layout is</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">//decoded frame</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">//resized frame (ChannelId = 1). The first frame from channel wit resize availble </span>
+<span class="c1">// no output from channel with ADI output since it has one frame delay</span>
+
+<span class="c1">//2nd call</span>
+<span class="n">sts</span> <span class="o">=</span> <span class="n">MFXVideoDECODE_VPP_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">bitstream</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">surf_array_out</span><span class="p">);</span>
+<span class="c1">//surf_array_out layout is</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">//decoded frame</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">//resized frame (ChannelId = 1)</span>
+<span class="n">surf_array_out</span><span class="o">-&gt;</span><span class="n">Surfaces</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">//ADI output (ChannelId = 2). The first frame from ADI channel </span>
+</pre></div>
+</td></tr></table></div>
+<p>Application can match decoded frame w/ specific VPP channels using <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameData9TimeStampE" title="mfxFrameData::TimeStamp"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameData::TimeStamp</span></code></a>, :cpp:member:mfxFrameData::FrameOrder` and <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N12mfxFrameInfo9ChannelIdE" title="mfxFrameInfo::ChannelId"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameInfo::ChannelId</span></code></a>.</p>
+<p>Application can skip some or all channels including decoding output with help of <cite>skip_channels</cite> and <cite>num_skip_channels</cite> parameters as follows: application fills <cite>skip_channels</cite> array with <cite>ChannelId`s to disable output of correspondent channels. In that case  :cpp:member:`surf_array_out</cite> would contain only surfaces for the remaining channels. If the decoder’s channel and/or impacted VPP channels don’t have output frame(s) for the current call (for instance, input bitstream doesn’t contain complete frame or deinterlacing/FRC filter have delay) <cite>skip_channels</cite> parameter is ignored for this channel.
+If application disables all channels the SDK returns NULL as  <a class="reference internal" href="../API_ref/VPL_structs_decode_vpp.html#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxSurfaceArray</span></code></a>.
+If application doesn’t need to disable any channels it sets <cite>num_skip_channels</cite> to zero, <cite>skip_channels</cite> is ignored when <cite>num_skip_channels</cite> is zero.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Even if more than one input compressed frame is consumed, the <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code> produces only           one decoded frame and correspondent frames from VPP channels.</p>
+</div>
 </div>
 </div>
 

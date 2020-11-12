@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../architecture/index.html">Architecture</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Programming Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="VPL_prg_stc.html">Status Codes</a></li>
@@ -223,7 +224,8 @@ SPDX-License-Identifier: MIT
 <span id="sdk-session"></span><h1>oneVPL Session<a class="headerlink" href="#onevpl-session" title="Permalink to this headline">¶</a></h1>
 <p>Before calling any oneVPL functions, the application must initialize the
 library and create a oneVPL session. A oneVPL session maintains context for the
-use of any of <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>, or <a class="reference internal" href="../architecture/index.html#term-VPP"><span class="xref std std-term">VPP</span></a> functions.</p>
+use of any of <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-VPP"><span class="xref std std-term">VPP</span></a>, <a class="reference internal" href="../architecture/index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a>
+functions.</p>
 <div class="section" id="msdk-full-name-dispatcher-legacy">
 <h2>Intel<sup>®</sup> Media Software Development Kit Dispatcher (Legacy)<a class="headerlink" href="#msdk-full-name-dispatcher-legacy" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> or <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv49MFXInitEx12mfxInitParamP10mfxSession" title="MFXInitEx"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitEx()</span></code></a> function starts (initializes)
@@ -440,7 +442,8 @@ the <a class="reference internal" href="../API_ref/VPL_disp_api_struct.html#_CPP
 implementation.</p>
 <p>Internally, the dispatcher works as follows:</p>
 <ol class="arabic simple">
-<li><p>Dispatcher loads any shared library within the given search folders.</p></li>
+<li><p>Dispatcher loads any shared library with <cite>libvpl*</cite> prefix in the library name
+in the given search folders.</p></li>
 <li><p>For each loaded library, the dispatcher tries to resolve address of the
 <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryImplsCapabilities()</span></code> function to collect the implementation’s
 capabilities.</p></li>
@@ -451,10 +454,9 @@ the list of functions to export.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For backward compatibility with Intel<sup>®</sup> Media Software Development Kit, dispatcher will try to
-load Intel<sup>®</sup> Media Software Development Kit first, if 1.x was requested to be loaded. If loading
-was failed, dispatcher will search for the implementation with highest
-2.x API version.</p>
+<p>For backward compatibility with Intel<sup>®</sup> Media Software Development Kit, the dispatcher will
+first try to load Intel<sup>®</sup> Media Software Development Kit if API version 1.x was requested.
+If loading fails, the dispatcher will search for the implementation with highest 2.x API version and load that version.</p>
 </div>
 </div>
 <div class="section" id="multiple-sessions">

@@ -111,7 +111,8 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l1"><a class="reference internal" href="../../l0/source/index.html">Level Zero</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../oneDAL/source/index.html">oneDAL</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../oneTBB/source/nested-index.html">oneTBB</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">oneVPL</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">oneVPL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html#onevpl-specification-version">oneVPL Specification Version</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="architecture/index.html">Architecture</a></li>
 <li class="toctree-l2"><a class="reference internal" href="programming_guide/index.html">Programming Guide</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Mandatory APIs and Functions</a><ul>
@@ -212,18 +213,19 @@ SPDX-License-Identifier: MIT
 <p>Developers can implement any subset of the oneVPL API.
 The specification makes no claim about what encoder, decoder, VPP
 filter, or any other underlying features are mandatory for the implementation.
-The oneVPL API is designed in the way that users have several options
+The oneVPL API is designed such that users have several options
 to discover capabilities exposed by the implementation:</p>
 <ol class="arabic simple">
-<li><p>Before session creation, users can get list of supported encoders, decoders, VPP filters,
-corespondent color formats, and memory types with help of the <a class="reference internal" href="API_ref/VPL_disp_api_func.html#_CPPv422MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL" title="MFXEnumImplementations"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXEnumImplementations()</span></code></a>
-function.</p></li>
-<li><p>Once the session is created, users can call <strong>Query</strong> functions to obtain
+<li><p>Before session creation: Users can get a list of supported encoders, decoders,
+VPP filters, correspondent color formats, and memory types with the help of
+the <a class="reference internal" href="API_ref/VPL_disp_api_func.html#_CPPv422MFXEnumImplementations9mfxLoader6mfxU3225mfxImplCapsDeliveryFormatP6mfxHDL" title="MFXEnumImplementations"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXEnumImplementations()</span></code></a> function.</p></li>
+<li><p>After session is created: Users can call <strong>Query</strong> functions to obtain
 low level implementation capabilities.</p></li>
 </ol>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>The legacy Intel<sup>®</sup> Media Software Development Kit implementation does not support the first approach to obtain capabilities.</p>
+<p>The legacy Intel<sup>®</sup> Media Software Development Kit implementation does not support the
+first approach to obtain capabilities.</p>
 </div>
 </div>
 <div class="section" id="exported-functions">
@@ -237,7 +239,7 @@ The realization of all listed functions is mandatory; most functions may return
 <p>Functions <a class="reference internal" href="API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> and <a class="reference internal" href="API_ref/VPL_func_session.html#_CPPv49MFXInitEx12mfxInitParamP10mfxSession" title="MFXInitEx"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitEx()</span></code></a> are not required to be
 exported.</p>
 </div>
-<p>See <a class="reference internal" href="#mandatory-apis">Mandatory APIs</a> for details about which functions and in which conditions
+<p>See <a class="reference internal" href="#mandatory-apis">Mandatory APIs</a> for details about which functions, in which conditions,
 must not return <a class="reference internal" href="API_ref/VPL_enums.html#_CPPv4N9mfxStatus23MFX_ERR_NOT_IMPLEMENTEDE" title="mfxStatus::MFX_ERR_NOT_IMPLEMENTED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_NOT_IMPLEMENTED</span></code></a>.</p>
 <span id="export-func-version-table-2x"></span><table class="colwidths-given docutils align-default" id="id1">
 <caption><span class="caption-text">Exported Functions</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
@@ -389,6 +391,12 @@ must not return <a class="reference internal" href="API_ref/VPL_enums.html#_CPPv
 <tr class="row-odd"><td><p><a class="reference internal" href="API_ref/VPL_func_session.html#_CPPv413MFXInitialize22mfxInitializationParamP10mfxSession" title="MFXInitialize"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitialize()</span></code></a></p></td>
 <td><p>2.0</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="API_ref/VPL_func_mem.html#_CPPv429MFXMemory_GetSurfaceForVPPOut10mfxSessionPP16mfxFrameSurface1" title="MFXMemory_GetSurfaceForVPPOut"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXMemory_GetSurfaceForVPPOut()</span></code></a></p></td>
+<td><p>2.1</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv429MFXVideoVPP_ProcessFrameAsync10mfxSessionP16mfxFrameSurface1PP16mfxFrameSurface1" title="MFXVideoVPP_ProcessFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_ProcessFrameAsync()</span></code></a></p></td>
+<td><p>2.1</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -493,7 +501,7 @@ implement the corresponding mandatory APIs, as described in the
 <div class="line"><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv416MFXVideoVPP_Init10mfxSessionP13mfxVideoParam" title="MFXVideoVPP_Init"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Init()</span></code></a></div>
 <div class="line"><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv417MFXVideoVPP_Close10mfxSession" title="MFXVideoVPP_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Close()</span></code></a></div>
 <div class="line"><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv417MFXVideoVPP_Query10mfxSessionP13mfxVideoParamP13mfxVideoParam" title="MFXVideoVPP_Query"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_Query()</span></code></a></div>
-<div class="line"><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint" title="MFXVideoVPP_RunFrameVPPAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_RunFrameVPPAsync()</span></code></a></div>
+<div class="line"><a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint" title="MFXVideoVPP_RunFrameVPPAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_RunFrameVPPAsync()</span></code></a> or <a class="reference internal" href="API_ref/VPL_func_vid_vpp.html#_CPPv429MFXVideoVPP_ProcessFrameAsync10mfxSessionP16mfxFrameSurface1PP16mfxFrameSurface1" title="MFXVideoVPP_ProcessFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_ProcessFrameAsync()</span></code></a></div>
 </div>
 </td>
 <td><p>Required functions if the implementation implements any VPP filter.</p></td>
@@ -505,10 +513,10 @@ implement the corresponding mandatory APIs, as described in the
 <p>Mandatory functions must not return the
 <a class="reference internal" href="API_ref/VPL_enums.html#_CPPv4N9mfxStatus23MFX_ERR_NOT_IMPLEMENTEDE" title="MFX_ERR_NOT_IMPLEMENTED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_ERR_NOT_IMPLEMENTED</span></code></a> status.</p>
 </div>
-<p>If at least one of encoder or decoder or VPP filter is implemented,
-<a class="reference internal" href="API_ref/VPL_func_capabilities.html#_CPPv424MFXQueryImplsDescription25mfxImplCapsDeliveryFormatP6mfxU32" title="MFXQueryImplsDescription"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryImplsDescription()</span></code></a> function must return valid
+<p>If at least one of the encoder, decoder, or VPP filter functions is implemented,
+the <a class="reference internal" href="API_ref/VPL_func_capabilities.html#_CPPv424MFXQueryImplsDescription25mfxImplCapsDeliveryFormatP6mfxU32" title="MFXQueryImplsDescription"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryImplsDescription()</span></code></a> function must return a valid
 <a class="reference internal" href="API_ref/VPL_disp_api_struct.html#_CPPv418mfxImplDescription" title="mfxImplDescription"><code class="xref cpp cpp-struct docutils literal notranslate"><span class="pre">mfxImplDescription</span></code></a> structure instance with mandatory capabilities
-of the implementation including decoder, encoder, or VPP capabilities information.</p>
+of the implementation, including decoder, encoder, or VPP capabilities information.</p>
 <p>Any other functions or extension buffers are optional for the implementation.</p>
 </div>
 </div>
