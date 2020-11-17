@@ -228,7 +228,7 @@ SPDX-License-Identifier: MIT
            <div itemprop="articleBody">
             
   <div class="section" id="onemkl-architecture">
-<span id="id1"></span><h1>oneMKL Architecture<a class="headerlink" href="#onemkl-architecture" title="Permalink to this headline">¶</a></h1>
+<span id="id3"></span><h1>oneMKL Architecture<a class="headerlink" href="#onemkl-architecture" title="Permalink to this headline">¶</a></h1>
 <p>The oneMKL element of oneAPI has several general assumptions, requirements and recommendations for all domains contained therein.  These will be addressed in this architecture section.
 In particular, DPC++ allows for a great control over the execution of kernels on the various devices.  We discuss the supported execution models of oneMKL APIs in <a class="reference internal" href="#onemkl-execution-model"><span class="std std-ref">Execution Model</span></a>.
 A discussion of how data is stored and passed in and out of the APIs is addressed in <a class="reference internal" href="#onemkl-memory-model"><span class="std std-ref">Memory Model</span></a>.
@@ -308,7 +308,7 @@ The execution requirements for computational routines from the previous section 
 <span id="onemkl-api-design"></span><h2>API Design<a class="headerlink" href="#api-design" title="Permalink to this headline">¶</a></h2>
 <p>This section discusses the general features of oneMKL API design. In particular, it covers the use of namespaces and data types from C++, from DPC++ and new ones introduced for oneMKL APIs.</p>
 <div class="section" id="onemkl-namespaces">
-<span id="id2"></span><h3>oneMKL namespaces<a class="headerlink" href="#onemkl-namespaces" title="Permalink to this headline">¶</a></h3>
+<span id="id4"></span><h3>oneMKL namespaces<a class="headerlink" href="#onemkl-namespaces" title="Permalink to this headline">¶</a></h3>
 <p>The oneMKL library uses C++ namespaces to organize routines by mathematical domain.  All oneMKL objects and routines shall be contained within the <code class="docutils literal notranslate"><span class="pre">oneapi::mkl</span></code> base namespace.  The individual oneMKL domains use a secondary namespace layer as follows:</p>
 <table class="docutils align-default">
 <colgroup>

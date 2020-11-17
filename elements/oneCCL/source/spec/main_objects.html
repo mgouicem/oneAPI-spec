@@ -228,7 +228,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#operation-attributes">Operation Attributes</a></p></li>
 </ul>
 <div class="section" id="device">
-<span id="id1"></span><h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Here and below, a native device/context/stream/event are defined in the scope of SYCL device runtime</p>
@@ -267,7 +267,7 @@ SPDX-License-Identifier: MIT
 </dl>
 </div>
 <div class="section" id="context">
-<span id="id2"></span><h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">context</span></code> as an abstraction of a computational devices context that is responsible for managing resources and for executing of communication operations on one or more devices specified in the context.</p>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">context</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_context_type</span></code>) and without a native object.</p>
 <p>Creating a new context object:</p>
@@ -383,7 +383,7 @@ and be used to create key-value stores on other ranks:</p>
 </dl>
 </div>
 <div class="section" id="communicator">
-<span id="id3"></span><h2>Communicator<a class="headerlink" href="#communicator" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Communicator<a class="headerlink" href="#communicator" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">communicator</span></code> class that describes a group of communicating ranks, where a rank is an addressable entity in a communication operation and corresponds to single oneCCL device.</p>
 <p><code class="docutils literal notranslate"><span class="pre">communicator</span></code> defines communication operations on memory buffers between homogenous oneCCL devices, that is, all oneCCL devices either wrap native device objects of the same type (for example CPUs only or GPUs only) or do not wrap native objects.</p>
 <p>Each process may correspond to multiple ranks.</p>
@@ -461,7 +461,7 @@ and be used to create key-value stores on other ranks:</p>
 </div>
 </div>
 <div class="section" id="stream">
-<span id="id4"></span><h2>Stream<a class="headerlink" href="#stream" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Stream<a class="headerlink" href="#stream" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">stream</span></code> as an abstraction that encapsulates execution context for <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operations.</p>
 <p>Stream shall be passed to <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operation.</p>
 <p>oneCCL specification defines the way to create an instance of the <code class="docutils literal notranslate"><span class="pre">stream</span></code> class with a native object (<code class="docutils literal notranslate"><span class="pre">native_stream_type</span></code>) and without a native object.</p>
@@ -491,7 +491,7 @@ and be used to create key-value stores on other ranks:</p>
 </dl>
 </div>
 <div class="section" id="event">
-<span id="id5"></span><h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>Event<a class="headerlink" href="#event" title="Permalink to this headline">¶</a></h2>
 <p>oneCCL specification defines <code class="docutils literal notranslate"><span class="pre">event</span></code> as an abstraction that encapsulates synchronization context for <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operations.</p>
 <p>Each communication operation of oneCCL shall return an event object for tracking the operation’s progress. A vector of events may be passed to the <code class="docutils literal notranslate"><span class="pre">communicator</span></code> communication operation to designate input dependencies for the operation.</p>
 <div class="admonition note">

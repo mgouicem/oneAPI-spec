@@ -119,7 +119,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l2"><a class="reference internal" href="../API_ref/VPL_api_ref.html">oneVPL API Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Versioning.html">oneVPL API Versioning</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Appendices</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="VPL_intel_media_sdk.html">oneVPL for Intel<sup>®</sup> Media Software Development Kit Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VPL_intel_media_sdk.html">oneVPL for |msdk_full_name| Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_a.html">Configuration Parameter Constraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_b.html">Multiple-segment Encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_c.html">Streaming and Video Conferencing Features</a></li>
@@ -231,19 +231,19 @@ switch between the graphic devices. In one of the switchable graphics variations
 it is possible to register an application in an affinity list to certain graphic
 device so that the launch of the application automatically triggers a switch. The
 actual techniques to enable such a switch are outside the scope of this document.
-This section discusses the implication of switchable graphics to Intel<sup>®</sup> Media Software Development Kit and
-Intel<sup>®</sup> Media Software Development Kit applications.</p>
-<p>As Intel<sup>®</sup> Media Software Development Kit performs hardware acceleration through graphic devices, it is
-critical that Intel<sup>®</sup> Media Software Development Kit can access the graphic device in the switchable
+This section discusses the implication of switchable graphics to <a href="#id4"><span class="problematic" id="id5">|msdk_full_name|</span></a> and
+<a href="#id6"><span class="problematic" id="id7">|msdk_full_name|</span></a> applications.</p>
+<p>As <a href="#id8"><span class="problematic" id="id9">|msdk_full_name|</span></a> performs hardware acceleration through graphic devices, it is
+critical that <a href="#id10"><span class="problematic" id="id11">|msdk_full_name|</span></a> can access the graphic device in the switchable
 graphics setting. It is recommended to add the application to the graphic device
 affinity list. If this is not possible, the application should handle the
 following cases:</p>
 <ul class="simple">
-<li><p>By design, during legacy Intel<sup>®</sup> Media Software Development Kit library initialization, the
-<a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function searches for graphic devices. If a Intel<sup>®</sup> Media Software Development Kit
+<li><p>By design, during legacy <a href="#id12"><span class="problematic" id="id13">|msdk_full_name|</span></a> library initialization, the
+<a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function searches for graphic devices. If a <a href="#id14"><span class="problematic" id="id15">|msdk_full_name|</span></a>
 implementation is successfully loaded, the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus12MFX_ERR_NONEE" title="mfxStatus::MFX_ERR_NONE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_NONE</span></code></a>
 and the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv412MFXQueryIMPL10mfxSessionP7mfxIMPL" title="MFXQueryIMPL"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryIMPL()</span></code></a> function returns the actual implementation
-type. If no Intel<sup>®</sup> Media Software Development Kit implementation is loaded, the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function
+type. If no <a href="#id16"><span class="problematic" id="id17">|msdk_full_name|</span></a> implementation is loaded, the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function
 returns <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus19MFX_ERR_UNSUPPORTEDE" title="mfxStatus::MFX_ERR_UNSUPPORTED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_UNSUPPORTED</span></code></a>. In the switchable graphics
 environment, if the application is not in the graphic device affinity
 list, it is possible that the graphic device will not be accessible
@@ -256,10 +256,10 @@ the actual decoding, video processing, and encoding operations to determine
 the hardware acceleration capability.</p></li>
 <li><p>During decoding, video processing, and encoding operations, if the application
 is not in the graphic device affinity list, the previously accessible
-graphic device may become inaccessible due to a switch event. The Intel<sup>®</sup> Media Software Development Kit
+graphic device may become inaccessible due to a switch event. The <a href="#id18"><span class="problematic" id="id19">|msdk_full_name|</span></a>
 functions will return <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus19MFX_ERR_DEVICE_LOSTE" title="mfxStatus::MFX_ERR_DEVICE_LOST"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_DEVICE_LOST</span></code></a> or
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus21MFX_ERR_DEVICE_FAILEDE" title="mfxStatus::MFX_ERR_DEVICE_FAILED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_DEVICE_FAILED</span></code></a>, depending on when the switch occurs
-and what stage the Intel<sup>®</sup> Media Software Development Kit functions operate. The application should handle these
+and what stage the <a href="#id20"><span class="problematic" id="id21">|msdk_full_name|</span></a> functions operate. The application should handle these
 errors and exit gracefully.</p></li>
 </ul>
 </div>
@@ -270,15 +270,15 @@ are available. Some graphic devices connect to a display and become active
 and accessible under the Microsoft* DirectX* infrastructure. Graphic devices
 that are not connected to a display are inactive. Using the Microsoft Direct3D* 9
 infrastructure, devices that are not connected to a display are not accessible.</p>
-<p>The legacy Intel<sup>®</sup> Media Software Development Kit uses the adapter number to access a specific graphic
+<p>The legacy <a href="#id22"><span class="problematic" id="id23">|msdk_full_name|</span></a> uses the adapter number to access a specific graphic
 device. Usually, the graphic device driving the main desktop becomes the primary
 adapter. Other graphic devices take subsequent adapter numbers after the primary
 adapter. Under the Microsoft Direct3D 9 infrastructure, only active adapters are
 accessible and have an adapter number.</p>
-<p>Intel<sup>®</sup> Media Software Development Kit extends the <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv47mfxIMPL" title="mfxIMPL"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">mfxIMPL</span></code></a> implementation type as shown in the
+<p><a href="#id24"><span class="problematic" id="id25">|msdk_full_name|</span></a> extends the <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv47mfxIMPL" title="mfxIMPL"><code class="xref cpp cpp-type docutils literal notranslate"><span class="pre">mfxIMPL</span></code></a> implementation type as shown in the
 <a class="reference internal" href="#mfximpl-def-1-table"><span class="std std-ref">Intel® Media SDK mfxIMPL Implementation Type Definitions table</span></a>:</p>
-<span id="mfximpl-def-1-table"></span><table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Intel® Media SDK mfxIMPL Implementation Type Definitions</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<span id="mfximpl-def-1-table"></span><table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Intel® Media SDK mfxIMPL Implementation Type Definitions</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 40%" />
 <col style="width: 60%" />
@@ -290,54 +290,54 @@ accessible and have an adapter number.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv417MFX_IMPL_HARDWARE" title="MFX_IMPL_HARDWARE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on the primary adapter</p></td>
+<td><p><a href="#id26"><span class="problematic" id="id27">|msdk_full_name|</span></a> should initialize on the primary adapter</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE2" title="MFX_IMPL_HARDWARE2"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE2</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on the 2nd graphic adapter</p></td>
+<td><p><a href="#id28"><span class="problematic" id="id29">|msdk_full_name|</span></a> should initialize on the 2nd graphic adapter</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE3" title="MFX_IMPL_HARDWARE3"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE3</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on the 3rd graphic adapter</p></td>
+<td><p><a href="#id30"><span class="problematic" id="id31">|msdk_full_name|</span></a> should initialize on the 3rd graphic adapter</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE4" title="MFX_IMPL_HARDWARE4"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE4</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on the 4th graphic adapter</p></td>
+<td><p><a href="#id32"><span class="problematic" id="id33">|msdk_full_name|</span></a> should initialize on the 4th graphic adapter</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv421MFX_IMPL_HARDWARE_ANY" title="MFX_IMPL_HARDWARE_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE_ANY</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on any graphic adapter.</p></td>
+<td><p><a href="#id34"><span class="problematic" id="id35">|msdk_full_name|</span></a> should initialize on any graphic adapter.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv417MFX_IMPL_AUTO_ANY" title="MFX_IMPL_AUTO_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_AUTO_ANY</span></code></a></p></td>
-<td><p>Intel<sup>®</sup> Media Software Development Kit should initialize on any graphic adapter. If not successful,
+<td><p><a href="#id36"><span class="problematic" id="id37">|msdk_full_name|</span></a> should initialize on any graphic adapter. If not successful,
 load the software implementation.</p></td>
 </tr>
 </tbody>
 </table>
 <p>The application can use the first four definitions shown in the
 <a class="reference internal" href="#mfximpl-def-1-table"><span class="std std-ref">Intel® Media SDK mfxIMPL Implementation Type Definitions table</span></a>
-to instruct the legacy Intel<sup>®</sup> Media Software Development Kit library to initialize on a specific
+to instruct the legacy <a href="#id38"><span class="problematic" id="id39">|msdk_full_name|</span></a> library to initialize on a specific
 graphic device. The application can use the definitions for
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv421MFX_IMPL_HARDWARE_ANY" title="MFX_IMPL_HARDWARE_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE_ANY</span></code></a> and
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv417MFX_IMPL_AUTO_ANY" title="MFX_IMPL_AUTO_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_AUTO_ANY</span></code></a> for automatic detection.</p>
 <p>If the application uses the Microsoft DirectX surfaces for I/O, it is critical
-that the application and Intel<sup>®</sup> Media Software Development Kit work on the same graphic device. It is
+that the application and <a href="#id40"><span class="problematic" id="id41">|msdk_full_name|</span></a> work on the same graphic device. It is
 recommended that the application use the following procedure:</p>
 <ol class="arabic simple">
 <li><p>The application uses the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function to initialize the legacy
-Intel<sup>®</sup> Media Software Development Kit, with option <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv421MFX_IMPL_HARDWARE_ANY" title="MFX_IMPL_HARDWARE_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE_ANY</span></code></a> or
+<a href="#id42"><span class="problematic" id="id43">|msdk_full_name|</span></a>, with option <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv421MFX_IMPL_HARDWARE_ANY" title="MFX_IMPL_HARDWARE_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE_ANY</span></code></a> or
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv417MFX_IMPL_AUTO_ANY" title="MFX_IMPL_AUTO_ANY"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_AUTO_ANY</span></code></a>. The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function returns
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus12MFX_ERR_NONEE" title="mfxStatus::MFX_ERR_NONE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_NONE</span></code></a> if successful.</p></li>
 <li><p>The application uses the <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv412MFXQueryIMPL10mfxSessionP7mfxIMPL" title="MFXQueryIMPL"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXQueryIMPL()</span></code></a> function to check the actual
 implementation type. The implementation type <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv417MFX_IMPL_HARDWARE" title="MFX_IMPL_HARDWARE"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE</span></code></a>,
 <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE2" title="MFX_IMPL_HARDWARE2"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE2</span></code></a>, <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE3" title="MFX_IMPL_HARDWARE3"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE3</span></code></a>,
 or <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv418MFX_IMPL_HARDWARE4" title="MFX_IMPL_HARDWARE4"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">MFX_IMPL_HARDWARE4</span></code></a> indicates the graphic adapter the
-Intel<sup>®</sup> Media Software Development Kit works on.</p></li>
+<a href="#id44"><span class="problematic" id="id45">|msdk_full_name|</span></a> works on.</p></li>
 <li><p>The application creates the Direct3D device on the respective graphic adapter
-and passes it to Intel<sup>®</sup> Media Software Development Kit through the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv422MFXVideoCORE_SetHandle10mfxSession13mfxHandleType6mfxHDL" title="MFXVideoCORE_SetHandle"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SetHandle()</span></code></a> function.</p></li>
+and passes it to <a href="#id46"><span class="problematic" id="id47">|msdk_full_name|</span></a> through the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv422MFXVideoCORE_SetHandle10mfxSession13mfxHandleType6mfxHDL" title="MFXVideoCORE_SetHandle"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SetHandle()</span></code></a> function.</p></li>
 </ol>
 <p>Similar to the switchable graphics cases, interruption may result if the user
 disconnects monitors from the graphic devices or remaps the primary adapter. If
-the interruption occurs during the Intel<sup>®</sup> Media Software Development Kit library initialization, the
+the interruption occurs during the <a href="#id48"><span class="problematic" id="id49">|msdk_full_name|</span></a> library initialization, the
 <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> function may return <a class="reference internal" href="../API_ref/VPL_enums.html#_CPPv4N9mfxStatus19MFX_ERR_UNSUPPORTEDE" title="mfxStatus::MFX_ERR_UNSUPPORTED"><code class="xref cpp cpp-enumerator docutils literal notranslate"><span class="pre">mfxStatus::MFX_ERR_UNSUPPORTED</span></code></a>.
 This means hardware acceleration is currently not available. It is recommended
-that the application initialize Intel<sup>®</sup> Media Software Development Kit right before the actual decoding,
+that the application initialize <a href="#id50"><span class="problematic" id="id51">|msdk_full_name|</span></a> right before the actual decoding,
 video processing, and encoding operations to determine the hardware acceleration
 capability.</p>
 <p>If the interruption occurs during decoding, video processing, or encoding

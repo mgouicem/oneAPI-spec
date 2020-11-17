@@ -270,7 +270,7 @@ version of the oneDAL spec defines only Euclidean distance case.</p>
 </div>
 <div class="section" id="training-method-lloyd-s">
 <span id="kmeans-t-math-lloyd"></span><h4>Training method: <em>Lloyd’s</em><a class="headerlink" href="#training-method-lloyd-s" title="Permalink to this headline">¶</a></h4>
-<p>The Lloyd’s method <a class="reference internal" href="../../bibliography.html#lloyd82" id="id1"><span>[Lloyd82]</span></a> consists in iterative updates of centroids by
+<p>The Lloyd’s method <a class="reference internal" href="../../bibliography.html#lloyd82" id="id3"><span>[Lloyd82]</span></a> consists in iterative updates of centroids by
 applying the alternating <em>Assignment</em> and <em>Update</em> steps, where <span class="math notranslate nohighlight">\(t\)</span>
 denotes a index of the current iteration, e.g., <span class="math notranslate nohighlight">\(C^{(t)} = \{ c_1^{(t)},
 \ldots, c_k^{(t)} \}\)</span> is the set of centroids at the <span class="math notranslate nohighlight">\(t\)</span>-th iteration. The
@@ -314,8 +314,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </div>
 <div class="section" id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>Training<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h3>Training<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;</span> <span class="n">run_training</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">,</span>
                              <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">initial_centroids</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">kmeans_desc</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{}</span>
@@ -334,8 +334,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Inference<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3>Inference<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_inference</span><span class="p">(</span><span class="k">const</span> <span class="n">kmeans</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
                     <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">new_data</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">kmeans_desc</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{}</span>
@@ -751,7 +751,7 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 <div class="section" id="inference-infer">
 <span id="kmeans-i-api"></span><h3>Inference <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer"><span class="pre">infer</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#inference-infer" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="kmeans-i-api-input">
-<span id="id4"></span><h4>Input<a class="headerlink" href="#kmeans-i-api-input" title="Permalink to this headline">¶</a></h4>
+<span id="id6"></span><h4>Input<a class="headerlink" href="#kmeans-i-api-input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_input</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -812,7 +812,7 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 
 </div>
 <div class="section" id="kmeans-i-api-result">
-<span id="id5"></span><h4>Result<a class="headerlink" href="#kmeans-i-api-result" title="Permalink to this headline">¶</a></h4>
+<span id="id7"></span><h4>Result<a class="headerlink" href="#kmeans-i-api-result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_result</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -871,8 +871,8 @@ closest to the feature vector <span class="math notranslate nohighlight">\(x_j'\
 </dd></dl>
 
 </div>
-<div class="section" id="id6">
-<h4>Operation<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id8">
+<h4>Operation<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
 <span id="_CPPv3I000EN6oneapi3dal6kmeans5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span><span id="_CPPv2I000EN6oneapi3dal6kmeans5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span>template&lt;typename <code class="sig-name descname">Float</code>, typename <code class="sig-name descname">Method</code>, typename <code class="sig-name descname">Task</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans12infer_resultE" title="oneapi::dal::kmeans::infer_result">infer_result</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task">Task</a>&gt; <code class="sig-name descname">infer</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans10descriptorE" title="oneapi::dal::kmeans::descriptor">descriptor</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Float">Float</a>, <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Method">Method</a>, <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task">Task</a>&gt; &amp;<em>desc</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal6kmeans11infer_inputE" title="oneapi::dal::kmeans::infer_input">infer_input</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::kmeans::infer::Task">Task</a>&gt; &amp;<em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN6oneapi3dal6kmeans5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="Permalink to this definition">¶</a><br /></dt>

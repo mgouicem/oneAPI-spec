@@ -220,9 +220,9 @@ SPDX-License-Identifier: MIT
 <h1>Message Flow Graph Example<a class="headerlink" href="#message-flow-graph-example" title="Permalink to this headline">¶</a></h1>
 <p>This example calculates the sum <code class="docutils literal notranslate"><span class="pre">x*x</span> <span class="pre">+</span> <span class="pre">x*x*x</span></code> for all <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">to</span> <span class="pre">10</span></code>. The layout of this example is shown in
 the figure below.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../../../../_images/message_flow_graph.jpg"><img alt="../../../../_images/message_flow_graph.jpg" src="../../../../_images/message_flow_graph.jpg" style="width: 454px; height: 252px;" /></a>
-<p class="caption"><span class="caption-text">A simple message flow graph.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">A simple message flow graph.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Each value enters through the <code class="docutils literal notranslate"><span class="pre">broadcast_node&lt;int&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">input</span></code>. This node broadcasts the value to both
 <code class="docutils literal notranslate"><span class="pre">squarer</span></code> and <code class="docutils literal notranslate"><span class="pre">cuber</span></code>, which calculate <code class="docutils literal notranslate"><span class="pre">x*x</span></code> and <code class="docutils literal notranslate"><span class="pre">x*x*x</span></code>, respectively. The output of each

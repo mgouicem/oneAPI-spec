@@ -119,7 +119,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l2"><a class="reference internal" href="../API_ref/VPL_api_ref.html">oneVPL API Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Versioning.html">oneVPL API Versioning</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Appendices</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="VPL_intel_media_sdk.html">oneVPL for Intel<sup>®</sup> Media Software Development Kit Users</a></li>
+<li class="toctree-l3"><a class="reference internal" href="VPL_intel_media_sdk.html">oneVPL for |msdk_full_name| Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_a.html">Configuration Parameter Constraints</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_b.html">Multiple-segment Encoding</a></li>
 <li class="toctree-l3"><a class="reference internal" href="VPL_apnds_c.html">Streaming and Video Conferencing Features</a></li>
@@ -214,8 +214,8 @@ SPDX-License-Identifier: MIT
             
   <div class="section" id="working-directly-with-va-api-for-linux">
 <h1>Working Directly with VA API for Linux*<a class="headerlink" href="#working-directly-with-va-api-for-linux" title="Permalink to this headline">¶</a></h1>
-<p>Intel<sup>®</sup> Media Software Development Kit takes care of all memory and synchronization related operations in the VA API.
-The application may need to extend Intel<sup>®</sup> Media Software Development Kit functionality by working directly
+<p><a href="#id3"><span class="problematic" id="id4">|msdk_full_name|</span></a> takes care of all memory and synchronization related operations in the VA API.
+The application may need to extend <a href="#id5"><span class="problematic" id="id6">|msdk_full_name|</span></a> functionality by working directly
 with the VA API for Linux*, for example to implement a customized external allocator.
 This section describes basic memory management and synchronization techniques.</p>
 <p>To create the VA surface pool, the application should call the vaCreateSurfaces
@@ -246,7 +246,7 @@ function:</p>
 <div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">,</span> <span class="n">NUM_SURFACES</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-<p>If the application works with hardware acceleration through Intel<sup>®</sup> Media Software Development Kit, then it can
+<p>If the application works with hardware acceleration through <a href="#id7"><span class="problematic" id="id8">|msdk_full_name|</span></a>, then it can
 access surface data immediately after successful completion of
 the <a class="reference internal" href="../API_ref/VPL_func_vidcore.html#_CPPv426MFXVideoCORE_SyncOperation10mfxSession12mfxSyncPoint6mfxU32" title="MFXVideoCORE_SyncOperation"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoCORE_SyncOperation()</span></code></a> call. If the application works with
 hardware acceleration directly, then it must check surface status before

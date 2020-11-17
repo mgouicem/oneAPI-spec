@@ -259,7 +259,7 @@ variance, that is, the directions where the data is mostly spread out.</p>
 <p>Given the training set <span class="math notranslate nohighlight">\(X = \{ x_1, \ldots, x_n \}\)</span> of
 <span class="math notranslate nohighlight">\(p\)</span>-dimensional feature vectors and the number of principal components
 <span class="math notranslate nohighlight">\(r\)</span>, the problem is to compute <span class="math notranslate nohighlight">\(r\)</span> principal directions
-(<span class="math notranslate nohighlight">\(p\)</span>-dimensional eigenvectors <a class="reference internal" href="../../bibliography.html#lang87" id="id1"><span>[Lang87]</span></a>) for the training set. The
+(<span class="math notranslate nohighlight">\(p\)</span>-dimensional eigenvectors <a class="reference internal" href="../../bibliography.html#lang87" id="id3"><span>[Lang87]</span></a>) for the training set. The
 eigenvectors can be grouped into the <span class="math notranslate nohighlight">\(r \times p\)</span> matrix <span class="math notranslate nohighlight">\(T\)</span> that
 contains one eigenvector in each row.</p>
 <div class="section" id="training-method-covariance">
@@ -279,7 +279,7 @@ steps:</p>
 <li><p>Compute the covariance matrix <span class="math notranslate nohighlight">\(\Sigma = \frac{1}{n - 1} P\)</span>.</p></li>
 </ol>
 <p>To compute eigenvalues <span class="math notranslate nohighlight">\(\lambda_i\)</span> and eigenvectors <span class="math notranslate nohighlight">\(\upsilon_i\)</span>, the implementer can choose an arbitrary
-method such as <a class="reference internal" href="../../bibliography.html#ping14" id="id2"><span>[Ping14]</span></a>.</p>
+method such as <a class="reference internal" href="../../bibliography.html#ping14" id="id4"><span>[Ping14]</span></a>.</p>
 <p>The final step is to sort the set of pairs <span class="math notranslate nohighlight">\((\lambda_i, \upsilon_i)\)</span> in
 the descending order by <span class="math notranslate nohighlight">\(\lambda_i\)</span> and form the resulting matrix <span class="math notranslate nohighlight">\(T
 = (\upsilon_{i,1}, \cdots, \upsilon_{i,r}), \quad 1 \leq i \leq p\)</span>.
@@ -295,7 +295,7 @@ principal components. The method relies on the following steps:</p>
 </ol>
 <p>To compute singular values <span class="math notranslate nohighlight">\(\lambda_i\)</span> and singular vectors <span class="math notranslate nohighlight">\(u_i\)</span>
 and <span class="math notranslate nohighlight">\(v_i\)</span>, the implementer can choose an arbitrary method such as
-<a class="reference internal" href="../../bibliography.html#demmel90" id="id3"><span>[Demmel90]</span></a>.</p>
+<a class="reference internal" href="../../bibliography.html#demmel90" id="id5"><span>[Demmel90]</span></a>.</p>
 <p>The final step is to sort the set of pairs <span class="math notranslate nohighlight">\((\lambda_i, v_i)\)</span> in the
 descending order by <span class="math notranslate nohighlight">\(\lambda_i\)</span> and form the resulting matrix <span class="math notranslate nohighlight">\(T =
 (v_{i,1}, \cdots, v_{i,r}), \quad 1 \leq i \leq p\)</span>. Additionally, the means and
@@ -305,7 +305,7 @@ variances of the initial dataset shall be returned.</p>
 <h4>Sign-flip technique<a class="headerlink" href="#sign-flip-technique" title="Permalink to this headline">¶</a></h4>
 <p>Eigenvectors computed by some eigenvalue solvers are not uniquely defined due to
 sign ambiguity. To get the deterministic result, a sign-flip technique should be
-applied. One of the sign-flip techniques proposed in <a class="reference internal" href="../../bibliography.html#bro07" id="id4"><span>[Bro07]</span></a> requires the
+applied. One of the sign-flip techniques proposed in <a class="reference internal" href="../../bibliography.html#bro07" id="id6"><span>[Bro07]</span></a> requires the
 following modification of matrix <span class="math notranslate nohighlight">\(T\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\hat{T}_i = T_i \cdot \mathrm{sgn}(\max_{1 \leq j \leq p } |{T}_{ij}|), \quad 1 \leq i \leq r,\]</div>
@@ -335,7 +335,7 @@ arbitrary technique that modifies the eigenvectors’ signs.</p>
 to the set <span class="math notranslate nohighlight">\(X'' = \{ x_1'', \ldots, x_m'' \}\)</span>, where <span class="math notranslate nohighlight">\(x_{j}''\)</span> is an
 <span class="math notranslate nohighlight">\(r\)</span>-dimensional feature vector, <span class="math notranslate nohighlight">\(1 \leq j \leq m\)</span>.</p>
 <p>The feature vector <span class="math notranslate nohighlight">\(x_{j}''\)</span> is computed through applying linear
-transformation <a class="reference internal" href="../../bibliography.html#lang87" id="id5"><span>[Lang87]</span></a> defined by the matrix <span class="math notranslate nohighlight">\(T\)</span> to the feature vector
+transformation <a class="reference internal" href="../../bibliography.html#lang87" id="id7"><span>[Lang87]</span></a> defined by the matrix <span class="math notranslate nohighlight">\(T\)</span> to the feature vector
 <span class="math notranslate nohighlight">\(x_{j}'\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-x-transform">
 <span class="eqno">(1)<a class="headerlink" href="#equation-x-transform" title="Permalink to this equation">¶</a></span>\[x_{j}'' = T x_{j}', \quad 1 \leq j \leq m.\]</div>
@@ -348,8 +348,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 </div>
 <div class="section" id="usage-example">
 <h2>Usage example<a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>Training<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h3>Training<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;</span> <span class="n">run_training</span><span class="p">(</span><span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">pca_desc</span> <span class="o">=</span> <span class="n">pca</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{}</span>
       <span class="p">.</span><span class="n">set_component_count</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -367,8 +367,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 </pre></div>
 </div>
 </div>
-<div class="section" id="id7">
-<h3>Inference<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h3>Inference<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">table</span> <span class="nf">run_inference</span><span class="p">(</span><span class="k">const</span> <span class="n">pca</span><span class="o">::</span><span class="n">model</span><span class="o">&lt;&gt;&amp;</span> <span class="n">model</span><span class="p">,</span>
                     <span class="k">const</span> <span class="n">table</span><span class="o">&amp;</span> <span class="n">new_data</span><span class="p">)</span> <span class="p">{</span>
    <span class="k">const</span> <span class="k">auto</span> <span class="n">pca_desc</span> <span class="o">=</span> <span class="n">pca</span><span class="o">::</span><span class="n">descriptor</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;</span><span class="p">{}</span>
@@ -761,7 +761,7 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 <div class="section" id="inference-infer">
 <span id="pca-i-api"></span><h3>Inference <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer"><span class="pre">infer</span></a><span class="sig-paren">(</span><span class="pre">...</span><span class="sig-paren">)</span></code><a class="headerlink" href="#inference-infer" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="pca-i-api-input">
-<span id="id8"></span><h4>Input<a class="headerlink" href="#pca-i-api-input" title="Permalink to this headline">¶</a></h4>
+<span id="id10"></span><h4>Input<a class="headerlink" href="#pca-i-api-input" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_input</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -822,7 +822,7 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 
 </div>
 <div class="section" id="pca-i-api-result">
-<span id="id9"></span><h4>Result<a class="headerlink" href="#pca-i-api-result" title="Permalink to this headline">¶</a></h4>
+<span id="id11"></span><h4>Result<a class="headerlink" href="#pca-i-api-result" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Task</span> <span class="o">=</span> <span class="n">task</span><span class="o">::</span><span class="n">by_default</span><span class="o">&gt;</span>
 <span class="k">class</span> <span class="nc">infer_result</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -863,8 +863,8 @@ transformation <a class="reference internal" href="../../bibliography.html#lang8
 </dd></dl>
 
 </div>
-<div class="section" id="id10">
-<h4>Operation<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id12">
+<h4>Operation<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h4>
 <dl class="cpp function">
 <dt id="_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE">
 <span id="_CPPv3I000EN6oneapi3dal3pca5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span><span id="_CPPv2I000EN6oneapi3dal3pca5inferERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE"></span>template&lt;typename <code class="sig-name descname">Float</code>, typename <code class="sig-name descname">Method</code>, typename <code class="sig-name descname">Task</code>&gt;<br /><a class="reference internal" href="#_CPPv4I0EN6oneapi3dal3pca12infer_resultE" title="oneapi::dal::pca::infer_result">infer_result</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer::Task">Task</a>&gt; <code class="sig-name descname">infer</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca10descriptorE" title="oneapi::dal::pca::descriptor">descriptor</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer::Float">Float</a>, <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer::Method">Method</a>, <a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer::Task">Task</a>&gt; &amp;<em>desc</em>, <em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN6oneapi3dal3pca11infer_inputE" title="oneapi::dal::pca::infer_input">infer_input</a>&lt;<a class="reference internal" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="oneapi::dal::pca::infer::Task">Task</a>&gt; &amp;<em>input</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I000EN6oneapi3dal3pca5inferE12infer_resultI4TaskERK10descriptorI5Float6Method4TaskERK11infer_inputI4TaskE" title="Permalink to this definition">¶</a><br /></dt>

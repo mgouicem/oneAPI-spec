@@ -219,19 +219,19 @@ SPDX-License-Identifier: MIT
   <div class="section" id="computational-modes">
 <h1>Computational modes<a class="headerlink" href="#computational-modes" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="batch">
-<span id="id1"></span><h2>Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Batch<a class="headerlink" href="#batch" title="Permalink to this headline">¶</a></h2>
 <p>In the batch processing mode, the algorithm works with the entire data set to produce the final
 result. A more complex scenario occurs when the entire data set is not available at the moment
 or the data set does not fit into the device memory.</p>
 </div>
 <div class="section" id="online">
-<span id="id2"></span><h2>Online<a class="headerlink" href="#online" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Online<a class="headerlink" href="#online" title="Permalink to this headline">¶</a></h2>
 <p>In the online processing mode, the algorithm processes a data set in blocks streamed into the
 device’s memory. Partial results are updated incrementally and finalized when the last data block
 is processed.</p>
 </div>
 <div class="section" id="distributed">
-<span id="id3"></span><h2>Distributed<a class="headerlink" href="#distributed" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Distributed<a class="headerlink" href="#distributed" title="Permalink to this headline">¶</a></h2>
 <p>In the distributed processing mode, the algorithm operates on a data set
 distributed across several devices (compute nodes). On each node, the algorithm
 produces partial results that are later merged into the final result on the main

@@ -117,7 +117,7 @@ SPDX-License-Identifier: MIT
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Programming Guide</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="VPL_prg_stc.html">Status Codes</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">oneVPL Session</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#msdk-full-name-dispatcher-legacy">Intel<sup>®</sup> Media Software Development Kit Dispatcher (Legacy)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#msdk-full-name-dispatcher-legacy">|msdk_full_name| Dispatcher (Legacy)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#onevpl-dispatcher">oneVPL Dispatcher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#multiple-sessions">Multiple Sessions</a></li>
 </ul>
@@ -227,7 +227,7 @@ library and create a oneVPL session. A oneVPL session maintains context for the
 use of any of <a class="reference internal" href="../architecture/index.html#term-DECODE"><span class="xref std std-term">DECODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-ENCODE"><span class="xref std std-term">ENCODE</span></a>, <a class="reference internal" href="../architecture/index.html#term-VPP"><span class="xref std std-term">VPP</span></a>, <a class="reference internal" href="../architecture/index.html#term-DECODE_VPP"><span class="xref std std-term">DECODE_VPP</span></a>
 functions.</p>
 <div class="section" id="msdk-full-name-dispatcher-legacy">
-<h2>Intel<sup>®</sup> Media Software Development Kit Dispatcher (Legacy)<a class="headerlink" href="#msdk-full-name-dispatcher-legacy" title="Permalink to this headline">¶</a></h2>
+<h2><a href="#id4"><span class="problematic" id="id5">|msdk_full_name|</span></a> Dispatcher (Legacy)<a class="headerlink" href="#msdk-full-name-dispatcher-legacy" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv47MFXInit7mfxIMPLP10mfxVersionP10mfxSession" title="MFXInit"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInit()</span></code></a> or <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv49MFXInitEx12mfxInitParamP10mfxSession" title="MFXInitEx"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXInitEx()</span></code></a> function starts (initializes)
 a session. The <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv48MFXClose10mfxSession" title="MFXClose"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXClose()</span></code></a> function closes (de-initializes) the
 session. To avoid memory leaks, always call <a class="reference internal" href="../API_ref/VPL_func_session.html#_CPPv48MFXClose10mfxSession" title="MFXClose"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXClose()</span></code></a> after
@@ -405,7 +405,7 @@ runtime, in priority order:</p>
 <li><p>Path from <span class="target" id="index-0"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PATH</span></code> or <span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">LD_LIBRARY_PATH</span></code> environmental variables,
 depending on OS.</p></li>
 <li><p>Default system folders.</p></li>
-<li><p>Standalone Intel<sup>®</sup> Media Software Development Kit package (or driver).</p></li>
+<li><p>Standalone <a href="#id6"><span class="problematic" id="id7">|msdk_full_name|</span></a> package (or driver).</p></li>
 </ol>
 <p>For more details, see the <a class="reference external" href="legacy_search_order">legacy dispatcher search order</a>.</p>
 <p>A user can develop their own implementation and direct the oneVPL dispatcher to
@@ -418,8 +418,8 @@ steps depend on which OS is used.</p>
 <span class="target" id="index-3"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">ONEVPL_SEARCH_PATH</span></code> environmental variable. Alternatively, the user
 can use the Windows registry.</p></li>
 </ul>
-<table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Dispatcher Environmental Variables</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-given docutils align-default" id="id3">
+<caption><span class="caption-text">Dispatcher Environmental Variables</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 40%" />
 <col style="width: 60%" />
@@ -454,8 +454,8 @@ the list of functions to export.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>For backward compatibility with Intel<sup>®</sup> Media Software Development Kit, the dispatcher will
-first try to load Intel<sup>®</sup> Media Software Development Kit if API version 1.x was requested.
+<p>For backward compatibility with <a href="#id8"><span class="problematic" id="id9">|msdk_full_name|</span></a>, the dispatcher will
+first try to load <a href="#id10"><span class="problematic" id="id11">|msdk_full_name|</span></a> if API version 1.x was requested.
 If loading fails, the dispatcher will search for the implementation with highest 2.x API version and load that version.</p>
 </div>
 </div>
