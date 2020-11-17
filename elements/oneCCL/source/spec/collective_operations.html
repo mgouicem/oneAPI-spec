@@ -247,7 +247,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 </div>
 <p>If the arguments provided to a communication operation call do not comply to the requirements of the operation, the behavior is undefined unless it is specified otherwise.</p>
 <div class="section" id="allgatherv">
-<span id="id3"></span><h2>Allgatherv<a class="headerlink" href="#allgatherv" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Allgatherv<a class="headerlink" href="#allgatherv" title="Permalink to this headline">¶</a></h2>
 <p>Allgatherv is a collective communication operation that collects data from all the ranks within a communicator into a single buffer. Different ranks may contribute segments of different sizes. The resulting data in the output buffer must be the same for each rank.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
 <span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allgatherv</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
@@ -303,7 +303,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 </dl>
 </div>
 <div class="section" id="allreduce">
-<span id="id4"></span><h2>Allreduce<a class="headerlink" href="#allreduce" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Allreduce<a class="headerlink" href="#allreduce" title="Permalink to this headline">¶</a></h2>
 <p>Allreduce is a collective communication operation that performs the global reduction operation on values from all ranks of communicator and distributes the result back to all ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
 <span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">allreduce</span><span class="p">(</span><span class="k">const</span> <span class="n">BufferType</span><span class="o">*</span> <span class="n">send_buf</span><span class="p">,</span>
@@ -354,7 +354,7 @@ The order of collective operation calls should be the same across all ranks.</p>
 </dl>
 </div>
 <div class="section" id="alltoallv">
-<span id="id5"></span><h2>Alltoallv<a class="headerlink" href="#alltoallv" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Alltoallv<a class="headerlink" href="#alltoallv" title="Permalink to this headline">¶</a></h2>
 <p>Alltoall is a collective communication operation in which each rank
 sends separate blocks of data to each rank. Block sizes may differ.
 The j-th block of send buffer sent from the i-th rank is received by the j-th rank
@@ -416,7 +416,7 @@ and is placed in the i-th block of receive buffer.</p>
 </dl>
 </div>
 <div class="section" id="barrier">
-<span id="id6"></span><h2>Barrier<a class="headerlink" href="#barrier" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>Barrier<a class="headerlink" href="#barrier" title="Permalink to this headline">¶</a></h2>
 <p>Barrier synchronization is performed across all ranks of the communicator
 and it is completed only after all the ranks in the communicator have called it.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">event</span> <span class="n">ccl</span><span class="o">::</span><span class="n">barrier</span><span class="p">(</span><span class="k">const</span> <span class="n">communicator</span><span class="o">&amp;</span> <span class="n">comm</span><span class="p">,</span>
@@ -439,7 +439,7 @@ and it is completed only after all the ranks in the communicator have called it.
 </dl>
 </div>
 <div class="section" id="broadcast">
-<span id="id7"></span><h2>Broadcast<a class="headerlink" href="#broadcast" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Broadcast<a class="headerlink" href="#broadcast" title="Permalink to this headline">¶</a></h2>
 <p>Broadcast is a collective communication operation that broadcasts data
 from one rank of communicator (denoted as root) to all other ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
@@ -490,7 +490,7 @@ from one rank of communicator (denoted as root) to all other ranks.</p>
 </dl>
 </div>
 <div class="section" id="reduce">
-<span id="id8"></span><h2>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
+<span id="id6"></span><h2>Reduce<a class="headerlink" href="#reduce" title="Permalink to this headline">¶</a></h2>
 <p>Reduce is a collective communication operation that performs the global reduction operation
 on values from all ranks of the communicator and returns the result to the root rank.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>
@@ -549,7 +549,7 @@ on values from all ranks of the communicator and returns the result to the root 
 </dl>
 </div>
 <div class="section" id="reducescatter">
-<span id="id9"></span><h2>ReduceScatter<a class="headerlink" href="#reducescatter" title="Permalink to this headline">¶</a></h2>
+<span id="id7"></span><h2>ReduceScatter<a class="headerlink" href="#reducescatter" title="Permalink to this headline">¶</a></h2>
 <p>Reduce-scatter is a collective communication operation that performs the global reduction operation
 on values from all ranks of the communicator and scatters the result in blocks back to all ranks.</p>
 <div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span> <span class="o">&lt;</span><span class="k">class</span> <span class="nc">BufferType</span><span class="o">&gt;</span>

@@ -295,7 +295,7 @@ output, and <strong>Nb</strong> is the frame surface requirements for oneVPL fun
 and delay synchronization as much as possible, which gives oneVPL flexibility
 to organize internal pipelining. For example, compare the following two operation
 sequences, where the first sequence is the recommended order:</p>
-<div class="figure align-default" id="id3">
+<div class="figure align-default" id="id1">
 <div class="graphviz"><img src="../../../../_images/graphviz-1d3aa857b4784f656d4eac77e4266e8349f08e34.png" alt="digraph {
    rankdir=LR;
    labelloc=&quot;t&quot;;
@@ -306,9 +306,9 @@ sequences, where the first sequence is the recommended order:</p>
    f4 [shape=record label=&quot;SYNC(F2)&quot; ];
    f1-&gt;f2-&gt;f3-&gt;f4;
 }" class="graphviz" /></div>
-<p class="caption"><span class="caption-text">Recommended operation sequence</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Recommended operation sequence</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
-<div class="figure align-default" id="id4">
+<div class="figure align-default" id="id2">
 <div class="graphviz"><img src="../../../../_images/graphviz-5a3d1fe20eb74b213cfce550b4f5465cdbfc9178.png" alt="digraph {
    rankdir=LR;
    labelloc=&quot;t&quot;;
@@ -319,7 +319,7 @@ sequences, where the first sequence is the recommended order:</p>
    f4 [shape=record label=&quot;SYNC(F2)&quot; ];
    f1-&gt;f3-&gt;f2-&gt;f4;
 }" class="graphviz" /></div>
-<p class="caption"><span class="caption-text">Operation sequence - not recommended</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Operation sequence - not recommended</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>In this example, the surface pool needs additional surfaces to take into account
 multiple asynchronous operations before synchronization. The application can use
