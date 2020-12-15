@@ -32,7 +32,7 @@ SPDX-License-Identifier: MIT
 
     
     <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.2b987205ae9623f1e8a6c50893438118.css" type="text/css" />
+    <link rel="stylesheet" href="../../../../_static/sphinx-book-theme.da26317cf37e5c4af2fa3e6253912353.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css" />
     
@@ -4613,7 +4613,7 @@ The execution requirements for computational routines from the previous section 
 <span id="onemkl-asynchronous-synchronous-execution"></span><h3>Asynchronous Execution<a class="headerlink" href="#asynchronous-execution" title="Permalink to this headline">¶</a></h3>
 <p>The oneMKL API is designed to allow asynchronous execution of computational routines, to facilitate concurrent usage of multiple devices in the system. Each computational routine enqueues work to be performed on the selected device, and may (but is not required to) return before execution completes.</p>
 <p>Hence, it is the calling application’s responsibility to ensure that any inputs are valid until computation is complete, and likewise to wait for computation completion before reading any outputs. This can be done automatically when using DPC++ buffers, or manually when using Unified Shared Memory (USM) pointers, as described in the sections below.</p>
-<p>Unless otherwise specified, asynchronous execution is <em>allowed</em>, but not <em>guaranteed</em>, by any oneMKL computational routine, and may vary between implementations and/or versions. oneMKL implementations must clearly document whether execution is guaranteed to be asynchronous for each supported routine.</p>
+<p>Unless otherwise specified, asynchronous execution is <em>allowed</em>, but not <em>guaranteed</em>, by any oneMKL computational routine, and may vary between implementations and/or versions. oneMKL implementations must clearly document whether execution is guaranteed to be asynchronous for each supported routine. Regardless, calling applications shall not launch any oneMKL computational routine with a dependency on a future oneMKL API call, even if this computational routine executes asynchronously (i.e. a oneMKL implementation may assume no antidependencies are present). This guarantee allows oneMKL implementations to reserve resources for execution without risking deadlock.</p>
 <div class="section" id="synchronization-when-using-buffers">
 <span id="onemkl-synchronization-with-buffers"></span><h4>Synchronization When Using Buffers<a class="headerlink" href="#synchronization-when-using-buffers" title="Permalink to this headline">¶</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">sycl::buffer</span></code> objects automatically manage synchronization between kernel launches linked by a data dependency (either read-after-write, write-after-write, or write-after-read).</p>
