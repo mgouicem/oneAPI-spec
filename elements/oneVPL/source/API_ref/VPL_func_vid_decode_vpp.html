@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4629,9 +4634,7 @@ with multiple output frame surfaces.</p>
 <dl class="cpp function">
 <dt id="_CPPv423MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32">
 <span id="_CPPv323MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32"></span><span id="_CPPv223MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32"></span><span id="MFXVideoDECODE_VPP_Init__mfxSession.mfxVideoParamP.mfxVideoChannelParamPP.mfxU32"></span><span class="target" id="mfxvideo_8h_1af0880a14dea025021875050231f96caf"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus">mfxStatus</a> <code class="sig-name descname">MFXVideoDECODE_VPP_Init</code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession">mfxSession</a> <em>session</em>, <a class="reference internal" href="VPL_structs_cross_component.html#_CPPv413mfxVideoParam" title="mfxVideoParam">mfxVideoParam</a> *<em>decode_par</em>, <a class="reference internal" href="VPL_structs_decode_vpp.html#_CPPv420mfxVideoChannelParam" title="mfxVideoChannelParam">mfxVideoChannelParam</a> **<em>vpp_par_array</em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32">mfxU32</a> <em>num_vpp_par</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423MFXVideoDECODE_VPP_Init10mfxSessionP13mfxVideoParamPP20mfxVideoChannelParam6mfxU32" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Initialize the SDK in (decode + vpp) mode. The logic of this function is similar to MFXVideoDECODE_Init, but application has to provide array of pointers to <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param"><span class="std std-ref">mfxVideoChannelParam</span></a> and num_channel_param - number of channels. Application is responsible for <p> memory allocation for </p>
-<a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param"><span class="std std-ref">mfxVideoChannelParam</span></a> parameters and for each channel it should specify channel IDs: <p> mfxVideoChannelParam::mfxFrameInfo::ChannelId. ChannelId should be unique value within one session. The application can attach </p>
-<a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_ext_in_crops"><span class="std std-ref">mfxExtInCrops</span></a> to <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param_1a6c6d4e90cfb42d72948ec1daab0d21d2"><span class="std std-ref">mfxVideoChannelParam::ExtParam</span></a> to annotate input video frame if it wants to enable letterboxing operation. </p>
+<dd><p>Initialize the SDK in (decode + vpp) mode. The logic of this function is similar to MFXVideoDECODE_Init, but application has to provide array of pointers to <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param"><span class="std std-ref">mfxVideoChannelParam</span></a> and num_channel_param - number of channels. Application is responsible for memory allocation for <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param"><span class="std std-ref">mfxVideoChannelParam</span></a> parameters and for each channel it should specify channel IDs: mfxVideoChannelParam::mfxFrameInfo::ChannelId. ChannelId should be unique value within one session. The application can attach <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_ext_in_crops"><span class="std std-ref">mfxExtInCrops</span></a> to <a class="reference internal" href="VPL_structs_decode_vpp.html#structmfx_video_channel_param_1a6c6d4e90cfb42d72948ec1daab0d21d2"><span class="std std-ref">mfxVideoChannelParam::ExtParam</span></a> to annotate input video frame if it wants to enable letterboxing operation. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
@@ -4684,8 +4687,7 @@ with multiple output frame surfaces.</p>
 <dl class="cpp function">
 <dt id="_CPPv434MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32">
 <span id="_CPPv334MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32"></span><span id="_CPPv234MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32"></span><span id="MFXVideoDECODE_VPP_GetChannelParam__mfxSession.mfxVideoChannelParamP.mfxU32"></span><span class="target" id="mfxvideo_8h_1a6cc897ca2201a664b74ea70caa4e5d4a"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus">mfxStatus</a> <code class="sig-name descname">MFXVideoDECODE_VPP_GetChannelParam</code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession">mfxSession</a> <em>session</em>, <a class="reference internal" href="VPL_structs_decode_vpp.html#_CPPv420mfxVideoChannelParam" title="mfxVideoChannelParam">mfxVideoChannelParam</a> *<em>par</em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32">mfxU32</a> <em>channel_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv434MFXVideoDECODE_VPP_GetChannelParam10mfxSessionP20mfxVideoChannelParam6mfxU32" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Returns actual VPP parameters for selected channel which should be specified by application through <p> mfxVideoChannelParam::mfxFrameInfo::ChannelId. </p>
-</p>
+<dd><p>Returns actual VPP parameters for selected channel which should be specified by application through mfxVideoChannelParam::mfxFrameInfo::ChannelId. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR par pointer is NULL. </p>
 <p>MFX_ERR_NOT_FOUND the library is not able to find VPP channel with such channel_id. </p>

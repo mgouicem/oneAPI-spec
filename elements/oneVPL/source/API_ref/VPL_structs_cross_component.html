@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4789,7 +4794,7 @@ SPDX-License-Identifier: MIT
 <dl class="cpp struct">
 <dt id="_CPPv423mfxExtJPEGHuffmanTables">
 <span id="_CPPv323mfxExtJPEGHuffmanTables"></span><span id="_CPPv223mfxExtJPEGHuffmanTables"></span><span id="mfxExtJPEGHuffmanTables"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables"></span><em class="property">struct </em><code class="sig-name descname">mfxExtJPEGHuffmanTables</code><a class="headerlink" href="#_CPPv423mfxExtJPEGHuffmanTables" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Specifies Huffman tables. The application may specify up to 2 quantization table pairs for baseline process. The encoder assigns an ID to each table. That ID is equal to the table index in the DCTables and ACTables arrays. Table “0” is used for encoding of the Y component and table “1” is used for encoding of the U and V component. The application may specify only one table, in which case the table will be used for all components in the image. The following table illustrates this behavior. </p>
+<dd><p>Specifies Huffman tables. The application may specify up to 2 quantization table pairs for baseline process. The encoder assigns an ID to each table. That ID is equal to the table index in the DCTables and ACTables arrays. Table “0” is used for encoding of the Y component and table “1” is used for encoding of the U and V component. The application may specify only one table, in which case the table will be used for all components in the image. The following table illustrates this behavior.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="cpp var">
@@ -4825,13 +4830,13 @@ SPDX-License-Identifier: MIT
 
 <dl class="cpp var">
 <dt id="_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE">
-<span id="_CPPv3N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a14cc3309a46cd49659aa9b7e323a609b"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">DCTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8DCTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a603b923c9f466e3d75906f3f54b4f6bc"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">DCTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8DCTablesE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Array of DC tables. </p>
 </dd></dl>
 
 <dl class="cpp var">
 <dt id="_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE">
-<span id="_CPPv3N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1a447d71b01e8939cdb52d4a7bfa3707cc"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ACTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span id="_CPPv2N23mfxExtJPEGHuffmanTables8ACTablesE"></span><span class="target" id="structmfx_ext_j_p_e_g_huffman_tables_1aff637c11edfa854282c6167daedaf11f"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv423mfxExtJPEGHuffmanTables" title="mfxExtJPEGHuffmanTables">mfxExtJPEGHuffmanTables</a>::<strong>[anonymous]</strong> <code class="sig-name descname">ACTables</code>[4]<a class="headerlink" href="#_CPPv4N23mfxExtJPEGHuffmanTables8ACTablesE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>List of the 8-bit symbol values. </p>
 </dd></dl>
 
@@ -4871,7 +4876,7 @@ SPDX-License-Identifier: MIT
 <dl class="cpp struct">
 <dt id="_CPPv421mfxExtJPEGQuantTables">
 <span id="_CPPv321mfxExtJPEGQuantTables"></span><span id="_CPPv221mfxExtJPEGQuantTables"></span><span id="mfxExtJPEGQuantTables"></span><span class="target" id="structmfx_ext_j_p_e_g_quant_tables"></span><em class="property">struct </em><code class="sig-name descname">mfxExtJPEGQuantTables</code><a class="headerlink" href="#_CPPv421mfxExtJPEGQuantTables" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Specifies quantization tables. The application may specify up to 4 quantization tables. The encoder assigns an ID to each table. That ID is equal to the table index in the Qm array. Table “0” is used for encoding of the Y component, table “1” for the U component, and table “2” for the V component. The application may specify fewer tables than the number of components in the image. If two tables are specified, then table “1” is used for both U and V components. If only one table is specified then it is used for all components in the image. The following table illustrates this behavior. </p>
+<dd><p>Specifies quantization tables. The application may specify up to 4 quantization tables. The encoder assigns an ID to each table. That ID is equal to the table index in the Qm array. Table “0” is used for encoding of the Y component, table “1” for the U component, and table “2” for the V component. The application may specify fewer tables than the number of components in the image. If two tables are specified, then table “1” is used for both U and V components. If only one table is specified then it is used for all components in the image. The following table illustrates this behavior.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="cpp var">
@@ -5683,7 +5688,7 @@ and the instant bitrate is not capped or padded.</p>
 <p>For encoding, these payloads can be inserted into the bitstream. The payload buffer must contain a valid formatted payload.</p>
 <p>For H.264, this is the sei_message() as specified in the section 7.3.2.3.1 ‘Supplemental enhancement information message syntax’ of the ISO/IEC 14496-10 specification.</p>
 <p>For MPEG-2, this is the section 6.2.2.2.2 ‘User data’ of the ISO/IEC 13818-2 specification, excluding the user data start_code.</p>
-<p>For decoding, these payloads can be retrieved as the decoder parses the bitstream and caches them in an internal buffer. </p>
+<p>For decoding, these payloads can be retrieved as the decoder parses the bitstream and caches them in an internal buffer.</p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="cpp var">

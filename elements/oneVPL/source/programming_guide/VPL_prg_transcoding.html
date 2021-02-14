@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4615,15 +4620,15 @@ aspects of connecting two or more oneVPL functions together.</p>
 the downstream oneVPL function to construct an asynchronous pipeline. Pipeline
 construction is done at runtime and can be dynamically changed, as shown in the
 following example:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxSyncPoint</span> <span class="n">sp_d</span><span class="p">,</span> <span class="n">sp_e</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxSyncPoint</span> <span class="n">sp_d</span><span class="p">,</span> <span class="n">sp_e</span><span class="p">;</span>
 <span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">bs</span><span class="p">,</span><span class="n">work</span><span class="p">,</span><span class="o">&amp;</span><span class="n">vin</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp_d</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">going_through_vpp</span><span class="p">)</span> <span class="p">{</span>
    <span class="n">MFXVideoVPP_RunFrameVPPAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span><span class="n">vin</span><span class="p">,</span><span class="n">vout</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp_d</span><span class="p">);</span>
@@ -4713,19 +4718,19 @@ synchronization. The corresponding oneVPL <strong>QueryIOSurf</strong> function 
 this number in the <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N20mfxFrameAllocRequest17NumFrameSuggestedE" title="mfxFrameAllocRequest::NumFrameSuggested"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameAllocRequest::NumFrameSuggested</span></code></a>
 value. The following example shows a way of calculating the surface needs based
 on <a class="reference internal" href="../API_ref/VPL_structs_memory.html#_CPPv4N20mfxFrameAllocRequest17NumFrameSuggestedE" title="mfxFrameAllocRequest::NumFrameSuggested"><code class="xref cpp cpp-member docutils literal notranslate"><span class="pre">mfxFrameAllocRequest::NumFrameSuggested</span></code></a> values:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxVideoParam</span> <span class="n">init_param_v</span><span class="p">,</span> <span class="n">init_param_e</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxVideoParam</span> <span class="n">init_param_v</span><span class="p">,</span> <span class="n">init_param_e</span><span class="p">;</span>
 <span class="n">mfxFrameAllocRequest</span> <span class="n">response_v</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">response_e</span><span class="p">;</span>
 
 <span class="c1">// Desired depth</span>

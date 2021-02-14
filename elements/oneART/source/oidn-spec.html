@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4577,60 +4582,119 @@ SPDX-License-Identifier: MIT
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#device">
-   Device
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Intel Open Image Denoise API
   </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#error-handling">
-     Error Handling
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#buffer">
-   Buffer
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-format">
-     Data Format
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#filter">
-   Filter
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rt">
-     RT
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#device">
+     Device
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#albedo">
-       Albedo
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#normal">
-       Normal
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#weights">
-       Weights
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#error-handling">
+       Error Handling
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rtlightmap">
-     RTLightmap
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#buffer">
+     Buffer
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-format">
+       Data Format
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filter">
+     Filter
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rt">
+       RT
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#albedo">
+         Albedo
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#normal">
+         Normal
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#weights">
+         Weights
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rtlightmap">
+       RTLightmap
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#training">
+   Training
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prerequisites">
+     Prerequisites
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#devices">
+     Devices
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datasets">
+     Datasets
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-preprocess-py">
+     Preprocessing (preprocess.py)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training-train-py">
+     Training (train.py)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference-infer-py">
+     Inference (infer.py)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exporting-results-export-py">
+     Exporting Results (export.py)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#image-conversion-and-comparison">
+     Image Conversion and Comparison
     </a>
    </li>
   </ul>
@@ -4650,9 +4714,11 @@ SPDX-License-Identifier: MIT
   <div class="section" id="intel-open-image-denoise-api">
 <h1>Intel Open Image Denoise API<a class="headerlink" href="#intel-open-image-denoise-api" title="Permalink to this headline">¶</a></h1>
 <p>Intel Open Image Denoise provides a C99 API (also compatible with C++) and a C++11 wrapper API as well. For simplicity, this document mostly refers to the C99 version of the API.</p>
-<p>The API is designed in an object-oriented manner, e.g. it contains device objects (<code class="docutils literal notranslate"><span class="pre">OIDNDevice</span></code> type), buffer objects (<code class="docutils literal notranslate"><span class="pre">OIDNBuffer</span></code> type), and filter objects (<code class="docutils literal notranslate"><span class="pre">OIDNFilter</span></code> type). All objects are reference-counted, and handles can be released by calling the appropriate release function (e.g. <code class="docutils literal notranslate"><span class="pre">oidnReleaseDevice</span></code>) or retained by incrementing the reference count (e.g. <code class="docutils literal notranslate"><span class="pre">oidnRetainDevice</span></code>).</p>
+<p>The API is designed in an object-oriented manner, e.g. it contains device objects (<code class="docutils literal notranslate"><span class="pre">OIDNDevice</span></code> type), buffer objects (<code class="docutils literal notranslate"><span class="pre">OIDNBuffer</span></code> type), and filter objects (<code class="docutils literal notranslate"><span class="pre">OIDNFilter</span></code> type). All objects are reference-counted, and handles can be released by calling the appropriate release function (e.g. <code class="docutils literal notranslate"><span class="pre">oidnReleaseDevice</span></code>) or retained by incrementing the reference count (e.g. <code class="docutils literal notranslate"><span class="pre">oidnRetainDevice</span></code>).</p>
 <p>An important aspect of objects is that setting their parameters do not have an immediate effect (with a few exceptions). Instead, objects with updated parameters are in an unusable state until the parameters get explicitly committed to a given object. The commit semantic allows for batching up multiple small changes, and specifies exactly when changes to objects will occur.</p>
 <p>All API calls are thread-safe, but operations that use the same device will be serialized, so the amount of API calls from different threads should be minimized.</p>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>To have a quick overview of the C99 and C++11 APIs, see the following simple example code snippets.</p>
 <p><em>C99 API Example</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;OpenImageDenoise/oidn.h&gt;</span>
@@ -4712,6 +4778,7 @@ SPDX-License-Identifier: MIT
   <span class="n">std</span><span class="p">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s2">&quot;Error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">errorMessage</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="p">::</span><span class="n">endl</span><span class="p">;</span>
 </pre></div>
 </div>
+</div>
 <div class="section" id="device">
 <h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
 <p>Intel Open Image Denoise supports a device concept, which allows different components of the application to use the Open Image Denoise API without interfering with each other. An application first needs to create a device with</p>
@@ -4719,11 +4786,10 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>where the <code class="docutils literal notranslate"><span class="pre">type</span></code> enumeration maps to a specific device implementation, which can be one of the following:</p>
-<table class="table" id="id1">
-<caption><span class="caption-text">Supported device types, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNDeviceType</span></code>.</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 38%" />
-<col style="width: 62%" />
+<col style="width: 32%" />
+<col style="width: 68%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -4735,10 +4801,11 @@ SPDX-License-Identifier: MIT
 <td><p>select the approximately fastest device</p></td>
 </tr>
 <tr class="row-odd"><td><p>OIDN_DEVICE_TYPE_CPU</p></td>
-<td><p>CPU device (requires SSE4.1 support)</p></td>
+<td><p>CPU device (requires SSE4.1 support or Apple Silicon)</p></td>
 </tr>
 </tbody>
 </table>
+<p>Supported device types, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNDeviceType</span></code>.</p>
 <p>Once a device is created, you can call</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnSetDevice1b</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="nb">bool</span> <span class="n">value</span><span class="p">);</span>
 <span class="n">void</span> <span class="n">oidnSetDevice1i</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="n">name</span><span class="p">,</span> <span class="nb">int</span>  <span class="n">value</span><span class="p">);</span>
@@ -4747,8 +4814,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>to set and get parameter values on the device. Note that some parameters are constants, thus trying to set them is an error. See the tables below for the parameters supported by devices.</p>
-<table class="table" id="id2">
-<caption><span class="caption-text">Parameters supported by all devices.</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
 <col style="width: 6%" />
 <col style="width: 8%" />
@@ -4790,8 +4856,8 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<table class="table" id="id3">
-<caption><span class="caption-text">Additional parameters supported only by CPU devices.</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<p>Parameters supported by all devices.</p>
+<table class="table">
 <colgroup>
 <col style="width: 4%" />
 <col style="width: 9%" />
@@ -4818,6 +4884,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
+<p>Additional parameters supported only by CPU devices.</p>
 <p>Note that the CPU device heavily relies on setting the thread affinities to achieve optimal performance, so it is highly recommended to leave this option enabled. However, this may interfere with the application if that also sets the thread affinities, potentially causing performance degradation. In such cases, the recommended solution is to either disable setting the affinities in the application or in Intel Open Image Denoise, or to always set/reset the affinities before/after each parallel region in the application (e.g., if using TBB, with <code class="docutils literal notranslate"><span class="pre">tbb::task_arena</span></code> and <code class="docutils literal notranslate"><span class="pre">tbb::task_scheduler_observer</span></code>).</p>
 <p>Once parameters are set on the created device, the device must be committed with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnCommitDevice</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">);</span>
@@ -4850,11 +4917,10 @@ SPDX-License-Identifier: MIT
 <p>to get notified when errors occur. Only a single callback function can be registered per device, and further invocations overwrite the previously set callback function, which do <em>not</em> require also calling the <code class="docutils literal notranslate"><span class="pre">oidnCommitDevice</span></code> function. Passing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as function pointer disables the registered callback function. When the registered callback function is invoked, it gets passed the user-defined payload (<code class="docutils literal notranslate"><span class="pre">userPtr</span></code> argument as specified at registration time), the error code (<code class="docutils literal notranslate"><span class="pre">code</span></code> argument) of the occurred error, as well as a string (<code class="docutils literal notranslate"><span class="pre">message</span></code> argument) that further describes the error. The error code is always set even if an error callback function is registered. It is recommended to always set a error callback function, to detect all errors.</p>
 <p>When the device construction fails, <code class="docutils literal notranslate"><span class="pre">oidnNewDevice</span></code> returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as device. To detect the error code of a such failed device construction, pass <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as device to the <code class="docutils literal notranslate"><span class="pre">oidnGetDeviceError</span></code> function. For all other invocations of <code class="docutils literal notranslate"><span class="pre">oidnGetDeviceError</span></code>, a proper device handle must be specified.</p>
 <p>The following errors are currently used by Intel Open Image Denoise:</p>
-<table class="table" id="id4">
-<caption><span class="caption-text">Possible error codes, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNError</span></code>.</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 43%" />
-<col style="width: 57%" />
+<col style="width: 42%" />
+<col style="width: 58%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -4885,6 +4951,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
+<p>Possible error codes, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNError</span></code>.</p>
 </div>
 </div>
 <div class="section" id="buffer">
@@ -4909,11 +4976,10 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>where <code class="docutils literal notranslate"><span class="pre">access</span></code> is the desired access mode of the mapped memory, <code class="docutils literal notranslate"><span class="pre">byteOffset</span></code> is the offset to the beginning of the mapped memory region in bytes, and <code class="docutils literal notranslate"><span class="pre">byteSize</span></code> is the number of bytes to map. The function returns a pointer to the mapped buffer data. If the specified <code class="docutils literal notranslate"><span class="pre">byteSize</span></code> is 0, the maximum available amount of memory will be mapped. The <code class="docutils literal notranslate"><span class="pre">access</span></code> argument must be one of the access modes in the following table:</p>
-<table class="table" id="id5">
-<caption><span class="caption-text">Access modes for memory regions mapped with <code class="docutils literal notranslate"><span class="pre">oidnMapBuffer</span></code>, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNAccess</span></code>.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 29%" />
-<col style="width: 71%" />
+<col style="width: 30%" />
+<col style="width: 70%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -4935,6 +5001,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
+<p>Access modes for memory regions mapped with <code class="docutils literal notranslate"><span class="pre">oidnMapBuffer</span></code>, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNAccess</span></code>.</p>
 <p>After accessing the mapped data in the buffer, the memory region must be unmapped with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnUnmapBuffer</span><span class="p">(</span><span class="n">OIDNBuffer</span> <span class="n">buffer</span><span class="p">,</span> <span class="n">void</span><span class="o">*</span> <span class="n">mappedPtr</span><span class="p">);</span>
 </pre></div>
@@ -4943,8 +5010,7 @@ SPDX-License-Identifier: MIT
 <div class="section" id="data-format">
 <h3>Data Format<a class="headerlink" href="#data-format" title="Permalink to this headline">¶</a></h3>
 <p>Buffers store opaque data and thus have no information about the type and format of the data. Other objects, e.g. filters, typically require specifying the format of the data stored in buffers or shared via pointers. This can be done using the <code class="docutils literal notranslate"><span class="pre">OIDNFormat</span></code> enumeration type:</p>
-<table class="table" id="id6">
-<caption><span class="caption-text">Supported data formats, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNFormat</span></code>.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 67%" />
@@ -4966,6 +5032,7 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
+<p>Supported data formats, i.e., valid constants of type <code class="docutils literal notranslate"><span class="pre">OIDNFormat</span></code>.</p>
 </div>
 </div>
 <div class="section" id="filter">
@@ -5034,17 +5101,16 @@ SPDX-License-Identifier: MIT
 <div class="section" id="rt">
 <h3>RT<a class="headerlink" href="#rt" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">RT</span></code> (<strong>r</strong>ay <strong>t</strong>racing) filter is a generic ray tracing denoising filter which is suitable for denoising images rendered with Monte Carlo ray tracing methods like unidirectional and bidirectional path tracing. It supports depth of field and motion blur as well, but it is <em>not</em> temporally stable. The filter is based on a convolutional neural network (CNN), and it aims to provide a good balance between denoising performance and quality. The filter comes with a set of pre-trained CNN models that work well with a wide range of ray tracing based renderers and noise levels.</p>
-<p>It accepts either a low dynamic range (LDR) or high dynamic range (HDR) color image as input. Optionally, it also accepts auxiliary <em>feature</em> images, e.g. albedo and normal, which improve the denoising quality, preserving more details in the image.</p>
+<p>It accepts either a low dynamic range (LDR) or high dynamic range (HDR) color image as input. Optionally, it also accepts auxiliary <em>feature</em> images, e.g. albedo and normal, which improve the denoising quality, preserving more details in the image.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter has certain limitations regarding the supported input images. Most notably, it cannot denoise images that were not rendered with ray tracing. Another important limitation is related to anti-aliasing filters. Most renderers use a high-quality pixel reconstruction filter instead of a trivial box filter to minimize aliasing artifacts (e.g. Gaussian, Blackman-Harris). The <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter does support such pixel filters but only if implemented with importance sampling. Weighted pixel sampling (sometimes called <em>splatting</em>) introduces correlation between neighboring pixels, which causes the denoising to fail (the noise will not be filtered), thus it is not supported.</p>
 <p>The filter can be created by passing <code class="docutils literal notranslate"><span class="pre">&quot;RT&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">oidnNewFilter</span></code> function as the filter type. The filter supports the parameters listed in the table below. All specified images must have the same dimensions. The output image can be one of the input images (i.e. in-place denoising is supported).</p>
-<table class="table" id="id7">
-<caption><span class="caption-text">Parameters supported by the <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
 <col style="width: 3%" />
 <col style="width: 2%" />
-<col style="width: 4%" />
 <col style="width: 3%" />
-<col style="width: 87%" />
+<col style="width: 2%" />
+<col style="width: 90%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5059,49 +5125,49 @@ SPDX-License-Identifier: MIT
 <td><p>float3</p></td>
 <td><p>color</p></td>
 <td></td>
-<td><p>input color image (LDR values in [0, 1] or HDR values in [0, +∞), 3 channels)</p></td>
+<td><p>input color image (RGB, LDR values in [0, 1] or HDR values in [0, +∞), values being interpreted such that, after scaling with the inputScale parameter, a value of 1 corresponds to a luminance level of 100 cd/m²)</p></td>
 </tr>
 <tr class="row-odd"><td><p>Image</p></td>
 <td><p>float3</p></td>
 <td><p>albedo</p></td>
 <td></td>
-<td><p>input feature image containing the albedo (values in [0, 1], 3 channels) of the first hit per pixel; <em>optional</em></p></td>
+<td><p>input feature image containing the albedo (RGB, values in [0, 1]) of the first hit per pixel; <em>optional</em></p></td>
 </tr>
 <tr class="row-even"><td><p>Image</p></td>
 <td><p>float3</p></td>
 <td><p>normal</p></td>
 <td></td>
-<td><p>input feature image containing the shading normal (world-space or view-space, arbitrary length, values in (−∞, +∞), 3 channels) of the first hit per pixel; <em>optional</em>, requires setting the albedo image too</p></td>
+<td><p>input feature image containing the shading normal (3D world-space or view-space vector with arbitrary length, values in (−∞, +∞)) of the first hit per pixel; <em>optional</em>, requires setting the albedo image too</p></td>
 </tr>
 <tr class="row-odd"><td><p>Image</p></td>
 <td><p>float3</p></td>
 <td><p>output</p></td>
 <td></td>
-<td><p>output color image (3 channels); it can be one of the input images</p></td>
+<td><p>output image; it can be one of the input images</p></td>
 </tr>
-<tr class="row-even"><td><p>Data</p></td>
-<td></td>
-<td><p>weights</p></td>
-<td></td>
-<td><p>trained model weights blob; <em>optional</em></p></td>
-</tr>
-<tr class="row-odd"><td><p>bool</p></td>
+<tr class="row-even"><td><p>bool</p></td>
 <td></td>
 <td><p>hdr</p></td>
 <td><p>false</p></td>
 <td><p>whether the color is HDR</p></td>
-</tr>
-<tr class="row-even"><td><p>float</p></td>
-<td></td>
-<td><p>hdrScale</p></td>
-<td><p>NaN</p></td>
-<td><p>HDR color values are interpreted such that, multiplied by this scale, a value of 1 corresponds to a luminance level of 100 cd/m² (this affects the quality of the output but the output color values will <em>not</em> be scaled); if set to NaN, the scale is computed automatically (<em>default</em>)</p></td>
 </tr>
 <tr class="row-odd"><td><p>bool</p></td>
 <td></td>
 <td><p>srgb</p></td>
 <td><p>false</p></td>
 <td><p>whether the color is encoded with the sRGB (or 2.2 gamma) curve (LDR only) or is linear; the output will be encoded with the same curve</p></td>
+</tr>
+<tr class="row-even"><td><p>float</p></td>
+<td></td>
+<td><p>inputScale</p></td>
+<td><p>NaN</p></td>
+<td><p>scales input color values before filtering, without scaling the output too, which can be used to map color values to the expected range, e.g. for mapping HDR values to physical units (which affects the quality of the output but <em>not</em> the range of the output values); if set to NaN, the scale is computed automatically for HDR images or set to 1 otherwise (<em>default</em>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data</p></td>
+<td></td>
+<td><p>weights</p></td>
+<td></td>
+<td><p>trained model weights blob; <em>optional</em></p></td>
 </tr>
 <tr class="row-even"><td><p>int</p></td>
 <td></td>
@@ -5113,7 +5179,7 @@ SPDX-License-Identifier: MIT
 <td></td>
 <td><p>alignment</p></td>
 <td></td>
-<td><p>when manually denoising the image in tiles, the tile size and offsets should be multiples of this amount of pixels to avoid artifacts; note that manual tiled denoising of HDR images is supported <em>only</em> when hdrScale is set by the user</p></td>
+<td><p>when manually denoising the image in tiles, the tile size and offsets should be multiples of this amount of pixels to avoid artifacts; note that manual tiled denoising of HDR images is supported <em>only</em> when inputScale is set by the user</p></td>
 </tr>
 <tr class="row-even"><td><p>const int</p></td>
 <td></td>
@@ -5123,16 +5189,29 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
-<p>[Example noisy color image rendered using unidirectional path tracing (64 spp). <em>Scene by Evermotion.</em>][imgMazdaColor]</p>
-<p>[Example output image denoised using color and auxiliary feature images (albedo and normal).][imgMazdaDenoised]</p>
+<p>Parameters supported by the <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter.</p>
+<div class="figure align-default" id="id1">
+<img alt="Example noisy color image rendered using unidirectional path tracing (64 spp). *Scene by Evermotion.*" src="../../../_images/mazda_64spp_input.jpg" />
+<p class="caption"><span class="caption-text">Example noisy color image rendered using unidirectional path tracing (64 spp). <em>Scene by Evermotion.</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<img alt="Example output image denoised using color and auxiliary feature images (albedo and normal)." src="../../../_images/mazda_64spp_oidn.jpg" />
+<p class="caption"><span class="caption-text">Example output image denoised using color and auxiliary feature images (albedo and normal).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>Using auxiliary feature images like albedo and normal helps preserving fine details and textures in the image thus can significantly improve denoising quality. These images should typically contain feature values for the first hit (i.e. the surface which is directly visible) per pixel. This works well for most surfaces but does not provide any benefits for reflections and objects visible through transparent surfaces (compared to just using the color as input). However, in certain cases this issue can be fixed by storing feature values for a subsequent hit (i.e. the reflection and/or refraction) instead of the first hit. For example, it usually works well to follow perfect specular (<em>delta</em>) paths and store features for the first diffuse or glossy surface hit instead (e.g. for perfect specular dielectrics and mirrors). This can greatly improve the quality of reflections and transmission. We will describe this approach in more detail in the following subsections.</p>
 <p>The auxiliary feature images should be as noise-free as possible. It is not a strict requirement but too much noise in the feature images may cause residual noise in the output. Also, all feature images should use the same pixel reconstruction filter as the color image. Using a properly anti-aliased color image but aliased albedo or normal images will likely introduce artifacts around edges.</p>
 <div class="section" id="albedo">
 <h4>Albedo<a class="headerlink" href="#albedo" title="Permalink to this headline">¶</a></h4>
 <p>The albedo image is the feature image that usually provides the biggest quality improvement. It should contain the approximate color of the surfaces independent of illumination and viewing angle.</p>
 <p>For simple matte surfaces this means using the diffuse color/texture as the albedo. For other, more complex surfaces it is not always obvious what is the best way to compute the albedo, but the denoising filter is flexibile to a certain extent and works well with differently computed albedos. Thus it is not necessary to compute the strict, exact albedo values but must be always between 0 and 1.</p>
-<p>[Example albedo image obtained using the first hit. Note that the albedos of all transparent surfaces are 1.][imgMazdaAlbedoFirstHit]</p>
-<p>[Example albedo image obtained using the first diffuse or glossy (non-delta) hit. Note that the albedos of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted albedos.][imgMazdaAlbedoNonDeltaHit]</p>
+<div class="figure align-default" id="id3">
+<img alt="Example albedo image obtained using the first hit. Note that the albedos of all transparent surfaces are 1." src="../../../_images/mazda_firsthit_512spp_albedo.jpg" />
+<p class="caption"><span class="caption-text">Example albedo image obtained using the first hit. Note that the albedos of all transparent surfaces are 1.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id4">
+<img alt="Example albedo image obtained using the first diffuse or glossy (non-delta) hit. Note that the albedos of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted albedos." src="../../../_images/mazda_nondeltahit_512spp_albedo.jpg" />
+<p class="caption"><span class="caption-text">Example albedo image obtained using the first diffuse or glossy (non-delta) hit. Note that the albedos of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted albedos.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
 <p>For metallic surfaces the albedo should be either the reflectivity at normal incidence (e.g. from the artist friendly metallic Fresnel model) or the average reflectivity; or if these are constant (not textured) or unknown, the albedo can be simply 1 as well.</p>
 <p>The albedo for dielectric surfaces (e.g. glass) should be either 1 or, if the surface is perfect specular (i.e. has a delta BSDF), the Fresnel blend of the reflected and transmitted albedos (as previously discussed). The latter usually works better but <em>only</em> if it does not introduce too much additional noise due to random sampling. Thus we recommend to split the path into a reflected and a transmitted path at the first hit, and perhaps fall back to an albedo of 1 for subsequent dielectric hits, to avoid noise. The reflected albedo in itself can be used for mirror-like surfaces as well.</p>
 <p>The albedo for layered surfaces can be computed as the weighted sum of the albedos of the individual layers. Non-absorbing clear coat layers can be simply ignored (or the albedo of the perfect specular reflection can be used as well) but absorption should be taken into account.</p>
@@ -5140,28 +5219,33 @@ SPDX-License-Identifier: MIT
 <div class="section" id="normal">
 <h4>Normal<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h4>
 <p>The normal image should contain the shading normals of the surfaces either in world-space or view-space. It is recommended to include normal maps to preserve as much detail as possible.</p>
-<p>Just like any other input image, the normal image should be anti-aliased (i.e. by accumulating the normalized normals per pixel). The final accumulated normals do not have to be normalized but must be in a range symmetric about 0 (i.e. normals mapped to [0, 1] are <em>not</em> acceptable and must be remapped to e.g. [−1, 1]).</p>
+<p>Just like any other input image, the normal image should be anti-aliased (i.e. by accumulating the normalized normals per pixel). The final accumulated normals do not have to be normalized but must be in a range symmetric about 0 (i.e. normals mapped to [0, 1] are <em>not</em> acceptable and must be remapped to e.g. [−1, 1]).</p>
 <p>Similar to the albedo, the normal can be stored for either the first or a subsequent hit (if the first hit has a perfect specular/delta BSDF).</p>
-<p>[Example normal image obtained using the first hit (the values are actually in [−1, 1] but were mapped to [0, 1] for illustration purposes).][imgMazdaNormalFirstHit]</p>
-<p>[Example normal image obtained using the first diffuse or glossy (non-delta) hit. Note that the normals of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted normals.][imgMazdaNormalNonDeltaHit]</p>
+<div class="figure align-default" id="id5">
+<img alt="Example normal image obtained using the first hit (the values are actually in [−1, 1] but were mapped to [0, 1] for illustration purposes)." src="../../../_images/mazda_firsthit_512spp_normal.jpg" />
+<p class="caption"><span class="caption-text">Example normal image obtained using the first hit (the values are actually in [−1, 1] but were mapped to [0, 1] for illustration purposes).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id6">
+<img alt="Example normal image obtained using the first diffuse or glossy (non-delta) hit. Note that the normals of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted normals." src="../../../_images/mazda_nondeltahit_512spp_normal.jpg" />
+<p class="caption"><span class="caption-text">Example normal image obtained using the first diffuse or glossy (non-delta) hit. Note that the normals of perfect specular (delta) transparent surfaces are computed as the Fresnel blend of the reflected and transmitted normals.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="weights">
 <h4>Weights<a class="headerlink" href="#weights" title="Permalink to this headline">¶</a></h4>
-<p>Instead of using the built-in trained models for filtering, it is also possible to specify user-trained models at runtime. This can be achieved by passing the model <em>weights</em> blob corresponding to the specified set of features and other filter parameters, produced by the included training tool. See Section [Training] for details.</p>
+<p>Instead of using the built-in trained models for filtering, it is also possible to specify user-trained models at runtime. This can be achieved by passing the model <em>weights</em> blob corresponding to the specified set of features and other filter parameters, produced by the included training tool. See Section <a class="reference external" href="#training">Training</a> for details.</p>
 </div>
 </div>
 <div class="section" id="rtlightmap">
 <h3>RTLightmap<a class="headerlink" href="#rtlightmap" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">RTLightmap</span></code> filter is a variant of the <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter optimized for denoising HDR lightmaps. It does not support LDR images.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">RTLightmap</span></code> filter is a variant of the <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter optimized for denoising HDR and normalized directional (e.g. spherical harmonics) lightmaps. It does not support LDR images.</p>
 <p>The filter can be created by passing <code class="docutils literal notranslate"><span class="pre">&quot;RTLightmap&quot;</span></code> to the <code class="docutils literal notranslate"><span class="pre">oidnNewFilter</span></code> function as the filter type. The filter supports the following parameters:</p>
-<table class="table" id="id8">
-<caption><span class="caption-text">Parameters supported by the <code class="docutils literal notranslate"><span class="pre">RTLightmap</span></code> filter.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<table class="table">
 <colgroup>
-<col style="width: 5%" />
 <col style="width: 3%" />
-<col style="width: 6%" />
-<col style="width: 4%" />
-<col style="width: 83%" />
+<col style="width: 2%" />
+<col style="width: 3%" />
+<col style="width: 2%" />
+<col style="width: 90%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5176,13 +5260,25 @@ SPDX-License-Identifier: MIT
 <td><p>float3</p></td>
 <td><p>color</p></td>
 <td></td>
-<td><p>input color image (HDR values in [0, +∞), 3 channels)</p></td>
+<td><p>input color image (RGB, HDR values in [0, +∞), interpreted such that, after scaling with the inputScale parameter, a value of 1 corresponds to a luminance level of 100 cd/m²; directional values in [-1, 1])</p></td>
 </tr>
 <tr class="row-odd"><td><p>Image</p></td>
 <td><p>float3</p></td>
 <td><p>output</p></td>
 <td></td>
-<td><p>output color image (3 channels); it can be one of the input images</p></td>
+<td><p>output image; it can be one of the input images</p></td>
+</tr>
+<tr class="row-even"><td><p>bool</p></td>
+<td></td>
+<td><p>directional</p></td>
+<td><p>false</p></td>
+<td><p>whether the input contains normalized coefficients (in [-1, 1]) of a directional lightmap (e.g. normalized L1 or higher spherical harmonics band with the L0 band divided out); if the range of the coefficients is different from [-1, 1], the inputScale parameter can be used to adjust the range without changing the stored values</p></td>
+</tr>
+<tr class="row-odd"><td><p>float</p></td>
+<td></td>
+<td><p>inputScale</p></td>
+<td><p>NaN</p></td>
+<td><p>scales input color values before filtering, without scaling the output too, which can be used to map color values to the expected range, e.g. for mapping HDR values to physical units (which affects the quality of the output but <em>not</em> the range of the output values); if set to NaN, the scale is computed automatically for HDR images or set to 1 otherwise (<em>default</em>)</p></td>
 </tr>
 <tr class="row-even"><td><p>Data</p></td>
 <td></td>
@@ -5190,25 +5286,19 @@ SPDX-License-Identifier: MIT
 <td></td>
 <td><p>trained model weights blob; <em>optional</em></p></td>
 </tr>
-<tr class="row-odd"><td><p>float</p></td>
-<td></td>
-<td><p>hdrScale</p></td>
-<td><p>NaN</p></td>
-<td><p>HDR color values are interpreted such that, multiplied by this scale, a value of 1 corresponds to a luminance level of 100 cd/m²; if set to NaN, the scale is computed automatically (<em>default</em>)</p></td>
-</tr>
-<tr class="row-even"><td><p>int</p></td>
+<tr class="row-odd"><td><p>int</p></td>
 <td></td>
 <td><p>maxMemoryMB</p></td>
 <td><p>6000</p></td>
 <td><p>approximate maximum amount of scratch memory to use in megabytes (actual memory usage may be higher)</p></td>
 </tr>
-<tr class="row-odd"><td><p>const int</p></td>
+<tr class="row-even"><td><p>const int</p></td>
 <td></td>
 <td><p>alignment</p></td>
 <td></td>
-<td><p>when manually denoising the image in tiles, the tile size and offsets should be multiples of this amount of pixels</p></td>
+<td><p>when manually denoising the image in tiles, the tile size and offsets should be multiples of this amount of pixels to avoid artifacts; note that manual tiled denoising of HDR images is supported <em>only</em> when inputScale is set by the user</p></td>
 </tr>
-<tr class="row-even"><td><p>const int</p></td>
+<tr class="row-odd"><td><p>const int</p></td>
 <td></td>
 <td><p>overlap</p></td>
 <td></td>
@@ -5216,6 +5306,176 @@ SPDX-License-Identifier: MIT
 </tr>
 </tbody>
 </table>
+<p>Parameters supported by the <code class="docutils literal notranslate"><span class="pre">RTLightmap</span></code> filter.</p>
+</div>
+</div>
+</div>
+<div class="section" id="training">
+<h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
+<p>The Intel Open Image Denoise source distribution includes a Python-based neural network training toolkit (located in the <code class="docutils literal notranslate"><span class="pre">training</span></code> directory), which can be used to train the denoising filter models with image datasets provided by the user. This is an advanced feature of the library which usage requires some background knowledge of machine learning and basic familiarity with deep learning frameworks and toolkits (e.g. PyTorch or TensorFlow, TensorBoard).</p>
+<p>The training toolkit consists of the following command-line scripts:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">preprocess.py</span></code>: Preprocesses training and validation datasets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">train.py</span></code>: Trains a model using preprocessed datasets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">infer.py</span></code>: Performs inference on a dataset using the specified training result.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">export.py</span></code>: Exports a training result to the runtime model weights format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find_lr.py</span></code>: Tool for finding the optimal minimum and maximum learning rates.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">visualize.py</span></code>: Invokes TensorBoard for visualizing statistics of a training result.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split_exr.py</span></code>: Splits a multi-channel EXR image into multiple feature images.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">convert_image.py</span></code>: Converts a feature image to a different image format.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">compare_image.py</span></code>: Compares two feature images using the specified quality metrics.</p></li>
+</ul>
+<div class="section" id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Before you can run the training toolkit you need the following prerequisites:</p>
+<ul class="simple">
+<li><p>Linux (other operating systems are currently not supported)</p></li>
+<li><p>Python 3.7 or later</p></li>
+<li><p><a class="reference external" href="https://pytorch.org/">PyTorch</a> 1.7 or later</p></li>
+<li><p><a class="reference external" href="https://numpy.org/">NumPy</a> 1.19 or later</p></li>
+<li><p><a class="reference external" href="http://openimageio.org/">OpenImageIO</a> 2.1 or later</p></li>
+<li><p><a class="reference external" href="https://www.tensorflow.org/tensorboard">TensorBoard</a> 2.4 or later (<em>optional</em>)</p></li>
+</ul>
+</div>
+<div class="section" id="devices">
+<h2>Devices<a class="headerlink" href="#devices" title="Permalink to this headline">¶</a></h2>
+<p>Most scripts in the training toolkit support selecting what kind of device (e.g. CPU, GPU) to use for the computations (<code class="docutils literal notranslate"><span class="pre">--device</span></code> or <code class="docutils literal notranslate"><span class="pre">-d</span></code> option). If multiple devices of the same kind are available (e.g. multiple GPUs), the user can specify which one of these to use (<code class="docutils literal notranslate"><span class="pre">--device_id</span></code> or <code class="docutils literal notranslate"><span class="pre">-k</span></code> option). Additionally, some scripts, like <code class="docutils literal notranslate"><span class="pre">train.py</span></code>, support data-parallel execution on multiple devices for faster performance (<code class="docutils literal notranslate"><span class="pre">--num_devices</span></code> or <code class="docutils literal notranslate"><span class="pre">-n</span></code> option).</p>
+</div>
+<div class="section" id="datasets">
+<h2>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h2>
+<p>A dataset should consist of a collection of noisy and corresponding noise-free reference images. It is possible to have more than one noisy version of the same image in the dataset, e.g. rendered at different samples per pixel and/or using different seeds.</p>
+<p>The training toolkit expects to have all datasets (e.g. training, validation) in the same parent directory (e.g. <code class="docutils literal notranslate"><span class="pre">data</span></code>). Each dataset is stored in its own subdirectory (e.g. <code class="docutils literal notranslate"><span class="pre">train</span></code>, <code class="docutils literal notranslate"><span class="pre">valid</span></code>), which can have an arbitrary name.</p>
+<p>The images must be stored in <a class="reference external" href="https://www.openexr.com/">OpenEXR</a> format (<code class="docutils literal notranslate"><span class="pre">.exr</span></code> files), and the filenames must have a specific format but the files can be stored in an arbitrary directory structure inside the dataset directory. The only restriction is that all versions of an image (noisy images and the reference image) must be located in the same subdirectory. Each feature of an image (e.g. color, albedo) must be stored in a separate image file, i.e. multi-channel EXR image files are not supported. If you have multi-channel EXRs, you can split them into separate images per feature using the included <code class="docutils literal notranslate"><span class="pre">split_exr.py</span></code> tool.</p>
+<p>An image filename must consist of a base name, a suffix with the number of samples per pixel or whether it is the reference image (e.g. <code class="docutils literal notranslate"><span class="pre">_0128spp</span></code>, <code class="docutils literal notranslate"><span class="pre">_ref</span></code>), the feature type extension (e.g. <code class="docutils literal notranslate"><span class="pre">.hdr</span></code>, <code class="docutils literal notranslate"><span class="pre">.alb</span></code>), and the image format extension (<code class="docutils literal notranslate"><span class="pre">.exr</span></code>). The exact filename format as a regular expression is the following:</p>
+<div class="highlight-regexp notranslate"><div class="highlight"><pre><span></span><span class="err">.+_([0-9]+(</span><span class="n">spp</span><span class="err">)?|</span><span class="n">ref</span><span class="err">|</span><span class="n">reference</span><span class="err">|</span><span class="n">gt</span><span class="err">|</span><span class="n">target</span><span class="err">)\.(</span><span class="n">hdr</span><span class="err">|</span><span class="n">ldr</span><span class="err">|</span><span class="n">sh</span><span class="err">1[</span><span class="n">xyz</span><span class="err">]|</span><span class="n">alb</span><span class="err">|</span><span class="n">nrm</span><span class="err">)\.</span><span class="n">exr</span>
+</pre></div>
+</div>
+<p>The number of samples per pixel should be padded with leading zeros to have a fixed number of digits. If the reference image is not explicitly named as such (i.e. has the number of samples instead), the image with the most samples per pixel will be considered the reference.</p>
+<p>The following image features are supported:</p>
+<table class="table">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 39%" />
+<col style="width: 13%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Channels</p></th>
+<th class="head"><p>File extension</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">hdr</span></code></p></td>
+<td><p>color (HDR)</p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.hdr.exr</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ldr</span></code></p></td>
+<td><p>color (LDR)</p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.ldr.exr</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sh1</span></code></p></td>
+<td><p>color (normalized L1 spherical harmonics)</p></td>
+<td><p>3 × 3 images</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.sh1x.exr</span></code>, <code class="docutils literal notranslate"><span class="pre">.sh1y.exr</span></code>, <code class="docutils literal notranslate"><span class="pre">.sh1z.exr</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">alb</span></code></p></td>
+<td><p>albedo</p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.alb.exr</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nrm</span></code></p></td>
+<td><p>normal</p></td>
+<td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">.nrm.exr</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Image features supported by the training toolkit.</p>
+<p>The following directory tree demonstrates an example root dataset directory (<code class="docutils literal notranslate"><span class="pre">data</span></code>) containing one dataset (<code class="docutils literal notranslate"><span class="pre">rt_train</span></code>) with HDR color and albedo feature images:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>data
+`-- rt_train
+    |-- scene1
+    |   |-- view1_0001.alb.exr
+    |   |-- view1_0001.hdr.exr
+    |   |-- view1_0004.alb.exr
+    |   |-- view1_0004.hdr.exr
+    |   |-- view1_8192.alb.exr
+    |   |-- view1_8192.hdr.exr
+    |   |-- view2_0001.alb.exr
+    |   |-- view2_0001.hdr.exr
+    |   |-- view2_8192.alb.exr
+    |   `-- view2_8192.hdr.exr
+    |-- scene2_000008spp.alb.exr
+    |-- scene2_000008spp.hdr.exr
+    |-- scene2_000064spp.alb.exr
+    |-- scene2_000064spp.hdr.exr
+    |-- scene2_reference.alb.exr
+    `-- scene2_reference.hdr.exr
+</pre></div>
+</div>
+</div>
+<div class="section" id="preprocessing-preprocess-py">
+<h2>Preprocessing (preprocess.py)<a class="headerlink" href="#preprocessing-preprocess-py" title="Permalink to this headline">¶</a></h2>
+<p>Training and validation datasets can be used only after preprocessing them using the <code class="docutils literal notranslate"><span class="pre">preprocess.py</span></code> script. This will convert the specified training (<code class="docutils literal notranslate"><span class="pre">--train_data</span></code> or <code class="docutils literal notranslate"><span class="pre">-t</span></code> option) and validation datasets (<code class="docutils literal notranslate"><span class="pre">--valid_data</span></code> or <code class="docutils literal notranslate"><span class="pre">-v</span></code> option) located in the root dataset directory (<code class="docutils literal notranslate"><span class="pre">--data_dir</span></code> or <code class="docutils literal notranslate"><span class="pre">-D</span></code> option) to a format that can be loaded more efficiently during training. All preprocessed datasets will be stored in a root preprocessed dataset directory (<code class="docutils literal notranslate"><span class="pre">--preproc_dir</span></code> or <code class="docutils literal notranslate"><span class="pre">-P</span></code> option).</p>
+<p>The preprocessing script requires the set of image features to include in the preprocessed dataset as command-line arguments. Only these specified features will be available for training but it is not required to use all of them at the same time. Thus, a single preprocessed dataset can be reused for training multiple models with different combinations of the preprocessed features. Preprocessing also depends on the filter that will be trained (e.g. determines which HDR/LDR transfer function has to be used), which should be also specified (<code class="docutils literal notranslate"><span class="pre">--filter</span></code> or <code class="docutils literal notranslate"><span class="pre">-f</span></code> option). The alternative is to manually specify the transfer function (<code class="docutils literal notranslate"><span class="pre">--transfer</span></code> or <code class="docutils literal notranslate"><span class="pre">-x</span></code> option) and other filter-specific parameters, which could be useful for training custom filters.</p>
+<p>For example, to preprocess the training and validation datasets (<code class="docutils literal notranslate"><span class="pre">rt_train</span></code> and <code class="docutils literal notranslate"><span class="pre">rt_valid</span></code>) with HDR color, albedo, and normal image features, for training the <code class="docutils literal notranslate"><span class="pre">RT</span></code> filter, the following command can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">preprocess</span><span class="o">.</span><span class="n">py</span> <span class="n">hdr</span> <span class="n">alb</span> <span class="n">nrm</span> <span class="o">--</span><span class="nb">filter</span> <span class="n">RT</span> <span class="o">--</span><span class="n">train_data</span> <span class="n">rt_train</span> <span class="o">--</span><span class="n">valid_data</span> <span class="n">rt_valid</span>
+</pre></div>
+</div>
+<p>It is possible to preprocess the same dataset multiple times, with possibly different combinations of features and options. The training script will use the most suitable and most recent preprocessed version depending on the training parameters.</p>
+<p>For more details about using the preprocessing script, including other options, please have a look at the help message:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">preprocess</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="training-train-py">
+<h2>Training (train.py)<a class="headerlink" href="#training-train-py" title="Permalink to this headline">¶</a></h2>
+<p>The filters require separate trained models for each supported combination of input features. Thus, depending on which combinations of features the user wants to support for a particular filter, one or more models have to be trained.</p>
+<p>After preprocessing the datasets, it is possible to start training a model using the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script. Similar to the preprocessing script, the input features must be specified (could be a subset of the preprocessed features), and the dataset names, directory paths, and the filter can be also passed.</p>
+<p>The tool will produce a training <em>result</em>, the name of which can be either specified (<code class="docutils literal notranslate"><span class="pre">--result</span></code> or <code class="docutils literal notranslate"><span class="pre">-r</span></code> option) or automatically generated (by default). Each result is stored in its own subdirectory, and these are located in a common parent directory (<code class="docutils literal notranslate"><span class="pre">--results_dir</span></code> or <code class="docutils literal notranslate"><span class="pre">-R</span></code> option). If a training result already exists, the tool will resume training that result from the latest checkpoint.</p>
+<p>The default training hyperparameters should work reasonably well in general, but some adjustments might be necessary for certain datasets to attain optimal performance, most importantly: the number of epochs (<code class="docutils literal notranslate"><span class="pre">--num_epochs</span></code> or <code class="docutils literal notranslate"><span class="pre">-e</span></code> option), the global mini-batch size (<code class="docutils literal notranslate"><span class="pre">--batch_size</span></code> or <code class="docutils literal notranslate"><span class="pre">--bs</span></code> option), and the learning rate. The training tool uses a one-cycle learning rate schedule with cosine annealing, which can be configured by setting the base learning rate (<code class="docutils literal notranslate"><span class="pre">--learning_rate</span></code> or <code class="docutils literal notranslate"><span class="pre">--lr</span></code> option), the maximum learning rate (<code class="docutils literal notranslate"><span class="pre">--max_learning_rate</span></code> or <code class="docutils literal notranslate"><span class="pre">--max_lr</span></code> option), and the percentage of the cycle spent increasing the learning rate (<code class="docutils literal notranslate"><span class="pre">--lr_warmup</span></code> option).</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">train</span><span class="o">.</span><span class="n">py</span> <span class="n">hdr</span> <span class="n">alb</span> <span class="o">--</span><span class="nb">filter</span> <span class="n">RT</span> <span class="o">--</span><span class="n">train_data</span> <span class="n">rt_train</span> <span class="o">--</span><span class="n">valid_data</span> <span class="n">rt_valid</span> <span class="o">--</span><span class="n">result</span> <span class="n">rt_hdr_alb</span>
+</pre></div>
+</div>
+<p>For finding the optimal learning rate range, we recommend using the included <code class="docutils literal notranslate"><span class="pre">find_lr.py</span></code> script, which trains one epoch using an increasing learning rate and logs the resulting losses in a comma-separated values (CSV) file. Plotting the loss curve can show when the model starts to learn (the base learning rate) and when it starts to diverge (the maximum learning rate).</p>
+<p>The model is evaluated with the validation dataset at regular intervals (<code class="docutils literal notranslate"><span class="pre">--num_valid_epochs</span></code> option), and checkpoints are also regularly created (<code class="docutils literal notranslate"><span class="pre">--num_save_epochs</span></code> option) to save training progress. Also, some statistics are logged (e.g. training and validation losses, learning rate) per epoch, which can be later visualized with TensorBoard by running the <code class="docutils literal notranslate"><span class="pre">visualize.py</span></code> script, e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">visualize</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">result</span> <span class="n">rt_hdr_alb</span>
+</pre></div>
+</div>
+<p>Training is performed with mixed precision (FP16 and FP32) by default, if it supported by the hardware, which makes training faster and use less memory. However, in some rare cases this might cause some convergence issues. The training precision can be manually set to FP32 if necessary (<code class="docutils literal notranslate"><span class="pre">-p</span></code> or <code class="docutils literal notranslate"><span class="pre">--precision</span></code> option).</p>
+</div>
+<div class="section" id="inference-infer-py">
+<h2>Inference (infer.py)<a class="headerlink" href="#inference-infer-py" title="Permalink to this headline">¶</a></h2>
+<p>A training result can be tested by performing inference on an image dataset (<code class="docutils literal notranslate"><span class="pre">--input_data</span></code> or <code class="docutils literal notranslate"><span class="pre">-i</span></code> option) using the <code class="docutils literal notranslate"><span class="pre">infer.py</span></code> script. The dataset does <em>not</em> have to be preprocessed. In addition to the result to use, it is possible to specify which checkpoint to load as well (<code class="docutils literal notranslate"><span class="pre">-e</span></code> or <code class="docutils literal notranslate"><span class="pre">--num_epochs</span></code> option). By default the latest checkpoint is loaded.</p>
+<p>The tool saves the output images in a separate directory (<code class="docutils literal notranslate"><span class="pre">--output_dir</span></code> or <code class="docutils literal notranslate"><span class="pre">-O</span></code> option) in the requested formats (<code class="docutils literal notranslate"><span class="pre">--format</span></code> or <code class="docutils literal notranslate"><span class="pre">-F</span></code> option). It also evaluates a set of image quality metrics (<code class="docutils literal notranslate"><span class="pre">--metric</span></code> or <code class="docutils literal notranslate"><span class="pre">-M</span></code> option), e.g. PSNR, SSIM, for images that have reference images available. All metrics are computed in tonemapped non-linear sRGB space. Thus, HDR images are first tonemapped (with Naughty Dog’s Filmic Tonemapper from John Hable’s <em>Uncharted 2: HDR Lighting</em> presentation) and converted to sRGB before evaluating the metrics.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">infer</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">result</span> <span class="n">rt_hdr_alb</span> <span class="o">--</span><span class="n">input_data</span> <span class="n">rt_test</span> <span class="o">--</span><span class="nb">format</span> <span class="n">exr</span> <span class="n">png</span> <span class="o">--</span><span class="n">metric</span> <span class="n">ssim</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exporting-results-export-py">
+<h2>Exporting Results (export.py)<a class="headerlink" href="#exporting-results-export-py" title="Permalink to this headline">¶</a></h2>
+<p>The training result produced by the <code class="docutils literal notranslate"><span class="pre">train.py</span></code> script cannot be immediately used by the main library. It has to be first exported to the runtime model weights format, a <em>Tensor Archive</em> (TZA) file. Running the <code class="docutils literal notranslate"><span class="pre">export.py</span></code> script for a training result (and optionally a checkpoint epoch) will create a binary <code class="docutils literal notranslate"><span class="pre">.tza</span></code> file in the directory of the result, which can be either used at runtime through the API or it can be included in the library build by replacing one of the built-in weights files.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">export</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">result</span> <span class="n">rt_hdr_alb</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="image-conversion-and-comparison">
+<h2>Image Conversion and Comparison<a class="headerlink" href="#image-conversion-and-comparison" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the already mentioned <code class="docutils literal notranslate"><span class="pre">split_exr.py</span></code> script, the toolkit contains a few other image utilities as well.</p>
+<p><code class="docutils literal notranslate"><span class="pre">convert_image.py</span></code> converts a feature image to a different image format (and/or a different feature, e.g. HDR color to LDR), performing tonemapping and other transforms as well if needed. For HDR images the exposure can be adjusted by passing a linear exposure scale (<code class="docutils literal notranslate"><span class="pre">--exposure</span></code> or <code class="docutils literal notranslate"><span class="pre">-E</span></code> option). Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">convert_image</span><span class="o">.</span><span class="n">py</span> <span class="n">view1_0004</span><span class="o">.</span><span class="n">hdr</span><span class="o">.</span><span class="n">exr</span> <span class="n">view1_0004</span><span class="o">.</span><span class="n">png</span> <span class="o">--</span><span class="n">exposure</span> <span class="mf">2.5</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">compare_image.py</span></code> script compares two feature images (preferably having the dataset filename format to correctly detect the feature) using the specified image quality metrics, similar to the <code class="docutils literal notranslate"><span class="pre">infer.py</span></code> tool. Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">compare_image</span><span class="o">.</span><span class="n">py</span> <span class="n">view1_0004</span><span class="o">.</span><span class="n">hdr</span><span class="o">.</span><span class="n">exr</span> <span class="n">view1_8192</span><span class="o">.</span><span class="n">hdr</span><span class="o">.</span><span class="n">exr</span> <span class="o">--</span><span class="n">exposure</span> <span class="mf">2.5</span> <span class="o">--</span><span class="n">metric</span> <span class="n">mse</span> <span class="n">ssim</span>
+</pre></div>
 </div>
 </div>
 </div>

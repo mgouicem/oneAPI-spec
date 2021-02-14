@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -5138,10 +5143,10 @@ SPDX-License-Identifier: MIT
 <table class="table" id="id5">
 <caption><span class="caption-text">Configuration parameters for structured regular (<code class="docutils literal notranslate"><span class="pre">&quot;structuredRegular&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 5%" />
+<col style="width: 4%" />
 <col style="width: 10%" />
 <col style="width: 16%" />
-<col style="width: 69%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5167,9 +5172,12 @@ SPDX-License-Identifier: MIT
 <div class="section" id="structured-spherical-volumes">
 <h4>Structured Spherical Volumes<a class="headerlink" href="#structured-spherical-volumes" title="Permalink to this headline">¶</a></h4>
 <p>Structured spherical volumes are also supported, which are created by passing a type string of <code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>. The grid dimensions and parameters are defined in terms of radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>), conforming with the ISO convention for spherical coordinate systems. The coordinate system and parameters understood by structured spherical volumes are summarized below.</p>
-<p>[Structured spherical volume coordinate system: radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>).][imgStructuredSphericalCoords]</p>
-<table class="table" id="id6">
-<caption><span class="caption-text">Configuration parameters for structured spherical (<code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code>) volumes.</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<div class="figure align-default" id="id6">
+<img alt="Structured spherical volume coordinate system: radial distance (:math:`r`), inclination angle (:math:`\theta`), and azimuthal angle (:math:`\phi`)." src="../../../_images/structured_spherical_coords.png" />
+<p class="caption"><span class="caption-text">Structured spherical volume coordinate system: radial distance (<span class="math notranslate nohighlight">\(r\)</span>), inclination angle (<span class="math notranslate nohighlight">\(\theta\)</span>), and azimuthal angle (<span class="math notranslate nohighlight">\(\phi\)</span>).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<table class="table" id="id7">
+<caption><span class="caption-text">Configuration parameters for structured spherical (<code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code>) volumes.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 14%" />
 <col style="width: 10%" />
@@ -5243,13 +5251,13 @@ SPDX-License-Identifier: MIT
 <li><p><span class="math notranslate nohighlight">\(0 \leq \phi \leq 360\)</span></p></li>
 </ul>
 <p>The following additional parameters can be set both on <code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code> volumes and their sampler objects. Sampler object parameters default to volume parameters.</p>
-<table class="table" id="id7">
-<caption><span class="caption-text">Configuration parameters for structured spherical (<code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id8">
+<caption><span class="caption-text">Configuration parameters for structured spherical (<code class="docutils literal notranslate"><span class="pre">&quot;structuredSpherical&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 5%" />
+<col style="width: 4%" />
 <col style="width: 10%" />
 <col style="width: 16%" />
-<col style="width: 69%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5280,8 +5288,8 @@ SPDX-License-Identifier: MIT
 <p>Blocks are defined by three parameters: their bounds, the refinement level in which they reside, and the scalar data contained within each block.</p>
 <p>Note that cell widths are defined <em>per refinement level</em>, not per block.</p>
 <p>AMR volumes are created by passing the type string <code class="docutils literal notranslate"><span class="pre">&quot;amr&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>, and have the following parameters:</p>
-<table class="table" id="id8">
-<caption><span class="caption-text">Configuration parameters for AMR (<code class="docutils literal notranslate"><span class="pre">&quot;amr&quot;</span></code>) volumes.</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id9">
+<caption><span class="caption-text">Configuration parameters for AMR (<code class="docutils literal notranslate"><span class="pre">&quot;amr&quot;</span></code>) volumes.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 6%" />
 <col style="width: 8%" />
@@ -5330,13 +5338,13 @@ SPDX-License-Identifier: MIT
 </table>
 <p>Note that the <code class="docutils literal notranslate"><span class="pre">gridOrigin</span></code> and <code class="docutils literal notranslate"><span class="pre">gridSpacing</span></code> parameters act just like the structured volume equivalent, but they only modify the root (coarsest level) of refinement.</p>
 <p>The following additional parameters can be set both on <code class="docutils literal notranslate"><span class="pre">&quot;amr&quot;</span></code> volumes and their sampler objects. Sampler object parameters default to volume parameters.</p>
-<table class="table" id="id9">
-<caption><span class="caption-text">Configuration parameters for AMR (<code class="docutils literal notranslate"><span class="pre">&quot;AMR&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id10">
+<caption><span class="caption-text">Configuration parameters for AMR (<code class="docutils literal notranslate"><span class="pre">&quot;AMR&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 17%" />
-<col style="width: 11%" />
-<col style="width: 19%" />
-<col style="width: 53%" />
+<col style="width: 8%" />
+<col style="width: 20%" />
+<col style="width: 55%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5404,8 +5412,8 @@ SPDX-License-Identifier: MIT
 <p>To maintain VTK data compatibility, the <code class="docutils literal notranslate"><span class="pre">index</span></code> array may be specified with cell sizes interleaved with vertex indices in the following format: <span class="math notranslate nohighlight">\(n, id_1, ..., id_n, m, id_1, ..., id_m\)</span>. This alternative <code class="docutils literal notranslate"><span class="pre">index</span></code> array layout can be enabled through the <code class="docutils literal notranslate"><span class="pre">indexPrefixed</span></code> flag (in which case, the <code class="docutils literal notranslate"><span class="pre">cell.type</span></code> parameter should be omitted).</p>
 <p>A binary bounding volume hierarchy (BVH) is used internally to accelerate interval iteration. Intervals are found by intersecting BVH nodes up to a maximum level of the tree, configurable by the <code class="docutils literal notranslate"><span class="pre">maxIteratorDepth</span></code> parameter. Larger values of <code class="docutils literal notranslate"><span class="pre">maxIteratorDepth</span></code> lead to smaller individual intervals (up to leaf node intersections), yielding potentially more efficient space-skipping behavior and tighter bounds on returned interval metadata.</p>
 <p>Unstructured volumes are created by passing the type string <code class="docutils literal notranslate"><span class="pre">&quot;unstructured&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>, and have the following parameters:</p>
-<table class="table" id="id10">
-<caption><span class="caption-text">Configuration parameters for unstructured (<code class="docutils literal notranslate"><span class="pre">&quot;unstructured&quot;</span></code>) volumes.</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id11">
+<caption><span class="caption-text">Configuration parameters for unstructured (<code class="docutils literal notranslate"><span class="pre">&quot;unstructured&quot;</span></code>) volumes.</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 10%" />
 <col style="width: 10%" />
@@ -5488,13 +5496,13 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The following additional parameters can be set both on <code class="docutils literal notranslate"><span class="pre">unstructured</span></code> volumes and their sampler objects (sampler object parameters default to volume parameters).</p>
-<table class="table" id="id11">
-<caption><span class="caption-text">Configuration parameters for unstructured (<code class="docutils literal notranslate"><span class="pre">&quot;unstructured&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id12">
+<caption><span class="caption-text">Configuration parameters for unstructured (<code class="docutils literal notranslate"><span class="pre">&quot;unstructured&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 13%" />
-<col style="width: 16%" />
+<col style="width: 6%" />
+<col style="width: 17%" />
 <col style="width: 8%" />
-<col style="width: 64%" />
+<col style="width: 69%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5518,7 +5526,10 @@ SPDX-License-Identifier: MIT
 <p>The data structure is a hierarchical regular grid at its core: Nodes are regular grids, and each grid cell may either store a constant value (this is called a tile), or child pointers.</p>
 <p>Nodes in VDB trees are wide: Nodes on the first level have a resolution of 32^3 voxels by default, on the next level 16^3, and on the leaf level 8^3 voxels. All nodes on a given level have the same resolution. This makes it easy to find the node containing a coordinate using shift operations (cp. [1]).</p>
 <p>VDB leaf nodes are implicit in Open VKL: they are stored as pointers to user-provided data.</p>
-<p>[Structure of <code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code> volumes in the default configuration][imgVdbStructure]</p>
+<div class="figure align-default" id="id13">
+<img alt="Structure of ``&quot;vdb&quot;`` volumes in the default configuration" src="../../../_images/vdb_structure.png" />
+<p class="caption"><span class="caption-text">Structure of <code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code> volumes in the default configuration</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
 <p>VDB volumes interpret input data as constant cells (which are then potentially filtered). This is in contrast to <code class="docutils literal notranslate"><span class="pre">structuredRegular</span></code> volumes, which have a vertex-centered interpretation.</p>
 <p>The VDB implementation in Open VKL follows the following goals:</p>
 <ul class="simple">
@@ -5527,8 +5538,8 @@ SPDX-License-Identifier: MIT
 <li><p>Compatibility with OpenVDB on a leaf data level, so that .vdb files may be loaded with minimal overhead.</p></li>
 </ul>
 <p>VDB volumes are created by passing the type string <code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>, and have the following parameters:</p>
-<table class="table" id="id12">
-<caption><span class="caption-text">Configuration parameters for VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes.</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id14">
+<caption><span class="caption-text">Configuration parameters for VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 3%" />
@@ -5572,13 +5583,13 @@ SPDX-License-Identifier: MIT
 </table>
 <p>The level, origin, format, and data parameters must have the same size, and there must be at least one valid node or <code class="docutils literal notranslate"><span class="pre">commit()</span></code> will fail.</p>
 <p>The following additional parameters can be set both on <code class="docutils literal notranslate"><span class="pre">vdb</span></code> volumes and their sampler objects (sampler object parameters default to volume parameters).</p>
-<table class="table" id="id13">
-<caption><span class="caption-text">Configuration parameters for VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id15">
+<caption><span class="caption-text">Configuration parameters for VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
-<col style="width: 5%" />
+<col style="width: 4%" />
 <col style="width: 11%" />
-<col style="width: 15%" />
-<col style="width: 68%" />
+<col style="width: 16%" />
+<col style="width: 70%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>
@@ -5611,8 +5622,8 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>VDB sampler objects support the following observers:</p>
-<table class="table" id="id14">
-<caption><span class="caption-text">Observers supported by sampler objects created on VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes.</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id16">
+<caption><span class="caption-text">Observers supported by sampler objects created on VDB (<code class="docutils literal notranslate"><span class="pre">&quot;vdb&quot;</span></code>) volumes.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 6%" />
 <col style="width: 5%" />
@@ -5666,8 +5677,8 @@ SPDX-License-Identifier: MIT
 <p>The Open VKL implementation is similar to direct evaluation of samples in Reda et al.[2]. It uses an Embree-built BVH with a custom traversal, similar to the method in [1].</p>
 <p>Similar to unstructured volumes, a binary BVH is used internally to accelerate interval iteration. Intervals are found by intersecting BVH nodes up to a maximum level of the tree, configurable by the <code class="docutils literal notranslate"><span class="pre">maxIteratorDepth</span></code> parameter.</p>
 <p>Particle volumes are created by passing the type string <code class="docutils literal notranslate"><span class="pre">&quot;particle&quot;</span></code> to <code class="docutils literal notranslate"><span class="pre">vklNewVolume</span></code>, and have the following parameters:</p>
-<table class="table" id="id15">
-<caption><span class="caption-text">Configuration parameters for particle (<code class="docutils literal notranslate"><span class="pre">&quot;particle&quot;</span></code>) volumes.</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id17">
+<caption><span class="caption-text">Configuration parameters for particle (<code class="docutils literal notranslate"><span class="pre">&quot;particle&quot;</span></code>) volumes.</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 2%" />
 <col style="width: 5%" />
@@ -5715,13 +5726,13 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>The following additional parameters can be set both on <code class="docutils literal notranslate"><span class="pre">particle</span></code> volumes and their sampler objects (sampler object parameters default to volume parameters).</p>
-<table class="table" id="id16">
-<caption><span class="caption-text">Configuration parameters for particle (<code class="docutils literal notranslate"><span class="pre">&quot;particle&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<table class="table" id="id18">
+<caption><span class="caption-text">Configuration parameters for particle (<code class="docutils literal notranslate"><span class="pre">&quot;particle&quot;</span></code>) volumes and their sampler objects.</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 6%" />
-<col style="width: 19%" />
+<col style="width: 17%" />
 <col style="width: 8%" />
-<col style="width: 67%" />
+<col style="width: 69%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Type</p></th>

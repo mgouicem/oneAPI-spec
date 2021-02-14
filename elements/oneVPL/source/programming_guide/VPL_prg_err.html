@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4624,12 +4629,12 @@ errors or other warnings overwriting
 hardware device is busy and unable to take commands at this time. Resume the
 operation by waiting for a few milliseconds and resubmitting the request.
 The following example shows the decoding pseudo-code:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxStatus</span> <span class="n">sts</span><span class="o">=</span><span class="n">MFX_ERR_NONE</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxStatus</span> <span class="n">sts</span><span class="o">=</span><span class="n">MFX_ERR_NONE</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(;;)</span> <span class="p">{</span>
    <span class="c1">// do something</span>
    <span class="n">sts</span><span class="o">=</span><span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="n">bitstream</span><span class="p">,</span>  <span class="n">surface_work</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">surface_disp</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>

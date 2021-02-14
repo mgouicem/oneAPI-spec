@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4607,31 +4612,31 @@ SPDX-License-Identifier: MIT
   <div class="section" id="video-processing-procedures">
 <span id="vid-process-procedure"></span><h1>Video Processing Procedures<a class="headerlink" href="#video-processing-procedures" title="Permalink to this headline">¶</a></h1>
 <p>The following pseudo code shows the video processing procedure:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">MFXVideoVPP_QueryIOSurf</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">,</span> <span class="n">response</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">MFXVideoVPP_QueryIOSurf</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">,</span> <span class="n">response</span><span class="p">);</span>
 <span class="n">allocate_pool_of_surfaces</span><span class="p">(</span><span class="n">in_pool</span><span class="p">,</span> <span class="n">response</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">NumFrameSuggested</span><span class="p">);</span>
 <span class="n">allocate_pool_of_surfaces</span><span class="p">(</span><span class="n">out_pool</span><span class="p">,</span> <span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">NumFrameSuggested</span><span class="p">);</span>
 <span class="n">MFXVideoVPP_Init</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">init_param</span><span class="p">);</span>
@@ -4760,31 +4765,31 @@ list of configurable filters.</p>
 </tbody>
 </table>
 <p>The following example shows video processing configuration:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* enable image stabilization filter with default settings */</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* enable image stabilization filter with default settings */</span>
 <span class="n">mfxExtVPPDoUse</span> <span class="n">du</span><span class="p">;</span>
 <span class="n">mfxU32</span> <span class="n">al</span><span class="o">=</span><span class="n">MFX_EXTBUFF_VPP_IMAGE_STABILIZATION</span><span class="p">;</span>
 
@@ -4914,25 +4919,25 @@ each view according to its processing pipeline. If the video processing source
 frame is not the output from the oneVPL MVC decoder, then the application needs to
 fill the the <code class="docutils literal notranslate"><span class="pre">FrameID</span></code> field before calling the <a class="reference internal" href="../API_ref/VPL_func_vid_vpp.html#_CPPv428MFXVideoVPP_RunFrameVPPAsync10mfxSessionP16mfxFrameSurface1P16mfxFrameSurface1P16mfxExtVppAuxDataP12mfxSyncPoint" title="MFXVideoVPP_RunFrameVPPAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_RunFrameVPPAsync()</span></code></a>
 function. This is shown in the following pseudo code:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxExtBuffer</span> <span class="o">*</span><span class="n">eb</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxExtBuffer</span> <span class="o">*</span><span class="n">eb</span><span class="p">;</span>
 <span class="n">mfxExtMVCSeqDesc</span>  <span class="n">seq_desc</span><span class="p">;</span>
 <span class="n">mfxVideoParam</span> <span class="n">init_param</span><span class="p">;</span>
 

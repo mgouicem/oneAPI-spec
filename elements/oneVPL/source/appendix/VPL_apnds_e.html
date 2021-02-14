@@ -4412,6 +4412,11 @@ SPDX-License-Identifier: MIT
          Intel Open Image Denoise API
         </a>
        </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../../../oneART/source/oidn-spec.html#training">
+         Training
+        </a>
+       </li>
       </ul>
       <i class="fas fa-chevron-down">
       </i>
@@ -4433,7 +4438,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/ospray-spec.html#distributed-rendering-with-mpi">
-         Distributed rendering with MPI
+         Distributed Rendering with MPI
         </a>
        </li>
       </ul>
@@ -4588,16 +4593,16 @@ with the VA API for Linux*, for example to implement a customized external alloc
 This section describes basic memory management and synchronization techniques.</p>
 <p>To create the VA surface pool, the application should call the vaCreateSurfaces
 function:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">VASurfaceAttrib</span> <span class="n">attrib</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">VASurfaceAttrib</span> <span class="n">attrib</span><span class="p">;</span>
 <span class="n">attrib</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VASurfaceAttribPixelFormat</span><span class="p">;</span>
 <span class="n">attrib</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">VAGenericValueTypeInteger</span><span class="p">;</span>
 <span class="n">attrib</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">value</span><span class="p">.</span><span class="n">i</span> <span class="o">=</span> <span class="n">VA_FOURCC_NV12</span><span class="p">;</span>
@@ -4611,7 +4616,7 @@ function:</p>
 </td></tr></table></div>
 <p>To destroy the surface pool, the application should call the vaDestroySurfaces
 function:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">,</span> <span class="n">NUM_SURFACES</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">vaDestroySurfaces</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">,</span> <span class="n">NUM_SURFACES</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p>If the application works with hardware acceleration through Intel<sup>®</sup> Media Software Development Kit, then it can
@@ -4631,16 +4636,16 @@ Accessing surface data is performed in two steps:</p>
 plain in a mapped buffer and the VAImage.pitches[3] array holds color plain
 pitches in bytes. For packed data formats, only first entries in these
 arrays are valid. The following example shows how to access data in a NV12 surface:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">VAImage</span> <span class="n">image</span><span class="p">;</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">VAImage</span> <span class="n">image</span><span class="p">;</span>
 <span class="kt">unsigned</span> <span class="kt">char</span> <span class="o">*</span><span class="n">buffer</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">U</span><span class="p">,</span> <span class="n">V</span><span class="p">;</span>
 
 <span class="n">vaDeriveImage</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">surface_id</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">image</span><span class="p">);</span>
@@ -4654,36 +4659,36 @@ arrays are valid. The following example shows how to access data in a NV12 surfa
 </td></tr></table></div>
 <p>After processing data in a VA surface, the application should release resources
 allocated for the mapped buffer and VAImage object:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">buf</span><span class="p">);</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">vaUnmapBuffer</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">buf</span><span class="p">);</span>
 <span class="n">vaDestroyImage</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">image</span><span class="p">.</span><span class="n">image_id</span><span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
 <p>In some cases, in order to retrieve encoded bitstream data from video memory,
 the application must use the VABuffer to store data. The following example shows
 how to create, use, and destroy the VABuffer:</p>
-<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* create buffer */</span>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* create buffer */</span>
 <span class="n">VABufferID</span> <span class="n">buf_id</span><span class="p">;</span>
 <span class="n">vaCreateBuffer</span><span class="p">(</span><span class="n">va_display</span><span class="p">,</span> <span class="n">va_context</span><span class="p">,</span> <span class="n">VAEncCodedBufferType</span><span class="p">,</span> <span class="n">buf_size</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span> <span class="n">buf_id</span><span class="p">);</span>
 
