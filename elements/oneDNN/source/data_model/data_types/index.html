@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4600,48 +4599,48 @@ post-ops always use it internally.</p>
 <p>oneDNN uses the following enumeration to refer to data types it supports:</p>
 <dl class="cpp enum">
 <dt id="_CPPv4N4dnnl6memory9data_typeE">
-<span id="_CPPv3N4dnnl6memory9data_typeE"></span><span id="_CPPv2N4dnnl6memory9data_typeE"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dce"></span><em class="property">enum </em><code class="sig-prename descclassname">dnnl::<a class="reference internal" href="../memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory">memory</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">data_type</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_typeE"></span><span id="_CPPv2N4dnnl6memory9data_typeE"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dce"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><a class="reference internal" href="../memory/objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">data_type</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Data type specification. </p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type5undefE">
-<span id="_CPPv3N4dnnl6memory9data_type5undefE"></span><span id="_CPPv2N4dnnl6memory9data_type5undefE"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaf31ee5e3824f1f5e5d206bdf3029f22b"></span><em class="property">enumerator </em><code class="sig-name descname">undef</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type5undefE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type5undefE"></span><span id="_CPPv2N4dnnl6memory9data_type5undefE"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaf31ee5e3824f1f5e5d206bdf3029f22b"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">undef</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type5undefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Undefined data type (used for empty memory descriptors). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type3f16E">
-<span id="_CPPv3N4dnnl6memory9data_type3f16E"></span><span id="_CPPv2N4dnnl6memory9data_type3f16E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaa2449b6477c1fef79be4202906486876"></span><em class="property">enumerator </em><code class="sig-name descname">f16</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3f16E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type3f16E"></span><span id="_CPPv2N4dnnl6memory9data_type3f16E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaa2449b6477c1fef79be4202906486876"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">f16</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3f16E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Half-precision_floating-point_format">16-bit/half-precision floating point</a>. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type4bf16E">
-<span id="_CPPv3N4dnnl6memory9data_type4bf16E"></span><span id="_CPPv2N4dnnl6memory9data_type4bf16E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceafe2904d9fb3b0f4a81c92b03dec11424"></span><em class="property">enumerator </em><code class="sig-name descname">bf16</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type4bf16E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type4bf16E"></span><span id="_CPPv2N4dnnl6memory9data_type4bf16E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceafe2904d9fb3b0f4a81c92b03dec11424"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bf16</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type4bf16E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>non-standard <a class="reference external" href="https://en.wikipedia.org/wiki/Bfloat16_floating-point_format">16-bit floating point with 7-bit mantissa</a>. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type3f32E">
-<span id="_CPPv3N4dnnl6memory9data_type3f32E"></span><span id="_CPPv2N4dnnl6memory9data_type3f32E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e"></span><em class="property">enumerator </em><code class="sig-name descname">f32</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3f32E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type3f32E"></span><span id="_CPPv2N4dnnl6memory9data_type3f32E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea512dc597be7ae761876315165dc8bd2e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">f32</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3f32E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Single-precision_floating-point_format">32-bit/single-precision floating point</a>. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type3s32E">
-<span id="_CPPv3N4dnnl6memory9data_type3s32E"></span><span id="_CPPv2N4dnnl6memory9data_type3s32E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31"></span><em class="property">enumerator </em><code class="sig-name descname">s32</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3s32E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type3s32E"></span><span id="_CPPv2N4dnnl6memory9data_type3s32E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dceaa860868d23f3a68323a2e3f6563d7f31"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">s32</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type3s32E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>32-bit signed integer. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type2s8E">
-<span id="_CPPv3N4dnnl6memory9data_type2s8E"></span><span id="_CPPv2N4dnnl6memory9data_type2s8E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea3e8d88fdd85d7153525e0647cdd97686"></span><em class="property">enumerator </em><code class="sig-name descname">s8</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type2s8E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type2s8E"></span><span id="_CPPv2N4dnnl6memory9data_type2s8E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea3e8d88fdd85d7153525e0647cdd97686"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">s8</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type2s8E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>8-bit signed integer. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory9data_type2u8E">
-<span id="_CPPv3N4dnnl6memory9data_type2u8E"></span><span id="_CPPv2N4dnnl6memory9data_type2u8E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2"></span><em class="property">enumerator </em><code class="sig-name descname">u8</code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type2u8E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory9data_type2u8E"></span><span id="_CPPv2N4dnnl6memory9data_type2u8E"></span><span class="target" id="structdnnl_1_1memory_1a8e83474ec3a50e08e37af76c8c075dcea077393852be20e37026d6281827662f2"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">u8</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory9data_type2u8E" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>8-bit unsigned integer. </p>
 </dd></dl>
 

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4657,14 +4656,14 @@ used to obtain an updated copy.</p>
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4I0E10input_nodeR5graph4Body">
-<span id="_CPPv3I0E10input_nodeR5graph4Body"></span><span id="_CPPv2I0E10input_nodeR5graph4Body"></span>template&lt;typename <code class="sig-name descname">Body</code>&gt;<br /><code class="sig-name descname">input_node</code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph">graph</a> &amp;<em>g</em>, <a class="reference internal" href="#_CPPv4I0E10input_nodeR5graph4Body" title="input_node::Body">Body</a> <em>body</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E10input_nodeR5graph4Body" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0E10input_nodeR5graph4Body"></span><span id="_CPPv2I0E10input_nodeR5graph4Body"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Body</span></code><span class="pre">&gt;</span><br /><code class="sig-name descname"><span class="pre">input_node</span></code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph"><span class="pre">graph</span></a> <span class="pre">&amp;</span><em><span class="pre">g</span></em>, <a class="reference internal" href="#_CPPv4I0E10input_nodeR5graph4Body" title="input_node::Body"><span class="pre">Body</span></a> <em><span class="pre">body</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0E10input_nodeR5graph4Body" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an <code class="docutils literal notranslate"><span class="pre">input_node</span></code> that invokes <code class="docutils literal notranslate"><span class="pre">body</span></code>. By default,
 the node is created in an inactive state, which means that messages are not generated until a call to <code class="docutils literal notranslate"><span class="pre">activate</span></code> is made.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410input_nodeRK10input_node">
-<span id="_CPPv310input_nodeRK10input_node"></span><span id="_CPPv210input_nodeRK10input_node"></span><span id="input_node__input_nodeCR"></span><code class="sig-name descname">input_node</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv410input_nodeRK10input_node" title="input_node">input_node</a> &amp;<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410input_nodeRK10input_node" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv310input_nodeRK10input_node"></span><span id="_CPPv210input_nodeRK10input_node"></span><span id="input_node__input_nodeCR"></span><code class="sig-name descname"><span class="pre">input_node</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv410input_nodeRK10input_node" title="input_node"><span class="pre">input_node</span></a> <span class="pre">&amp;</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410input_nodeRK10input_node" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an <code class="docutils literal notranslate"><span class="pre">input_node</span></code> that has the same initial state that
 <code class="docutils literal notranslate"><span class="pre">src</span></code> had when it was constructed. The <code class="docutils literal notranslate"><span class="pre">input_node</span></code> that is
 constructed has a reference to the same <code class="docutils literal notranslate"><span class="pre">graph</span></code> object as
@@ -4679,13 +4678,13 @@ of <code class="docutils literal notranslate"><span class="pre">src</span></code
 
 <dl class="cpp function">
 <dt id="_CPPv48activatev">
-<span id="_CPPv38activatev"></span><span id="_CPPv28activatev"></span><span id="activate"></span>void <code class="sig-name descname">activate</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48activatev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv38activatev"></span><span id="_CPPv28activatev"></span><span id="activate"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">activate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48activatev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets the <code class="docutils literal notranslate"><span class="pre">input_node</span></code> to the active state, which enables messages generation.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv47try_getR6Output">
-<span id="_CPPv37try_getR6Output"></span><span id="_CPPv27try_getR6Output"></span><span id="try_get__OutputR"></span>bool <code class="sig-name descname">try_get</code><span class="sig-paren">(</span>Output &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_getR6Output" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37try_getR6Output"></span><span id="_CPPv27try_getR6Output"></span><span id="try_get__OutputR"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_get</span></code><span class="sig-paren">(</span><span class="pre">Output</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_getR6Output" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Copies the message from the buffer to <code class="docutils literal notranslate"><span class="pre">v</span></code> if available, or, if the node is
 in active state, invokes <code class="docutils literal notranslate"><span class="pre">body</span></code> to attempt to generate a new message that
 will be copied into <code class="docutils literal notranslate"><span class="pre">v</span></code>.</p>

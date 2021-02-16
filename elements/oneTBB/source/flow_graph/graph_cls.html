@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4643,7 +4642,7 @@ SPDX-License-Identifier: MIT
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv45graphR18task_group_context">
-<span id="_CPPv35graphR18task_group_context"></span><span id="_CPPv25graphR18task_group_context"></span><span id="graph__task_group_contextR"></span><code class="sig-name descname">graph</code><span class="sig-paren">(</span><a class="reference internal" href="../task_scheduler/scheduling_controls/task_group_context_cls.html#_CPPv418task_group_context6kind_t9uintptr_t" title="task_group_context">task_group_context</a> &amp;<em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45graphR18task_group_context" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv35graphR18task_group_context"></span><span id="_CPPv25graphR18task_group_context"></span><span id="graph__task_group_contextR"></span><code class="sig-name descname"><span class="pre">graph</span></code><span class="sig-paren">(</span><a class="reference internal" href="../task_scheduler/scheduling_controls/task_group_context_cls.html#_CPPv418task_group_context6kind_t9uintptr_t" title="task_group_context"><span class="pre">task_group_context</span></a> <span class="pre">&amp;</span><em><span class="pre">group</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45graphR18task_group_context" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a graph with no nodes. If <code class="docutils literal notranslate"><span class="pre">group</span></code> is specified, the
 graph tasks are executed in this group. By default, the graph is
 executed in a bound context of its own.</p>
@@ -4651,39 +4650,39 @@ executed in a bound context of its own.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4D0v">
-<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~graph"></span><code class="sig-name descname">~graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~graph"></span><code class="sig-name descname"><span class="pre">~graph</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Calls <code class="docutils literal notranslate"><span class="pre">wait_for_all()</span></code> on the graph, then destroys the graph.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412wait_for_allv">
-<span id="_CPPv312wait_for_allv"></span><span id="_CPPv212wait_for_allv"></span><span id="wait_for_all"></span>void <code class="sig-name descname">wait_for_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412wait_for_allv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv312wait_for_allv"></span><span id="_CPPv212wait_for_allv"></span><span id="wait_for_all"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">wait_for_all</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412wait_for_allv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Blocks execution until all tasks associated with the graph have completed or cancelled.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv45reset11reset_flags">
-<span id="_CPPv35reset11reset_flags"></span><span id="_CPPv25reset11reset_flags"></span><span id="reset__reset_flags"></span>void <code class="sig-name descname">reset</code><span class="sig-paren">(</span>reset_flags <em>f</em> = rf_reset_protocol<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45reset11reset_flags" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv35reset11reset_flags"></span><span id="_CPPv25reset11reset_flags"></span><span id="reset__reset_flags"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="pre">reset_flags</span> <em><span class="pre">f</span></em> <span class="pre">=</span> <span class="pre">rf_reset_protocol</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45reset11reset_flags" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Resets the graph according to the specified flags.
 Flags to <code class="docutils literal notranslate"><span class="pre">reset()</span></code> can be combined with bitwise-<code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv46cancelv">
-<span id="_CPPv36cancelv"></span><span id="_CPPv26cancelv"></span><span id="cancel"></span>void <code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46cancelv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv36cancelv"></span><span id="_CPPv26cancelv"></span><span id="cancel"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">cancel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46cancelv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Cancels all tasks in the graph.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412is_cancelledv">
-<span id="_CPPv312is_cancelledv"></span><span id="_CPPv212is_cancelledv"></span><span id="is_cancelled"></span>bool <code class="sig-name descname">is_cancelled</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412is_cancelledv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv312is_cancelledv"></span><span id="_CPPv212is_cancelledv"></span><span id="is_cancelled"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_cancelled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412is_cancelledv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns: <code class="docutils literal notranslate"><span class="pre">true</span></code> if the graph was cancelled during the last call to
 <code class="docutils literal notranslate"><span class="pre">wait_for_all()</span></code>; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv416exception_thrownv">
-<span id="_CPPv316exception_thrownv"></span><span id="_CPPv216exception_thrownv"></span><span id="exception_thrown"></span>bool <code class="sig-name descname">exception_thrown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416exception_thrownv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv316exception_thrownv"></span><span id="_CPPv216exception_thrownv"></span><span id="exception_thrown"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">exception_thrown</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416exception_thrownv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns: <code class="docutils literal notranslate"><span class="pre">true</span></code> if during the last call to <code class="docutils literal notranslate"><span class="pre">wait_for_all()</span></code> an
 exception was thrown; <code class="docutils literal notranslate"><span class="pre">false</span></code>, otherwise.</p>
 </dd></dl>

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4639,13 +4638,13 @@ that will be merged into a final value.</p>
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable10combinableEv">
-<span id="_CPPv3N3tbb10combinable10combinableEv"></span><span id="_CPPv2N3tbb10combinable10combinableEv"></span><span id="tbb::combinable::combinable"></span><code class="sig-name descname">combinable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable10combinableEv"></span><span id="_CPPv2N3tbb10combinable10combinableEv"></span><span id="tbb::combinable::combinable"></span><code class="sig-name descname"><span class="pre">combinable</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs <code class="docutils literal notranslate"><span class="pre">combinable</span></code> such that thread-local instances of <code class="docutils literal notranslate"><span class="pre">T</span></code> will be default-constructed.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb10combinable10combinableE5FInit">
-<span id="_CPPv3I0EN3tbb10combinable10combinableE5FInit"></span><span id="_CPPv2I0EN3tbb10combinable10combinableE5FInit"></span>template&lt;typename <code class="sig-name descname">FInit</code>&gt;<br /><em class="property">explicit</em> <code class="sig-name descname">combinable</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable10combinableE5FInit" title="tbb::combinable::combinable::FInit">FInit</a> <em>finit</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable10combinableE5FInit" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb10combinable10combinableE5FInit"></span><span id="_CPPv2I0EN3tbb10combinable10combinableE5FInit"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">FInit</span></code><span class="pre">&gt;</span><br /><em class="property"><span class="pre">explicit</span></em> <code class="sig-name descname"><span class="pre">combinable</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable10combinableE5FInit" title="tbb::combinable::combinable::FInit"><span class="pre">FInit</span></a> <em><span class="pre">finit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable10combinableE5FInit" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs <code class="docutils literal notranslate"><span class="pre">combinable</span></code> such that thread-local elements will be created by copying the result of <em>finit()</em>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -4656,33 +4655,33 @@ It is evaluated each time a new thread-local element is created.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable10combinableERK10combinable">
-<span id="_CPPv3N3tbb10combinable10combinableERK10combinable"></span><span id="_CPPv2N3tbb10combinable10combinableERK10combinable"></span><span id="tbb::combinable::combinable__combinableCR"></span><code class="sig-name descname">combinable</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N3tbb10combinable10combinableERK10combinable" title="tbb::combinable::combinable">combinable</a> &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableERK10combinable" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable10combinableERK10combinable"></span><span id="_CPPv2N3tbb10combinable10combinableERK10combinable"></span><span id="tbb::combinable::combinable__combinableCR"></span><code class="sig-name descname"><span class="pre">combinable</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N3tbb10combinable10combinableERK10combinable" title="tbb::combinable::combinable"><span class="pre">combinable</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableERK10combinable" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a copy of <em>other</em>, so that it has copies of each element in <em>other</em> with the same thread mapping.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable10combinableERR10combinable">
-<span id="_CPPv3N3tbb10combinable10combinableERR10combinable"></span><span id="_CPPv2N3tbb10combinable10combinableERR10combinable"></span><span id="tbb::combinable::combinable__combinableRR"></span><code class="sig-name descname">combinable</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3tbb10combinable10combinableERR10combinable" title="tbb::combinable::combinable">combinable</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableERR10combinable" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable10combinableERR10combinable"></span><span id="_CPPv2N3tbb10combinable10combinableERR10combinable"></span><span id="tbb::combinable::combinable__combinableRR"></span><code class="sig-name descname"><span class="pre">combinable</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3tbb10combinable10combinableERR10combinable" title="tbb::combinable::combinable"><span class="pre">combinable</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable10combinableERR10combinable" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs <code class="docutils literal notranslate"><span class="pre">combinable</span></code> by moving the content of <em>other</em> intact.
 <em>other</em> is left in an unspecified state but can be safely destroyed.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinableD0Ev">
-<span id="_CPPv3N3tbb10combinableD0Ev"></span><span id="_CPPv2N3tbb10combinableD0Ev"></span><span id="tbb::combinable::~combinable"></span><code class="sig-name descname">~combinable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinableD0Ev"></span><span id="_CPPv2N3tbb10combinableD0Ev"></span><span id="tbb::combinable::~combinable"></span><code class="sig-name descname"><span class="pre">~combinable</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys all elements in <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinableaSERK10combinable">
-<span id="_CPPv3N3tbb10combinableaSERK10combinable"></span><span id="_CPPv2N3tbb10combinableaSERK10combinable"></span><span id="tbb::combinable::assign-operator__combinableCR"></span>combinable &amp;<code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> combinable &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableaSERK10combinable" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinableaSERK10combinable"></span><span id="_CPPv2N3tbb10combinableaSERK10combinable"></span><span id="tbb::combinable::assign-operator__combinableCR"></span><span class="pre">combinable</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">combinable</span> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableaSERK10combinable" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets <code class="docutils literal notranslate"><span class="pre">*this</span></code> to be a copy of <em>other</em>.
 Returns a reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinableaSERR10combinable">
-<span id="_CPPv3N3tbb10combinableaSERR10combinable"></span><span id="_CPPv2N3tbb10combinableaSERR10combinable"></span><span id="tbb::combinable::assign-operator__combinableRR"></span>combinable &amp;<code class="sig-name descname">operator=</code><span class="sig-paren">(</span>combinable &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableaSERR10combinable" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinableaSERR10combinable"></span><span id="_CPPv2N3tbb10combinableaSERR10combinable"></span><span id="tbb::combinable::assign-operator__combinableRR"></span><span class="pre">combinable</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><span class="pre">combinable</span> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinableaSERR10combinable" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Moves the content of <em>other</em> to <code class="docutils literal notranslate"><span class="pre">*this</span></code> intact.
 <em>other</em> is left in an unspecified state but can be safely destroyed.
 Returns a reference to <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
@@ -4690,20 +4689,20 @@ Returns a reference to <code class="docutils literal notranslate"><span class="p
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable5clearEv">
-<span id="_CPPv3N3tbb10combinable5clearEv"></span><span id="_CPPv2N3tbb10combinable5clearEv"></span><span id="tbb::combinable::clear"></span>void <code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5clearEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable5clearEv"></span><span id="_CPPv2N3tbb10combinable5clearEv"></span><span id="tbb::combinable::clear"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">clear</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5clearEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Removes all elements from <code class="docutils literal notranslate"><span class="pre">*this</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable5localEv">
-<span id="_CPPv3N3tbb10combinable5localEv"></span><span id="_CPPv2N3tbb10combinable5localEv"></span><span id="tbb::combinable::local"></span>T &amp;<code class="sig-name descname">local</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5localEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable5localEv"></span><span id="_CPPv2N3tbb10combinable5localEv"></span><span id="tbb::combinable::local"></span><span class="pre">T</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">local</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5localEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>If an element does not exist for the current thread, creates it.</p>
 <p><strong>Returns</strong>: Reference to thread-local element.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10combinable5localERb">
-<span id="_CPPv3N3tbb10combinable5localERb"></span><span id="_CPPv2N3tbb10combinable5localERb"></span><span id="tbb::combinable::local__bR"></span>T &amp;<code class="sig-name descname">local</code><span class="sig-paren">(</span>bool &amp;<em>exists</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5localERb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10combinable5localERb"></span><span id="_CPPv2N3tbb10combinable5localERb"></span><span id="tbb::combinable::local__bR"></span><span class="pre">T</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">local</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <span class="pre">&amp;</span><em><span class="pre">exists</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10combinable5localERb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Similar to <code class="docutils literal notranslate"><span class="pre">local()</span></code>, except that <em>exists</em> is set to true
 if an element was already present for the current thread; false, otherwise.</p>
 <p><strong>Returns</strong>: Reference to thread-local element.</p>
@@ -4711,7 +4710,7 @@ if an element was already present for the current thread; false, otherwise.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb10combinable7combineE1T10BinaryFunc">
-<span id="_CPPv3I0EN3tbb10combinable7combineE10BinaryFunc"></span><span id="_CPPv2I0EN3tbb10combinable7combineE10BinaryFunc"></span>template&lt;typename <code class="sig-name descname">BinaryFunc</code>&gt;<br />T <code class="sig-name descname">combine</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable7combineE1T10BinaryFunc" title="tbb::combinable::combine::BinaryFunc">BinaryFunc</a> <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable7combineE1T10BinaryFunc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb10combinable7combineE10BinaryFunc"></span><span id="_CPPv2I0EN3tbb10combinable7combineE10BinaryFunc"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">BinaryFunc</span></code><span class="pre">&gt;</span><br /><span class="pre">T</span> <code class="sig-name descname"><span class="pre">combine</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable7combineE1T10BinaryFunc" title="tbb::combinable::combine::BinaryFunc"><span class="pre">BinaryFunc</span></a> <em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable7combineE1T10BinaryFunc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requires</strong>: A <code class="docutils literal notranslate"><span class="pre">BinaryFunc</span></code> must meet the <cite>Function Objects</cite> requirements from the [function.objects] ISO C++ Standard section.
 Specifically, the type should be an associative binary functor with the signature <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">BinaryFunc(T,T)</span></code> or <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">BinaryFunc(const</span> <span class="pre">T&amp;,const</span> <span class="pre">T&amp;)</span></code>.
 A <code class="docutils literal notranslate"><span class="pre">T</span></code> type must be the same as a corresponding template parameter for the <code class="docutils literal notranslate"><span class="pre">combinable</span></code> object.</p>
@@ -4723,7 +4722,7 @@ If there are no elements, creates the result using the same rules as for creatin
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb10combinable12combine_eachEv9UnaryFunc">
-<span id="_CPPv3I0EN3tbb10combinable12combine_eachE9UnaryFunc"></span><span id="_CPPv2I0EN3tbb10combinable12combine_eachE9UnaryFunc"></span>template&lt;typename <code class="sig-name descname">UnaryFunc</code>&gt;<br />void <code class="sig-name descname">combine_each</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable12combine_eachEv9UnaryFunc" title="tbb::combinable::combine_each::UnaryFunc">UnaryFunc</a> <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable12combine_eachEv9UnaryFunc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb10combinable12combine_eachE9UnaryFunc"></span><span id="_CPPv2I0EN3tbb10combinable12combine_eachE9UnaryFunc"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">UnaryFunc</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">combine_each</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10combinable12combine_eachEv9UnaryFunc" title="tbb::combinable::combine_each::UnaryFunc"><span class="pre">UnaryFunc</span></a> <em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10combinable12combine_eachEv9UnaryFunc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requires</strong>: An <code class="docutils literal notranslate"><span class="pre">UnaryFunc</span></code> must meet the <cite>Function Objects</cite> requirements from the [function.objects] ISO C++ Standard section.
 Specifically, the type should be an unary functor with the one of the signatures: <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(T)</span></code>, <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(T&amp;)</span></code>, or <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(const</span> <span class="pre">T&amp;)</span></code>
 A <code class="docutils literal notranslate"><span class="pre">T</span></code> type must be the same as a corresponding template parameter for the <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> object.</p>

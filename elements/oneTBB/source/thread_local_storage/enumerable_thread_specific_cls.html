@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4730,21 +4729,21 @@ by a thread to the <code class="docutils literal notranslate"><span class="pre">
 <h2>Non-member types and constants<a class="headerlink" href="#non-member-types-and-constants" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N18ets_key_usage_type20ets_key_per_instanceE">
-<span id="_CPPv3N18ets_key_usage_type20ets_key_per_instanceE"></span><span id="_CPPv2N18ets_key_usage_type20ets_key_per_instanceE"></span><em class="property">enum </em><code class="sig-prename descclassname">ets_key_usage_type<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">ets_key_per_instance</code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type20ets_key_per_instanceE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ets_key_usage_type20ets_key_per_instanceE"></span><span id="_CPPv2N18ets_key_usage_type20ets_key_per_instanceE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">ets_key_usage_type</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">ets_key_per_instance</span></code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type20ets_key_per_instanceE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>Enumeration parameter type used to select an implementation that consumes 1 native TLS key per <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> instance.
 The number of native TLS keys may be limited and can be fairly small.</p>
 <dl class="cpp enum">
 <dt id="_CPPv4N18ets_key_usage_type10ets_no_keyE">
-<span id="_CPPv3N18ets_key_usage_type10ets_no_keyE"></span><span id="_CPPv2N18ets_key_usage_type10ets_no_keyE"></span><em class="property">enum </em><code class="sig-prename descclassname">ets_key_usage_type<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">ets_no_key</code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type10ets_no_keyE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ets_key_usage_type10ets_no_keyE"></span><span id="_CPPv2N18ets_key_usage_type10ets_no_keyE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">ets_key_usage_type</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">ets_no_key</span></code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type10ets_no_keyE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>Enumeration parameter type used to select an implementation that consumes no native TLS keys.
 If no <code class="docutils literal notranslate"><span class="pre">ETS_key_usage_type</span></code> parameter type is provided, <code class="docutils literal notranslate"><span class="pre">ets_no_key</span></code> is used by default.</p>
 <dl class="cpp enum">
 <dt id="_CPPv4N18ets_key_usage_type17ets_suspend_awareE">
-<span id="_CPPv3N18ets_key_usage_type17ets_suspend_awareE"></span><span id="_CPPv2N18ets_key_usage_type17ets_suspend_awareE"></span><em class="property">enum </em><code class="sig-prename descclassname">ets_key_usage_type<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">ets_suspend_aware</code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type17ets_suspend_awareE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ets_key_usage_type17ets_suspend_awareE"></span><span id="_CPPv2N18ets_key_usage_type17ets_suspend_awareE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">ets_key_usage_type</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">ets_suspend_aware</span></code><a class="headerlink" href="#_CPPv4N18ets_key_usage_type17ets_suspend_awareE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <p>The <code class="docutils literal notranslate"><span class="pre">tbb::task::suspend</span></code> function can change the value of the <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> object. To avoid this problem,

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4641,20 +4640,20 @@ its successor set.</p>
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10queue_node10queue_nodeER5graph">
-<span id="_CPPv3N3tbb4flow10queue_node10queue_nodeER5graph"></span><span id="_CPPv2N3tbb4flow10queue_node10queue_nodeER5graph"></span><span id="tbb::flow::queue_node::queue_node__graphR"></span><em class="property">explicit</em> <code class="sig-name descname">queue_node</code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph">graph</a> &amp;<em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeER5graph" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb4flow10queue_node10queue_nodeER5graph"></span><span id="_CPPv2N3tbb4flow10queue_node10queue_nodeER5graph"></span><span id="tbb::flow::queue_node::queue_node__graphR"></span><em class="property"><span class="pre">explicit</span></em> <code class="sig-name descname"><span class="pre">queue_node</span></code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph"><span class="pre">graph</span></a> <span class="pre">&amp;</span><em><span class="pre">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeER5graph" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an empty <code class="docutils literal notranslate"><span class="pre">queue_node</span></code> that belongs to the  graph <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10queue_node10queue_nodeERK10queue_node">
-<span id="_CPPv3N3tbb4flow10queue_node10queue_nodeERK10queue_node"></span><span id="_CPPv2N3tbb4flow10queue_node10queue_nodeERK10queue_node"></span><span id="tbb::flow::queue_node::queue_node__queue_nodeCR"></span><code class="sig-name descname">queue_node</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeERK10queue_node" title="tbb::flow::queue_node::queue_node">queue_node</a> &amp;<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeERK10queue_node" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb4flow10queue_node10queue_nodeERK10queue_node"></span><span id="_CPPv2N3tbb4flow10queue_node10queue_nodeERK10queue_node"></span><span id="tbb::flow::queue_node::queue_node__queue_nodeCR"></span><code class="sig-name descname"><span class="pre">queue_node</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeERK10queue_node" title="tbb::flow::queue_node::queue_node"><span class="pre">queue_node</span></a> <span class="pre">&amp;</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node10queue_nodeERK10queue_node" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an empty <code class="docutils literal notranslate"><span class="pre">queue_node</span></code> that belongs to the same graph <code class="docutils literal notranslate"><span class="pre">g</span></code> as <code class="docutils literal notranslate"><span class="pre">src</span></code>. Any
 intermediate state of <code class="docutils literal notranslate"><span class="pre">src</span></code>, including its links to predecessors and successors, is not copied.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10queue_node7try_putERK1T">
-<span id="_CPPv3N3tbb4flow10queue_node7try_putERK1T"></span><span id="_CPPv2N3tbb4flow10queue_node7try_putERK1T"></span><span id="tbb::flow::queue_node::try_put__TCR"></span>bool <code class="sig-name descname">try_put</code><span class="sig-paren">(</span><em class="property">const</em> T &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node7try_putERK1T" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb4flow10queue_node7try_putERK1T"></span><span id="_CPPv2N3tbb4flow10queue_node7try_putERK1T"></span><span id="tbb::flow::queue_node::try_put__TCR"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_put</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">T</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node7try_putERK1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds <code class="docutils literal notranslate"><span class="pre">v</span></code> to the set of items managed by the node, and tries forwarding the least recently
 added item to a successor.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
@@ -4662,7 +4661,7 @@ added item to a successor.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb4flow10queue_node7try_getER1T">
-<span id="_CPPv3N3tbb4flow10queue_node7try_getER1T"></span><span id="_CPPv2N3tbb4flow10queue_node7try_getER1T"></span><span id="tbb::flow::queue_node::try_get__TR"></span>bool <code class="sig-name descname">try_get</code><span class="sig-paren">(</span>T &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node7try_getER1T" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb4flow10queue_node7try_getER1T"></span><span id="_CPPv2N3tbb4flow10queue_node7try_getER1T"></span><span id="tbb::flow::queue_node::try_get__TR"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_get</span></code><span class="sig-paren">(</span><span class="pre">T</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb4flow10queue_node7try_getER1T" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">true</span></code> if an item can be taken from the node and assigned to <code class="docutils literal notranslate"><span class="pre">v</span></code>. Returns
 <code class="docutils literal notranslate"><span class="pre">false</span></code> if there is no item currently in the <code class="docutils literal notranslate"><span class="pre">queue_node</span></code> or if the node is reserved.</p>
 </dd></dl>

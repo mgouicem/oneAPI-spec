@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/custom.js"></script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4627,7 +4626,7 @@ SPDX-License-Identifier: MIT
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv410numa_nodesv">
-<span id="_CPPv310numa_nodesv"></span><span id="_CPPv210numa_nodesv"></span><span id="numa_nodes"></span>std::vector&lt;numa_node_id&gt; <code class="sig-name descname">numa_nodes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410numa_nodesv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv310numa_nodesv"></span><span id="_CPPv210numa_nodesv"></span><span id="numa_nodes"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">vector</span><span class="pre">&lt;</span><span class="pre">numa_node_id</span><span class="pre">&gt;</span> <code class="sig-name descname"><span class="pre">numa_nodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410numa_nodesv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the vector of integral indexes that indicate available NUMA nodes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -4638,7 +4637,7 @@ that equals to <code class="docutils literal notranslate"><span class="pre">task
 
 <dl class="cpp function">
 <dt id="_CPPv419default_concurrency12numa_node_id">
-<span id="_CPPv319default_concurrency12numa_node_id"></span><span id="_CPPv219default_concurrency12numa_node_id"></span><span id="default_concurrency__numa_node_id"></span>int <code class="sig-name descname">default_concurrency</code><span class="sig-paren">(</span>numa_node_id <em>id</em> = tbb::task_arena::automatic<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419default_concurrency12numa_node_id" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv319default_concurrency12numa_node_id"></span><span id="_CPPv219default_concurrency12numa_node_id"></span><span id="default_concurrency__numa_node_id"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">default_concurrency</span></code><span class="sig-paren">(</span><span class="pre">numa_node_id</span> <em><span class="pre">id</span></em> <span class="pre">=</span> <span class="pre">tbb</span><span class="pre">::</span><span class="pre">task_arena</span><span class="pre">::</span><span class="pre">automatic</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419default_concurrency12numa_node_id" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns concurrency level of the given NUMA node. If argument is not specified, returns default
 concurrency level for current library configuration.</p>
 </dd></dl>

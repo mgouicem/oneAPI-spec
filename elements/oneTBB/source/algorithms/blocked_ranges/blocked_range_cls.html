@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4648,13 +4647,13 @@ to the loop templates <code class="docutils literal notranslate"><span class="pr
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp type">
 <dt id="_CPPv49size_type">
-<span id="_CPPv39size_type"></span><span id="_CPPv29size_type"></span><span id="size_type"></span><em class="property">type </em><code class="sig-name descname">size_type</code><a class="headerlink" href="#_CPPv49size_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv39size_type"></span><span id="_CPPv29size_type"></span><span id="size_type"></span><em class="property"><span class="pre">type</span> </em><code class="sig-name descname"><span class="pre">size_type</span></code><a class="headerlink" href="#_CPPv49size_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The type for measuring the size of a <code class="docutils literal notranslate"><span class="pre">blocked_range</span></code>. The type is always a <code class="docutils literal notranslate"><span class="pre">size_t</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp type">
 <dt id="_CPPv414const_iterator">
-<span id="_CPPv314const_iterator"></span><span id="_CPPv214const_iterator"></span><span id="const_iterator"></span><em class="property">type </em><code class="sig-name descname">const_iterator</code><a class="headerlink" href="#_CPPv414const_iterator" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314const_iterator"></span><span id="_CPPv214const_iterator"></span><span id="const_iterator"></span><em class="property"><span class="pre">type</span> </em><code class="sig-name descname"><span class="pre">const_iterator</span></code><a class="headerlink" href="#_CPPv414const_iterator" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The type of a value in the range. Despite its name, the <code class="docutils literal notranslate"><span class="pre">const_iterator</span></code> type is not necessarily an STL
 iterator; it merely needs to meet the <a class="reference internal" href="../../named_requirements/algorithms/blocked_range_val.html"><span class="doc">BlockedRangeValue requirements</span></a>.
 However, it is convenient to call it <code class="docutils literal notranslate"><span class="pre">const_iterator</span></code> so that if it is a
@@ -4663,7 +4662,7 @@ const_iterator, the <code class="docutils literal notranslate"><span class="pre"
 
 <dl class="cpp function">
 <dt id="_CPPv413blocked_range5Value5Value9size_type">
-<span id="_CPPv313blocked_range5Value5Value9size_type"></span><span id="_CPPv213blocked_range5Value5Value9size_type"></span><span id="blocked_range__Value.Value.size_type"></span><code class="sig-name descname">blocked_range</code><span class="sig-paren">(</span>Value <em>begin</em>, Value <em>end</em>, <a class="reference internal" href="#_CPPv49size_type" title="size_type">size_type</a> <em>grainsize</em> = 1<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_range5Value5Value9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv313blocked_range5Value5Value9size_type"></span><span id="_CPPv213blocked_range5Value5Value9size_type"></span><span id="blocked_range__Value.Value.size_type"></span><code class="sig-name descname"><span class="pre">blocked_range</span></code><span class="sig-paren">(</span><span class="pre">Value</span> <em><span class="pre">begin</span></em>, <span class="pre">Value</span> <em><span class="pre">end</span></em>, <a class="reference internal" href="#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <em><span class="pre">grainsize</span></em> <span class="pre">=</span> <span class="pre">1</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_range5Value5Value9size_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requirements</strong>: The parameter <code class="docutils literal notranslate"><span class="pre">grainsize</span></code> must be positive.
 The debug version of the library raises an assertion failure if this requirement is not met.</p>
 <p><strong>Effects</strong>: Constructs a <code class="docutils literal notranslate"><span class="pre">blocked_range</span></code> representing the half-open interval
@@ -4675,7 +4674,7 @@ The debug version of the library raises an assertion failure if this requirement
 
 <dl class="cpp function">
 <dt id="_CPPv413blocked_rangeR13blocked_range5split">
-<span id="_CPPv313blocked_rangeR13blocked_range5split"></span><span id="_CPPv213blocked_rangeR13blocked_range5split"></span><span id="blocked_range__blocked_rangeR.split"></span><code class="sig-name descname">blocked_range</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413blocked_rangeR13blocked_range5split" title="blocked_range">blocked_range</a> &amp;<em>range</em>, split<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_rangeR13blocked_range5split" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv313blocked_rangeR13blocked_range5split"></span><span id="_CPPv213blocked_rangeR13blocked_range5split"></span><span id="blocked_range__blocked_rangeR.split"></span><code class="sig-name descname"><span class="pre">blocked_range</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413blocked_rangeR13blocked_range5split" title="blocked_range"><span class="pre">blocked_range</span></a> <span class="pre">&amp;</span><em><span class="pre">range</span></em>, <span class="pre">split</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_rangeR13blocked_range5split" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Basic splitting constructor.</p>
 <p><strong>Requirements</strong>: <code class="docutils literal notranslate"><span class="pre">is_divisible()</span></code> is true.</p>
 <p><strong>Effects</strong>: Partitions <code class="docutils literal notranslate"><span class="pre">range</span></code> into two subranges. The newly
@@ -4690,7 +4689,7 @@ subsequently causes r to represent <code class="docutils literal notranslate"><s
 
 <dl class="cpp function">
 <dt id="_CPPv413blocked_rangeR13blocked_range18proportional_split">
-<span id="_CPPv313blocked_rangeR13blocked_range18proportional_split"></span><span id="_CPPv213blocked_rangeR13blocked_range18proportional_split"></span><span id="blocked_range__blocked_rangeR.proportional_split"></span><code class="sig-name descname">blocked_range</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413blocked_rangeR13blocked_range18proportional_split" title="blocked_range">blocked_range</a> &amp;<em>range</em>, <a class="reference internal" href="../split_tags/proportional_split_cls.html#_CPPv418proportional_splitNSt6size_tENSt6size_tE" title="proportional_split">proportional_split</a> <em>proportion</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_rangeR13blocked_range18proportional_split" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv313blocked_rangeR13blocked_range18proportional_split"></span><span id="_CPPv213blocked_rangeR13blocked_range18proportional_split"></span><span id="blocked_range__blocked_rangeR.proportional_split"></span><code class="sig-name descname"><span class="pre">blocked_range</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv413blocked_rangeR13blocked_range18proportional_split" title="blocked_range"><span class="pre">blocked_range</span></a> <span class="pre">&amp;</span><em><span class="pre">range</span></em>, <a class="reference internal" href="../split_tags/proportional_split_cls.html#_CPPv418proportional_splitNSt6size_tENSt6size_tE" title="proportional_split"><span class="pre">proportional_split</span></a> <em><span class="pre">proportion</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413blocked_rangeR13blocked_range18proportional_split" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Proportional splitting constructor.</p>
 <p><strong>Requirements</strong>: <code class="docutils literal notranslate"><span class="pre">is_divisible()</span></code> is true.</p>
 <p><strong>Effects</strong>: Partitions <code class="docutils literal notranslate"><span class="pre">range</span></code> into two subranges such that the ratio of their sizes is
@@ -4706,7 +4705,7 @@ interval <code class="docutils literal notranslate"><span class="pre">[i,</span>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4sizeEv">
-<span id="_CPPv3NK4sizeEv"></span><span id="_CPPv2NK4sizeEv"></span><span id="sizeC"></span><a class="reference internal" href="#_CPPv49size_type" title="size_type">size_type</a> <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4sizeEv"></span><span id="_CPPv2NK4sizeEv"></span><span id="sizeC"></span><a class="reference internal" href="#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <code class="sig-name descname"><span class="pre">size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requirements</strong>: <code class="docutils literal notranslate"><span class="pre">end()&lt;begin()</span></code> is false.</p>
 <p><strong>Effects</strong>: Determines size of range.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">end()-begin()</span></code>.</p>
@@ -4714,20 +4713,20 @@ interval <code class="docutils literal notranslate"><span class="pre">[i,</span>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK5emptyEv">
-<span id="_CPPv3NK5emptyEv"></span><span id="_CPPv2NK5emptyEv"></span><span id="emptyC"></span>bool <code class="sig-name descname">empty</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5emptyEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK5emptyEv"></span><span id="_CPPv2NK5emptyEv"></span><span id="emptyC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">empty</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK5emptyEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Effects</strong>: Determines if range is empty.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">!(begin()&lt;end())</span></code></p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK9grainsizeEv">
-<span id="_CPPv3NK9grainsizeEv"></span><span id="_CPPv2NK9grainsizeEv"></span><span id="grainsizeC"></span><a class="reference internal" href="#_CPPv49size_type" title="size_type">size_type</a> <code class="sig-name descname">grainsize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK9grainsizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK9grainsizeEv"></span><span id="_CPPv2NK9grainsizeEv"></span><span id="grainsizeC"></span><a class="reference internal" href="#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <code class="sig-name descname"><span class="pre">grainsize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK9grainsizeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: Grain size of range.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK12is_divisibleEv">
-<span id="_CPPv3NK12is_divisibleEv"></span><span id="_CPPv2NK12is_divisibleEv"></span><span id="is_divisibleC"></span>bool <code class="sig-name descname">is_divisible</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK12is_divisibleEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK12is_divisibleEv"></span><span id="_CPPv2NK12is_divisibleEv"></span><span id="is_divisibleC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_divisible</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK12is_divisibleEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requirements</strong>: <code class="docutils literal notranslate"><span class="pre">end()&lt;begin()</span></code> is false.</p>
 <p><strong>Effects</strong>: Determines if the range can be split into subranges.</p>
 <p><strong>Returns</strong>: True if <code class="docutils literal notranslate"><span class="pre">size()&gt;grainsize()</span></code>; false, otherwise.</p>
@@ -4735,13 +4734,13 @@ interval <code class="docutils literal notranslate"><span class="pre">[i,</span>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK5beginEv">
-<span id="_CPPv3NK5beginEv"></span><span id="_CPPv2NK5beginEv"></span><span id="beginC"></span><a class="reference internal" href="#_CPPv414const_iterator" title="const_iterator">const_iterator</a> <code class="sig-name descname">begin</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5beginEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK5beginEv"></span><span id="_CPPv2NK5beginEv"></span><span id="beginC"></span><a class="reference internal" href="#_CPPv414const_iterator" title="const_iterator"><span class="pre">const_iterator</span></a> <code class="sig-name descname"><span class="pre">begin</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK5beginEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: Inclusive lower bound of the range.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK3endEv">
-<span id="_CPPv3NK3endEv"></span><span id="_CPPv2NK3endEv"></span><span id="endC"></span><a class="reference internal" href="#_CPPv414const_iterator" title="const_iterator">const_iterator</a> <code class="sig-name descname">end</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3endEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK3endEv"></span><span id="_CPPv2NK3endEv"></span><span id="endC"></span><a class="reference internal" href="#_CPPv414const_iterator" title="const_iterator"><span class="pre">const_iterator</span></a> <code class="sig-name descname"><span class="pre">end</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK3endEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: Exclusive upper bound of the range.</p>
 </dd></dl>
 

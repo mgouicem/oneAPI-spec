@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4696,13 +4695,13 @@ ISO C++ Standard section.</p>
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv414composite_nodeR5graph">
-<span id="_CPPv314composite_nodeR5graph"></span><span id="_CPPv214composite_nodeR5graph"></span><span id="composite_node__graphR"></span><code class="sig-name descname">composite_node</code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph">graph</a> &amp;<em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414composite_nodeR5graph" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314composite_nodeR5graph"></span><span id="_CPPv214composite_nodeR5graph"></span><span id="composite_node__graphR"></span><code class="sig-name descname"><span class="pre">composite_node</span></code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph"><span class="pre">graph</span></a> <span class="pre">&amp;</span><em><span class="pre">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414composite_nodeR5graph" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a <code class="docutils literal notranslate"><span class="pre">composite_node</span></code> that belongs to the graph <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418set_external_portsRR16input_ports_typeRR17output_ports_type">
-<span id="_CPPv318set_external_portsRR16input_ports_typeRR17output_ports_type"></span><span id="_CPPv218set_external_portsRR16input_ports_typeRR17output_ports_type"></span><span id="set_external_ports__input_ports_typeRR.output_ports_typeRR"></span>void <code class="sig-name descname">set_external_ports</code><span class="sig-paren">(</span>input_ports_type &amp;&amp;<em>input_ports_tuple</em>, output_ports_type &amp;&amp;<em>output_ports_tuple</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418set_external_portsRR16input_ports_typeRR17output_ports_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv318set_external_portsRR16input_ports_typeRR17output_ports_type"></span><span id="_CPPv218set_external_portsRR16input_ports_typeRR17output_ports_type"></span><span id="set_external_ports__input_ports_typeRR.output_ports_typeRR"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">set_external_ports</span></code><span class="sig-paren">(</span><span class="pre">input_ports_type</span> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">input_ports_tuple</span></em>, <span class="pre">output_ports_type</span> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">output_ports_tuple</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418set_external_portsRR16input_ports_typeRR17output_ports_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates input and output ports of the <code class="docutils literal notranslate"><span class="pre">composite_node</span></code> as
 aliases to the ports referenced by <code class="docutils literal notranslate"><span class="pre">input_ports_tuple</span></code> and
 <code class="docutils literal notranslate"><span class="pre">output_ports_tuple</span></code>, respectively. That is, a port referenced at
@@ -4712,7 +4711,7 @@ input port of the <code class="docutils literal notranslate"><span class="pre">c
 
 <dl class="cpp function">
 <dt id="_CPPv411input_portsv">
-<span id="_CPPv311input_portsv"></span><span id="_CPPv211input_portsv"></span><span id="input_ports"></span>input_ports_type &amp;<code class="sig-name descname">input_ports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411input_portsv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv311input_portsv"></span><span id="_CPPv211input_portsv"></span><span id="input_ports"></span><span class="pre">input_ports_type</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">input_ports</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv411input_portsv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><blockquote>
 <div><p><strong>Returns</strong>: A <code class="docutils literal notranslate"><span class="pre">std::tuple</span></code> of <code class="docutils literal notranslate"><span class="pre">receivers</span></code>. Each element is a
 reference to the actual node or input port that was aliased to
@@ -4727,7 +4726,7 @@ results in undefined behavior.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv412output_portsv">
-<span id="_CPPv312output_portsv"></span><span id="_CPPv212output_portsv"></span><span id="output_ports"></span>output_ports_type &amp;<code class="sig-name descname">output_ports</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412output_portsv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv312output_portsv"></span><span id="_CPPv212output_portsv"></span><span id="output_ports"></span><span class="pre">output_ports_type</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">output_ports</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412output_portsv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: A <code class="docutils literal notranslate"><span class="pre">std::tuple</span></code> of <code class="docutils literal notranslate"><span class="pre">senders</span></code>. Each element is a
 reference to the actual node or output port that was aliased to
 that position in <code class="docutils literal notranslate"><span class="pre">set_external_ports()</span></code>.</p>

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4646,13 +4645,13 @@ exception is thrown out of an associated task. Canceling <code class="docutils l
 <h2>Member types and constants<a class="headerlink" href="#member-types-and-constants" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N6kind_t8isolatedE">
-<span id="_CPPv3N6kind_t8isolatedE"></span><span id="_CPPv2N6kind_t8isolatedE"></span><em class="property">enum </em><code class="sig-prename descclassname">kind_t<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">isolated</code><a class="headerlink" href="#_CPPv4N6kind_t8isolatedE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6kind_t8isolatedE"></span><span id="_CPPv2N6kind_t8isolatedE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">kind_t</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">isolated</span></code><a class="headerlink" href="#_CPPv4N6kind_t8isolatedE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When passed to the specific constructor, the created <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> object has no parent.</p>
 </dd></dl>
 
 <dl class="cpp enum">
 <dt id="_CPPv4N6kind_t5boundE">
-<span id="_CPPv3N6kind_t5boundE"></span><span id="_CPPv2N6kind_t5boundE"></span><em class="property">enum </em><code class="sig-prename descclassname">kind_t<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">bound</code><a class="headerlink" href="#_CPPv4N6kind_t5boundE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6kind_t5boundE"></span><span id="_CPPv2N6kind_t5boundE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">kind_t</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">bound</span></code><a class="headerlink" href="#_CPPv4N6kind_t5boundE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When passed to the specific constructor, the created <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> object becomes a child of the
 innermost running task’s group when the first task associated to the <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> is passed to the task scheduler.
 If there is no innermost running task on the current thread, the <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> becomes <code class="docutils literal notranslate"><span class="pre">isolated</span></code>.</p>
@@ -4660,7 +4659,7 @@ If there is no innermost running task on the current thread, the <code class="do
 
 <dl class="cpp enum">
 <dt id="_CPPv4N11traits_type11fp_settingsE">
-<span id="_CPPv3N11traits_type11fp_settingsE"></span><span id="_CPPv2N11traits_type11fp_settingsE"></span><em class="property">enum </em><code class="sig-prename descclassname">traits_type<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">fp_settings</code><a class="headerlink" href="#_CPPv4N11traits_type11fp_settingsE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N11traits_type11fp_settingsE"></span><span id="_CPPv2N11traits_type11fp_settingsE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">traits_type</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">fp_settings</span></code><a class="headerlink" href="#_CPPv4N11traits_type11fp_settingsE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>When passed to the specific constructor, the flag forces the context to capture floating-point settings from the current thread.</p>
 </dd></dl>
 
@@ -4669,20 +4668,20 @@ If there is no innermost running task on the current thread, the <code class="do
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv418task_group_context6kind_t9uintptr_t">
-<span id="_CPPv318task_group_context6kind_t9uintptr_t"></span><span id="_CPPv218task_group_context6kind_t9uintptr_t"></span><span id="task_group_context__kind_t.uintptr_t"></span><code class="sig-name descname">task_group_context</code><span class="sig-paren">(</span>kind_t <em>relation_to_parent</em> = bound, uintptr_t <em>traits</em> = default_traits<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418task_group_context6kind_t9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv318task_group_context6kind_t9uintptr_t"></span><span id="_CPPv218task_group_context6kind_t9uintptr_t"></span><span id="task_group_context__kind_t.uintptr_t"></span><code class="sig-name descname"><span class="pre">task_group_context</span></code><span class="sig-paren">(</span><span class="pre">kind_t</span> <em><span class="pre">relation_to_parent</span></em> <span class="pre">=</span> <span class="pre">bound</span>, <span class="pre">uintptr_t</span> <em><span class="pre">traits</span></em> <span class="pre">=</span> <span class="pre">default_traits</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418task_group_context6kind_t9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an empty <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4D0v">
-<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~task_group_context"></span><code class="sig-name descname">~task_group_context</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~task_group_context"></span><code class="sig-name descname"><span class="pre">~task_group_context</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys an empty task_group_context.
 The behavior is undefined if there are still extant tasks associated with this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv422cancel_group_executionv">
-<span id="_CPPv322cancel_group_executionv"></span><span id="_CPPv222cancel_group_executionv"></span><span id="cancel_group_execution"></span>bool <code class="sig-name descname">cancel_group_execution</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cancel_group_executionv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv322cancel_group_executionv"></span><span id="_CPPv222cancel_group_executionv"></span><span id="cancel_group_execution"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">cancel_group_execution</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422cancel_group_executionv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Requests that tasks associated with this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> are not executed.</p>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> if this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> is already cancelled; <code class="docutils literal notranslate"><span class="pre">true</span></code>, otherwise.
 If concurrently called by multiple threads, exactly one call returns <code class="docutils literal notranslate"><span class="pre">true</span></code> and the rest return <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
@@ -4690,13 +4689,13 @@ If concurrently called by multiple threads, exactly one call returns <code class
 
 <dl class="cpp function">
 <dt id="_CPPv4NK28is_group_execution_cancelledEv">
-<span id="_CPPv3NK28is_group_execution_cancelledEv"></span><span id="_CPPv2NK28is_group_execution_cancelledEv"></span><span id="is_group_execution_cancelledC"></span>bool <code class="sig-name descname">is_group_execution_cancelled</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK28is_group_execution_cancelledEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK28is_group_execution_cancelledEv"></span><span id="_CPPv2NK28is_group_execution_cancelledEv"></span><span id="is_group_execution_cancelledC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_group_execution_cancelled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK28is_group_execution_cancelledEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> has received the cancellation request.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv45resetv">
-<span id="_CPPv35resetv"></span><span id="_CPPv25resetv"></span><span id="reset"></span>void <code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45resetv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv35resetv"></span><span id="_CPPv25resetv"></span><span id="reset"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv45resetv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Reinitializes this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code> to the uncancelled state.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -4708,7 +4707,7 @@ invoked concurrently by multiple threads.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv419capture_fp_settingsv">
-<span id="_CPPv319capture_fp_settingsv"></span><span id="_CPPv219capture_fp_settingsv"></span><span id="capture_fp_settings"></span>void <code class="sig-name descname">capture_fp_settings</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419capture_fp_settingsv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv319capture_fp_settingsv"></span><span id="_CPPv219capture_fp_settingsv"></span><span id="capture_fp_settings"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">capture_fp_settings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419capture_fp_settingsv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Captures floating-point settings from the current thread.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -4720,7 +4719,7 @@ invoked concurrently by multiple threads.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6traitsEv">
-<span id="_CPPv3NK6traitsEv"></span><span id="_CPPv2NK6traitsEv"></span><span id="traitsC"></span>uintptr_t <code class="sig-name descname">traits</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK6traitsEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK6traitsEv"></span><span id="_CPPv2NK6traitsEv"></span><span id="traitsC"></span><span class="pre">uintptr_t</span> <code class="sig-name descname"><span class="pre">traits</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK6traitsEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns traits of this <code class="docutils literal notranslate"><span class="pre">task_group_context</span></code>.</p>
 </dd></dl>
 

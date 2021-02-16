@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4644,7 +4643,7 @@ and satisfies all requirements of shared mutex type from the [thread.sharedmutex
 <h2>Member classes<a class="headerlink" href="#member-classes" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
 <dt id="_CPPv4N3tbb13spin_rw_mutex11scoped_lockE">
-<span id="_CPPv3N3tbb13spin_rw_mutex11scoped_lockE"></span><span id="_CPPv2N3tbb13spin_rw_mutex11scoped_lockE"></span><span id="tbb::spin_rw_mutex::scoped_lock"></span><em class="property">class </em><code class="sig-name descname">scoped_lock</code><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex11scoped_lockE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex11scoped_lockE"></span><span id="_CPPv2N3tbb13spin_rw_mutex11scoped_lockE"></span><span id="tbb::spin_rw_mutex::scoped_lock"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">scoped_lock</span></code><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex11scoped_lockE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Corresponding scoped-lock class. See the <a class="reference internal" href="../named_requirements/mutexes/rw_mutex.html"><span class="doc">ReaderWriterMutex requirement</span></a>.</p>
 </dd></dl>
 
@@ -4653,49 +4652,49 @@ and satisfies all requirements of shared mutex type from the [thread.sharedmutex
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex13spin_rw_mutexEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex13spin_rw_mutexEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex13spin_rw_mutexEv"></span><span id="tbb::spin_rw_mutex::spin_rw_mutex"></span><code class="sig-name descname">spin_rw_mutex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex13spin_rw_mutexEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex13spin_rw_mutexEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex13spin_rw_mutexEv"></span><span id="tbb::spin_rw_mutex::spin_rw_mutex"></span><code class="sig-name descname"><span class="pre">spin_rw_mutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex13spin_rw_mutexEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs unlocked <code class="docutils literal notranslate"><span class="pre">spin_rw_mutex</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutexD0Ev">
-<span id="_CPPv3N3tbb13spin_rw_mutexD0Ev"></span><span id="_CPPv2N3tbb13spin_rw_mutexD0Ev"></span><span id="tbb::spin_rw_mutex::~spin_rw_mutex"></span><code class="sig-name descname">~spin_rw_mutex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutexD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutexD0Ev"></span><span id="_CPPv2N3tbb13spin_rw_mutexD0Ev"></span><span id="tbb::spin_rw_mutex::~spin_rw_mutex"></span><code class="sig-name descname"><span class="pre">~spin_rw_mutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutexD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys unlocked <code class="docutils literal notranslate"><span class="pre">spin_rw_mutex</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex4lockEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex4lockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex4lockEv"></span><span id="tbb::spin_rw_mutex::lock"></span>void <code class="sig-name descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex4lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex4lockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex4lockEv"></span><span id="tbb::spin_rw_mutex::lock"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex4lockEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Acquires a lock. Spins if the lock is taken.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex8try_lockEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex8try_lockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex8try_lockEv"></span><span id="tbb::spin_rw_mutex::try_lock"></span>bool <code class="sig-name descname">try_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex8try_lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex8try_lockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex8try_lockEv"></span><span id="tbb::spin_rw_mutex::try_lock"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex8try_lockEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Attempts to acquire a lock (non-blocking) on write. Returns true if the lock is acquired on write; false otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex6unlockEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex6unlockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex6unlockEv"></span><span id="tbb::spin_rw_mutex::unlock"></span>void <code class="sig-name descname">unlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex6unlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex6unlockEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex6unlockEv"></span><span id="tbb::spin_rw_mutex::unlock"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex6unlockEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases a write lock, held by the current thread.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex11lock_sharedEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex11lock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex11lock_sharedEv"></span><span id="tbb::spin_rw_mutex::lock_shared"></span>void <code class="sig-name descname">lock_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex11lock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex11lock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex11lock_sharedEv"></span><span id="tbb::spin_rw_mutex::lock_shared"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lock_shared</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex11lock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Acquires a lock on read. Spins if the lock is taken on write already.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex15try_lock_sharedEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex15try_lock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex15try_lock_sharedEv"></span><span id="tbb::spin_rw_mutex::try_lock_shared"></span>bool <code class="sig-name descname">try_lock_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex15try_lock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex15try_lock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex15try_lock_sharedEv"></span><span id="tbb::spin_rw_mutex::try_lock_shared"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_lock_shared</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex15try_lock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Attempts to acquire the lock (non-blocking) on read. Returns true if the lock is acquired on read; false, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb13spin_rw_mutex13unlock_sharedEv">
-<span id="_CPPv3N3tbb13spin_rw_mutex13unlock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex13unlock_sharedEv"></span><span id="tbb::spin_rw_mutex::unlock_shared"></span>void <code class="sig-name descname">unlock_shared</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex13unlock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb13spin_rw_mutex13unlock_sharedEv"></span><span id="_CPPv2N3tbb13spin_rw_mutex13unlock_sharedEv"></span><span id="tbb::spin_rw_mutex::unlock_shared"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlock_shared</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb13spin_rw_mutex13unlock_sharedEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases a read lock held by the current thread.</p>
 </dd></dl>
 

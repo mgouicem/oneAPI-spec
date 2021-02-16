@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4640,14 +4639,14 @@ that <code class="docutils literal notranslate"><span class="pre">cache_aligned_
 <h2>Member Functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv48allocate9size_type">
-<span id="_CPPv38allocate9size_type"></span><span id="_CPPv28allocate9size_type"></span><span id="allocate__size_type"></span>T *<code class="sig-name descname">allocate</code><span class="sig-paren">(</span><a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type">size_type</a> <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48allocate9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv38allocate9size_type"></span><span id="_CPPv28allocate9size_type"></span><span id="allocate__size_type"></span><span class="pre">T</span> <span class="pre">*</span><code class="sig-name descname"><span class="pre">allocate</span></code><span class="sig-paren">(</span><a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <em><span class="pre">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48allocate9size_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns a pointer to the allocated <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">sizeof(T)</span></code> bytes of memory, aligned on a cache-line boundary.
 The allocation may include extra hidden padding.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv410deallocateP1T9size_type">
-<span id="_CPPv310deallocateP1T9size_type"></span><span id="_CPPv210deallocateP1T9size_type"></span><span id="deallocate__TP.size_type"></span>void <code class="sig-name descname">deallocate</code><span class="sig-paren">(</span>T *<em>p</em>, <a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type">size_type</a> <em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410deallocateP1T9size_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv310deallocateP1T9size_type"></span><span id="_CPPv210deallocateP1T9size_type"></span><span id="deallocate__TP.size_type"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">deallocate</span></code><span class="sig-paren">(</span><span class="pre">T</span> <span class="pre">*</span><em><span class="pre">p</span></em>, <a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <em><span class="pre">n</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410deallocateP1T9size_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Deallocates memory pointed to by <code class="docutils literal notranslate"><span class="pre">p</span></code>. Deallocation also deallocates any extra hidden padding.
 The behavior is undefined if the pointer <code class="docutils literal notranslate"><span class="pre">p</span></code> is not the result of the <code class="docutils literal notranslate"><span class="pre">allocate(n)</span></code> method.
 The behavior is undefined if the memory has been already deallocated.</p>
@@ -4655,7 +4654,7 @@ The behavior is undefined if the memory has been already deallocated.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK8max_sizeEv">
-<span id="_CPPv3NK8max_sizeEv"></span><span id="_CPPv2NK8max_sizeEv"></span><span id="max_sizeC"></span><a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type">size_type</a> <code class="sig-name descname">max_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK8max_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK8max_sizeEv"></span><span id="_CPPv2NK8max_sizeEv"></span><span id="max_sizeC"></span><a class="reference internal" href="../algorithms/blocked_ranges/blocked_range_cls.html#_CPPv49size_type" title="size_type"><span class="pre">size_type</span></a> <code class="sig-name descname"><span class="pre">max_size</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK8max_sizeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the largest value <code class="docutils literal notranslate"><span class="pre">n</span></code> for which the call <code class="docutils literal notranslate"><span class="pre">allocate(n)</span></code> might succeed with cache alignment constraints.</p>
 </dd></dl>
 
@@ -4677,13 +4676,13 @@ For example, an implementation may define the classes and functions in the same 
 and define <code class="docutils literal notranslate"><span class="pre">tbb::cache_aligned_allocator</span></code> as a type alias for which the non-member functions are reachable only via argument-dependent lookup.</p>
 <dl class="cpp function">
 <dt id="_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE">
-<span id="_CPPv3I00EeqRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span id="_CPPv2I00EeqRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">U</code>&gt;<br />bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> cache_aligned_allocator&lt;<a class="reference internal" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator==::T">T</a>&gt;&amp;, <em class="property">const</em> cache_aligned_allocator&lt;<a class="reference internal" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator==::U">U</a>&gt;&amp;<span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I00EeqRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span id="_CPPv2I00EeqRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">U</span></code><span class="pre">&gt;</span><br /><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">operator==</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">cache_aligned_allocator</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator==::T"><span class="pre">T</span></a><span class="pre">&gt;</span><span class="pre">&amp;</span>, <em class="property"><span class="pre">const</span></em> <span class="pre">cache_aligned_allocator</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator==::U"><span class="pre">U</span></a><span class="pre">&gt;</span><span class="pre">&amp;</span><span class="sig-paren">)</span> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4I00EeqbRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns <strong>true</strong>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE">
-<span id="_CPPv3I00EneRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span id="_CPPv2I00EneRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span>template&lt;typename <code class="sig-name descname">T</code>, typename <code class="sig-name descname">U</code>&gt;<br />bool <code class="sig-name descname">operator!=</code><span class="sig-paren">(</span><em class="property">const</em> cache_aligned_allocator&lt;<a class="reference internal" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator!=::T">T</a>&gt;&amp;, <em class="property">const</em> cache_aligned_allocator&lt;<a class="reference internal" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator!=::U">U</a>&gt;&amp;<span class="sig-paren">)</span> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I00EneRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span id="_CPPv2I00EneRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">T</span></code><span class="pre">,</span> <span class="pre">typename</span> <code class="sig-name descname"><span class="pre">U</span></code><span class="pre">&gt;</span><br /><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">operator!=</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">cache_aligned_allocator</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator!=::T"><span class="pre">T</span></a><span class="pre">&gt;</span><span class="pre">&amp;</span>, <em class="property"><span class="pre">const</span></em> <span class="pre">cache_aligned_allocator</span><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="operator!=::U"><span class="pre">U</span></a><span class="pre">&gt;</span><span class="pre">&amp;</span><span class="sig-paren">)</span> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4I00EnebRK23cache_aligned_allocatorI1TERK23cache_aligned_allocatorI1UE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns <strong>false</strong>.</p>
 </dd></dl>
 

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4609,13 +4608,13 @@ It should also meet one of the following requirements:</p>
 <p><strong>ParallelForEachBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK4BodyclE8ItemType">
-<span id="_CPPv3NK4BodyclE8ItemType"></span><span id="_CPPv2NK4BodyclE8ItemType"></span><span id="Body::call-operator__ItemTypeC"></span><code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>ItemType <em>item</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4BodyclE8ItemType" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4BodyclE8ItemType"></span><span id="_CPPv2NK4BodyclE8ItemType"></span><span id="Body::call-operator__ItemTypeC"></span><code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">ItemType</span> <em><span class="pre">item</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4BodyclE8ItemType" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Process the received item.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE">
-<span id="_CPPv3NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE"></span><span id="_CPPv2NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE"></span><span id="Body::call-operator__ItemType.tbb::feeder:ItemType:RC"></span><code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>ItemType <em>item</em>, tbb::feeder&lt;ItemType&gt; &amp;<em>feeder</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE"></span><span id="_CPPv2NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE"></span><span id="Body::call-operator__ItemType.tbb::feeder:ItemType:RC"></span><code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">ItemType</span> <em><span class="pre">item</span></em>, <span class="pre">tbb</span><span class="pre">::</span><span class="pre">feeder</span><span class="pre">&lt;</span><span class="pre">ItemType</span><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">feeder</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4BodyclE8ItemTypeRN3tbb6feederI8ItemTypeEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Process the received item. May invoke the <code class="docutils literal notranslate"><span class="pre">feeder.add(T)</span></code> function to spawn additional items.</p>
 </dd></dl>
 

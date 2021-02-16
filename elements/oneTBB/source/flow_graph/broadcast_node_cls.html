@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4629,14 +4628,14 @@ SPDX-License-Identifier: MIT
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv414broadcast_nodeR5graph">
-<span id="_CPPv314broadcast_nodeR5graph"></span><span id="_CPPv214broadcast_nodeR5graph"></span><span id="broadcast_node__graphR"></span><em class="property">explicit</em> <code class="sig-name descname">broadcast_node</code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph">graph</a> &amp;<em>g</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414broadcast_nodeR5graph" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314broadcast_nodeR5graph"></span><span id="_CPPv214broadcast_nodeR5graph"></span><span id="broadcast_node__graphR"></span><em class="property"><span class="pre">explicit</span></em> <code class="sig-name descname"><span class="pre">broadcast_node</span></code><span class="sig-paren">(</span><a class="reference internal" href="graph_cls.html#_CPPv45graphR18task_group_context" title="graph"><span class="pre">graph</span></a> <span class="pre">&amp;</span><em><span class="pre">g</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414broadcast_nodeR5graph" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an object of type <code class="docutils literal notranslate"><span class="pre">broadcast_node</span></code> that belongs to the
 graph <code class="docutils literal notranslate"><span class="pre">g</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv414broadcast_nodeRK14broadcast_node">
-<span id="_CPPv314broadcast_nodeRK14broadcast_node"></span><span id="_CPPv214broadcast_nodeRK14broadcast_node"></span><span id="broadcast_node__broadcast_nodeCR"></span><code class="sig-name descname">broadcast_node</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv414broadcast_nodeRK14broadcast_node" title="broadcast_node">broadcast_node</a> &amp;<em>src</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414broadcast_nodeRK14broadcast_node" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314broadcast_nodeRK14broadcast_node"></span><span id="_CPPv214broadcast_nodeRK14broadcast_node"></span><span id="broadcast_node__broadcast_nodeCR"></span><code class="sig-name descname"><span class="pre">broadcast_node</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv414broadcast_nodeRK14broadcast_node" title="broadcast_node"><span class="pre">broadcast_node</span></a> <span class="pre">&amp;</span><em><span class="pre">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414broadcast_nodeRK14broadcast_node" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an object of type <code class="docutils literal notranslate"><span class="pre">broadcast_node</span></code> that belongs to the
 same graph <code class="docutils literal notranslate"><span class="pre">g</span></code> as <code class="docutils literal notranslate"><span class="pre">src</span></code>. The list of predecessors and the list of
 successors are not copied.</p>
@@ -4644,7 +4643,7 @@ successors are not copied.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv47try_putRK10input_type">
-<span id="_CPPv37try_putRK10input_type"></span><span id="_CPPv27try_putRK10input_type"></span><span id="try_put__input_typeCR"></span>bool <code class="sig-name descname">try_put</code><span class="sig-paren">(</span><em class="property">const</em> input_type &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_putRK10input_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37try_putRK10input_type"></span><span id="_CPPv27try_putRK10input_type"></span><span id="try_put__input_typeCR"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_put</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">input_type</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_putRK10input_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Broadcasts <code class="docutils literal notranslate"><span class="pre">v</span></code> to all successors.</p>
 <p><strong>Returns</strong>: always returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, even if it was unable to
 successfully forward the message to any of its successors.</p>
@@ -4652,7 +4651,7 @@ successfully forward the message to any of its successors.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv47try_getR11output_type">
-<span id="_CPPv37try_getR11output_type"></span><span id="_CPPv27try_getR11output_type"></span><span id="try_get__output_typeR"></span>bool <code class="sig-name descname">try_get</code><span class="sig-paren">(</span>output_type &amp;<em>v</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_getR11output_type" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37try_getR11output_type"></span><span id="_CPPv27try_getR11output_type"></span><span id="try_get__output_typeR"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_get</span></code><span class="sig-paren">(</span><span class="pre">output_type</span> <span class="pre">&amp;</span><em><span class="pre">v</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47try_getR11output_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
 </dd></dl>
 

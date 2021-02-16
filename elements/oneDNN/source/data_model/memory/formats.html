@@ -42,9 +42,9 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4409,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4813,7 +4813,7 @@ implement backward propagation.</p>
 <h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N4dnnl6memory10format_tagE">
-<span id="_CPPv3N4dnnl6memory10format_tagE"></span><span id="_CPPv2N4dnnl6memory10format_tagE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f"></span><em class="property">enum </em><code class="sig-prename descclassname">dnnl::<a class="reference internal" href="objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory">memory</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">format_tag</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tagE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tagE"></span><span id="_CPPv2N4dnnl6memory10format_tagE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3f"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">dnnl</span><span class="pre">::</span><a class="reference internal" href="objects.html#_CPPv4N4dnnl6memoryE" title="dnnl::memory"><span class="pre">memory</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">format_tag</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tagE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Memory format tag specification.</p>
 <p>Memory format tags can be further divided into two categories:</p>
 <p><ul class="simple">
@@ -4832,409 +4832,409 @@ implement backward propagation.</p>
 <p><em>Values:</em></p>
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5undefE">
-<span id="_CPPv3N4dnnl6memory10format_tag5undefE"></span><span id="_CPPv2N4dnnl6memory10format_tag5undefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf31ee5e3824f1f5e5d206bdf3029f22b"></span><em class="property">enumerator </em><code class="sig-name descname">undef</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5undefE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5undefE"></span><span id="_CPPv2N4dnnl6memory10format_tag5undefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf31ee5e3824f1f5e5d206bdf3029f22b"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">undef</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5undefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Undefined memory format tag. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3anyE">
-<span id="_CPPv3N4dnnl6memory10format_tag3anyE"></span><span id="_CPPv2N4dnnl6memory10format_tag3anyE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"></span><em class="property">enumerator </em><code class="sig-name descname">any</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3anyE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3anyE"></span><span id="_CPPv2N4dnnl6memory10format_tag3anyE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa100b8cad7cf2a56f6df78f171f97a1ec"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">any</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3anyE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Placeholder memory format tag. Used to instruct the primitive to select a format automatically. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag1aE">
-<span id="_CPPv3N4dnnl6memory10format_tag1aE"></span><span id="_CPPv2N4dnnl6memory10format_tag1aE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa0cc175b9c0f1b6a831c399e269772661"></span><em class="property">enumerator </em><code class="sig-name descname">a</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag1aE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag1aE"></span><span id="_CPPv2N4dnnl6memory10format_tag1aE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa0cc175b9c0f1b6a831c399e269772661"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">a</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag1aE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 1D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2abE">
-<span id="_CPPv3N4dnnl6memory10format_tag2abE"></span><span id="_CPPv2N4dnnl6memory10format_tag2abE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0"></span><em class="property">enumerator </em><code class="sig-name descname">ab</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2abE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2abE"></span><span id="_CPPv2N4dnnl6memory10format_tag2abE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ab</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2abE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 2D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2baE">
-<span id="_CPPv3N4dnnl6memory10format_tag2baE"></span><span id="_CPPv2N4dnnl6memory10format_tag2baE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4"></span><em class="property">enumerator </em><code class="sig-name descname">ba</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2baE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2baE"></span><span id="_CPPv2N4dnnl6memory10format_tag2baE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ba</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2baE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 2D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3abcE">
-<span id="_CPPv3N4dnnl6memory10format_tag3abcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3abcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa900150983cd24fb0d6963f7d28e17f72"></span><em class="property">enumerator </em><code class="sig-name descname">abc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3abcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3abcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3abcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa900150983cd24fb0d6963f7d28e17f72"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3abcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 3D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3acbE">
-<span id="_CPPv3N4dnnl6memory10format_tag3acbE"></span><span id="_CPPv2N4dnnl6memory10format_tag3acbE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5ff832d9bca8241d653279756f3ccd11"></span><em class="property">enumerator </em><code class="sig-name descname">acb</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3acbE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3acbE"></span><span id="_CPPv2N4dnnl6memory10format_tag3acbE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5ff832d9bca8241d653279756f3ccd11"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">acb</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3acbE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 3D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3bacE">
-<span id="_CPPv3N4dnnl6memory10format_tag3bacE"></span><span id="_CPPv2N4dnnl6memory10format_tag3bacE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ec16df80b57696a03bb364410061f3"></span><em class="property">enumerator </em><code class="sig-name descname">bac</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3bacE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3bacE"></span><span id="_CPPv2N4dnnl6memory10format_tag3bacE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ec16df80b57696a03bb364410061f3"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bac</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3bacE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 3D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3bcaE">
-<span id="_CPPv3N4dnnl6memory10format_tag3bcaE"></span><span id="_CPPv2N4dnnl6memory10format_tag3bcaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab64eab8ce39e013604e243089c687e4f"></span><em class="property">enumerator </em><code class="sig-name descname">bca</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3bcaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3bcaE"></span><span id="_CPPv2N4dnnl6memory10format_tag3bcaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab64eab8ce39e013604e243089c687e4f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bca</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3bcaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 3D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3cbaE">
-<span id="_CPPv3N4dnnl6memory10format_tag3cbaE"></span><span id="_CPPv2N4dnnl6memory10format_tag3cbaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3944b025c9ca7eec3154b44666ae04a0"></span><em class="property">enumerator </em><code class="sig-name descname">cba</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3cbaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3cbaE"></span><span id="_CPPv2N4dnnl6memory10format_tag3cbaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3944b025c9ca7eec3154b44666ae04a0"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">cba</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3cbaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 3D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4abcdE">
-<span id="_CPPv3N4dnnl6memory10format_tag4abcdE"></span><span id="_CPPv2N4dnnl6memory10format_tag4abcdE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"></span><em class="property">enumerator </em><code class="sig-name descname">abcd</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4abcdE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4abcdE"></span><span id="_CPPv2N4dnnl6memory10format_tag4abcdE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abcd</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4abcdE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4abdcE">
-<span id="_CPPv3N4dnnl6memory10format_tag4abdcE"></span><span id="_CPPv2N4dnnl6memory10format_tag4abdcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5e822a0b52c71ce2ff2ecd3aa8ca46fc"></span><em class="property">enumerator </em><code class="sig-name descname">abdc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4abdcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4abdcE"></span><span id="_CPPv2N4dnnl6memory10format_tag4abdcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5e822a0b52c71ce2ff2ecd3aa8ca46fc"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abdc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4abdcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4acdbE">
-<span id="_CPPv3N4dnnl6memory10format_tag4acdbE"></span><span id="_CPPv2N4dnnl6memory10format_tag4acdbE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7"></span><em class="property">enumerator </em><code class="sig-name descname">acdb</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4acdbE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4acdbE"></span><span id="_CPPv2N4dnnl6memory10format_tag4acdbE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">acdb</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4acdbE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4bacdE">
-<span id="_CPPv3N4dnnl6memory10format_tag4bacdE"></span><span id="_CPPv2N4dnnl6memory10format_tag4bacdE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5a3b732e0600663606054f6d8dfd465e"></span><em class="property">enumerator </em><code class="sig-name descname">bacd</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4bacdE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4bacdE"></span><span id="_CPPv2N4dnnl6memory10format_tag4bacdE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5a3b732e0600663606054f6d8dfd465e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bacd</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4bacdE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4bcdaE">
-<span id="_CPPv3N4dnnl6memory10format_tag4bcdaE"></span><span id="_CPPv2N4dnnl6memory10format_tag4bcdaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa078c4e73146ba90c3e4e9daa1facac28"></span><em class="property">enumerator </em><code class="sig-name descname">bcda</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4bcdaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4bcdaE"></span><span id="_CPPv2N4dnnl6memory10format_tag4bcdaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa078c4e73146ba90c3e4e9daa1facac28"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bcda</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4bcdaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4cdbaE">
-<span id="_CPPv3N4dnnl6memory10format_tag4cdbaE"></span><span id="_CPPv2N4dnnl6memory10format_tag4cdbaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faff2458511a39d703bd273eabbb1395d6"></span><em class="property">enumerator </em><code class="sig-name descname">cdba</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4cdbaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4cdbaE"></span><span id="_CPPv2N4dnnl6memory10format_tag4cdbaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faff2458511a39d703bd273eabbb1395d6"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">cdba</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4cdbaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4dcabE">
-<span id="_CPPv3N4dnnl6memory10format_tag4dcabE"></span><span id="_CPPv2N4dnnl6memory10format_tag4dcabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9737604d6ad5938095054dc4413bf8e9"></span><em class="property">enumerator </em><code class="sig-name descname">dcab</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4dcabE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4dcabE"></span><span id="_CPPv2N4dnnl6memory10format_tag4dcabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9737604d6ad5938095054dc4413bf8e9"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">dcab</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4dcabE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 4D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5abcdeE">
-<span id="_CPPv3N4dnnl6memory10format_tag5abcdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5abcdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786"></span><em class="property">enumerator </em><code class="sig-name descname">abcde</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5abcdeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5abcdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5abcdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abcde</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5abcdeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5abdecE">
-<span id="_CPPv3N4dnnl6memory10format_tag5abdecE"></span><span id="_CPPv2N4dnnl6memory10format_tag5abdecE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7a05226d93263d6fc613f52400f7416d"></span><em class="property">enumerator </em><code class="sig-name descname">abdec</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5abdecE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5abdecE"></span><span id="_CPPv2N4dnnl6memory10format_tag5abdecE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7a05226d93263d6fc613f52400f7416d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abdec</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5abdecE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5acbdeE">
-<span id="_CPPv3N4dnnl6memory10format_tag5acbdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5acbdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae0e56a95aff0ee48fc44e8a4faf69adb"></span><em class="property">enumerator </em><code class="sig-name descname">acbde</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5acbdeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5acbdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5acbdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae0e56a95aff0ee48fc44e8a4faf69adb"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">acbde</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5acbdeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5acdebE">
-<span id="_CPPv3N4dnnl6memory10format_tag5acdebE"></span><span id="_CPPv2N4dnnl6memory10format_tag5acdebE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf95d333a023ac787b43babc5b5c480ae"></span><em class="property">enumerator </em><code class="sig-name descname">acdeb</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5acdebE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5acdebE"></span><span id="_CPPv2N4dnnl6memory10format_tag5acdebE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf95d333a023ac787b43babc5b5c480ae"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">acdeb</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5acdebE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5bacdeE">
-<span id="_CPPv3N4dnnl6memory10format_tag5bacdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5bacdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabb59e2a27c3cb4e24384952fc6847948"></span><em class="property">enumerator </em><code class="sig-name descname">bacde</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5bacdeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5bacdeE"></span><span id="_CPPv2N4dnnl6memory10format_tag5bacdeE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabb59e2a27c3cb4e24384952fc6847948"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bacde</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5bacdeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5bcdeaE">
-<span id="_CPPv3N4dnnl6memory10format_tag5bcdeaE"></span><span id="_CPPv2N4dnnl6memory10format_tag5bcdeaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6debec47fc73823aa65cc49b94b7e1fb"></span><em class="property">enumerator </em><code class="sig-name descname">bcdea</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5bcdeaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5bcdeaE"></span><span id="_CPPv2N4dnnl6memory10format_tag5bcdeaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6debec47fc73823aa65cc49b94b7e1fb"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">bcdea</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5bcdeaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5cdebaE">
-<span id="_CPPv3N4dnnl6memory10format_tag5cdebaE"></span><span id="_CPPv2N4dnnl6memory10format_tag5cdebaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafafcbfdfcede01281676ab63df88a919"></span><em class="property">enumerator </em><code class="sig-name descname">cdeba</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5cdebaE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5cdebaE"></span><span id="_CPPv2N4dnnl6memory10format_tag5cdebaE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafafcbfdfcede01281676ab63df88a919"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">cdeba</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5cdebaE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5decabE">
-<span id="_CPPv3N4dnnl6memory10format_tag5decabE"></span><span id="_CPPv2N4dnnl6memory10format_tag5decabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab9a152e018d02395e6e94c5619da4a91"></span><em class="property">enumerator </em><code class="sig-name descname">decab</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5decabE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5decabE"></span><span id="_CPPv2N4dnnl6memory10format_tag5decabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab9a152e018d02395e6e94c5619da4a91"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">decab</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5decabE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>permuted 5D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6abcdefE">
-<span id="_CPPv3N4dnnl6memory10format_tag6abcdefE"></span><span id="_CPPv2N4dnnl6memory10format_tag6abcdefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae80b5017098950fc58aad83c8c14978e"></span><em class="property">enumerator </em><code class="sig-name descname">abcdef</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6abcdefE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6abcdefE"></span><span id="_CPPv2N4dnnl6memory10format_tag6abcdefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae80b5017098950fc58aad83c8c14978e"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">abcdef</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6abcdefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 6D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6acbdefE">
-<span id="_CPPv3N4dnnl6memory10format_tag6acbdefE"></span><span id="_CPPv2N4dnnl6memory10format_tag6acbdefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa66fd87374b1ec6be9fdbea534e17adeb"></span><em class="property">enumerator </em><code class="sig-name descname">acbdef</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6acbdefE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6acbdefE"></span><span id="_CPPv2N4dnnl6memory10format_tag6acbdefE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa66fd87374b1ec6be9fdbea534e17adeb"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">acbdef</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6acbdefE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 6D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6defcabE">
-<span id="_CPPv3N4dnnl6memory10format_tag6defcabE"></span><span id="_CPPv2N4dnnl6memory10format_tag6defcabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac9cdbbb9640597fea44206cee7f8a151"></span><em class="property">enumerator </em><code class="sig-name descname">defcab</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6defcabE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6defcabE"></span><span id="_CPPv2N4dnnl6memory10format_tag6defcabE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac9cdbbb9640597fea44206cee7f8a151"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">defcab</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6defcabE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>plain 6D tensor </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag1xE">
-<span id="_CPPv3N4dnnl6memory10format_tag1xE"></span><span id="_CPPv2N4dnnl6memory10format_tag1xE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9dd4e461268c8034f5c8564e155c67a6"></span><em class="property">enumerator </em><code class="sig-name descname">x</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag1xE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag1xE"></span><span id="_CPPv2N4dnnl6memory10format_tag1xE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9dd4e461268c8034f5c8564e155c67a6"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">x</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag1xE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>1D tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa0cc175b9c0f1b6a831c399e269772661"><span class="std std-ref">dnnl::memory::format_tag::a</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2ncE">
-<span id="_CPPv3N4dnnl6memory10format_tag2ncE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128"></span><em class="property">enumerator </em><code class="sig-name descname">nc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ncE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2ncE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1e7342845e24eb3b5b3554490da1c128"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">nc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ncE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0"><span class="std std-ref">dnnl::memory::format_tag::ab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2cnE">
-<span id="_CPPv3N4dnnl6memory10format_tag2cnE"></span><span id="_CPPv2N4dnnl6memory10format_tag2cnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7efdfc94655a25dcea3ec85e9bb703fa"></span><em class="property">enumerator </em><code class="sig-name descname">cn</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2cnE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2cnE"></span><span id="_CPPv2N4dnnl6memory10format_tag2cnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7efdfc94655a25dcea3ec85e9bb703fa"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">cn</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2cnE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4"><span class="std std-ref">dnnl::memory::format_tag::ba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2tnE">
-<span id="_CPPv3N4dnnl6memory10format_tag2tnE"></span><span id="_CPPv2N4dnnl6memory10format_tag2tnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faaafb96b2fa8806be307c4496867bad56"></span><em class="property">enumerator </em><code class="sig-name descname">tn</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2tnE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2tnE"></span><span id="_CPPv2N4dnnl6memory10format_tag2tnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faaafb96b2fa8806be307c4496867bad56"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">tn</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2tnE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D RNN statistics tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0"><span class="std std-ref">dnnl::memory::format_tag::ab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2ntE">
-<span id="_CPPv3N4dnnl6memory10format_tag2ntE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ntE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa25930e3036f13852cb0b29694bbab611"></span><em class="property">enumerator </em><code class="sig-name descname">nt</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ntE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2ntE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ntE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa25930e3036f13852cb0b29694bbab611"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">nt</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ntE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D RNN statistics tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4"><span class="std std-ref">dnnl::memory::format_tag::ba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3ncwE">
-<span id="_CPPv3N4dnnl6memory10format_tag3ncwE"></span><span id="_CPPv2N4dnnl6memory10format_tag3ncwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabc4eee572ad38f8a5c2534e0b2533100"></span><em class="property">enumerator </em><code class="sig-name descname">ncw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3ncwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3ncwE"></span><span id="_CPPv2N4dnnl6memory10format_tag3ncwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabc4eee572ad38f8a5c2534e0b2533100"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ncw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3ncwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa900150983cd24fb0d6963f7d28e17f72"><span class="std std-ref">dnnl::memory::format_tag::abc</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3nwcE">
-<span id="_CPPv3N4dnnl6memory10format_tag3nwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3nwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faccc0543dc9272f9fffd720fe55f818e4"></span><em class="property">enumerator </em><code class="sig-name descname">nwc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3nwcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3nwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3nwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faccc0543dc9272f9fffd720fe55f818e4"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">nwc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3nwcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5ff832d9bca8241d653279756f3ccd11"><span class="std std-ref">dnnl::memory::format_tag::acb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4nchwE">
-<span id="_CPPv3N4dnnl6memory10format_tag4nchwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4nchwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb"></span><em class="property">enumerator </em><code class="sig-name descname">nchw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4nchwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4nchwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4nchwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faded7ac40158367123c5467281d44cbeb"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">nchw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4nchwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"><span class="std std-ref">dnnl::memory::format_tag::abcd</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4nhwcE">
-<span id="_CPPv3N4dnnl6memory10format_tag4nhwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag4nhwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa763cbf7ba1b7b8793dcdc6e2157b5c42"></span><em class="property">enumerator </em><code class="sig-name descname">nhwc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4nhwcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4nhwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag4nhwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa763cbf7ba1b7b8793dcdc6e2157b5c42"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">nhwc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4nhwcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7"><span class="std std-ref">dnnl::memory::format_tag::acdb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4chwnE">
-<span id="_CPPv3N4dnnl6memory10format_tag4chwnE"></span><span id="_CPPv2N4dnnl6memory10format_tag4chwnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd2263500e815d8ce46e79e6b178a10a"></span><em class="property">enumerator </em><code class="sig-name descname">chwn</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4chwnE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4chwnE"></span><span id="_CPPv2N4dnnl6memory10format_tag4chwnE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd2263500e815d8ce46e79e6b178a10a"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">chwn</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4chwnE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa078c4e73146ba90c3e4e9daa1facac28"><span class="std std-ref">dnnl::memory::format_tag::bcda</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5ncdhwE">
-<span id="_CPPv3N4dnnl6memory10format_tag5ncdhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ncdhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae7a84f08ef10d4fe3096307c6d9770fd"></span><em class="property">enumerator </em><code class="sig-name descname">ncdhw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ncdhwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5ncdhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ncdhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae7a84f08ef10d4fe3096307c6d9770fd"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ncdhw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ncdhwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786"><span class="std std-ref">dnnl::memory::format_tag::abcde</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5ndhwcE">
-<span id="_CPPv3N4dnnl6memory10format_tag5ndhwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ndhwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fad2f2770ca9883423f680fd4a29481d64"></span><em class="property">enumerator </em><code class="sig-name descname">ndhwc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ndhwcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5ndhwcE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ndhwcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fad2f2770ca9883423f680fd4a29481d64"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ndhwc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ndhwcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN activations tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf95d333a023ac787b43babc5b5c480ae"><span class="std std-ref">dnnl::memory::format_tag::acdeb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2oiE">
-<span id="_CPPv3N4dnnl6memory10format_tag2oiE"></span><span id="_CPPv2N4dnnl6memory10format_tag2oiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faa2e63ee01401aaeca78be023dfbb8c59"></span><em class="property">enumerator </em><code class="sig-name descname">oi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2oiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2oiE"></span><span id="_CPPv2N4dnnl6memory10format_tag2oiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faa2e63ee01401aaeca78be023dfbb8c59"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">oi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2oiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa187ef4436122d1cc2f40dc2b92f0eba0"><span class="std std-ref">dnnl::memory::format_tag::ab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag2ioE">
-<span id="_CPPv3N4dnnl6memory10format_tag2ioE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf98ed07a4d5f50f7de1410d905f1477f"></span><em class="property">enumerator </em><code class="sig-name descname">io</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ioE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag2ioE"></span><span id="_CPPv2N4dnnl6memory10format_tag2ioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf98ed07a4d5f50f7de1410d905f1477f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">io</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag2ioE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>2D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa07159c47ee1b19ae4fb9c40d480856c4"><span class="std std-ref">dnnl::memory::format_tag::ba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3oiwE">
-<span id="_CPPv3N4dnnl6memory10format_tag3oiwE"></span><span id="_CPPv2N4dnnl6memory10format_tag3oiwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3a8cb832bca6da72735b742014560a5b"></span><em class="property">enumerator </em><code class="sig-name descname">oiw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3oiwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3oiwE"></span><span id="_CPPv2N4dnnl6memory10format_tag3oiwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3a8cb832bca6da72735b742014560a5b"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">oiw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3oiwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa900150983cd24fb0d6963f7d28e17f72"><span class="std std-ref">dnnl::memory::format_tag::abc</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3owiE">
-<span id="_CPPv3N4dnnl6memory10format_tag3owiE"></span><span id="_CPPv2N4dnnl6memory10format_tag3owiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa55e9a1b1cc2aaf0f5b7417d8098ea4b3"></span><em class="property">enumerator </em><code class="sig-name descname">owi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3owiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3owiE"></span><span id="_CPPv2N4dnnl6memory10format_tag3owiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa55e9a1b1cc2aaf0f5b7417d8098ea4b3"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">owi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3owiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5ff832d9bca8241d653279756f3ccd11"><span class="std std-ref">dnnl::memory::format_tag::acb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3wioE">
-<span id="_CPPv3N4dnnl6memory10format_tag3wioE"></span><span id="_CPPv2N4dnnl6memory10format_tag3wioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5b12270b2f1c52cb9ae37905880a5a6f"></span><em class="property">enumerator </em><code class="sig-name descname">wio</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3wioE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3wioE"></span><span id="_CPPv2N4dnnl6memory10format_tag3wioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5b12270b2f1c52cb9ae37905880a5a6f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">wio</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3wioE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3944b025c9ca7eec3154b44666ae04a0"><span class="std std-ref">dnnl::memory::format_tag::cba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3iwoE">
-<span id="_CPPv3N4dnnl6memory10format_tag3iwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag3iwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7afa5d2c0d2aa139eb213430ec70d91d"></span><em class="property">enumerator </em><code class="sig-name descname">iwo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3iwoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3iwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag3iwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa7afa5d2c0d2aa139eb213430ec70d91d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">iwo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3iwoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab64eab8ce39e013604e243089c687e4f"><span class="std std-ref">dnnl::memory::format_tag::bca</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4oihwE">
-<span id="_CPPv3N4dnnl6memory10format_tag4oihwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4oihwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa14b72a467aeefa06a5cb802ec4a7743c"></span><em class="property">enumerator </em><code class="sig-name descname">oihw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4oihwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4oihwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4oihwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa14b72a467aeefa06a5cb802ec4a7743c"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">oihw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4oihwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"><span class="std std-ref">dnnl::memory::format_tag::abcd</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4hwioE">
-<span id="_CPPv3N4dnnl6memory10format_tag4hwioE"></span><span id="_CPPv2N4dnnl6memory10format_tag4hwioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fadd942f902c741de7193e1869b13ba55a"></span><em class="property">enumerator </em><code class="sig-name descname">hwio</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4hwioE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4hwioE"></span><span id="_CPPv2N4dnnl6memory10format_tag4hwioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fadd942f902c741de7193e1869b13ba55a"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">hwio</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4hwioE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faff2458511a39d703bd273eabbb1395d6"><span class="std std-ref">dnnl::memory::format_tag::cdba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ohwiE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ohwiE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ohwiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab889a0cb4d051674706433941a2e867f"></span><em class="property">enumerator </em><code class="sig-name descname">ohwi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ohwiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ohwiE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ohwiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab889a0cb4d051674706433941a2e867f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ohwi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ohwiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa776649ab3d00664587b889457db87da7"><span class="std std-ref">dnnl::memory::format_tag::acdb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ihwoE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ihwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ihwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa56fe35ca9f339b4948384c2a2fa02de5"></span><em class="property">enumerator </em><code class="sig-name descname">ihwo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ihwoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ihwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ihwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa56fe35ca9f339b4948384c2a2fa02de5"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ihwo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ihwoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa078c4e73146ba90c3e4e9daa1facac28"><span class="std std-ref">dnnl::memory::format_tag::bcda</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4iohwE">
-<span id="_CPPv3N4dnnl6memory10format_tag4iohwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4iohwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac16710619e6550753801926b5388bef8"></span><em class="property">enumerator </em><code class="sig-name descname">iohw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4iohwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4iohwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4iohwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac16710619e6550753801926b5388bef8"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">iohw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4iohwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5a3b732e0600663606054f6d8dfd465e"><span class="std std-ref">dnnl::memory::format_tag::bacd</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5oidhwE">
-<span id="_CPPv3N4dnnl6memory10format_tag5oidhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5oidhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa98407962f915285419b23f5b0a223882"></span><em class="property">enumerator </em><code class="sig-name descname">oidhw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5oidhwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5oidhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5oidhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa98407962f915285419b23f5b0a223882"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">oidhw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5oidhwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786"><span class="std std-ref">dnnl::memory::format_tag::abcde</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5dhwioE">
-<span id="_CPPv3N4dnnl6memory10format_tag5dhwioE"></span><span id="_CPPv2N4dnnl6memory10format_tag5dhwioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faeafcb3d831eef23cde0b46f64646327c"></span><em class="property">enumerator </em><code class="sig-name descname">dhwio</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5dhwioE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5dhwioE"></span><span id="_CPPv2N4dnnl6memory10format_tag5dhwioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faeafcb3d831eef23cde0b46f64646327c"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">dhwio</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5dhwioE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafafcbfdfcede01281676ab63df88a919"><span class="std std-ref">dnnl::memory::format_tag::cdeba</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5odhwiE">
-<span id="_CPPv3N4dnnl6memory10format_tag5odhwiE"></span><span id="_CPPv2N4dnnl6memory10format_tag5odhwiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabf55006478a9dae3506eb67923703a1d"></span><em class="property">enumerator </em><code class="sig-name descname">odhwi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5odhwiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5odhwiE"></span><span id="_CPPv2N4dnnl6memory10format_tag5odhwiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabf55006478a9dae3506eb67923703a1d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">odhwi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5odhwiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faf95d333a023ac787b43babc5b5c480ae"><span class="std std-ref">dnnl::memory::format_tag::acdeb</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5iodhwE">
-<span id="_CPPv3N4dnnl6memory10format_tag5iodhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5iodhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa940f633559dc193ac5a96584394774a3"></span><em class="property">enumerator </em><code class="sig-name descname">iodhw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5iodhwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5iodhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5iodhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa940f633559dc193ac5a96584394774a3"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">iodhw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5iodhwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fabb59e2a27c3cb4e24384952fc6847948"><span class="std std-ref">dnnl::memory::format_tag::bacde</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5idhwoE">
-<span id="_CPPv3N4dnnl6memory10format_tag5idhwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5idhwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa2b3d6389089fb08059ece8a9642b8991"></span><em class="property">enumerator </em><code class="sig-name descname">idhwo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5idhwoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5idhwoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5idhwoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa2b3d6389089fb08059ece8a9642b8991"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">idhwo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5idhwoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6debec47fc73823aa65cc49b94b7e1fb"><span class="std std-ref">dnnl::memory::format_tag::bcdea</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4goiwE">
-<span id="_CPPv3N4dnnl6memory10format_tag4goiwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4goiwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1f1bc797706732c22eb9987e3cea3e54"></span><em class="property">enumerator </em><code class="sig-name descname">goiw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4goiwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4goiwE"></span><span id="_CPPv2N4dnnl6memory10format_tag4goiwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1f1bc797706732c22eb9987e3cea3e54"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">goiw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4goiwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae2fc714c4727ee9395f324cd2e7f331f"><span class="std std-ref">dnnl::memory::format_tag::abcd</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4wigoE">
-<span id="_CPPv3N4dnnl6memory10format_tag4wigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4wigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1609c2708a916705421742969a35351c"></span><em class="property">enumerator </em><code class="sig-name descname">wigo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4wigoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4wigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4wigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa1609c2708a916705421742969a35351c"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">wigo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4wigoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa9737604d6ad5938095054dc4413bf8e9"><span class="std std-ref">dnnl::memory::format_tag::dcab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5goihwE">
-<span id="_CPPv3N4dnnl6memory10format_tag5goihwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5goihwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3dc0e53430a6368210356118196f821a"></span><em class="property">enumerator </em><code class="sig-name descname">goihw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5goihwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5goihwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5goihwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa3dc0e53430a6368210356118196f821a"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">goihw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5goihwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faab56b4d92b40713acc5af89985d4b786"><span class="std std-ref">dnnl::memory::format_tag::abcde</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5hwigoE">
-<span id="_CPPv3N4dnnl6memory10format_tag5hwigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5hwigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd710c828421b3c91725b0e5aa53ecc6"></span><em class="property">enumerator </em><code class="sig-name descname">hwigo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5hwigoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5hwigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5hwigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fafd710c828421b3c91725b0e5aa53ecc6"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">hwigo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5hwigoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab9a152e018d02395e6e94c5619da4a91"><span class="std std-ref">dnnl::memory::format_tag::decab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5giohwE">
-<span id="_CPPv3N4dnnl6memory10format_tag5giohwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5giohwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5f1d6f8a3a8842611d15affa574b864f"></span><em class="property">enumerator </em><code class="sig-name descname">giohw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5giohwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5giohwE"></span><span id="_CPPv2N4dnnl6memory10format_tag5giohwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa5f1d6f8a3a8842611d15affa574b864f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">giohw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5giohwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae0e56a95aff0ee48fc44e8a4faf69adb"><span class="std std-ref">dnnl::memory::format_tag::acbde</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6goidhwE">
-<span id="_CPPv3N4dnnl6memory10format_tag6goidhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag6goidhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faa678de4e5a5e34c9a71a632b8f334b8b"></span><em class="property">enumerator </em><code class="sig-name descname">goidhw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6goidhwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6goidhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag6goidhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3faa678de4e5a5e34c9a71a632b8f334b8b"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">goidhw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6goidhwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>6D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae80b5017098950fc58aad83c8c14978e"><span class="std std-ref">dnnl::memory::format_tag::abcdef</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6giodhwE">
-<span id="_CPPv3N4dnnl6memory10format_tag6giodhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag6giodhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4f2399cfdc9861fee9d39cb1d703aadc"></span><em class="property">enumerator </em><code class="sig-name descname">giodhw</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6giodhwE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6giodhwE"></span><span id="_CPPv2N4dnnl6memory10format_tag6giodhwE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4f2399cfdc9861fee9d39cb1d703aadc"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">giodhw</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6giodhwE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>6D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fae80b5017098950fc58aad83c8c14978e"><span class="std std-ref">dnnl::memory::format_tag::abcdef</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag6dhwigoE">
-<span id="_CPPv3N4dnnl6memory10format_tag6dhwigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag6dhwigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab291a9717fdf353288d2d6082d578059"></span><em class="property">enumerator </em><code class="sig-name descname">dhwigo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6dhwigoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag6dhwigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag6dhwigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab291a9717fdf353288d2d6082d578059"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">dhwigo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag6dhwigoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>6D CNN weights tensor with groups; an alias for <a class="reference internal" href="#structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac9cdbbb9640597fea44206cee7f8a151"><span class="std std-ref">dnnl::memory::format_tag::defcab</span></a> </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3tncE">
-<span id="_CPPv3N4dnnl6memory10format_tag3tncE"></span><span id="_CPPv2N4dnnl6memory10format_tag3tncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac775cf954921a129a65eb929476de911"></span><em class="property">enumerator </em><code class="sig-name descname">tnc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3tncE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3tncE"></span><span id="_CPPv2N4dnnl6memory10format_tag3tncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fac775cf954921a129a65eb929476de911"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">tnc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3tncE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D RNN data tensor in the format (seq_length, batch, input channels). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag3ntcE">
-<span id="_CPPv3N4dnnl6memory10format_tag3ntcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3ntcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6758344f9f89d390953c6718f34e9be1"></span><em class="property">enumerator </em><code class="sig-name descname">ntc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3ntcE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag3ntcE"></span><span id="_CPPv2N4dnnl6memory10format_tag3ntcE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa6758344f9f89d390953c6718f34e9be1"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ntc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag3ntcE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>3D RNN data tensor in the format (batch, seq_length, input channels). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ldncE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ldncE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab49be97ff353a86d84d06d98f846b61d"></span><em class="property">enumerator </em><code class="sig-name descname">ldnc</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldncE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ldncE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldncE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab49be97ff353a86d84d06d98f846b61d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldnc</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldncE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D RNN states tensor in the format (num_layers, num_directions, batch, state channels). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5ldigoE">
-<span id="_CPPv3N4dnnl6memory10format_tag5ldigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ldigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b"></span><em class="property">enumerator </em><code class="sig-name descname">ldigo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ldigoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5ldigoE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ldigoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4e62e330c56963f9ead98490cd57ef7b"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldigo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ldigoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D RNN weights tensor in the format (num_layers, num_directions, input_channels, num_gates, output_channels).</p>
 <p><ul class="simple">
 <li><p>For LSTM cells, the gates order is input, forget, candidate and output gate.</p></li>
@@ -5245,7 +5245,7 @@ implement backward propagation.</p>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag5ldgoiE">
-<span id="_CPPv3N4dnnl6memory10format_tag5ldgoiE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ldgoiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4c850fa02c9e56a4c20dbfde737f1f8d"></span><em class="property">enumerator </em><code class="sig-name descname">ldgoi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ldgoiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag5ldgoiE"></span><span id="_CPPv2N4dnnl6memory10format_tag5ldgoiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa4c850fa02c9e56a4c20dbfde737f1f8d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldgoi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag5ldgoiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>5D RNN weights tensor in the format (num_layers, num_directions, num_gates, output_channels, input_channels).</p>
 <p><ul class="simple">
 <li><p>For LSTM cells, the gates order is input, forget, candidate and output gate.</p></li>
@@ -5256,19 +5256,19 @@ implement backward propagation.</p>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ldioE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ldioE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa201b31c3cfbeec4962a869bdc27da090"></span><em class="property">enumerator </em><code class="sig-name descname">ldio</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldioE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ldioE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldioE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa201b31c3cfbeec4962a869bdc27da090"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldio</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldioE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_hidden_state, num_channels_in_recurrent_projection). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ldoiE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ldoiE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldoiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ca41a567de72f7df2782e76dea722d"></span><em class="property">enumerator </em><code class="sig-name descname">ldoi</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldoiE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ldoiE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldoiE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fa79ca41a567de72f7df2782e76dea722d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldoi</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldoiE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D LSTM projection tensor in the format (num_layers, num_directions, num_channels_in_recurrent_projection, num_channels_in_hidden_state). </p>
 </dd></dl>
 
 <dl class="cpp enumerator">
 <dt id="_CPPv4N4dnnl6memory10format_tag4ldgoE">
-<span id="_CPPv3N4dnnl6memory10format_tag4ldgoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldgoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab8690cd92ccee6a0ad55faccc0346aab"></span><em class="property">enumerator </em><code class="sig-name descname">ldgo</code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldgoE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N4dnnl6memory10format_tag4ldgoE"></span><span id="_CPPv2N4dnnl6memory10format_tag4ldgoE"></span><span class="target" id="structdnnl_1_1memory_1a8e71077ed6a5f7fb7b3e6e1a5a2ecf3fab8690cd92ccee6a0ad55faccc0346aab"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">ldgo</span></code><a class="headerlink" href="#_CPPv4N4dnnl6memory10format_tag4ldgoE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>4D RNN bias tensor in the format (num_layers, num_directions, num_gates, output_channels).</p>
 <p><ul class="simple">
 <li><p>For LSTM cells, the gates order is input, forget, candidate and output gate.</p></li>

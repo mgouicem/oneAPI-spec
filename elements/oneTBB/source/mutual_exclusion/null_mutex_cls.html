@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4637,7 +4636,7 @@ It is useful for instantiating a template that expects a Mutex, but no mutual ex
 <h2>Member classes<a class="headerlink" href="#member-classes" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp class">
 <dt id="_CPPv411scoped_lock">
-<span id="_CPPv311scoped_lock"></span><span id="_CPPv211scoped_lock"></span><span id="scoped_lock"></span><em class="property">class </em><code class="sig-name descname">scoped_lock</code><a class="headerlink" href="#_CPPv411scoped_lock" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv311scoped_lock"></span><span id="_CPPv211scoped_lock"></span><span id="scoped_lock"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">scoped_lock</span></code><a class="headerlink" href="#_CPPv411scoped_lock" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Corresponding <code class="docutils literal notranslate"><span class="pre">scoped_lock</span></code> class. See the <a class="reference internal" href="../named_requirements/mutexes/mutex.html"><span class="doc">Mutex requirement</span></a>.</p>
 </dd></dl>
 
@@ -4646,31 +4645,31 @@ It is useful for instantiating a template that expects a Mutex, but no mutual ex
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv410null_mutexv">
-<span id="_CPPv310null_mutexv"></span><span id="_CPPv210null_mutexv"></span><span id="null_mutex"></span><code class="sig-name descname">null_mutex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410null_mutexv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv310null_mutexv"></span><span id="_CPPv210null_mutexv"></span><span id="null_mutex"></span><code class="sig-name descname"><span class="pre">null_mutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410null_mutexv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs unlocked mutex.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4D0v">
-<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~null_mutex"></span><code class="sig-name descname">~null_mutex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~null_mutex"></span><code class="sig-name descname"><span class="pre">~null_mutex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys unlocked mutex.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv44lockv">
-<span id="_CPPv34lockv"></span><span id="_CPPv24lockv"></span><span id="lock"></span>void <code class="sig-name descname">lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44lockv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv34lockv"></span><span id="_CPPv24lockv"></span><span id="lock"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv44lockv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Acquires lock.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv48try_lockv">
-<span id="_CPPv38try_lockv"></span><span id="_CPPv28try_lockv"></span><span id="try_lock"></span>bool <code class="sig-name descname">try_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48try_lockv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv38try_lockv"></span><span id="_CPPv28try_lockv"></span><span id="try_lock"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">try_lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv48try_lockv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Tries acquiring lock (non-blocking).</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv46unlockv">
-<span id="_CPPv36unlockv"></span><span id="_CPPv26unlockv"></span><span id="unlock"></span>void <code class="sig-name descname">unlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46unlockv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv36unlockv"></span><span id="_CPPv26unlockv"></span><span id="unlock"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">unlock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46unlockv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases the lock.</p>
 </dd></dl>
 

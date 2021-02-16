@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4637,13 +4636,13 @@ Tasks can be dynamically added to the group while it is executing.</p>
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10task_group10task_groupEv">
-<span id="_CPPv3N3tbb10task_group10task_groupEv"></span><span id="_CPPv2N3tbb10task_group10task_groupEv"></span><span id="tbb::task_group::task_group"></span><code class="sig-name descname">task_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group10task_groupEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10task_group10task_groupEv"></span><span id="_CPPv2N3tbb10task_group10task_groupEv"></span><span id="tbb::task_group::task_group"></span><code class="sig-name descname"><span class="pre">task_group</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group10task_groupEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs an empty <code class="docutils literal notranslate"><span class="pre">task_group</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10task_groupD0Ev">
-<span id="_CPPv3N3tbb10task_groupD0Ev"></span><span id="_CPPv2N3tbb10task_groupD0Ev"></span><span id="tbb::task_group::~task_group"></span><code class="sig-name descname">~task_group</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_groupD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10task_groupD0Ev"></span><span id="_CPPv2N3tbb10task_groupD0Ev"></span><span id="tbb::task_group::~task_group"></span><code class="sig-name descname"><span class="pre">~task_group</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_groupD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys the <code class="docutils literal notranslate"><span class="pre">task_group</span></code>.</p>
 <p><strong>Requires</strong>: Method <code class="docutils literal notranslate"><span class="pre">wait</span></code> must be called before destroying a <code class="docutils literal notranslate"><span class="pre">task_group</span></code>,
 otherwise, the destructor throws an exception.</p>
@@ -4651,14 +4650,14 @@ otherwise, the destructor throws an exception.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb10task_group3runEvRR4Func">
-<span id="_CPPv3I0EN3tbb10task_group3runERR4Func"></span><span id="_CPPv2I0EN3tbb10task_group3runERR4Func"></span>template&lt;typename <code class="sig-name descname">Func</code>&gt;<br />void <code class="sig-name descname">run</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10task_group3runEvRR4Func" title="tbb::task_group::run::Func">Func</a> &amp;&amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10task_group3runEvRR4Func" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb10task_group3runERR4Func"></span><span id="_CPPv2I0EN3tbb10task_group3runERR4Func"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Func</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">run</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb10task_group3runEvRR4Func" title="tbb::task_group::run::Func"><span class="pre">Func</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10task_group3runEvRR4Func" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Adds a task to compute <code class="docutils literal notranslate"><span class="pre">f()</span></code> and returns immediately.
 The <code class="docutils literal notranslate"><span class="pre">Func</span></code> type must meet the <cite>Function Objects</cite> requirements from [function.objects] ISO C++ Standard section.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb10task_group12run_and_waitE17task_group_statusRK4Func">
-<span id="_CPPv3I0EN3tbb10task_group12run_and_waitERK4Func"></span><span id="_CPPv2I0EN3tbb10task_group12run_and_waitERK4Func"></span>template&lt;typename <code class="sig-name descname">Func</code>&gt;<br />task_group_status <code class="sig-name descname">run_and_wait</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4I0EN3tbb10task_group12run_and_waitE17task_group_statusRK4Func" title="tbb::task_group::run_and_wait::Func">Func</a> &amp;<em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10task_group12run_and_waitE17task_group_statusRK4Func" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb10task_group12run_and_waitERK4Func"></span><span id="_CPPv2I0EN3tbb10task_group12run_and_waitERK4Func"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">Func</span></code><span class="pre">&gt;</span><br /><span class="pre">task_group_status</span> <code class="sig-name descname"><span class="pre">run_and_wait</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4I0EN3tbb10task_group12run_and_waitE17task_group_statusRK4Func" title="tbb::task_group::run_and_wait::Func"><span class="pre">Func</span></a> <span class="pre">&amp;</span><em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb10task_group12run_and_waitE17task_group_statusRK4Func" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Equivalent to <code class="docutils literal notranslate"><span class="pre">{run(f);</span> <span class="pre">return</span> <span class="pre">wait();}</span></code>, but guarantees that <code class="docutils literal notranslate"><span class="pre">f()</span></code> runs on the current thread.
 The <code class="docutils literal notranslate"><span class="pre">Func</span></code> type must meet the <cite>Function Objects</cite> requirements from the [function.objects] ISO C++ Standard section.</p>
 <p><strong>Returns</strong>: The status of <code class="docutils literal notranslate"><span class="pre">task_group</span></code>. See <a class="reference internal" href="task_group_status_enum.html"><span class="doc">task_group_status</span></a>.</p>
@@ -4666,14 +4665,14 @@ The <code class="docutils literal notranslate"><span class="pre">Func</span></co
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10task_group4waitEv">
-<span id="_CPPv3N3tbb10task_group4waitEv"></span><span id="_CPPv2N3tbb10task_group4waitEv"></span><span id="tbb::task_group::wait"></span>task_group_status <code class="sig-name descname">wait</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group4waitEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10task_group4waitEv"></span><span id="_CPPv2N3tbb10task_group4waitEv"></span><span id="tbb::task_group::wait"></span><span class="pre">task_group_status</span> <code class="sig-name descname"><span class="pre">wait</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group4waitEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Waits for all tasks in the group to complete or be cancelled.</p>
 <p><strong>Returns</strong>: The status of <code class="docutils literal notranslate"><span class="pre">task_group</span></code>. See <a class="reference internal" href="task_group_status_enum.html"><span class="doc">task_group_status</span></a>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10task_group6cancelEv">
-<span id="_CPPv3N3tbb10task_group6cancelEv"></span><span id="_CPPv2N3tbb10task_group6cancelEv"></span><span id="tbb::task_group::cancel"></span>void <code class="sig-name descname">cancel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group6cancelEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10task_group6cancelEv"></span><span id="_CPPv2N3tbb10task_group6cancelEv"></span><span id="tbb::task_group::cancel"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">cancel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group6cancelEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Cancels all tasks in this <code class="docutils literal notranslate"><span class="pre">task_group</span></code>.</p>
 </dd></dl>
 
@@ -4682,7 +4681,7 @@ The <code class="docutils literal notranslate"><span class="pre">Func</span></co
 <h2>Non-member functions<a class="headerlink" href="#non-member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv4N3tbb10task_group31is_current_task_group_cancelingEv">
-<span id="_CPPv3N3tbb10task_group31is_current_task_group_cancelingEv"></span><span id="_CPPv2N3tbb10task_group31is_current_task_group_cancelingEv"></span><span id="tbb::task_group::is_current_task_group_canceling"></span>bool <code class="sig-name descname">is_current_task_group_canceling</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group31is_current_task_group_cancelingEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3tbb10task_group31is_current_task_group_cancelingEv"></span><span id="_CPPv2N3tbb10task_group31is_current_task_group_cancelingEv"></span><span id="tbb::task_group::is_current_task_group_canceling"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_current_task_group_canceling</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3tbb10task_group31is_current_task_group_cancelingEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns true if an innermost <code class="docutils literal notranslate"><span class="pre">task_group</span></code> executing on this thread is cancelling its tasks.</p>
 </dd></dl>
 

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4639,7 +4638,7 @@ Remember to call <code class="docutils literal notranslate"><span class="pre">ob
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv423task_scheduler_observerv">
-<span id="_CPPv323task_scheduler_observerv"></span><span id="_CPPv223task_scheduler_observerv"></span><span id="task_scheduler_observer"></span><code class="sig-name descname">task_scheduler_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423task_scheduler_observerv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv323task_scheduler_observerv"></span><span id="_CPPv223task_scheduler_observerv"></span><span id="task_scheduler_observer"></span><code class="sig-name descname"><span class="pre">task_scheduler_observer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423task_scheduler_observerv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a <code class="docutils literal notranslate"><span class="pre">task_scheduler_observer</span></code> object in the inactive state (observation is disabled).
 For a created observer, entry/exit notifications are invoked whenever a worker
 thread joins/leaves the arena of the observer’s owner thread. If a thread is
@@ -4649,7 +4648,7 @@ called before it executes the first stolen task.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv423task_scheduler_observerR10task_arena">
-<span id="_CPPv323task_scheduler_observerR10task_arena"></span><span id="_CPPv223task_scheduler_observerR10task_arena"></span><span id="task_scheduler_observer__task_arenaR"></span><em class="property">explicit</em> <code class="sig-name descname">task_scheduler_observer</code><span class="sig-paren">(</span><a class="reference internal" href="task_arena_cls.html#_CPPv410task_arenaij8priority" title="task_arena">task_arena</a>&amp;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423task_scheduler_observerR10task_arena" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv323task_scheduler_observerR10task_arena"></span><span id="_CPPv223task_scheduler_observerR10task_arena"></span><span id="task_scheduler_observer__task_arenaR"></span><em class="property"><span class="pre">explicit</span></em> <code class="sig-name descname"><span class="pre">task_scheduler_observer</span></code><span class="sig-paren">(</span><a class="reference internal" href="task_arena_cls.html#_CPPv410task_arenaij8priority" title="task_arena"><span class="pre">task_arena</span></a><span class="pre">&amp;</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423task_scheduler_observerR10task_arena" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a <code class="docutils literal notranslate"><span class="pre">task_scheduler_observer</span></code> object for a given arena in inactive state (observation is disabled).
 For created observer, entry/exit notifications are invoked whenever a thread joins/leaves arena.
 If a thread is already in the arena when the observer is activated, the entry notification
@@ -4660,26 +4659,26 @@ which receives notifications from threads entering and exiting the specified <co
 
 <dl class="cpp function">
 <dt id="_CPPv4D0v">
-<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~task_scheduler_observer"></span><code class="sig-name descname">~task_scheduler_observer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~task_scheduler_observer"></span><code class="sig-name descname"><span class="pre">~task_scheduler_observer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Disables observing and destroys the observer instance.
 Waits for extant invocations of <code class="docutils literal notranslate"><span class="pre">on_scheduler_entry</span></code> and <code class="docutils literal notranslate"><span class="pre">on_scheduler_exit</span></code> to complete.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv47observeb">
-<span id="_CPPv37observeb"></span><span id="_CPPv27observeb"></span><span id="observe__b"></span>void <code class="sig-name descname">observe</code><span class="sig-paren">(</span>bool <em>state</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47observeb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv37observeb"></span><span id="_CPPv27observeb"></span><span id="observe__b"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">observe</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">state</span></em> <span class="pre">=</span> <span class="pre">true</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47observeb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enables observing if <code class="docutils literal notranslate"><span class="pre">state</span></code> is true; disables observing if <code class="docutils literal notranslate"><span class="pre">state</span></code> is false.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK12is_observingEv">
-<span id="_CPPv3NK12is_observingEv"></span><span id="_CPPv2NK12is_observingEv"></span><span id="is_observingC"></span>bool <code class="sig-name descname">is_observing</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK12is_observingEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK12is_observingEv"></span><span id="_CPPv2NK12is_observingEv"></span><span id="is_observingC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">is_observing</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK12is_observingEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns</strong>: True if observing is enabled; false, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv418on_scheduler_entryb">
-<span id="_CPPv318on_scheduler_entryb"></span><span id="_CPPv218on_scheduler_entryb"></span><span id="on_scheduler_entry__b"></span><em class="property">virtual</em> void <code class="sig-name descname">on_scheduler_entry</code><span class="sig-paren">(</span>bool <em>is_worker</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418on_scheduler_entryb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv318on_scheduler_entryb"></span><span id="_CPPv218on_scheduler_entryb"></span><span id="on_scheduler_entry__b"></span><em class="property"><span class="pre">virtual</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">on_scheduler_entry</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">is_worker</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418on_scheduler_entryb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The task scheduler invokes this method for each thread that starts participating
 in oneTBB work or enters an arena after the observation is enabled.
 For threads that already execute tasks, the method is invoked
@@ -4692,7 +4691,7 @@ as well as all the tasks it creates, will be executed by threads which have invo
 
 <dl class="cpp function">
 <dt id="_CPPv417on_scheduler_exitb">
-<span id="_CPPv317on_scheduler_exitb"></span><span id="_CPPv217on_scheduler_exitb"></span><span id="on_scheduler_exit__b"></span><em class="property">virtual</em> void <code class="sig-name descname">on_scheduler_exit</code><span class="sig-paren">(</span>bool <em>is_worker</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417on_scheduler_exitb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv317on_scheduler_exitb"></span><span id="_CPPv217on_scheduler_exitb"></span><span id="on_scheduler_exit__b"></span><em class="property"><span class="pre">virtual</span></em> <span class="pre">void</span> <code class="sig-name descname"><span class="pre">on_scheduler_exit</span></code><span class="sig-paren">(</span><span class="pre">bool</span> <em><span class="pre">is_worker</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417on_scheduler_exitb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The task scheduler invokes this method when
 a thread stops participating in task processing or leaves an arena.</p>
 <div class="admonition caution">

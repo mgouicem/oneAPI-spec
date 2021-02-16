@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4620,75 +4619,75 @@ A writer lock on a <cite>ReaderWriterMutex</cite> excludes all other threads fro
 They form a superset of the <a class="reference internal" href="mutex.html"><span class="doc">Mutex requirements</span></a>.</p>
 <dl class="cpp type">
 <dt id="_CPPv4N3RWM11scoped_lockE">
-<span id="_CPPv3N3RWM11scoped_lockE"></span><span id="_CPPv2N3RWM11scoped_lockE"></span><span id="RWM::scoped_lock"></span><em class="property">type </em><code class="sig-prename descclassname">RWM<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">scoped_lock</code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lockE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lockE"></span><span id="_CPPv2N3RWM11scoped_lockE"></span><span id="RWM::scoped_lock"></span><em class="property"><span class="pre">type</span> </em><code class="sig-prename descclassname"><span class="pre">RWM</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">scoped_lock</span></code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lockE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Corresponding scoped-lock type.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lockEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lockEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock"></span><code class="sig-prename descclassname">RWM<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">scoped_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lockEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lockEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock"></span><code class="sig-prename descclassname"><span class="pre">RWM</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">scoped_lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs <code class="docutils literal notranslate"><span class="pre">scoped_lock</span></code> without acquiring any mutex.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lockER3RWMb">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lockER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lockER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock__RWMR.b"></span><code class="sig-prename descclassname">RWM<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">scoped_lock</code><span class="sig-paren">(</span>RWM&amp;, bool <em>write</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lockER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lockER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock__RWMR.b"></span><code class="sig-prename descclassname"><span class="pre">RWM</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">scoped_lock</span></code><span class="sig-paren">(</span><span class="pre">RWM</span><span class="pre">&amp;</span>, <span class="pre">bool</span> <em><span class="pre">write</span></em> <span class="pre">=</span> <span class="pre">true</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs <code class="docutils literal notranslate"><span class="pre">scoped_lock</span></code> and acquires a lock on a given mutex. The lock is a writer lock if <code class="docutils literal notranslate"><span class="pre">write</span></code> is true; a reader lock otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWMD0Ev">
-<span id="_CPPv3N3RWM11scoped_lock3RWMD0Ev"></span><span id="_CPPv2N3RWM11scoped_lock3RWMD0Ev"></span><span id="RWM::scoped_lock::RWM::~scoped_lock"></span><code class="sig-prename descclassname">RWM<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">~scoped_lock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWMD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWMD0Ev"></span><span id="_CPPv2N3RWM11scoped_lock3RWMD0Ev"></span><span id="RWM::scoped_lock::RWM::~scoped_lock"></span><code class="sig-prename descclassname"><span class="pre">RWM</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">~scoped_lock</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWMD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases a lock (if acquired).</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock::acquire__RWMR.b"></span>void <code class="sig-prename descclassname">RWM::<a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock">scoped_lock</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">acquire</code><span class="sig-paren">(</span>RWM&amp;, bool <em>write</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock::acquire__RWMR.b"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">RWM</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock"><span class="pre">scoped_lock</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">acquire</span></code><span class="sig-paren">(</span><span class="pre">RWM</span><span class="pre">&amp;</span>, <span class="pre">bool</span> <em><span class="pre">write</span></em> <span class="pre">=</span> <span class="pre">true</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7acquireER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Acquires a lock on a given mutex. The lock is a writer lock if <code class="docutils literal notranslate"><span class="pre">write</span></code> is true; it is a reader lock, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock::try_acquire__RWMR.b"></span>bool <code class="sig-prename descclassname">RWM::<a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock">scoped_lock</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">try_acquire</code><span class="sig-paren">(</span>RWM&amp;, bool <em>write</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb"></span><span id="RWM::scoped_lock::RWM::scoped_lock::try_acquire__RWMR.b"></span><span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">RWM</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock"><span class="pre">scoped_lock</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">try_acquire</span></code><span class="sig-paren">(</span><span class="pre">RWM</span><span class="pre">&amp;</span>, <span class="pre">bool</span> <em><span class="pre">write</span></em> <span class="pre">=</span> <span class="pre">true</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock11try_acquireER3RWMb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Attempts to acquire a lock on a given mutex. The lock is a writer lock if <code class="docutils literal notranslate"><span class="pre">write</span></code> is true; it is a reader lock, otherwise.
 Returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the lock is acquired, <code class="docutils literal notranslate"><span class="pre">false</span></code> otherwise.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7releaseEv">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock7releaseEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock7releaseEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::release"></span><code class="sig-prename descclassname">RWM::<a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock">scoped_lock</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">release</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7releaseEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock7releaseEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock7releaseEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::release"></span><code class="sig-prename descclassname"><span class="pre">RWM</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock"><span class="pre">scoped_lock</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">release</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock7releaseEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Releases a lock. The effect is undefined if no lock is held.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::upgrade_to_writer"></span>bool <code class="sig-prename descclassname">RWM::<a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock">scoped_lock</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">upgrade_to_writer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::upgrade_to_writer"></span><span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">RWM</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock"><span class="pre">scoped_lock</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">upgrade_to_writer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock17upgrade_to_writerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Changes a reader lock to a writer lock. Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> if lock was released and reacquired. Otherwise, returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, including the case when the lock was already a writer lock.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv">
-<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::downgrade_to_reader"></span>bool <code class="sig-prename descclassname">RWM::<a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock">scoped_lock</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">downgrade_to_reader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv"></span><span id="_CPPv2N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv"></span><span id="RWM::scoped_lock::RWM::scoped_lock::downgrade_to_reader"></span><span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">RWM</span><span class="pre">::</span><a class="reference internal" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lockEv" title="RWM::scoped_lock::RWM::scoped_lock"><span class="pre">scoped_lock</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">downgrade_to_reader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock3RWM11scoped_lock19downgrade_to_readerEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Changes a writer lock to a reader lock. Returns <code class="docutils literal notranslate"><span class="pre">false</span></code> if lock was released and reacquired. Otherwise, returns <code class="docutils literal notranslate"><span class="pre">true</span></code>, including the case when the lock was already a reader lock.</p>
 </dd></dl>
 
 <p>Like the <cite>Mutex</cite> requirement, <cite>ReaderWriterMutex</cite> also requires a set of traits to be defined.</p>
 <dl class="cpp member">
 <dt id="_CPPv4N3RWM11scoped_lock1M11is_rw_mutexE">
-<span id="_CPPv3N3RWM11scoped_lock1M11is_rw_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M11is_rw_mutexE"></span><span id="RWM::scoped_lock::M::is_rw_mutex__b"></span><em class="property">static</em> <em class="property">constexpr</em> bool <code class="sig-prename descclassname">M<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">is_rw_mutex</code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M11is_rw_mutexE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock1M11is_rw_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M11is_rw_mutexE"></span><span id="RWM::scoped_lock::M::is_rw_mutex__b"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">constexpr</span></em> <span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">M</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">is_rw_mutex</span></code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M11is_rw_mutexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>True if mutex is a reader-writer mutex; false, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp member">
 <dt id="_CPPv4N3RWM11scoped_lock1M18is_recursive_mutexE">
-<span id="_CPPv3N3RWM11scoped_lock1M18is_recursive_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M18is_recursive_mutexE"></span><span id="RWM::scoped_lock::M::is_recursive_mutex__b"></span><em class="property">static</em> <em class="property">constexpr</em> bool <code class="sig-prename descclassname">M<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">is_recursive_mutex</code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M18is_recursive_mutexE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock1M18is_recursive_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M18is_recursive_mutexE"></span><span id="RWM::scoped_lock::M::is_recursive_mutex__b"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">constexpr</span></em> <span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">M</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">is_recursive_mutex</span></code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M18is_recursive_mutexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>True if mutex is a recursive mutex; false, otherwise.</p>
 </dd></dl>
 
 <dl class="cpp member">
 <dt id="_CPPv4N3RWM11scoped_lock1M13is_fair_mutexE">
-<span id="_CPPv3N3RWM11scoped_lock1M13is_fair_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M13is_fair_mutexE"></span><span id="RWM::scoped_lock::M::is_fair_mutex__b"></span><em class="property">static</em> <em class="property">constexpr</em> bool <code class="sig-prename descclassname">M<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">is_fair_mutex</code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M13is_fair_mutexE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N3RWM11scoped_lock1M13is_fair_mutexE"></span><span id="_CPPv2N3RWM11scoped_lock1M13is_fair_mutexE"></span><span id="RWM::scoped_lock::M::is_fair_mutex__b"></span><em class="property"><span class="pre">static</span></em> <em class="property"><span class="pre">constexpr</span></em> <span class="pre">bool</span> <code class="sig-prename descclassname"><span class="pre">M</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">is_fair_mutex</span></code><a class="headerlink" href="#_CPPv4N3RWM11scoped_lock1M13is_fair_mutexE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>True if mutex is fair; false, otherwise.</p>
 </dd></dl>
 

@@ -42,9 +42,9 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4409,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4766,49 +4766,49 @@ free its implementation.</p></li>
 </div>
 <dl class="cpp class">
 <dt id="_CPPv4N6oneapi3dal5tableE">
-<span id="_CPPv3N6oneapi3dal5tableE"></span><span id="_CPPv2N6oneapi3dal5tableE"></span><span id="oneapi::dal::table"></span><em class="property">class </em><code class="sig-name descname">table</code><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5tableE"></span><span id="_CPPv2N6oneapi3dal5tableE"></span><span id="oneapi::dal::table"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">table</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Constructors</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal5table5tableEv">
-<span id="_CPPv3N6oneapi3dal5table5tableEv"></span><span id="_CPPv2N6oneapi3dal5table5tableEv"></span><span id="oneapi::dal::table::table"></span><code class="sig-name descname">table</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5table5tableEv"></span><span id="_CPPv2N6oneapi3dal5table5tableEv"></span><span id="oneapi::dal::table::table"></span><code class="sig-name descname"><span class="pre">table</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>An empty table constructor: creates the table instance with zero number of rows and columns. Implementation shall be set to the special “empty” object that returns all the property values set to default (see Properties section).</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal5table5tableERK5table">
-<span id="_CPPv3N6oneapi3dal5table5tableERK5table"></span><span id="_CPPv2N6oneapi3dal5table5tableERK5table"></span><span id="oneapi::dal::table::table__tableCR"></span><code class="sig-name descname">table</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6oneapi3dal5table5tableERK5table" title="oneapi::dal::table::table">table</a> &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableERK5table" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5table5tableERK5table"></span><span id="_CPPv2N6oneapi3dal5table5tableERK5table"></span><span id="oneapi::dal::table::table__tableCR"></span><code class="sig-name descname"><span class="pre">table</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N6oneapi3dal5table5tableERK5table" title="oneapi::dal::table::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableERK5table" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a new table instance which shares implementation with <span class="math notranslate nohighlight">\(other\)</span>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal5table5tableERR5table">
-<span id="_CPPv3N6oneapi3dal5table5tableERR5table"></span><span id="_CPPv2N6oneapi3dal5table5tableERR5table"></span><span id="oneapi::dal::table::table__tableRR"></span><code class="sig-name descname">table</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6oneapi3dal5table5tableERR5table" title="oneapi::dal::table::table">table</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableERR5table" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5table5tableERR5table"></span><span id="_CPPv2N6oneapi3dal5table5tableERR5table"></span><span id="oneapi::dal::table::table__tableRR"></span><code class="sig-name descname"><span class="pre">table</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6oneapi3dal5table5tableERR5table" title="oneapi::dal::table::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5table5tableERR5table" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates a new table instance and moves implementation from <span class="math notranslate nohighlight">\(other\)</span> into it.</p>
 </dd></dl>
 
 <p><strong>Public Methods</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal5tableaSERK5table">
-<span id="_CPPv3N6oneapi3dal5tableaSERK5table"></span><span id="_CPPv2N6oneapi3dal5tableaSERK5table"></span><span id="oneapi::dal::table::assign-operator__tableCR"></span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table">table</a> &amp;<code class="sig-name descname">operator=</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table">table</a> &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableaSERK5table" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5tableaSERK5table"></span><span id="_CPPv2N6oneapi3dal5tableaSERK5table"></span><span id="oneapi::dal::table::assign-operator__tableCR"></span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableaSERK5table" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Replaces the implementation by another one from <span class="math notranslate nohighlight">\(other\)</span>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal5tableaSERR5table">
-<span id="_CPPv3N6oneapi3dal5tableaSERR5table"></span><span id="_CPPv2N6oneapi3dal5tableaSERR5table"></span><span id="oneapi::dal::table::assign-operator__tableRR"></span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table">table</a> &amp;<code class="sig-name descname">operator=</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table">table</a> &amp;&amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableaSERR5table" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal5tableaSERR5table"></span><span id="_CPPv2N6oneapi3dal5tableaSERR5table"></span><span id="oneapi::dal::table::assign-operator__tableRR"></span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">operator=</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N6oneapi3dal5tableE" title="oneapi::dal::table"><span class="pre">table</span></a> <span class="pre">&amp;</span><span class="pre">&amp;</span><em><span class="pre">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal5tableaSERR5table" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Swaps the implementation of this object and <span class="math notranslate nohighlight">\(other\)</span>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4NK6oneapi3dal5table8has_dataEv">
-<span id="_CPPv3NK6oneapi3dal5table8has_dataEv"></span><span id="_CPPv2NK6oneapi3dal5table8has_dataEv"></span><span id="oneapi::dal::table::has_dataC"></span>bool <code class="sig-name descname">has_data</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em> <em class="property">noexcept</em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5table8has_dataEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK6oneapi3dal5table8has_dataEv"></span><span id="_CPPv2NK6oneapi3dal5table8has_dataEv"></span><span id="oneapi::dal::table::has_dataC"></span><span class="pre">bool</span> <code class="sig-name descname"><span class="pre">has_data</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em> <em class="property"><span class="pre">noexcept</span></em><a class="headerlink" href="#_CPPv4NK6oneapi3dal5table8has_dataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Indicates whether a table contains non-zero number of rows and columns.</p>
 </dd></dl>
 
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
 <dt id="_CPPv4N27oneapi_dal_table_properties12column_countE">
-<span id="_CPPv3N27oneapi_dal_table_properties12column_countE"></span><span id="_CPPv2N27oneapi_dal_table_properties12column_countE"></span><span id="oneapi_dal_table_properties::column_count__std::int64_t"></span>std::int64_t <code class="sig-name descname">column_count</code> = 0<a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties12column_countE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27oneapi_dal_table_properties12column_countE"></span><span id="_CPPv2N27oneapi_dal_table_properties12column_countE"></span><span id="oneapi_dal_table_properties::column_count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">column_count</span></code> <span class="pre">=</span> <span class="pre">0</span><a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties12column_countE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of columns in the table.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4820,7 +4820,7 @@ free its implementation.</p></li>
 
 <dl class="cpp member">
 <dt id="_CPPv4N27oneapi_dal_table_properties9row_countE">
-<span id="_CPPv3N27oneapi_dal_table_properties9row_countE"></span><span id="_CPPv2N27oneapi_dal_table_properties9row_countE"></span><span id="oneapi_dal_table_properties::row_count__std::int64_t"></span>std::int64_t <code class="sig-name descname">row_count</code> = 0<a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties9row_countE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27oneapi_dal_table_properties9row_countE"></span><span id="_CPPv2N27oneapi_dal_table_properties9row_countE"></span><span id="oneapi_dal_table_properties::row_count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">row_count</span></code> <span class="pre">=</span> <span class="pre">0</span><a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties9row_countE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of rows in the table.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4832,7 +4832,7 @@ free its implementation.</p></li>
 
 <dl class="cpp member">
 <dt id="_CPPv4N27oneapi_dal_table_properties8metadataE">
-<span id="_CPPv3N27oneapi_dal_table_properties8metadataE"></span><span id="_CPPv2N27oneapi_dal_table_properties8metadataE"></span><span id="oneapi_dal_table_properties::metadata__table_metadataCR"></span><em class="property">const</em> table_metadata &amp;<code class="sig-name descname">metadata</code> = table_metadata()<a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties8metadataE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27oneapi_dal_table_properties8metadataE"></span><span id="_CPPv2N27oneapi_dal_table_properties8metadataE"></span><span id="oneapi_dal_table_properties::metadata__table_metadataCR"></span><em class="property"><span class="pre">const</span></em> <span class="pre">table_metadata</span> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">metadata</span></code> <span class="pre">=</span> <span class="pre">table_metadata</span><span class="pre">(</span><span class="pre">)</span><a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties8metadataE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The metadata object that holds additional information about the data within the table.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4844,7 +4844,7 @@ free its implementation.</p></li>
 
 <dl class="cpp member">
 <dt id="_CPPv4N27oneapi_dal_table_properties4kindE">
-<span id="_CPPv3N27oneapi_dal_table_properties4kindE"></span><span id="_CPPv2N27oneapi_dal_table_properties4kindE"></span><span id="oneapi_dal_table_properties::kind__std::int64_t"></span>std::int64_t <code class="sig-name descname">kind</code> = empty_table_kind<a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties4kindE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27oneapi_dal_table_properties4kindE"></span><span id="_CPPv2N27oneapi_dal_table_properties4kindE"></span><span id="oneapi_dal_table_properties::kind__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">kind</span></code> <span class="pre">=</span> <span class="pre">empty_table_kind</span><a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties4kindE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The runtime id of the table type. Each table sub-type shall have its unique <cite>kind</cite>. An empty table (see the default constructor) shall have a unique <cite>kind</cite> value as well.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4856,7 +4856,7 @@ free its implementation.</p></li>
 
 <dl class="cpp member">
 <dt id="_CPPv4N27oneapi_dal_table_properties11data_layoutE">
-<span id="_CPPv3N27oneapi_dal_table_properties11data_layoutE"></span><span id="_CPPv2N27oneapi_dal_table_properties11data_layoutE"></span><span id="oneapi_dal_table_properties::data_layout__data_layout"></span><a class="reference internal" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="oneapi_dal_table_properties::data_layout">data_layout</a> <code class="sig-name descname">data_layout</code> = <a class="reference internal" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="oneapi_dal_table_properties::data_layout">data_layout</a>::unknown<a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N27oneapi_dal_table_properties11data_layoutE"></span><span id="_CPPv2N27oneapi_dal_table_properties11data_layoutE"></span><span id="oneapi_dal_table_properties::data_layout__data_layout"></span><a class="reference internal" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="oneapi_dal_table_properties::data_layout"><span class="pre">data_layout</span></a> <code class="sig-name descname"><span class="pre">data_layout</span></code> <span class="pre">=</span> <a class="reference internal" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="oneapi_dal_table_properties::data_layout"><span class="pre">data_layout</span></a><span class="pre">::</span><span class="pre">unknown</span><a class="headerlink" href="#_CPPv4N27oneapi_dal_table_properties11data_layoutE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The layout of the data within the table.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4890,17 +4890,17 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 </div>
 <dl class="cpp class">
 <dt id="_CPPv4N6oneapi3dal14table_metadataE">
-<span id="_CPPv3N6oneapi3dal14table_metadataE"></span><span id="_CPPv2N6oneapi3dal14table_metadataE"></span><span id="oneapi::dal::table_metadata"></span><em class="property">class </em><code class="sig-name descname">table_metadata</code><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadataE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal14table_metadataE"></span><span id="_CPPv2N6oneapi3dal14table_metadataE"></span><span id="oneapi::dal::table_metadata"></span><em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">table_metadata</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadataE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Constructors</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal14table_metadata14table_metadataEv">
-<span id="_CPPv3N6oneapi3dal14table_metadata14table_metadataEv"></span><span id="_CPPv2N6oneapi3dal14table_metadata14table_metadataEv"></span><span id="oneapi::dal::table_metadata::table_metadata"></span><code class="sig-name descname">table_metadata</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadata14table_metadataEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal14table_metadata14table_metadataEv"></span><span id="_CPPv2N6oneapi3dal14table_metadata14table_metadataEv"></span><span id="oneapi::dal::table_metadata::table_metadata"></span><code class="sig-name descname"><span class="pre">table_metadata</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadata14table_metadataEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates the metadata instance without information about the features. The <code class="xref cpp cpp-expr docutils literal notranslate"><span class="pre">feature_count</span></code> shall be set to zero. The <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="../common_interface/common_type_definitions.html#_CPPv4N6oneapi3dal9data_typeE" title="oneapi::dal::data_type"><span class="pre">data_type</span></a></code> and <code class="xref cpp cpp-expr docutils literal notranslate"><a class="reference internal" href="#_CPPv4N6oneapi3dal12feature_typeE" title="oneapi::dal::feature_type"><span class="pre">feature_type</span></a></code> properties shall not be initialized.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE">
-<span id="_CPPv3N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE"></span><span id="_CPPv2N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE"></span><span id="oneapi::dal::table_metadata::table_metadata__array:data_type:CR.array:feature_type:CR"></span><code class="sig-name descname">table_metadata</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv4I0EN6oneapi3dal5arrayE" title="oneapi::dal::array">array</a>&lt;<a class="reference internal" href="../common_interface/common_type_definitions.html#_CPPv4N6oneapi3dal9data_typeE" title="oneapi::dal::data_type">data_type</a>&gt; &amp;<em>dtypes</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv4I0EN6oneapi3dal5arrayE" title="oneapi::dal::array">array</a>&lt;<a class="reference internal" href="#_CPPv4N6oneapi3dal12feature_typeE" title="oneapi::dal::feature_type">feature_type</a>&gt; &amp;<em>ftypes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE"></span><span id="_CPPv2N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE"></span><span id="oneapi::dal::table_metadata::table_metadata__array:data_type:CR.array:feature_type:CR"></span><code class="sig-name descname"><span class="pre">table_metadata</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="array.html#_CPPv4I0EN6oneapi3dal5arrayE" title="oneapi::dal::array"><span class="pre">array</span></a><span class="pre">&lt;</span><a class="reference internal" href="../common_interface/common_type_definitions.html#_CPPv4N6oneapi3dal9data_typeE" title="oneapi::dal::data_type"><span class="pre">data_type</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">dtypes</span></em>, <em class="property"><span class="pre">const</span></em> <a class="reference internal" href="array.html#_CPPv4I0EN6oneapi3dal5arrayE" title="oneapi::dal::array"><span class="pre">array</span></a><span class="pre">&lt;</span><a class="reference internal" href="#_CPPv4N6oneapi3dal12feature_typeE" title="oneapi::dal::feature_type"><span class="pre">feature_type</span></a><span class="pre">&gt;</span> <span class="pre">&amp;</span><em><span class="pre">ftypes</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6oneapi3dal14table_metadata14table_metadataERK5arrayI9data_typeERK5arrayI12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates the metadata instance from external information about the data types and the feature types.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -4921,7 +4921,7 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 <p><strong>Properties</strong></p>
 <dl class="cpp member">
 <dt id="_CPPv4N36oneapi_dal_table_metadata_properties13feature_countE">
-<span id="_CPPv3N36oneapi_dal_table_metadata_properties13feature_countE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties13feature_countE"></span><span id="oneapi_dal_table_metadata_properties::feature_count__std::int64_t"></span>std::int64_t <code class="sig-name descname">feature_count</code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties13feature_countE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N36oneapi_dal_table_metadata_properties13feature_countE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties13feature_countE"></span><span id="oneapi_dal_table_metadata_properties::feature_count__std::int64_t"></span><span class="pre">std</span><span class="pre">::</span><span class="pre">int64_t</span> <code class="sig-name descname"><span class="pre">feature_count</span></code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties13feature_countE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>The number of features that metadata contains information about.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4933,7 +4933,7 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 
 <dl class="cpp member">
 <dt id="_CPPv4N36oneapi_dal_table_metadata_properties12feature_typeE">
-<span id="_CPPv3N36oneapi_dal_table_metadata_properties12feature_typeE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties12feature_typeE"></span><span id="oneapi_dal_table_metadata_properties::feature_type__feature_typeCR"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N36oneapi_dal_table_metadata_properties12feature_typeE" title="oneapi_dal_table_metadata_properties::feature_type">feature_type</a> &amp;<code class="sig-name descname">feature_type</code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N36oneapi_dal_table_metadata_properties12feature_typeE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties12feature_typeE"></span><span id="oneapi_dal_table_metadata_properties::feature_type__feature_typeCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N36oneapi_dal_table_metadata_properties12feature_typeE" title="oneapi_dal_table_metadata_properties::feature_type"><span class="pre">feature_type</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">feature_type</span></code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Feature types in the metadata object. Shall be within the range <cite>[0, feature_count)</cite>.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4945,7 +4945,7 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 
 <dl class="cpp member">
 <dt id="_CPPv4N36oneapi_dal_table_metadata_properties9data_typeE">
-<span id="_CPPv3N36oneapi_dal_table_metadata_properties9data_typeE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties9data_typeE"></span><span id="oneapi_dal_table_metadata_properties::data_type__data_typeCR"></span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N36oneapi_dal_table_metadata_properties9data_typeE" title="oneapi_dal_table_metadata_properties::data_type">data_type</a> &amp;<code class="sig-name descname">data_type</code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N36oneapi_dal_table_metadata_properties9data_typeE"></span><span id="_CPPv2N36oneapi_dal_table_metadata_properties9data_typeE"></span><span id="oneapi_dal_table_metadata_properties::data_type__data_typeCR"></span><em class="property"><span class="pre">const</span></em> <a class="reference internal" href="#_CPPv4N36oneapi_dal_table_metadata_properties9data_typeE" title="oneapi_dal_table_metadata_properties::data_type"><span class="pre">data_type</span></a> <span class="pre">&amp;</span><code class="sig-name descname"><span class="pre">data_type</span></code><a class="headerlink" href="#_CPPv4N36oneapi_dal_table_metadata_properties9data_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Data types of the features in the metadata object. Shall be within the range <cite>[0, feature_count)</cite>.</p>
 <dl>
 <dt>Getter &amp; Setter</dt><dd><div class="line-block">
@@ -4966,7 +4966,7 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 </div>
 <dl class="cpp enum-class">
 <dt id="_CPPv4N6oneapi3dal11data_layoutE">
-<span id="_CPPv3N6oneapi3dal11data_layoutE"></span><span id="_CPPv2N6oneapi3dal11data_layoutE"></span><em class="property">enum class </em><code class="sig-name descname">data_layout</code><a class="headerlink" href="#_CPPv4N6oneapi3dal11data_layoutE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal11data_layoutE"></span><span id="_CPPv2N6oneapi3dal11data_layoutE"></span><em class="property"><span class="pre">enum</span> <span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">data_layout</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal11data_layoutE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="simple">
 <dt>data_layout::unknown</dt><dd><p>Represents the <a class="reference internal" href="../glossary.html#term-Data-layout"><span class="xref std std-term">data layout</span></a> that is undefined or unknown at this moment.</p>
 </dd>
@@ -4986,7 +4986,7 @@ be <a class="reference internal" href="../glossary.html#term-Reference-counted-o
 </div>
 <dl class="cpp enum-class">
 <dt id="_CPPv4N6oneapi3dal12feature_typeE">
-<span id="_CPPv3N6oneapi3dal12feature_typeE"></span><span id="_CPPv2N6oneapi3dal12feature_typeE"></span><em class="property">enum class </em><code class="sig-name descname">feature_type</code><a class="headerlink" href="#_CPPv4N6oneapi3dal12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N6oneapi3dal12feature_typeE"></span><span id="_CPPv2N6oneapi3dal12feature_typeE"></span><em class="property"><span class="pre">enum</span> <span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">feature_type</span></code><a class="headerlink" href="#_CPPv4N6oneapi3dal12feature_typeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><dl class="simple">
 <dt>feature_type::nominal</dt><dd><p>Represents the type of <a class="reference internal" href="../glossary.html#term-Nominal-feature"><span class="xref std std-term">Nominal feature</span></a>.</p>
 </dd>

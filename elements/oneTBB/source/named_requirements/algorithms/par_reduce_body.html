@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4593,25 +4592,25 @@ SPDX-License-Identifier: MIT
 <p><strong>ParallelReduceBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split">
-<span id="_CPPv3N18ParallelReduceBody4Body4BodyER4Body5split"></span><span id="_CPPv2N18ParallelReduceBody4Body4BodyER4Body5split"></span><span id="ParallelReduceBody::Body::Body__BodyR.split"></span><code class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="ParallelReduceBody::Body::Body">Body</a><code class="sig-prename descclassname">::</code></code><code class="sig-name descname">Body</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="ParallelReduceBody::Body::Body">Body</a>&amp;, split<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ParallelReduceBody4Body4BodyER4Body5split"></span><span id="_CPPv2N18ParallelReduceBody4Body4BodyER4Body5split"></span><span id="ParallelReduceBody::Body::Body__BodyR.split"></span><code class="sig-prename descclassname"><a class="reference internal" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="ParallelReduceBody::Body::Body"><span class="pre">Body</span></a><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">Body</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="ParallelReduceBody::Body::Body"><span class="pre">Body</span></a><span class="pre">&amp;</span>, <span class="pre">split</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4Body4BodyER4Body5split" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Splitting constructor. Must be able to run concurrently with <code class="docutils literal notranslate"><span class="pre">operator()</span></code> and method <code class="docutils literal notranslate"><span class="pre">join</span></code>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N18ParallelReduceBody4BodyD0Ev">
-<span id="_CPPv3N18ParallelReduceBody4BodyD0Ev"></span><span id="_CPPv2N18ParallelReduceBody4BodyD0Ev"></span><span id="ParallelReduceBody::Body::~Body"></span><code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">~Body</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4BodyD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ParallelReduceBody4BodyD0Ev"></span><span id="_CPPv2N18ParallelReduceBody4BodyD0Ev"></span><span id="ParallelReduceBody::Body::~Body"></span><code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">~Body</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4BodyD0Ev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destructor.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N18ParallelReduceBody4BodyclERK5Range">
-<span id="_CPPv3N18ParallelReduceBody4BodyclERK5Range"></span><span id="_CPPv2N18ParallelReduceBody4BodyclERK5Range"></span><span id="ParallelReduceBody::Body::call-operator__RangeCR"></span>void <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span><em class="property">const</em> Range &amp;<em>range</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4BodyclERK5Range" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ParallelReduceBody4BodyclERK5Range"></span><span id="_CPPv2N18ParallelReduceBody4BodyclERK5Range"></span><span id="ParallelReduceBody::Body::call-operator__RangeCR"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Range</span> <span class="pre">&amp;</span><em><span class="pre">range</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4BodyclERK5Range" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Accumulates result for a subrange. <code class="docutils literal notranslate"><span class="pre">Range</span></code> type must meet the <a class="reference internal" href="range.html"><span class="doc">Range requirements</span></a>.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N18ParallelReduceBody4Body4joinER4Body">
-<span id="_CPPv3N18ParallelReduceBody4Body4joinER4Body"></span><span id="_CPPv2N18ParallelReduceBody4Body4joinER4Body"></span><span id="ParallelReduceBody::Body::join__BodyR"></span>void <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">join</code><span class="sig-paren">(</span>Body &amp;<em>rhs</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4Body4joinER4Body" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N18ParallelReduceBody4Body4joinER4Body"></span><span id="_CPPv2N18ParallelReduceBody4Body4joinER4Body"></span><span id="ParallelReduceBody::Body::join__BodyR"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">join</span></code><span class="sig-paren">(</span><span class="pre">Body</span> <span class="pre">&amp;</span><em><span class="pre">rhs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N18ParallelReduceBody4Body4joinER4Body" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Joins results. The result in rhs should be merged into the result of <code class="docutils literal notranslate"><span class="pre">this</span></code>.</p>
 </dd></dl>
 

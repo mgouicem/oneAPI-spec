@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4590,7 +4589,7 @@ SPDX-License-Identifier: MIT
 <p>The member functions in this section iterate across the entire container sequentially in the calling thread.</p>
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb26enumerable_thread_specific7combineE1T10BinaryFunc">
-<span id="_CPPv3I0EN3tbb26enumerable_thread_specific7combineE10BinaryFunc"></span><span id="_CPPv2I0EN3tbb26enumerable_thread_specific7combineE10BinaryFunc"></span>template&lt;typename <code class="sig-name descname">BinaryFunc</code>&gt;<br />T <code class="sig-name descname">combine</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb26enumerable_thread_specific7combineE1T10BinaryFunc" title="tbb::enumerable_thread_specific::combine::BinaryFunc">BinaryFunc</a> <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb26enumerable_thread_specific7combineE1T10BinaryFunc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb26enumerable_thread_specific7combineE10BinaryFunc"></span><span id="_CPPv2I0EN3tbb26enumerable_thread_specific7combineE10BinaryFunc"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">BinaryFunc</span></code><span class="pre">&gt;</span><br /><span class="pre">T</span> <code class="sig-name descname"><span class="pre">combine</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb26enumerable_thread_specific7combineE1T10BinaryFunc" title="tbb::enumerable_thread_specific::combine::BinaryFunc"><span class="pre">BinaryFunc</span></a> <em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb26enumerable_thread_specific7combineE1T10BinaryFunc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requires</strong>: A <code class="docutils literal notranslate"><span class="pre">BinaryFunc</span></code> must meet the <cite>Function Objects</cite> requirements from the [function.objects] ISO C++ Standard section.
 Specifically, the type should be an associative binary functor with the signature <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">BinaryFunc(T,T)</span></code> or <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">BinaryFunc(const</span> <span class="pre">T&amp;,const</span> <span class="pre">T&amp;)</span></code>.
 A <code class="docutils literal notranslate"><span class="pre">T</span></code> type must be the same as a corresponding template parameter for <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> object.</p>
@@ -4601,7 +4600,7 @@ If there are no elements, creates the result using the same rules as for creatin
 
 <dl class="cpp function">
 <dt id="_CPPv4I0EN3tbb26enumerable_thread_specific12combine_eachEv9UnaryFunc">
-<span id="_CPPv3I0EN3tbb26enumerable_thread_specific12combine_eachE9UnaryFunc"></span><span id="_CPPv2I0EN3tbb26enumerable_thread_specific12combine_eachE9UnaryFunc"></span>template&lt;typename <code class="sig-name descname">UnaryFunc</code>&gt;<br />void <code class="sig-name descname">combine_each</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb26enumerable_thread_specific12combine_eachEv9UnaryFunc" title="tbb::enumerable_thread_specific::combine_each::UnaryFunc">UnaryFunc</a> <em>f</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb26enumerable_thread_specific12combine_eachEv9UnaryFunc" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3I0EN3tbb26enumerable_thread_specific12combine_eachE9UnaryFunc"></span><span id="_CPPv2I0EN3tbb26enumerable_thread_specific12combine_eachE9UnaryFunc"></span><span class="pre">template&lt;</span><span class="pre">typename</span> <code class="sig-name descname"><span class="pre">UnaryFunc</span></code><span class="pre">&gt;</span><br /><span class="pre">void</span> <code class="sig-name descname"><span class="pre">combine_each</span></code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0EN3tbb26enumerable_thread_specific12combine_eachEv9UnaryFunc" title="tbb::enumerable_thread_specific::combine_each::UnaryFunc"><span class="pre">UnaryFunc</span></a> <em><span class="pre">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0EN3tbb26enumerable_thread_specific12combine_eachEv9UnaryFunc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Requires</strong>: An <code class="docutils literal notranslate"><span class="pre">UnaryFunc</span></code> must meet the <cite>Function Objects</cite> requirements from the [function.objects] ISO C++ Standard section.
 Specifically, the type should be an unary functor with one of signatures: <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(T)</span></code>, <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(T&amp;)</span></code>, or <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">UnaryFunc(const</span> <span class="pre">T&amp;)</span></code>
 A <code class="docutils literal notranslate"><span class="pre">T</span></code> type must be the same as a corresponding template parameter for the <code class="docutils literal notranslate"><span class="pre">enumerable_thread_specific</span></code> object.</p>

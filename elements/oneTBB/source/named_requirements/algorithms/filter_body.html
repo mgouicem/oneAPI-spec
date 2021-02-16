@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4593,7 +4592,7 @@ SPDX-License-Identifier: MIT
 <p><strong>MiddleFilterBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK16MiddleFilterBody4BodyclE9InputType">
-<span id="_CPPv3NK16MiddleFilterBody4BodyclE9InputType"></span><span id="_CPPv2NK16MiddleFilterBody4BodyclE9InputType"></span><span id="MiddleFilterBody::Body::call-operator__InputTypeC"></span>OutputType <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>InputType <em>item</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK16MiddleFilterBody4BodyclE9InputType" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK16MiddleFilterBody4BodyclE9InputType"></span><span id="_CPPv2NK16MiddleFilterBody4BodyclE9InputType"></span><span id="MiddleFilterBody::Body::call-operator__InputTypeC"></span><span class="pre">OutputType</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">InputType</span> <em><span class="pre">item</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK16MiddleFilterBody4BodyclE9InputType" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Processes the received item and then returns it.</p>
 </dd></dl>
 
@@ -4601,7 +4600,7 @@ SPDX-License-Identifier: MIT
 <p><strong>FirstFilterBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK15FirstFilterBody4BodyclEN3tbb12flow_controlE">
-<span id="_CPPv3NK15FirstFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="_CPPv2NK15FirstFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="FirstFilterBody::Body::call-operator__tbb::flow_controlC"></span>OutputType <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>tbb::flow_control <em>fc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK15FirstFilterBody4BodyclEN3tbb12flow_controlE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK15FirstFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="_CPPv2NK15FirstFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="FirstFilterBody::Body::call-operator__tbb::flow_controlC"></span><span class="pre">OutputType</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">tbb</span><span class="pre">::</span><span class="pre">flow_control</span> <em><span class="pre">fc</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK15FirstFilterBody4BodyclEN3tbb12flow_controlE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the next item from an input stream. Calls <code class="docutils literal notranslate"><span class="pre">fc.stop()</span></code> at the end of an input stream.</p>
 </dd></dl>
 
@@ -4609,7 +4608,7 @@ SPDX-License-Identifier: MIT
 <p><strong>LastFilterBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK14LastFilterBody4BodyclE9InputType">
-<span id="_CPPv3NK14LastFilterBody4BodyclE9InputType"></span><span id="_CPPv2NK14LastFilterBody4BodyclE9InputType"></span><span id="LastFilterBody::Body::call-operator__InputTypeC"></span>void <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>InputType <em>item</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK14LastFilterBody4BodyclE9InputType" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK14LastFilterBody4BodyclE9InputType"></span><span id="_CPPv2NK14LastFilterBody4BodyclE9InputType"></span><span id="LastFilterBody::Body::call-operator__InputTypeC"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">InputType</span> <em><span class="pre">item</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK14LastFilterBody4BodyclE9InputType" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Processes the received item.</p>
 </dd></dl>
 
@@ -4617,7 +4616,7 @@ SPDX-License-Identifier: MIT
 <p><strong>SingleFilterBody Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK16SingleFilterBody4BodyclEN3tbb12flow_controlE">
-<span id="_CPPv3NK16SingleFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="_CPPv2NK16SingleFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="SingleFilterBody::Body::call-operator__tbb::flow_controlC"></span>void <code class="sig-prename descclassname">Body<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span>tbb::flow_control <em>fc</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK16SingleFilterBody4BodyclEN3tbb12flow_controlE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK16SingleFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="_CPPv2NK16SingleFilterBody4BodyclEN3tbb12flow_controlE"></span><span id="SingleFilterBody::Body::call-operator__tbb::flow_controlC"></span><span class="pre">void</span> <code class="sig-prename descclassname"><span class="pre">Body</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><span class="pre">tbb</span><span class="pre">::</span><span class="pre">flow_control</span> <em><span class="pre">fc</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK16SingleFilterBody4BodyclEN3tbb12flow_controlE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Processes an element from an input stream. Calls <code class="docutils literal notranslate"><span class="pre">fc.stop()</span></code> at the end of an input stream.</p>
 </dd></dl>
 

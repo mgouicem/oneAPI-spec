@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4593,7 +4592,7 @@ SPDX-License-Identifier: MIT
 <p><strong>ParallelScanFunc Requirements: Pseudo-Signature, Semantics</strong></p>
 <dl class="cpp function">
 <dt id="_CPPv4NK4ScanclERK5RangeRK5Valueb">
-<span id="_CPPv3NK4ScanclERK5RangeRK5Valueb"></span><span id="_CPPv2NK4ScanclERK5RangeRK5Valueb"></span><span id="Scan::call-operator__RangeCR.ValueCR.bC"></span>Value <code class="sig-prename descclassname">Scan<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">operator()</code><span class="sig-paren">(</span><em class="property">const</em> Range &amp;<em>r</em>, <em class="property">const</em> Value &amp;<em>sum</em>, bool <em>is_final</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK4ScanclERK5RangeRK5Valueb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK4ScanclERK5RangeRK5Valueb"></span><span id="_CPPv2NK4ScanclERK5RangeRK5Valueb"></span><span id="Scan::call-operator__RangeCR.ValueCR.bC"></span><span class="pre">Value</span> <code class="sig-prename descclassname"><span class="pre">Scan</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">operator()</span></code><span class="sig-paren">(</span><em class="property"><span class="pre">const</span></em> <span class="pre">Range</span> <span class="pre">&amp;</span><em><span class="pre">r</span></em>, <em class="property"><span class="pre">const</span></em> <span class="pre">Value</span> <span class="pre">&amp;</span><em><span class="pre">sum</span></em>, <span class="pre">bool</span> <em><span class="pre">is_final</span></em><span class="sig-paren">)</span> <em class="property"><span class="pre">const</span></em><a class="headerlink" href="#_CPPv4NK4ScanclERK5RangeRK5Valueb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Starting with <code class="docutils literal notranslate"><span class="pre">sum</span></code>, computes the summary and, for <code class="docutils literal notranslate"><span class="pre">is_final</span> <span class="pre">==</span> <span class="pre">true</span></code>,
 the scan result for range <code class="docutils literal notranslate"><span class="pre">r</span></code>. Returns the computed summary.
 <code class="docutils literal notranslate"><span class="pre">Value</span></code> type must be the same as a corresponding template parameter for the <code class="docutils literal notranslate"><span class="pre">parallel_scan</span></code> algorithm.</p>

@@ -11,7 +11,7 @@ SPDX-License-Identifier: MIT
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intel Open Image Denoise API &#8212; oneAPI Specification 1.0-rev-2 documentation</title>
+    <title>Open Image Denoise API &#8212; oneAPI Specification 1.0-rev-2 documentation</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/custom.js"></script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4 current active">
         <a class="current reference internal" href="#">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4584,7 +4583,7 @@ SPDX-License-Identifier: MIT
             <ul class="nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Intel Open Image Denoise API
+   Open Image Denoise API
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -4711,9 +4710,9 @@ SPDX-License-Identifier: MIT
         
               <div>
                 
-  <div class="section" id="intel-open-image-denoise-api">
-<h1>Intel Open Image Denoise API<a class="headerlink" href="#intel-open-image-denoise-api" title="Permalink to this headline">¶</a></h1>
-<p>Intel Open Image Denoise provides a C99 API (also compatible with C++) and a C++11 wrapper API as well. For simplicity, this document mostly refers to the C99 version of the API.</p>
+  <div class="section" id="open-image-denoise-api">
+<h1>Open Image Denoise API<a class="headerlink" href="#open-image-denoise-api" title="Permalink to this headline">¶</a></h1>
+<p>Open Image Denoise provides a C99 API (also compatible with C++) and a C++11 wrapper API as well. For simplicity, this document mostly refers to the C99 version of the API.</p>
 <p>The API is designed in an object-oriented manner, e.g. it contains device objects (<code class="docutils literal notranslate"><span class="pre">OIDNDevice</span></code> type), buffer objects (<code class="docutils literal notranslate"><span class="pre">OIDNBuffer</span></code> type), and filter objects (<code class="docutils literal notranslate"><span class="pre">OIDNFilter</span></code> type). All objects are reference-counted, and handles can be released by calling the appropriate release function (e.g. <code class="docutils literal notranslate"><span class="pre">oidnReleaseDevice</span></code>) or retained by incrementing the reference count (e.g. <code class="docutils literal notranslate"><span class="pre">oidnRetainDevice</span></code>).</p>
 <p>An important aspect of objects is that setting their parameters do not have an immediate effect (with a few exceptions). Instead, objects with updated parameters are in an unusable state until the parameters get explicitly committed to a given object. The commit semantic allows for batching up multiple small changes, and specifies exactly when changes to objects will occur.</p>
 <p>All API calls are thread-safe, but operations that use the same device will be serialized, so the amount of API calls from different threads should be minimized.</p>
@@ -4723,7 +4722,7 @@ SPDX-License-Identifier: MIT
 <p><em>C99 API Example</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;OpenImageDenoise/oidn.h&gt;</span>
 <span class="o">...</span>
-<span class="o">//</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">Intel</span> <span class="n">Open</span> <span class="n">Image</span> <span class="n">Denoise</span> <span class="n">device</span>
+<span class="o">//</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">Open</span> <span class="n">Image</span> <span class="n">Denoise</span> <span class="n">device</span>
 <span class="n">OIDNDevice</span> <span class="n">device</span> <span class="o">=</span> <span class="n">oidnNewDevice</span><span class="p">(</span><span class="n">OIDN_DEVICE_TYPE_DEFAULT</span><span class="p">);</span>
 <span class="n">oidnCommitDevice</span><span class="p">(</span><span class="n">device</span><span class="p">);</span>
 
@@ -4756,7 +4755,7 @@ SPDX-License-Identifier: MIT
 <p><em>C++11 API Example</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include &lt;OpenImageDenoise/oidn.hpp&gt;</span>
 <span class="o">...</span>
-<span class="o">//</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">Intel</span> <span class="n">Open</span> <span class="n">Image</span> <span class="n">Denoise</span> <span class="n">device</span>
+<span class="o">//</span> <span class="n">Create</span> <span class="n">an</span> <span class="n">Open</span> <span class="n">Image</span> <span class="n">Denoise</span> <span class="n">device</span>
 <span class="n">oidn</span><span class="p">::</span><span class="n">DeviceRef</span> <span class="n">device</span> <span class="o">=</span> <span class="n">oidn</span><span class="p">::</span><span class="n">newDevice</span><span class="p">();</span>
 <span class="n">device</span><span class="o">.</span><span class="n">commit</span><span class="p">();</span>
 
@@ -4781,7 +4780,7 @@ SPDX-License-Identifier: MIT
 </div>
 <div class="section" id="device">
 <h2>Device<a class="headerlink" href="#device" title="Permalink to this headline">¶</a></h2>
-<p>Intel Open Image Denoise supports a device concept, which allows different components of the application to use the Open Image Denoise API without interfering with each other. An application first needs to create a device with</p>
+<p>Open Image Denoise supports a device concept, which allows different components of the application to use the Open Image Denoise API without interfering with each other. An application first needs to create a device with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OIDNDevice</span> <span class="n">oidnNewDevice</span><span class="p">(</span><span class="n">OIDNDeviceType</span> <span class="nb">type</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -4885,7 +4884,7 @@ SPDX-License-Identifier: MIT
 </tbody>
 </table>
 <p>Additional parameters supported only by CPU devices.</p>
-<p>Note that the CPU device heavily relies on setting the thread affinities to achieve optimal performance, so it is highly recommended to leave this option enabled. However, this may interfere with the application if that also sets the thread affinities, potentially causing performance degradation. In such cases, the recommended solution is to either disable setting the affinities in the application or in Intel Open Image Denoise, or to always set/reset the affinities before/after each parallel region in the application (e.g., if using TBB, with <code class="docutils literal notranslate"><span class="pre">tbb::task_arena</span></code> and <code class="docutils literal notranslate"><span class="pre">tbb::task_scheduler_observer</span></code>).</p>
+<p>Note that the CPU device heavily relies on setting the thread affinities to achieve optimal performance, so it is highly recommended to leave this option enabled. However, this may interfere with the application if that also sets the thread affinities, potentially causing performance degradation. In such cases, the recommended solution is to either disable setting the affinities in the application or in Open Image Denoise, or to always set/reset the affinities before/after each parallel region in the application (e.g., if using TBB, with <code class="docutils literal notranslate"><span class="pre">tbb::task_arena</span></code> and <code class="docutils literal notranslate"><span class="pre">tbb::task_scheduler_observer</span></code>).</p>
 <p>Once parameters are set on the created device, the device must be committed with</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnCommitDevice</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">);</span>
 </pre></div>
@@ -4894,7 +4893,7 @@ SPDX-License-Identifier: MIT
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnReleaseDevice</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Note that Intel Open Image Denoise uses reference counting for all object types, so this function decreases the reference count of the device, and if the count reaches 0 the device will automatically get deleted. It is also possible to increase the reference count by calling</p>
+<p>Note that Open Image Denoise uses reference counting for all object types, so this function decreases the reference count of the device, and if the count reaches 0 the device will automatically get deleted. It is also possible to increase the reference count by calling</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnRetainDevice</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -4916,7 +4915,7 @@ SPDX-License-Identifier: MIT
 </div>
 <p>to get notified when errors occur. Only a single callback function can be registered per device, and further invocations overwrite the previously set callback function, which do <em>not</em> require also calling the <code class="docutils literal notranslate"><span class="pre">oidnCommitDevice</span></code> function. Passing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as function pointer disables the registered callback function. When the registered callback function is invoked, it gets passed the user-defined payload (<code class="docutils literal notranslate"><span class="pre">userPtr</span></code> argument as specified at registration time), the error code (<code class="docutils literal notranslate"><span class="pre">code</span></code> argument) of the occurred error, as well as a string (<code class="docutils literal notranslate"><span class="pre">message</span></code> argument) that further describes the error. The error code is always set even if an error callback function is registered. It is recommended to always set a error callback function, to detect all errors.</p>
 <p>When the device construction fails, <code class="docutils literal notranslate"><span class="pre">oidnNewDevice</span></code> returns <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as device. To detect the error code of a such failed device construction, pass <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as device to the <code class="docutils literal notranslate"><span class="pre">oidnGetDeviceError</span></code> function. For all other invocations of <code class="docutils literal notranslate"><span class="pre">oidnGetDeviceError</span></code>, a proper device handle must be specified.</p>
-<p>The following errors are currently used by Intel Open Image Denoise:</p>
+<p>The following errors are currently used by Open Image Denoise:</p>
 <table class="table">
 <colgroup>
 <col style="width: 42%" />
@@ -4956,7 +4955,7 @@ SPDX-License-Identifier: MIT
 </div>
 <div class="section" id="buffer">
 <h2>Buffer<a class="headerlink" href="#buffer" title="Permalink to this headline">¶</a></h2>
-<p>Large data like images can be passed to Intel Open Image Denoise either via pointers to memory allocated and managed by the user (this is the recommended, often easier and more efficient approach, if supported by the device) or by creating buffer objects (supported by all devices). To create a new data buffer with memory allocated and owned by the device, holding <code class="docutils literal notranslate"><span class="pre">byteSize</span></code> number of bytes, use</p>
+<p>Large data like images can be passed to Open Image Denoise either via pointers to memory allocated and managed by the user (this is the recommended, often easier and more efficient approach, if supported by the device) or by creating buffer objects (supported by all devices). To create a new data buffer with memory allocated and owned by the device, holding <code class="docutils literal notranslate"><span class="pre">byteSize</span></code> number of bytes, use</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OIDNBuffer</span> <span class="n">oidnNewBuffer</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">byteSize</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -5037,7 +5036,7 @@ SPDX-License-Identifier: MIT
 </div>
 <div class="section" id="filter">
 <h2>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
-<p>Filters are the main objects in Intel Open Image Denoise that are responsible for the actual denoising. The library ships with a collection of filters which are optimized for different types of images and use cases. To create a filter object, call</p>
+<p>Filters are the main objects in Open Image Denoise that are responsible for the actual denoising. The library ships with a collection of filters which are optimized for different types of images and use cases. To create a filter object, call</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">OIDNFilter</span> <span class="n">oidnNewFilter</span><span class="p">(</span><span class="n">OIDNDevice</span> <span class="n">device</span><span class="p">,</span> <span class="n">const</span> <span class="n">char</span><span class="o">*</span> <span class="nb">type</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -5086,7 +5085,7 @@ SPDX-License-Identifier: MIT
                                           <span class="n">void</span><span class="o">*</span> <span class="n">userPtr</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Only a single callback function can be registered per filter, and further invocations overwrite the previously set callback function. Passing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as function pointer disables the registered callback function. Once registered, Intel Open Image Denoise will invoke the callback function multiple times during filter operations, by passing the payload as set at registration time (<code class="docutils literal notranslate"><span class="pre">userPtr</span></code> argument), and a <code class="docutils literal notranslate"><span class="pre">double</span></code> in the range [0, 1] which estimates the progress of the operation (<code class="docutils literal notranslate"><span class="pre">n</span></code> argument). When returning <code class="docutils literal notranslate"><span class="pre">true</span></code> from the callback function, Intel Open Image Denoise will continue the filter operation normally. When returning <code class="docutils literal notranslate"><span class="pre">false</span></code>, the library will cancel the filter operation with the <code class="docutils literal notranslate"><span class="pre">OIDN_ERROR_CANCELLED</span></code> error code.</p>
+<p>Only a single callback function can be registered per filter, and further invocations overwrite the previously set callback function. Passing <code class="docutils literal notranslate"><span class="pre">NULL</span></code> as function pointer disables the registered callback function. Once registered, Open Image Denoise will invoke the callback function multiple times during filter operations, by passing the payload as set at registration time (<code class="docutils literal notranslate"><span class="pre">userPtr</span></code> argument), and a <code class="docutils literal notranslate"><span class="pre">double</span></code> in the range [0, 1] which estimates the progress of the operation (<code class="docutils literal notranslate"><span class="pre">n</span></code> argument). When returning <code class="docutils literal notranslate"><span class="pre">true</span></code> from the callback function, Open Image Denoise will continue the filter operation normally. When returning <code class="docutils literal notranslate"><span class="pre">false</span></code>, the library will cancel the filter operation with the <code class="docutils literal notranslate"><span class="pre">OIDN_ERROR_CANCELLED</span></code> error code.</p>
 <p>After setting all necessary parameters for the filter, the changes must be commmitted by calling</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">void</span> <span class="n">oidnCommitFilter</span><span class="p">(</span><span class="n">OIDNFilter</span> <span class="nb">filter</span><span class="p">);</span>
 </pre></div>
@@ -5097,7 +5096,7 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
 <p>which will read the input image data from the specified buffers and produce the denoised output image.</p>
-<p>In the following we describe the different filters that are currently implemented in Intel Open Image Denoise.</p>
+<p>In the following we describe the different filters that are currently implemented in Open Image Denoise.</p>
 <div class="section" id="rt">
 <h3>RT<a class="headerlink" href="#rt" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">RT</span></code> (<strong>r</strong>ay <strong>t</strong>racing) filter is a generic ray tracing denoising filter which is suitable for denoising images rendered with Monte Carlo ray tracing methods like unidirectional and bidirectional path tracing. It supports depth of field and motion blur as well, but it is <em>not</em> temporally stable. The filter is based on a convolutional neural network (CNN), and it aims to provide a good balance between denoising performance and quality. The filter comes with a set of pre-trained CNN models that work well with a wide range of ray tracing based renderers and noise levels.</p>
@@ -5312,7 +5311,7 @@ SPDX-License-Identifier: MIT
 </div>
 <div class="section" id="training">
 <h1>Training<a class="headerlink" href="#training" title="Permalink to this headline">¶</a></h1>
-<p>The Intel Open Image Denoise source distribution includes a Python-based neural network training toolkit (located in the <code class="docutils literal notranslate"><span class="pre">training</span></code> directory), which can be used to train the denoising filter models with image datasets provided by the user. This is an advanced feature of the library which usage requires some background knowledge of machine learning and basic familiarity with deep learning frameworks and toolkits (e.g. PyTorch or TensorFlow, TensorBoard).</p>
+<p>The Open Image Denoise source distribution includes a Python-based neural network training toolkit (located in the <code class="docutils literal notranslate"><span class="pre">training</span></code> directory), which can be used to train the denoising filter models with image datasets provided by the user. This is an advanced feature of the library which usage requires some background knowledge of machine learning and basic familiarity with deep learning frameworks and toolkits (e.g. PyTorch or TensorFlow, TensorBoard).</p>
 <p>The training toolkit consists of the following command-line scripts:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">preprocess.py</span></code>: Preprocesses training and validation datasets.</p></li>

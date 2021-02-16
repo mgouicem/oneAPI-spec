@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../_static/jquery.js"></script>
     <script src="../../../../_static/underscore.js"></script>
     <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/custom.js"></script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4688,7 +4687,7 @@ standard library function should not be freed or resized by a <code class="docut
 obtaining useful information or influencing behavior of the memory allocator.</p>
 <dl class="cpp function">
 <dt id="_CPPv414scalable_msizePv">
-<span id="_CPPv314scalable_msizePv"></span><span id="_CPPv214scalable_msizePv"></span><span id="scalable_msize__voidP"></span>size_t <code class="sig-name descname">scalable_msize</code><span class="sig-paren">(</span>void *<em>ptr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414scalable_msizePv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314scalable_msizePv"></span><span id="_CPPv214scalable_msizePv"></span><span id="scalable_msize__voidP"></span><span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">scalable_msize</span></code><span class="sig-paren">(</span><span class="pre">void</span> <span class="pre">*</span><em><span class="pre">ptr</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414scalable_msizePv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Returns:</strong> The usable size of the memory block
 pointed to by <em>ptr</em> if it was allocated by the scalable allocator.
 Returns zero if <em>ptr</em> does not point to such a block.</p>
@@ -4696,7 +4695,7 @@ Returns zero if <em>ptr</em> does not point to such a block.</p>
 
 <dl class="cpp function">
 <dt id="_CPPv424scalable_allocation_modei8intptr_t">
-<span id="_CPPv324scalable_allocation_modei8intptr_t"></span><span id="_CPPv224scalable_allocation_modei8intptr_t"></span><span id="scalable_allocation_mode__i.intptr_t"></span>int <code class="sig-name descname">scalable_allocation_mode</code><span class="sig-paren">(</span>int <em>mode</em>, intptr_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424scalable_allocation_modei8intptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv324scalable_allocation_modei8intptr_t"></span><span id="_CPPv224scalable_allocation_modei8intptr_t"></span><span id="scalable_allocation_mode__i.intptr_t"></span><span class="pre">int</span> <code class="sig-name descname"><span class="pre">scalable_allocation_mode</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">mode</span></em>, <span class="pre">intptr_t</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424scalable_allocation_modei8intptr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Use this function to adjust behavior of the scalable memory allocator.</p>
 <p><strong>Returns</strong>: TBBMALLOC_OK if the operation succeeded, TBBMALLOC_INVALID_PARAM if
 <code class="docutils literal notranslate"><span class="pre">mode</span></code> is not one of the described below, or if <code class="docutils literal notranslate"><span class="pre">value</span></code>
@@ -4707,7 +4706,7 @@ is not valid for the given mode. Other return values are possible, as described 
 <p><strong>scalable_allocation_mode Parameters: Parameter, Description</strong></p>
 <dl class="c macro">
 <dt id="c.TBBMALLOC_USE_HUGE_PAGES">
-<code class="sig-name descname">TBBMALLOC_USE_HUGE_PAGES</code><a class="headerlink" href="#c.TBBMALLOC_USE_HUGE_PAGES" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">TBBMALLOC_USE_HUGE_PAGES</span></code><a class="headerlink" href="#c.TBBMALLOC_USE_HUGE_PAGES" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">scalable_allocation_mode(TBBMALLOC_USE_HUGE_PAGES,</span> <span class="pre">1)</span></code>
 tells the allocator to use huge pages if enabled by the operating system.
 <code class="docutils literal notranslate"><span class="pre">scalable_allocation_mode(TBBMALLOC_USE_HUGE_PAGES,</span> <span class="pre">0)</span></code> disables it.
@@ -4721,7 +4720,7 @@ For information about enabling and configuring huge pages, refer to OS documenta
 
 <dl class="c macro">
 <dt id="c.TBBMALLOC_SET_SOFT_HEAP_LIMIT">
-<code class="sig-name descname">TBBMALLOC_SET_SOFT_HEAP_LIMIT</code><a class="headerlink" href="#c.TBBMALLOC_SET_SOFT_HEAP_LIMIT" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">TBBMALLOC_SET_SOFT_HEAP_LIMIT</span></code><a class="headerlink" href="#c.TBBMALLOC_SET_SOFT_HEAP_LIMIT" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">scalable_allocation_mode(TBBMALLOC_SET_SOFT_HEAP_LIMIT,</span> <span class="pre">size)</span></code> sets a threshold of <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes on the amount
 of memory the allocator takes from OS. Exceeding the threshold urges the allocator to release memory from its internal buffers;
 however it does not prevent from requesting more memory if needed.</p>
@@ -4729,7 +4728,7 @@ however it does not prevent from requesting more memory if needed.</p>
 
 <dl class="c macro">
 <dt id="c.TBBMALLOC_SET_HUGE_SIZE_THRESHOLD">
-<code class="sig-name descname">TBBMALLOC_SET_HUGE_SIZE_THRESHOLD</code><a class="headerlink" href="#c.TBBMALLOC_SET_HUGE_SIZE_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">TBBMALLOC_SET_HUGE_SIZE_THRESHOLD</span></code><a class="headerlink" href="#c.TBBMALLOC_SET_HUGE_SIZE_THRESHOLD" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">scalable_allocation_mode(TBBMALLOC_SET_HUGE_SIZE_THRESHOLD,</span> <span class="pre">size)</span></code>
 sets a lower bound threshold (with no upper limit) of <code class="docutils literal notranslate"><span class="pre">size</span></code> bytes.
 Any object bigger than this threshold becomes huge and does not participate in internal periodic cleanup logic.
@@ -4741,7 +4740,7 @@ The mode set with <code class="docutils literal notranslate"><span class="pre">s
 <hr class="docutils" />
 <dl class="c function">
 <dt id="c.scalable_allocation_command">
-int <code class="sig-name descname">scalable_allocation_command</code><span class="sig-paren">(</span>int <em>cmd</em>, void *<em>reserved</em><span class="sig-paren">)</span><a class="headerlink" href="#c.scalable_allocation_command" title="Permalink to this definition">¶</a><br /></dt>
+<span class="pre">int</span> <code class="sig-name descname"><span class="pre">scalable_allocation_command</span></code><span class="sig-paren">(</span><span class="pre">int</span> <em><span class="pre">cmd</span></em>, <span class="pre">void</span> <span class="pre">*</span><em><span class="pre">reserved</span></em><span class="sig-paren">)</span><a class="headerlink" href="#c.scalable_allocation_command" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>This function may be used to command the scalable memory allocator to perform an
 action specified by the first parameter. The second parameter is reserved and must be set to 0.</p>
 <p><strong>Returns</strong>: <code class="docutils literal notranslate"><span class="pre">TBBMALLOC_OK</span></code> if the operation succeeded, <code class="docutils literal notranslate"><span class="pre">TBBMALLOC_INVALID_PARAM</span></code> if
@@ -4752,7 +4751,7 @@ action specified by the first parameter. The second parameter is reserved and mu
 <p><strong>scalable_allocation_command Parameters: Parameter, Description</strong></p>
 <dl class="c macro">
 <dt id="c.TBBMALLOC_CLEAN_ALL_BUFFERS">
-<code class="sig-name descname">TBBMALLOC_CLEAN_ALL_BUFFERS</code><a class="headerlink" href="#c.TBBMALLOC_CLEAN_ALL_BUFFERS" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">TBBMALLOC_CLEAN_ALL_BUFFERS</span></code><a class="headerlink" href="#c.TBBMALLOC_CLEAN_ALL_BUFFERS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">scalable_allocation_command(TBBMALLOC_CLEAN_ALL_BUFFERS,</span> <span class="pre">0)</span></code>
 cleans internal memory buffers of the allocator, and possibly reduces memory footprint.
 It may result in increased time for subsequent memory allocation requests.
@@ -4766,7 +4765,7 @@ The command is not designed for frequent use, and careful evaluation of the perf
 
 <dl class="c macro">
 <dt id="c.TBBMALLOC_CLEAN_THREAD_BUFFERS">
-<code class="sig-name descname">TBBMALLOC_CLEAN_THREAD_BUFFERS</code><a class="headerlink" href="#c.TBBMALLOC_CLEAN_THREAD_BUFFERS" title="Permalink to this definition">¶</a><br /></dt>
+<code class="sig-name descname"><span class="pre">TBBMALLOC_CLEAN_THREAD_BUFFERS</span></code><a class="headerlink" href="#c.TBBMALLOC_CLEAN_THREAD_BUFFERS" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">scalable_allocation_command(TBBMALLOC_CLEAN_THREAD_BUFFERS,</span> <span class="pre">0)</span></code>
 cleans internal memory buffers, but only for the calling thread.</p>
 <p><strong>May return</strong>: <code class="docutils literal notranslate"><span class="pre">TBBMALLOC_NO_EFFECT</span></code> if no buffers were released.</p>

@@ -42,9 +42,8 @@ SPDX-License-Identifier: MIT
     <script src="../../../../../_static/jquery.js"></script>
     <script src="../../../../../_static/underscore.js"></script>
     <script src="../../../../../_static/doctools.js"></script>
-    <script src="../../../../../_static/custom.js"></script>
     <script src="../../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../../../../../_static/custom.js"></script>
     <link rel="shortcut icon" href="../../../../../_static/favicons.png"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -4409,7 +4408,7 @@ SPDX-License-Identifier: MIT
        </li>
        <li class="toctree-l4">
         <a class="reference internal" href="../../../../oneART/source/oidn-spec.html">
-         Intel Open Image Denoise API
+         Open Image Denoise API
         </a>
        </li>
        <li class="toctree-l4">
@@ -4639,7 +4638,7 @@ This value is selected from all currently existing control variables by applying
 <h2>Member types and constants<a class="headerlink" href="#member-types-and-constants" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp enum">
 <dt id="_CPPv4N9parameter23max_allowed_parallelismE">
-<span id="_CPPv3N9parameter23max_allowed_parallelismE"></span><span id="_CPPv2N9parameter23max_allowed_parallelismE"></span><em class="property">enum </em><code class="sig-prename descclassname">parameter<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">max_allowed_parallelism</code><a class="headerlink" href="#_CPPv4N9parameter23max_allowed_parallelismE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N9parameter23max_allowed_parallelismE"></span><span id="_CPPv2N9parameter23max_allowed_parallelismE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">parameter</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">max_allowed_parallelism</span></code><a class="headerlink" href="#_CPPv4N9parameter23max_allowed_parallelismE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Selection rule</strong>: minimum</p>
 <p>Limits total number of worker threads that can be active in the task scheduler to <code class="docutils literal notranslate"><span class="pre">parameter_value</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 <div class="admonition note">
@@ -4653,7 +4652,7 @@ a single worker thread will still run ignoring the <code class="docutils literal
 
 <dl class="cpp enum">
 <dt id="_CPPv4N9parameter17thread_stack_sizeE">
-<span id="_CPPv3N9parameter17thread_stack_sizeE"></span><span id="_CPPv2N9parameter17thread_stack_sizeE"></span><em class="property">enum </em><code class="sig-prename descclassname">parameter<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">thread_stack_size</code><a class="headerlink" href="#_CPPv4N9parameter17thread_stack_sizeE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N9parameter17thread_stack_sizeE"></span><span id="_CPPv2N9parameter17thread_stack_sizeE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">parameter</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">thread_stack_size</span></code><a class="headerlink" href="#_CPPv4N9parameter17thread_stack_sizeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Selection rule</strong>: maximum</p>
 <p>Set stack size for threads created by the library, including working threads in the task scheduler
 and threads controlled by thread wrapper classes.</p>
@@ -4661,7 +4660,7 @@ and threads controlled by thread wrapper classes.</p>
 
 <dl class="cpp enum">
 <dt id="_CPPv4N9parameter22terminate_on_exceptionE">
-<span id="_CPPv3N9parameter22terminate_on_exceptionE"></span><span id="_CPPv2N9parameter22terminate_on_exceptionE"></span><em class="property">enum </em><code class="sig-prename descclassname">parameter<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">terminate_on_exception</code><a class="headerlink" href="#_CPPv4N9parameter22terminate_on_exceptionE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N9parameter22terminate_on_exceptionE"></span><span id="_CPPv2N9parameter22terminate_on_exceptionE"></span><em class="property"><span class="pre">enum</span> </em><code class="sig-prename descclassname"><span class="pre">parameter</span><code class="sig-prename descclassname"><span class="pre">::</span></code></code><code class="sig-name descname"><span class="pre">terminate_on_exception</span></code><a class="headerlink" href="#_CPPv4N9parameter22terminate_on_exceptionE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p><strong>Selection rule</strong>: logical disjunction</p>
 <p>Setting the parameter to 1 causes termination in any condition that would throw or rethrow an exception.
 If set to 0 (default), the parameter does not affect the implementation behavior.</p>
@@ -4672,19 +4671,19 @@ If set to 0 (default), the parameter does not affect the implementation behavior
 <h2>Member functions<a class="headerlink" href="#member-functions" title="Permalink to this headline">¶</a></h2>
 <dl class="cpp function">
 <dt id="_CPPv414global_control9parameter6size_t">
-<span id="_CPPv314global_control9parameter6size_t"></span><span id="_CPPv214global_control9parameter6size_t"></span><span id="global_control__parameter.s"></span><code class="sig-name descname">global_control</code><span class="sig-paren">(</span>parameter <em>param</em>, size_t <em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414global_control9parameter6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv314global_control9parameter6size_t"></span><span id="_CPPv214global_control9parameter6size_t"></span><span id="global_control__parameter.s"></span><code class="sig-name descname"><span class="pre">global_control</span></code><span class="sig-paren">(</span><span class="pre">parameter</span> <em><span class="pre">param</span></em>, <span class="pre">size_t</span> <em><span class="pre">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414global_control9parameter6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Constructs a <code class="docutils literal notranslate"><span class="pre">global_control</span></code> object with a specified control parameter and it’s value.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4D0v">
-<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~global_control"></span><code class="sig-name descname">~global_control</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3D0v"></span><span id="_CPPv2D0v"></span><span id="~global_control"></span><code class="sig-name descname"><span class="pre">~global_control</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4D0v" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destructs a control variable object and ends it’s impact.</p>
 </dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv412active_value9parameter">
-<span id="_CPPv312active_value9parameter"></span><span id="_CPPv212active_value9parameter"></span><span id="active_value__parameter"></span><em class="property">static</em> size_t <code class="sig-name descname">active_value</code><span class="sig-paren">(</span>parameter <em>param</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412active_value9parameter" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv312active_value9parameter"></span><span id="_CPPv212active_value9parameter"></span><span id="active_value__parameter"></span><em class="property"><span class="pre">static</span></em> <span class="pre">size_t</span> <code class="sig-name descname"><span class="pre">active_value</span></code><span class="sig-paren">(</span><span class="pre">parameter</span> <em><span class="pre">param</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412active_value9parameter" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the currently active value of the setting defined by <code class="docutils literal notranslate"><span class="pre">param</span></code>.</p>
 </dd></dl>
 
