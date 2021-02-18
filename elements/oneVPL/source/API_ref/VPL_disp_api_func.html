@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4664,7 +4659,9 @@ SPDX-License-Identifier: MIT
 </pre></div>
 </div>
  <dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Config handle or NULL pointer is failed. </p>
+<dt><strong>Return</strong></dt><dd><p>Config handle or NULL pointer is failed.</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
@@ -4702,8 +4699,10 @@ SPDX-License-Identifier: MIT
  <dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The session contains a pointer to the session handle.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
 <p> MFX_ERR_NULL_PTR If session is NULL. </p>
-<p> MFX_ERR_NOT_FOUND Provided index is out of possible range. </p>
+<p> MFX_ERR_NOT_FOUND Provided index is out of possible range.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
@@ -4724,8 +4723,10 @@ SPDX-License-Identifier: MIT
 <dd><p>Destroys handle allocated by the MFXQueryImplsCapabilities function. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p> MFX_ERR_NULL_PTR If loader is NULL. </p>
-<p> MFX_ERR_INVALID_HANDLE Provided hdl handle is not associated with this loader. </p>
+<p> MFX_ERR_INVALID_HANDLE Provided hdl handle is not associated with this loader.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
@@ -4747,8 +4748,10 @@ SPDX-License-Identifier: MIT
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. The idesc contains valid information.<p> MFX_ERR_NULL_PTR If loader is NULL. </p>
 <p> MFX_ERR_NULL_PTR If idesc is NULL. </p>
 <p> MFX_ERR_NOT_FOUND Provided index is out of possible range. </p>
-<p> MFX_ERR_UNSUPPORTED If requested format is not supported. </p>
+<p> MFX_ERR_UNSUPPORTED If requested format is not supported.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
@@ -4769,7 +4772,9 @@ SPDX-License-Identifier: MIT
 <span id="_CPPv37MFXLoadv"></span><span id="_CPPv27MFXLoadv"></span><span id="MFXLoad"></span><span class="target" id="mfxdispatcher_8h_1a8b69c6591d6d2c879192ef579a9b4660"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv49mfxLoader" title="mfxLoader"><span class="pre">mfxLoader</span></a> <code class="sig-name descname"><span class="pre">MFXLoad</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv47MFXLoadv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Creates the loader. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Loader Loader handle or NULL if failed. </p>
+<dt><strong>Return</strong></dt><dd><p>Loader Loader handle or NULL if failed.</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 </dl>
 </p>
@@ -4848,8 +4853,10 @@ SPDX-License-Identifier: MIT
 </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. MFX_ERR_NULL_PTR If config is NULL. <p> MFX_ERR_NULL_PTR If name is NULL. </p>
-<p> MFX_ERR_NOT_FOUND If name contains unknown parameter name. MFX_ERR_UNSUPPORTED If value data type does not equal the parameter with provided name. </p>
+<p> MFX_ERR_NOT_FOUND If name contains unknown parameter name. MFX_ERR_UNSUPPORTED If value data type does not equal the parameter with provided name.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">config</span></code>: Config handle. </p></li>
@@ -4869,8 +4876,10 @@ SPDX-License-Identifier: MIT
 <span id="_CPPv39MFXUnload9mfxLoader"></span><span id="_CPPv29MFXUnload9mfxLoader"></span><span id="MFXUnload__mfxLoader"></span><span class="target" id="mfxdispatcher_8h_1a06d87116fe956793f493e7390ee2f233"></span><span class="pre">void</span> <code class="sig-name descname"><span class="pre">MFXUnload</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv49mfxLoader" title="mfxLoader"><span class="pre">mfxLoader</span></a> <em><span class="pre">loader</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv49MFXUnload9mfxLoader" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys the dispatcher. </p>
 <p><dl class="simple">
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">loader</span></code>: Loader handle.</p></li>
 </ul>
 </dd>
 </dl>

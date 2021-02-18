@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4621,6 +4616,11 @@ SPDX-License-Identifier: MIT
      mfxAccelerationModeDescription
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mfximplementedfunctions">
+     mfxImplementedFunctions
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -4648,6 +4648,7 @@ SPDX-License-Identifier: MIT
 <li><p><a class="reference internal" href="#mfxvariant" id="id5">mfxVariant</a></p></li>
 <li><p><a class="reference internal" href="#mfxvppdescription" id="id6">mfxVPPDescription</a></p></li>
 <li><p><a class="reference internal" href="#mfxaccelerationmodedescription" id="id7">mfxAccelerationModeDescription</a></p></li>
+<li><p><a class="reference internal" href="#mfximplementedfunctions" id="id8">mfxImplementedFunctions</a></p></li>
 </ul>
 </div>
 <div class="section" id="mfxdecoderdescription">
@@ -5072,7 +5073,7 @@ SPDX-License-Identifier: MIT
 <dl class="cpp var">
 <dt id="_CPPv4N18mfxImplDescription7LicenseE">
 <span id="_CPPv3N18mfxImplDescription7LicenseE"></span><span id="_CPPv2N18mfxImplDescription7LicenseE"></span><span id="mfxImplDescription::License__mfxCharA"></span><span class="target" id="structmfx_impl_description_1ab85d267699da9c580568d8b28578a229"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv47mfxChar" title="mfxChar"><span class="pre">mfxChar</span></a> <code class="sig-name descname"><span class="pre">License</span></code><span class="pre">[</span><code class="sig-name descname"><span class="pre">MFX_STRFIELD_LEN</span></code><span class="pre">]</span><a class="headerlink" href="#_CPPv4N18mfxImplDescription7LicenseE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Null-terminated string with license name of the implementation. </p>
+<dd><p>Null-terminated string with comma-separated list of license names of the implementation. </p>
 </dd></dl>
 
 <dl class="cpp var">
@@ -5524,6 +5525,30 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N30mfxAccelerationModeDescription4ModeE">
 <span id="_CPPv3N30mfxAccelerationModeDescription4ModeE"></span><span id="_CPPv2N30mfxAccelerationModeDescription4ModeE"></span><span id="mfxAccelerationModeDescription::Mode__mfxAccelerationModeP"></span><span class="target" id="structmfx_acceleration_mode_description_1ae768658301f47ed167109872cc636c58"></span><a class="reference internal" href="VPL_disp_api_enum.html#_CPPv419mfxAccelerationMode" title="mfxAccelerationMode"><span class="pre">mfxAccelerationMode</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">Mode</span></code><a class="headerlink" href="#_CPPv4N30mfxAccelerationModeDescription4ModeE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Pointer to the array of supported acceleration modes. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+<div class="section" id="mfximplementedfunctions">
+<h3><a class="toc-backref" href="#id8">mfxImplementedFunctions</a><a class="headerlink" href="#mfximplementedfunctions" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp struct">
+<dt id="_CPPv423mfxImplementedFunctions">
+<span id="_CPPv323mfxImplementedFunctions"></span><span id="_CPPv223mfxImplementedFunctions"></span><span id="mfxImplementedFunctions"></span><span class="target" id="structmfx_implemented_functions"></span><em class="property"><span class="pre">struct</span> </em><code class="sig-name descname"><span class="pre">mfxImplementedFunctions</span></code><a class="headerlink" href="#_CPPv423mfxImplementedFunctions" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This structure represents the list of names of implemented functions. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxImplementedFunctions12NumFunctionsE">
+<span id="_CPPv3N23mfxImplementedFunctions12NumFunctionsE"></span><span id="_CPPv2N23mfxImplementedFunctions12NumFunctionsE"></span><span id="mfxImplementedFunctions::NumFunctions__mfxU16"></span><span class="target" id="structmfx_implemented_functions_1a2fb584b44da104bef2e488fe58c2ec2f"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU16" title="mfxU16"><span class="pre">mfxU16</span></a> <code class="sig-name descname"><span class="pre">NumFunctions</span></code><a class="headerlink" href="#_CPPv4N23mfxImplementedFunctions12NumFunctionsE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Number of function names in the FunctionsName array. </p>
+</dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N23mfxImplementedFunctions13FunctionsNameE">
+<span id="_CPPv3N23mfxImplementedFunctions13FunctionsNameE"></span><span id="_CPPv2N23mfxImplementedFunctions13FunctionsNameE"></span><span id="mfxImplementedFunctions::FunctionsName__mfxCharPP"></span><span class="target" id="structmfx_implemented_functions_1a9ece08406e50d969df257c80e8271ca9"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv47mfxChar" title="mfxChar"><span class="pre">mfxChar</span></a> <span class="pre">*</span><span class="pre">*</span><code class="sig-name descname"><span class="pre">FunctionsName</span></code><a class="headerlink" href="#_CPPv4N23mfxImplementedFunctions13FunctionsNameE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Array of the null-terminated strings. Each string contains name of the implemented function. </p>
 </dd></dl>
 
 </div>

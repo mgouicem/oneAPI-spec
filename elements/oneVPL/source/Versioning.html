@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4589,11 +4584,6 @@ SPDX-License-Identifier: MIT
 <p>oneVPL is the successor to Intel<sup>®</sup> Media Software Development Kit. oneVPL API versioning starts from
 2.0. There is a correspondent version of Intel<sup>®</sup> Media Software Development Kit API which is used as a
 basis for oneVPL and defined as the <code class="docutils literal notranslate"><span class="pre">MFX_LEGACY_VERSION</span></code> macro.</p>
-<p>Experimental APIs in oneVPL are protected with the following macro:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#if (MFX_VERSION &gt;= MFX_VERSION_NEXT)</span>
-</pre></div>
-</div>
-<p>To use the API, define the <code class="docutils literal notranslate"><span class="pre">MFX_VERSION_USE_LATEST</span></code> macro.</p>
 </div>
 
 

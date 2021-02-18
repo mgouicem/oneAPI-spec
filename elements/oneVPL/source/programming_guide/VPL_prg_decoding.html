@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -5186,7 +5181,7 @@ If application disables all channels the SDK returns NULL as  <a class="referenc
 If application doesn’t need to disable any channels it sets <cite>num_skip_channels</cite> to zero, <cite>skip_channels</cite> is ignored when <cite>num_skip_channels</cite> is zero.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Even if more than one input compressed frame is consumed, the <code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code> produces only           one decoded frame and correspondent frames from VPP channels.</p>
+<p>Even if more than one input compressed frame is consumed, the <a class="reference internal" href="../API_ref/VPL_func_vid_decode_vpp.html#_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray" title="MFXVideoDECODE_VPP_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code></a> produces only           one decoded frame and correspondent frames from VPP channels.</p>
 </div>
 </div>
 </div>

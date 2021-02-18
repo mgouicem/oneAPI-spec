@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4644,6 +4639,44 @@ surfaces internally. An application can get access to these objects using
 <a class="reference internal" href="../API_ref/VPL_func_vid_encode.html#_CPPv426MFXVideoENCODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest" title="MFXVideoENCODE_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoENCODE_QueryIOSurf()</span></code></a>, <a class="reference internal" href="../API_ref/VPL_func_vid_decode.html#_CPPv426MFXVideoDECODE_QueryIOSurf10mfxSessionP13mfxVideoParamP20mfxFrameAllocRequest" title="MFXVideoDECODE_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_QueryIOSurf()</span></code></a>,
 or <a class="reference internal" href="../API_ref/VPL_func_vid_vpp.html#_CPPv423MFXVideoVPP_QueryIOSurf10mfxSessionP13mfxVideoParamAL2E_20mfxFrameAllocRequest" title="MFXVideoVPP_QueryIOSurf"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoVPP_QueryIOSurf()</span></code></a> functions optional. See
 <a class="reference internal" href="VPL_prg_mem.html#internal-mem-manage"><span class="std std-ref">Internal Memory Management</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Applications can set device handle before session creation through <a class="reference internal" href="../API_ref/VPL_disp_api_func.html#_CPPv426MFXSetConfigFilterProperty9mfxConfigPK5mfxU810mfxVariant" title="MFXSetConfigFilterProperty"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXSetConfigFilterProperty()</span></code></a>
+like shown in the code below:</p>
+</div>
+<div class="highlight-c++ notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">mfxLoader</span> <span class="n">loader</span> <span class="o">=</span> <span class="n">MFXLoad</span><span class="p">();</span>
+<span class="n">mfxConfig</span> <span class="n">config1</span> <span class="o">=</span> <span class="n">MFXCreateConfig</span><span class="p">(</span><span class="n">loader</span><span class="p">);</span>
+<span class="n">mfxConfig</span> <span class="n">config2</span> <span class="o">=</span> <span class="n">MFXCreateConfig</span><span class="p">(</span><span class="n">loader</span><span class="p">);</span>
+<span class="n">mfxSession</span> <span class="n">session</span><span class="p">;</span>
+
+<span class="n">mfxVariant</span> <span class="n">HandleType</span><span class="p">;</span>
+<span class="n">HandleType</span><span class="p">.</span><span class="n">Type</span> <span class="o">=</span> <span class="n">MFX_VARIANT_TYPE_U32</span><span class="p">;</span>
+<span class="n">HandleType</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">U32</span> <span class="o">=</span> <span class="n">MFX_HANDLE_VA_DISPLAY</span><span class="p">;</span>
+<span class="n">MFXSetConfigFilterProperty</span><span class="p">(</span><span class="n">config1</span><span class="p">,</span> <span class="p">(</span><span class="n">mfxU8</span><span class="o">*</span><span class="p">)</span><span class="s">&quot;mfxHandleType&quot;</span><span class="p">,</span> <span class="n">HandleType</span><span class="p">);</span>
+
+<span class="n">mfxVariant</span> <span class="n">DisplayHandle</span><span class="p">;</span>
+<span class="n">DisplayHandle</span><span class="p">.</span><span class="n">Type</span> <span class="o">=</span> <span class="n">MFX_VARIANT_TYPE_PTR</span><span class="p">;</span>
+<span class="n">HandleType</span><span class="p">.</span><span class="n">Data</span><span class="p">.</span><span class="n">Ptr</span> <span class="o">=</span> <span class="n">vaDisplay</span><span class="p">;</span>
+<span class="n">MFXSetConfigFilterProperty</span><span class="p">(</span><span class="n">config2</span><span class="p">,</span> <span class="p">(</span><span class="n">mfxU8</span><span class="o">*</span><span class="p">)</span><span class="s">&quot;mfxHDL&quot;</span><span class="p">,</span> <span class="n">DisplayHandle</span><span class="p">);</span>
+
+<span class="n">MFXCreateSession</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">session</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
 </div>
 <div class="section" id="work-with-hardware-acceleration-in-legacy-mode">
 <h2>Work with Hardware Acceleration in Legacy Mode<a class="headerlink" href="#work-with-hardware-acceleration-in-legacy-mode" title="Permalink to this headline">¶</a></h2>

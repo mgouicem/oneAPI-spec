@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4791,27 +4786,37 @@ for memory sharing:</p>
 <span class="normal">19</span>
 <span class="normal">20</span>
 <span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// lets decode frame and try to access output in a an optimal way.</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// lets decode frame and try to access output in a an optimal way.</span>
 <span class="n">sts</span> <span class="o">=</span> <span class="n">MFXVideoDECODE_DecodeFrameAsync</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">outsurface</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">syncp</span><span class="p">);</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">==</span> <span class="n">sts</span><span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">GetDeviceHandle</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">device_handle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">device_type</span><span class="p">);</span>
-    <span class="c1">// if application or component is familar with mfxHandleType and it&#39;s possible to share memory created by device_handle.</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">isDeviceTypeCompatible</span><span class="p">(</span><span class="n">device_type</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">isPossibleForMemorySharing</span><span class="p">(</span><span class="n">device_handle</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">mfxStatus</span> <span class="n">s</span> <span class="o">=</span> <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">GetDeviceHandle</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span>
+                                                  <span class="o">&amp;</span><span class="n">device_handle</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">device_type</span><span class="p">);</span>
+    <span class="c1">// if application or component is familar with mfxHandleType and it&#39;s</span>
+    <span class="c1">// possible to share memory created by device_handle.</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">MFX_ERR_NONE</span> <span class="o">==</span> <span class="n">s</span> <span class="o">&amp;&amp;</span> <span class="n">isDeviceTypeCompatible</span><span class="p">(</span><span class="n">device_type</span><span class="p">)</span>
+                          <span class="o">&amp;&amp;</span> <span class="n">isPossibleForMemorySharing</span><span class="p">(</span><span class="n">device_handle</span><span class="p">))</span> <span class="p">{</span>
         <span class="c1">// get native handle and type</span>
-        <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">GetNativeHandle</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">resource</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">resource_type</span><span class="p">);</span>
+        <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">GetNativeHandle</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span>
+                                                      <span class="o">&amp;</span><span class="n">resource</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">resource_type</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">isResourceTypeCompatible</span><span class="p">(</span><span class="n">resource_type</span><span class="p">))</span> <span class="p">{</span>
             <span class="c1">//use memory directly</span>
             <span class="n">ProcessNativeMemory</span><span class="p">(</span><span class="n">resource</span><span class="p">);</span>
             <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
         <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// Application or component is not aware about such DeviceHandle or</span>
+      <span class="c1">// Resource type need to map to system memory.</span>
+      <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Map</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span> <span class="n">MFX_MAP_READ</span><span class="p">);</span>
+      <span class="n">ProcessSystemMemory</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
+      <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Unmap</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
+      <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="c1">// Application or component is not aware about such DeviceHandle or Resource type need to map to system memory.</span>
-    <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Map</span><span class="p">(</span><span class="n">outsurface</span><span class="p">,</span> <span class="n">MFX_MAP_READ</span><span class="p">);</span>
-    <span class="n">ProcessSystemMemory</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
-    <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Unmap</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
-    <span class="n">outsurface</span><span class="o">-&gt;</span><span class="n">FrameInterface</span><span class="o">-&gt;</span><span class="n">Release</span><span class="p">(</span><span class="n">outsurface</span><span class="p">);</span>
-<span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>

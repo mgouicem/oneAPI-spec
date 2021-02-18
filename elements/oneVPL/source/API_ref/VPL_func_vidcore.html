@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4649,6 +4644,8 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
 </dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">allocator</span></code>: Pointer to the <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_allocator"><span class="std std-ref">mfxFrameAllocator</span></a> structure</p></li>
@@ -4667,8 +4664,10 @@ SPDX-License-Identifier: MIT
 <dd><p>Sets any essential system handle that the library might use. </p>
 <p>If the specified system handle is a COM interface, the reference counter of the COM interface will increase. The counter will decrease when the session closes.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNDEFINED_BEHAVIOR The same handle is redefined. For example, the function has been called twice with the same handle type or an internal handle has been created before this function call. </p>
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNDEFINED_BEHAVIOR The same handle is redefined. For example, the function has been called twice with the same handle type or an internal handle has been created before this function call. MFX_ERR_DEVICE_FAILED The SDK cannot initialize using the handle.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4689,8 +4688,10 @@ SPDX-License-Identifier: MIT
 <dd><p>Obtains system handles previously set by the MFXVideoCORE_SetHandle function. </p>
 <p>If the handler is a COM interface, the reference counter of the interface increases. The calling application must release the COM interface.</p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNDEFINED_BEHAVIOR Specified handle type not found. </p>
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNDEFINED_BEHAVIOR Specified handle type not found.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4710,7 +4711,9 @@ SPDX-License-Identifier: MIT
 <span id="_CPPv326MFXVideoCORE_QueryPlatform10mfxSessionP11mfxPlatform"></span><span id="_CPPv226MFXVideoCORE_QueryPlatform10mfxSessionP11mfxPlatform"></span><span id="MFXVideoCORE_QueryPlatform__mfxSession.mfxPlatformP"></span><span class="target" id="mfxvideo_8h_1a80f35fe5d1e86a4c8c7d1f9c389cedd8"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoCORE_QueryPlatform</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_impl_manage.html#_CPPv411mfxPlatform" title="mfxPlatform"><span class="pre">mfxPlatform</span></a> <span class="pre">*</span><em><span class="pre">platform</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv426MFXVideoCORE_QueryPlatform10mfxSessionP11mfxPlatform" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns information about current hardware platform in the Legacy mode. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.19. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4731,8 +4734,10 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NONE_PARTIAL_OUTPUT The function completed successfully, bitstream contains a portion of the encoded frame according to required granularity. </p>
 <p>MFX_WRN_IN_EXECUTION The specified asynchronous function is in execution. </p>
-<p>MFX_ERR_ABORTED The specified asynchronous function aborted due to data dependency on a previous asynchronous function that did not complete. </p>
+<p>MFX_ERR_ABORTED The specified asynchronous function aborted due to data dependency on a previous asynchronous function that did not complete.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>

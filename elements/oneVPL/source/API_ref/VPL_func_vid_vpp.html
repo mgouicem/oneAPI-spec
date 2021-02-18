@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4680,8 +4675,10 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_UNSUPPORTED The implementation does not support the specified configuration. </p>
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
-<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
+<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4711,8 +4708,10 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
-<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
+<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4737,8 +4736,10 @@ SPDX-License-Identifier: MIT
 <p>MFX_WRN_PARTIAL_ACCELERATION The underlying hardware does not fully support the specified video parameters. The video processing may be partially accelerated. Only hardware implementations may return this status code. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
 <p>MFX_ERR_UNDEFINED_BEHAVIOR The function is called twice without a close. </p>
-<p>MFX_WRN_FILTER_SKIPPED The VPP skipped one or more filters requested by the application. </p>
+<p>MFX_WRN_FILTER_SKIPPED The VPP skipped one or more filters requested by the application.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4763,8 +4764,10 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected that video parameters are wrong or they conflict with initialization parameters. Reset is impossible. </p>
 <p>MFX_ERR_INCOMPATIBLE_VIDEO_PARAM The function detected that video parameters provided by the application are incompatible with initialization parameters. Reset requires additional memory allocation and cannot be executed. The application should close the component and then reinitialize it. </p>
-<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
+<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4784,6 +4787,8 @@ SPDX-License-Identifier: MIT
 <dd><p>Terminates the current video processing operation and de-allocates any internal tables or structures. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle.</p></li>
@@ -4808,6 +4813,8 @@ SPDX-License-Identifier: MIT
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
 </dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
+</dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">par</span></code>: Pointer to the corresponding parameter structure.</p></li>
@@ -4826,6 +4833,8 @@ SPDX-License-Identifier: MIT
 <dd><p>Obtains statistics collected during video processing. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4854,8 +4863,10 @@ correctly send input and retrieve output.</p>
 <p>MFX_ERR_DEVICE_LOST Hardware device was lost. </p>
 <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#work-ms-directx-app"><span class="std std-ref">Working with Microsoft* DirectX* Applications section</span></a> for further information.</p>
 </p>
- <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again in a few milliseconds. </p>
+ <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again after MFXVideoCORE_SyncOperation or in a few milliseconds.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4883,8 +4894,10 @@ correctly send input and retrieve output.</p>
 <p> MFX_ERR_DEVICE_LOST Hardware device was lost. </p>
 <p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#work-ms-directx-app"><span class="std std-ref">Working with Microsoft* DirectX* Applications section</span></a> for further information.</p>
 </p>
- <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again in a few milliseconds. </p>
+ <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again after MFXVideoCORE_SyncOperation or in a few milliseconds.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>

@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4637,8 +4632,10 @@ processing, encoding, and decoding.</p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR </p>
 <code class="docutils literal notranslate"><span class="pre">input_info</span></code> or adapters pointer is NULL. <p>MFX_ERR_NOT_FOUND No suitable adapters found. </p>
-<p>MFX_WRN_OUT_OF_RANGE Not enough memory to report back entire list of adapters. In this case as many adapters as possible will be returned. </p>
+<p>MFX_WRN_OUT_OF_RANGE Not enough memory to report back entire list of adapters. In this case as many adapters as possible will be returned.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.31. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">input_info</span></code>: Pointer to workload description. See <a class="reference internal" href="VPL_structs_cross_component.html#structmfx_component_info"><span class="std std-ref">mfxComponentInfo</span></a> description for details. </p></li>
@@ -4659,8 +4656,10 @@ processing, encoding, and decoding.</p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR bitstream or </p>
 <code class="docutils literal notranslate"><span class="pre">adapters</span></code> pointer is NULL. <p>MFX_ERR_NOT_FOUND No suitable adapters found. </p>
-<p>MFX_WRN_OUT_OF_RANGE Not enough memory to report back entire list of adapters. In this case as many adapters as possible will be returned. </p>
+<p>MFX_WRN_OUT_OF_RANGE Not enough memory to report back entire list of adapters. In this case as many adapters as possible will be returned.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.31. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">bitstream</span></code>: Pointer to bitstream with input data. </p></li>
@@ -4680,8 +4679,10 @@ processing, encoding, and decoding.</p>
 <span id="_CPPv322MFXQueryAdaptersNumberP6mfxU32"></span><span id="_CPPv222MFXQueryAdaptersNumberP6mfxU32"></span><span id="MFXQueryAdaptersNumber__mfxU32P"></span><span class="target" id="mfxadapter_8h_1a3142f611b47eb562ba6da2da7977ef43"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXQueryAdaptersNumber</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <span class="pre">*</span><em><span class="pre">num_adapters</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422MFXQueryAdaptersNumberP6mfxU32" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Returns the number of detected graphics adapters. It can be used before calling MFXQueryAdapters to determine the size of input data that the user will need to allocate. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR num_adapters pointer is NULL. </p>
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR num_adapters pointer is NULL.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 1.31. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">num_adapters</span></code>: Pointer for the output number of detected graphics adapters.</p></li>

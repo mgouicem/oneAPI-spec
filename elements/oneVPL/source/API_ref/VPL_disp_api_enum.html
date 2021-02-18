@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4649,6 +4644,35 @@ SPDX-License-Identifier: MIT
 <dt id="_CPPv4N19mfxAccelerationMode24MFX_ACCEL_MODE_VIA_VAAPIE">
 <span id="_CPPv3N19mfxAccelerationMode24MFX_ACCEL_MODE_VIA_VAAPIE"></span><span id="_CPPv2N19mfxAccelerationMode24MFX_ACCEL_MODE_VIA_VAAPIE"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a0124e8d44e2b1769eea9ebd0d982e4dd"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode24MFX_ACCEL_MODE_VIA_VAAPIE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Hardware acceleration goes through the Linux* VA-API infrastructure. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19mfxAccelerationMode40MFX_ACCEL_MODE_VIA_VAAPI_DRM_RENDER_NODEE">
+<span id="_CPPv3N19mfxAccelerationMode40MFX_ACCEL_MODE_VIA_VAAPI_DRM_RENDER_NODEE"></span><span id="_CPPv2N19mfxAccelerationMode40MFX_ACCEL_MODE_VIA_VAAPI_DRM_RENDER_NODEE"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a9d16aef08955fe5d28db467426c85825"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI_DRM_RENDER_NODE</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode40MFX_ACCEL_MODE_VIA_VAAPI_DRM_RENDER_NODEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Hardware acceleration goes through the Linux* VA-API infrastructure with DRM RENDER MODE as default acceleration access point. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19mfxAccelerationMode36MFX_ACCEL_MODE_VIA_VAAPI_DRM_MODESETE">
+<span id="_CPPv3N19mfxAccelerationMode36MFX_ACCEL_MODE_VIA_VAAPI_DRM_MODESETE"></span><span id="_CPPv2N19mfxAccelerationMode36MFX_ACCEL_MODE_VIA_VAAPI_DRM_MODESETE"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a38a37978b2601a8399360506571dd53f"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI_DRM_MODESET</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode36MFX_ACCEL_MODE_VIA_VAAPI_DRM_MODESETE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Hardware acceleration goes through the Linux* VA-API infrastructure with DRM MODESET as default acceleration access point. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_GLXE">
+<span id="_CPPv3N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_GLXE"></span><span id="_CPPv2N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_GLXE"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a60fbe1e1e926d8a7e5bce29695605f87"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI_GLX</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_GLXE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_X11E">
+<span id="_CPPv3N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_X11E"></span><span id="_CPPv2N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_X11E"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a2ba68c507fd1c82d8fbb72714ee8619d"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI_X11</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode28MFX_ACCEL_MODE_VIA_VAAPI_X11E" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Hardware acceleration goes through the Linux* VA-API infrastructure with OpenGL Extension to the X Window System as default acceleration access point. Hardware acceleration goes through the Linux* VA-API infrastructure with X11 as default acceleration access point. </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt id="_CPPv4N19mfxAccelerationMode32MFX_ACCEL_MODE_VIA_VAAPI_WAYLANDE">
+<span id="_CPPv3N19mfxAccelerationMode32MFX_ACCEL_MODE_VIA_VAAPI_WAYLANDE"></span><span id="_CPPv2N19mfxAccelerationMode32MFX_ACCEL_MODE_VIA_VAAPI_WAYLANDE"></span><span class="target" id="mfxcommon_8h_1aae47fab6a9bb988df3b4f8865a128460a9d08e975d5cb26bbef3eefc915913399"></span><em class="property"><span class="pre">enumerator</span> </em><code class="sig-name descname"><span class="pre">MFX_ACCEL_MODE_VIA_VAAPI_WAYLAND</span></code><a class="headerlink" href="#_CPPv4N19mfxAccelerationMode32MFX_ACCEL_MODE_VIA_VAAPI_WAYLANDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Hardware acceleration goes through the Linux* VA-API infrastructure with Wayland as default acceleration access point. </p>
 </dd></dl>
 
 <dl class="cpp enumerator">

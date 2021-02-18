@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4601,6 +4596,16 @@ SPDX-License-Identifier: MIT
      MFXVideoDECODE_VPP_GetChannelParam
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mfxvideodecode-vpp-decodeframeasync">
+     MFXVideoDECODE_VPP_DecodeFrameAsync
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mfxvideodecode-vpp-close">
+     MFXVideoDECODE_VPP_Close
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -4626,6 +4631,8 @@ with multiple output frame surfaces.</p>
 <li><p><a class="reference internal" href="#mfxvideodecode-vpp-init" id="id1">MFXVideoDECODE_VPP_Init</a></p></li>
 <li><p><a class="reference internal" href="#mfxvideodecode-vpp-reset" id="id2">MFXVideoDECODE_VPP_Reset</a></p></li>
 <li><p><a class="reference internal" href="#mfxvideodecode-vpp-getchannelparam" id="id3">MFXVideoDECODE_VPP_GetChannelParam</a></p></li>
+<li><p><a class="reference internal" href="#mfxvideodecode-vpp-decodeframeasync" id="id4">MFXVideoDECODE_VPP_DecodeFrameAsync</a></p></li>
+<li><p><a class="reference internal" href="#mfxvideodecode-vpp-close" id="id5">MFXVideoDECODE_VPP_Close</a></p></li>
 </ul>
 </div>
 <div class="section" id="mfxvideodecode-vpp-init">
@@ -4638,8 +4645,10 @@ with multiple output frame surfaces.</p>
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected invalid video parameters. These parameters may be out of the valid range, or the combination of them resulted in incompatibility. Incompatibility not resolved. </p>
 <p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. </p>
 <p>MFX_ERR_UNDEFINED_BEHAVIOR The component is already initialized. </p>
-<p>MFX_WRN_FILTER_SKIPPED The VPP skipped one or more filters requested by the application. </p>
+<p>MFX_WRN_FILTER_SKIPPED The VPP skipped one or more filters requested by the application.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: SDK session handle. </p></li>
@@ -4666,8 +4675,10 @@ with multiple output frame surfaces.</p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_INVALID_VIDEO_PARAM The function detected that video parameters are wrong or they conflict with initialization parameters. Reset is impossible. </p>
 <p>MFX_ERR_INCOMPATIBLE_VIDEO_PARAM The function detected that video parameters provided by the application are incompatible with initialization parameters. Reset requires additional memory allocation and cannot be executed. The application should close the component and then reinitialize it. </p>
-<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. MFX_ERR_NULL_PTR Both pointers decode_par and vpp_par_array` equal to zero. </p>
+<p>MFX_WRN_INCOMPATIBLE_VIDEO_PARAM The function detected some video parameters were incompatible with others; incompatibility resolved. MFX_ERR_NULL_PTR Both pointers decode_par and vpp_par_array` equal to zero.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4689,8 +4700,10 @@ with multiple output frame surfaces.</p>
 <dd><p>Returns actual VPP parameters for selected channel which should be specified by application through mfxVideoChannelParam::mfxFrameInfo::ChannelId. </p>
 <p><dl class="simple">
 <dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. <p>MFX_ERR_NULL_PTR par pointer is NULL. </p>
-<p>MFX_ERR_NOT_FOUND the library is not able to find VPP channel with such channel_id. </p>
+<p>MFX_ERR_NOT_FOUND the library is not able to find VPP channel with such channel_id.</p>
 </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle. </p></li>
@@ -4702,6 +4715,67 @@ with multiple output frame surfaces.</p>
 </p>
 </dd></dl>
 
+</div>
+<div class="section" id="mfxvideodecode-vpp-decodeframeasync">
+<h3><a class="toc-backref" href="#id4">MFXVideoDECODE_VPP_DecodeFrameAsync</a><a class="headerlink" href="#mfxvideodecode-vpp-decodeframeasync" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp function">
+<dt id="_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray">
+<span id="_CPPv335MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray"></span><span id="_CPPv235MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray"></span><span id="MFXVideoDECODE_VPP_DecodeFrameAsync__mfxSession.mfxBitstreamP.mfxU32P.mfxU32.mfxSurfaceArrayPP"></span><span class="target" id="mfxvideo_8h_1abcf69352de0bb0853f027ce0e36b7810"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em>, <a class="reference internal" href="VPL_structs_memory.html#_CPPv412mfxBitstream" title="mfxBitstream"><span class="pre">mfxBitstream</span></a> <span class="pre">*</span><em><span class="pre">bs</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <span class="pre">*</span><em><span class="pre">skip_channels</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <em><span class="pre">num_skip_channels</span></em>, <a class="reference internal" href="VPL_structs_decode_vpp.html#_CPPv415mfxSurfaceArray" title="mfxSurfaceArray"><span class="pre">mfxSurfaceArray</span></a> <span class="pre">*</span><span class="pre">*</span><em><span class="pre">surf_array_out</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function is similar to MFXVideoDECODE_DecodeFrameAsync and inherits all bitstream processing logic. As output it allocates and returns array of processed surfaces according to the chain of filters specified by applicaton in MFXVideoDECODE_VPP_Init. The original decoded frames are returned through surfaces with <a class="reference internal" href="VPL_structs_memory.html#structmfx_frame_info_1a0a170cfb4996390618338bb838c9cd9f"><span class="std std-ref">mfxFrameInfo::ChannelId</span></a> == 0. In other words, zero ChannelId is reserved by the SDK for decoded output and cannot be used by application to set video processing channels during initialization. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully and the output surface is ready for decoding. <p>MFX_ERR_MORE_DATA The function requires more bitstream at input before decoding can proceed. </p>
+<p>MFX_ERR_MORE_SURFACE The function requires more frame surface at output before decoding can proceed. </p>
+<p>MFX_ERR_DEVICE_LOST Hardware device was lost. </p>
+<p><p>See the <a class="reference internal" href="../programming_guide/VPL_prg_hw.html#work-ms-directx-app"><span class="std std-ref">Working with Microsoft* DirectX* Applications section</span></a> for further information.</p>
+</p>
+ <p>MFX_WRN_DEVICE_BUSY Hardware device is currently busy. Call this function again after MFXVideoCORE_SyncOperation or in a few milliseconds. </p>
+<p>MFX_WRN_VIDEO_PARAM_CHANGED The decoder detected a new sequence header in the bitstream. Video parameters may have changed. </p>
+<p>MFX_ERR_INCOMPATIBLE_VIDEO_PARAM The decoder detected incompatible video parameters in the bitstream and failed to follow them. </p>
+<p>MFX_ERR_NULL_PTR num_skip_channels doesn’t equal to 0 when skip_channels is NULL.</p>
+</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: SDK session handle. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">bs</span></code>: Pointer to the input bitstream. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">skip_channels</span></code>: Pointer to the array of <code class="docutils literal notranslate"><span class="pre">ChannelId</span></code>s which specifies channels with skip output frames. Memory for the array is allocated by application. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">num_skip_channels</span></code>: Number of channels addressed by skip_channels. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[out]</span> <span class="pre">surf_array_out</span></code>: The address of a pointer to the structure with frame surfaces.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <a class="reference internal" href="#_CPPv435MFXVideoDECODE_VPP_DecodeFrameAsync10mfxSessionP12mfxBitstreamP6mfxU326mfxU32PP15mfxSurfaceArray" title="MFXVideoDECODE_VPP_DecodeFrameAsync"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_DecodeFrameAsync()</span></code></a> is mandatory when implementing a combined decode plus vpp.</p>
+</div>
+</div>
+<div class="section" id="mfxvideodecode-vpp-close">
+<h3><a class="toc-backref" href="#id5">MFXVideoDECODE_VPP_Close</a><a class="headerlink" href="#mfxvideodecode-vpp-close" title="Permalink to this headline">¶</a></h3>
+<dl class="cpp function">
+<dt id="_CPPv424MFXVideoDECODE_VPP_Close10mfxSession">
+<span id="_CPPv324MFXVideoDECODE_VPP_Close10mfxSession"></span><span id="_CPPv224MFXVideoDECODE_VPP_Close10mfxSession"></span><span id="MFXVideoDECODE_VPP_Close__mfxSession"></span><span class="target" id="mfxvideo_8h_1ad53bad8b2c9aa93c65d494c5db81f39a"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXVideoDECODE_VPP_Close</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv410mfxSession" title="mfxSession"><span class="pre">mfxSession</span></a> <em><span class="pre">session</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424MFXVideoDECODE_VPP_Close10mfxSession" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>This function is similar to MFXVideoDECODE_Close. It terminates the current decoding and vpp operation and de-allocates any internal tables or structures. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.1. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">session</span></code>: Session handle.</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The <a class="reference internal" href="#_CPPv424MFXVideoDECODE_VPP_Close10mfxSession" title="MFXVideoDECODE_VPP_Close"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">MFXVideoDECODE_VPP_Close()</span></code></a> is mandatory when implementing a combined decode plus vpp.</p>
+</div>
 </div>
 </div>
 </div>

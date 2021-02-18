@@ -2281,16 +2281,20 @@ SPDX-License-Identifier: MIT
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../index.html">
    oneVPL
   </a>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
-  <a class="reference internal" href="../index.html#onevpl-specification-version">
-   oneVPL Specification Version
-  </a>
   <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../VPL_intel_media_sdk.html">
+     oneVPL for Intel
+     <sup>
+      ®
+     </sup>
+     Media Software Development Kit Users
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../architecture/index.html">
      Architecture
@@ -2555,15 +2559,6 @@ SPDX-License-Identifier: MIT
      Appendices
     </a>
     <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../appendix/VPL_intel_media_sdk.html">
-       oneVPL for Intel
-       <sup>
-        ®
-       </sup>
-       Media Software Development Kit Users
-      </a>
-     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../appendix/VPL_apnds_a.html">
        Configuration Parameter Constraints
@@ -4629,7 +4624,9 @@ user-requested library implementations.</p>
 <span id="_CPPv324MFXQueryImplsDescription25mfxImplCapsDeliveryFormatP6mfxU32"></span><span id="_CPPv224MFXQueryImplsDescription25mfxImplCapsDeliveryFormatP6mfxU32"></span><span id="MFXQueryImplsDescription__mfxImplCapsDeliveryFormat.mfxU32P"></span><span class="target" id="mfximplcaps_8h_1a5f36f830b19ab93b6a8078a7189634f5"></span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <span class="pre">*</span><code class="sig-name descname"><span class="pre">MFXQueryImplsDescription</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_enums.html#_CPPv425mfxImplCapsDeliveryFormat" title="mfxImplCapsDeliveryFormat"><span class="pre">mfxImplCapsDeliveryFormat</span></a> <em><span class="pre">format</span></em>, <a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxU32" title="mfxU32"><span class="pre">mfxU32</span></a> <span class="pre">*</span><em><span class="pre">num_impls</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424MFXQueryImplsDescription25mfxImplCapsDeliveryFormatP6mfxU32" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Delivers implementation capabilities in the requested format according to the format value. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>Array of handles to the capability report or NULL in case of unsupported format or NULL num_impls pointer. Length of array is equal to num_impls. </p>
+<dt><strong>Return</strong></dt><dd><p>Array of handles to the capability report or NULL in case of unsupported format or NULL num_impls pointer. Length of array is equal to num_impls.</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">format</span></code>: Format in which capabilities must be delivered. See mfxImplCapsDeliveryFormat for more details. </p></li>
@@ -4652,7 +4649,9 @@ user-requested library implementations.</p>
 <span id="_CPPv325MFXReleaseImplDescription6mfxHDL"></span><span id="_CPPv225MFXReleaseImplDescription6mfxHDL"></span><span id="MFXReleaseImplDescription__mfxHDL"></span><span class="target" id="mfximplcaps_8h_1aff76831c9d8aae6728b8f196f00c732d"></span><a class="reference internal" href="VPL_enums.html#_CPPv49mfxStatus" title="mfxStatus"><span class="pre">mfxStatus</span></a> <code class="sig-name descname"><span class="pre">MFXReleaseImplDescription</span></code><span class="sig-paren">(</span><a class="reference internal" href="VPL_ref_types.html#_CPPv46mfxHDL" title="mfxHDL"><span class="pre">mfxHDL</span></a> <em><span class="pre">hdl</span></em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425MFXReleaseImplDescription6mfxHDL" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Destroys the handle allocated by the MFXQueryImplsCapabilities function. Implementation must remember which handles are released. Once the last handle is released, this function must release memory allocated for the array of handles. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully. </p>
+<dt><strong>Return</strong></dt><dd><p>MFX_ERR_NONE The function completed successfully.</p>
+</dd>
+<dt><strong>Since</strong></dt><dd><p>This function is available since API version 2.0. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">[in]</span> <span class="pre">hdl</span></code>: Handle to destroy. Can be equal to NULL.</p></li>
